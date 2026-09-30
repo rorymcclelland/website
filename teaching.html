@@ -9,11 +9,17 @@
 <meta name="theme-color" content="#111417" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="canonical" href="https://mcclelland.info/teaching">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rory McClelland · Teaching &amp; Mentoring">
+<meta property="og:description" content="AI mentoring for young builders: from understanding how AI works to launching something real, safely.">
+<meta property="og:url" content="https://mcclelland.info/teaching">
+<meta property="og:image" content="https://mcclelland.info/headshot.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
-  /* Layout: same editorial grid as the main site (920px column, hairline-ruled sections),
-     with one warmer secondary accent for the young-builder material. */
   :root{
     --ink:#15181B; --ink-soft:#3B4046; --paper:#F7F6F2; --paper-raised:#FFFFFF;
     --graphite:#5B6167; --line:#DBDAD3;
@@ -53,7 +59,6 @@
   .eyebrow::before{content:"";width:22px;height:1px;background:var(--accent);display:inline-block;}
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 
-  /* nav */
   .topnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;display:flex;align-items:center;justify-content:space-between;padding-block:14px;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-inline:-20px;padding-inline:20px;}
   .mark{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--ink);text-decoration:none;}
   .mark span{color:var(--accent);}
@@ -73,7 +78,6 @@
     :root:not([data-theme="light"]) .theme-toggle .moon{display:none;}
   }
 
-  /* hero */
   .hero{padding-block:5rem 3.5rem;position:relative;}
   .hero-top{display:grid;grid-template-columns:1.3fr .8fr;gap:3rem;align-items:center;}
   .hero-text{min-width:0;}
@@ -96,7 +100,6 @@
   .quickfacts .lbl{font-size:.76rem;color:var(--graphite);}
   @media (max-width:700px){ .quickfacts{grid-template-columns:repeat(2,1fr);} .quickfacts div:nth-child(2){border-right:none;} .quickfacts div:nth-child(-n+2){border-bottom:1px solid var(--line);} }
 
-  /* sections */
   section{padding-block:4.5rem;border-top:1px solid var(--line);position:relative;}
   section.hero{border-top:none;}
   h2.title{font-size:clamp(1.7rem,2.2vw + 1rem,2.35rem);max-width:22ch;margin-bottom:1.4rem;}
@@ -110,7 +113,6 @@
   .trio p{margin:0;font-size:.92rem;color:var(--ink-soft);}
   @media (max-width:800px){ .trio{grid-template-columns:1fr;} }
 
-  /* the gap: ladder of rungs with coverage bars */
   .ladder{border:1px solid var(--line);background:var(--paper-raised);padding:1.6rem;overflow-x:auto;}
   .ladder-inner{min-width:560px;}
   .rungs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;}
@@ -129,7 +131,6 @@
   .cover .fill.here{width:100%;background:linear-gradient(90deg,var(--accent) 0 52%,var(--warm) 52% 100%);}
   .gap-note{margin-top:1.4rem;font-size:.92rem;color:var(--ink-soft);max-width:64ch;}
 
-  /* programme */
   .pillbar{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.6rem;}
   .pill{font-family:var(--mono);font-size:.78rem;padding:.55rem 1rem;border:1px solid var(--line);background:transparent;color:var(--ink-soft);cursor:pointer;}
   .pill[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink);}
@@ -157,7 +158,6 @@
   .example p{margin:0;color:var(--ink);}
   .prog-note{margin-top:1.2rem;font-size:.86rem;color:var(--graphite);max-width:64ch;}
 
-  /* safety */
   .quad{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem 2.2rem;}
   .quad > div{border-left:2px solid var(--warm);padding-left:1rem;min-width:0;}
   .quad h4{font-size:1.05rem;margin-bottom:.35rem;}
@@ -185,7 +185,6 @@
   .verdict ul{margin:0;padding-left:1.2rem;font-size:.88rem;color:var(--ink-soft);}
   .verdict li{margin-bottom:.3rem;}
 
-  /* how it works */
   .rows{display:flex;flex-direction:column;}
   .row{display:grid;grid-template-columns:200px 1fr;gap:1.6rem;padding-block:1.2rem;border-top:1px solid var(--line);}
   .row:first-child{border-top:none;}
@@ -193,7 +192,6 @@
   .row p{margin:0;font-size:.92rem;color:var(--ink-soft);max-width:60ch;}
   @media (max-width:640px){ .row{grid-template-columns:1fr;gap:.3rem;} }
 
-  /* contact */
   .contact-grid{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.8rem;}
   .clink{border:1px solid var(--line);padding:1rem 1.3rem;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:.2rem;flex:1 1 200px;min-width:0;}
   .clink:hover{border-color:var(--accent);}
@@ -331,7 +329,7 @@
   <div class="wrap">
     <div class="eyebrow">04 · Safety &amp; governance</div>
     <h2 class="title reveal">Governance, sized for a young builder.</h2>
-    <p class="lede">With businesses, I spend a good deal of time on AI governance: who can see the data, what a system is allowed to do, and who is accountable when something goes wrong. The same questions apply to a young person's first app, in simpler words. Most young builders are never asked them, and they are far easier to learn at twelve than to unlearn at twenty-five.</p>
+    <p class="lede">With businesses, I spend a good deal of time on AI governance: who can see the data, what a system is allowed to do, and who is accountable when something goes wrong. The same questions apply to a young person's first app, in simpler words. Most young builders are never asked them, and they are far easier to learn early than to unlearn later.</p>
     <div class="quad reveal">
       <div><h4>My data</h4><p>What should never be typed into an AI tool, how to check a tool's privacy settings, and why 'free' usually means the user is paying some other way.</p></div>
       <div><h4>Tools and ages</h4><p>Many AI tools set minimum ages in their terms of use. Tools and accounts are chosen and set up with parents, and parents can see what is being used and why.</p></div>
@@ -475,7 +473,6 @@
     $('spEx').textContent = s.ex[state.track];
   }
 
-  // pre-launch checker
   var checks = {
     data:  'Collect only what is needed, say clearly what it is used for, and delete it when it is no longer needed. Check the plan against the ICO Children’s Code.',
     talk:  'Decide how anything unkind or unsafe gets reported and removed, and who does it. Keep testers to people you know at first.',
@@ -502,7 +499,6 @@
   }
   ids.forEach(function(k){ $('ck-' + k).addEventListener('change', updateCheck); });
 
-  // theme toggle, shared with the main site
   var tt = $('themeToggle');
   tt.addEventListener('click', function(){
     var cur = document.documentElement.getAttribute('data-theme');
@@ -512,7 +508,6 @@
     try { localStorage.setItem('rm-theme', next); } catch (e) {}
   });
 
-  // gentle reveal from a visible resting state
   var els = document.querySelectorAll('.reveal');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if ('IntersectionObserver' in window && !reduce) {
