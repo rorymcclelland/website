@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Rory McClelland · Teaching &amp; Mentoring</title>
+<meta name="description" content="AI mentoring for young builders: from understanding how AI works to launching something real, safely. A former teacher with twenty years in product and a background in privacy and user safety.">
+<meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111417" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  /* Layout: same editorial grid as the main site (920px column, hairline-ruled sections),
+     with one warmer secondary accent for the young-builder material. */
+  :root{
+    --ink:#15181B; --ink-soft:#3B4046; --paper:#F7F6F2; --paper-raised:#FFFFFF;
+    --graphite:#5B6167; --line:#DBDAD3;
+    --accent:#1F6F5C; --accent-soft:#DEEBE6; --accent-ink:#0F3F34;
+    --warm:#A9612C; --warm-soft:#F3E4D6;
+    --display:'Fraunces', Georgia, 'Times New Roman', serif;
+    --body:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono:'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#ECEBE6; --ink-soft:#C7CBCE; --paper:#111417; --paper-raised:#181C1F;
+      --graphite:#9CA2A8; --line:#2A2F33;
+      --accent:#57C2A4; --accent-soft:#173A32; --accent-ink:#BEEFDF;
+      --warm:#D08A50; --warm-soft:#3A2A1C;
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#ECEBE6; --ink-soft:#C7CBCE; --paper:#111417; --paper-raised:#181C1F;
+    --graphite:#9CA2A8; --line:#2A2F33;
+    --accent:#57C2A4; --accent-soft:#173A32; --accent-ink:#BEEFDF;
+    --warm:#D08A50; --warm-soft:#3A2A1C;
+    color-scheme:dark;
+  }
+  :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);}
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:72px;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:20px;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;}
+  [hidden]{display:none!important;}
+  a{color:var(--accent);}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.08;text-wrap:balance;color:var(--ink);margin:0;}
+  .wrap{max-width:920px;margin-inline:auto;position:relative;z-index:1;}
+  .eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.6em;margin-bottom:1.1rem;}
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--accent);display:inline-block;}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  /* nav */
+  .topnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;display:flex;align-items:center;justify-content:space-between;padding-block:14px;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-inline:-20px;padding-inline:20px;}
+  .mark{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--ink);text-decoration:none;}
+  .mark span{color:var(--accent);}
+  .nav-right{display:flex;align-items:center;gap:1.4rem;}
+  .navlinks{display:flex;gap:1.6rem;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;}
+  .navlinks a{color:var(--ink-soft);text-decoration:none;}
+  .navlinks a:hover,.navlinks a.here{color:var(--accent);}
+  @media (max-width:640px){ .navlinks{gap:1rem;} .navlinks .hide-narrow{display:none;} }
+  .theme-toggle{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:32px;height:32px;border:1px solid var(--line);background:transparent;color:var(--ink-soft);cursor:pointer;padding:0;}
+  .theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+  .theme-toggle svg{width:15px;height:15px;}
+  .theme-toggle .sun{display:none;} .theme-toggle .moon{display:block;}
+  :root[data-theme="dark"] .theme-toggle .sun{display:block;}
+  :root[data-theme="dark"] .theme-toggle .moon{display:none;}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .sun{display:block;}
+    :root:not([data-theme="light"]) .theme-toggle .moon{display:none;}
+  }
+
+  /* hero */
+  .hero{padding-block:5rem 3.5rem;position:relative;}
+  .hero-top{display:grid;grid-template-columns:1.3fr .8fr;gap:3rem;align-items:center;}
+  .hero-text{min-width:0;}
+  .kicker{font-family:var(--mono);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite);margin-bottom:1rem;}
+  h1.headline{font-size:clamp(2.1rem,4.4vw + .6rem,3.4rem);max-width:17ch;}
+  h1.headline em{font-style:italic;color:var(--accent);font-weight:500;}
+  .subline{margin-top:1.3rem;max-width:56ch;font-size:1.08rem;color:var(--ink-soft);}
+  .hero-ctas{display:flex;gap:.9rem;margin-top:2.2rem;flex-wrap:wrap;}
+  .btn{font-family:var(--mono);font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;padding:.85rem 1.3rem;border:1px solid var(--ink);color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:.5em;}
+  .btn.primary{background:var(--ink);color:var(--paper);}
+  .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--paper);}
+  .hero-portrait{border:1px solid var(--line);background:var(--paper-raised);padding:10px;}
+  .hero-portrait img{width:100%;display:block;object-fit:cover;aspect-ratio:4/5;}
+  .portrait-cap{font-family:var(--mono);font-size:.7rem;color:var(--graphite);margin-top:.7rem;}
+  @media (max-width:800px){ .hero-top{grid-template-columns:1fr;gap:2rem;} .hero-portrait{max-width:220px;} }
+  .quickfacts{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin-top:3rem;}
+  .quickfacts div{padding:1.1rem 1rem;border-right:1px solid var(--line);}
+  .quickfacts div:last-child{border-right:none;}
+  .quickfacts .num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:1.5rem;color:var(--accent);display:block;}
+  .quickfacts .lbl{font-size:.76rem;color:var(--graphite);}
+  @media (max-width:700px){ .quickfacts{grid-template-columns:repeat(2,1fr);} .quickfacts div:nth-child(2){border-right:none;} .quickfacts div:nth-child(-n+2){border-bottom:1px solid var(--line);} }
+
+  /* sections */
+  section{padding-block:4.5rem;border-top:1px solid var(--line);position:relative;}
+  section.hero{border-top:none;}
+  h2.title{font-size:clamp(1.7rem,2.2vw + 1rem,2.35rem);max-width:22ch;margin-bottom:1.4rem;}
+  .lede{font-size:1.05rem;color:var(--ink-soft);max-width:64ch;margin:0 0 2.2rem;}
+  .label{font-family:var(--mono);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--graphite);margin:2.4rem 0 1rem;}
+
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .trio > div{background:var(--paper);padding:1.6rem 1.5rem;min-width:0;}
+  .trio .si{font-family:var(--mono);color:var(--accent);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;}
+  .trio h3{font-size:1.15rem;margin:.5rem 0 .6rem;}
+  .trio p{margin:0;font-size:.92rem;color:var(--ink-soft);}
+  @media (max-width:800px){ .trio{grid-template-columns:1fr;} }
+
+  /* the gap: ladder of rungs with coverage bars */
+  .ladder{border:1px solid var(--line);background:var(--paper-raised);padding:1.6rem;overflow-x:auto;}
+  .ladder-inner{min-width:560px;}
+  .rungs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;}
+  .rung{border-top:3px solid var(--line);padding-top:.7rem;}
+  .rung .n{font-family:var(--mono);font-size:.7rem;color:var(--graphite);}
+  .rung h4{font-size:1rem;margin:.2rem 0 .3rem;}
+  .rung p{margin:0;font-size:.78rem;color:var(--graphite);line-height:1.4;}
+  .rung.later{border-top-color:var(--warm);}
+  .rung.early{border-top-color:var(--accent);}
+  .cover{display:grid;grid-template-columns:150px 1fr;gap:1rem;align-items:center;margin-top:1.1rem;}
+  .cover:first-of-type{margin-top:1.6rem;}
+  .cover .cl{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;color:var(--graphite);}
+  .cover .track{height:10px;background:var(--line);position:relative;}
+  .cover .fill{position:absolute;inset:0 auto 0 0;}
+  .cover .fill.typical{width:52%;background:var(--graphite);}
+  .cover .fill.here{width:100%;background:linear-gradient(90deg,var(--accent) 0 52%,var(--warm) 52% 100%);}
+  .gap-note{margin-top:1.4rem;font-size:.92rem;color:var(--ink-soft);max-width:64ch;}
+
+  /* programme */
+  .pillbar{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.6rem;}
+  .pill{font-family:var(--mono);font-size:.78rem;padding:.55rem 1rem;border:1px solid var(--line);background:transparent;color:var(--ink-soft);cursor:pointer;}
+  .pill[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+  .pill:hover:not([aria-pressed="true"]){border-color:var(--accent);color:var(--ink);}
+  .stagebar{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-bottom:none;}
+  .stab{background:var(--paper);border:none;border-right:1px solid var(--line);padding:.9rem .6rem;text-align:left;cursor:pointer;font-family:inherit;color:var(--ink-soft);min-width:0;}
+  .stab:last-child{border-right:none;}
+  .stab .w{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;text-transform:uppercase;color:var(--graphite);}
+  .stab .t{display:block;font-family:var(--display);font-weight:600;font-size:1.02rem;color:var(--ink);margin-top:.15rem;}
+  .stab[aria-selected="true"]{background:var(--ink);}
+  .stab[aria-selected="true"] .w{color:var(--paper);opacity:.75;}
+  .stab[aria-selected="true"] .t{color:var(--paper);}
+  .stab:hover:not([aria-selected="true"]){background:var(--accent-soft);}
+  @media (max-width:640px){ .stab{padding:.7rem .4rem;} .stab .t{font-size:.82rem;} .stab .w{font-size:.58rem;} }
+  .stagepanel{border:1px solid var(--line);background:var(--paper-raised);padding:1.8rem;}
+  .sp-q{font-family:var(--display);font-style:italic;font-weight:500;font-size:1.3rem;margin:0 0 1.3rem;color:var(--ink);}
+  .sp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.4rem;}
+  .sp-grid > div{min-width:0;}
+  .sp-grid b{display:block;font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;color:var(--graphite);margin-bottom:.35rem;}
+  .sp-grid p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+  .sp-grid .safe b{color:var(--warm);}
+  @media (max-width:760px){ .sp-grid{grid-template-columns:1fr;} }
+  .example{margin-top:1.4rem;border-left:2px solid var(--accent);padding:.8rem 1rem;background:var(--accent-soft);font-size:.9rem;}
+  .example b{display:block;font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent-ink);margin-bottom:.3rem;}
+  .example p{margin:0;color:var(--ink);}
+  .prog-note{margin-top:1.2rem;font-size:.86rem;color:var(--graphite);max-width:64ch;}
+
+  /* safety */
+  .quad{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem 2.2rem;}
+  .quad > div{border-left:2px solid var(--warm);padding-left:1rem;min-width:0;}
+  .quad h4{font-size:1.05rem;margin-bottom:.35rem;}
+  .quad p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+  @media (max-width:700px){ .quad{grid-template-columns:1fr;} }
+  .checker{margin-top:2rem;border:1px solid var(--line);padding:1.6rem;background:var(--paper-raised);}
+  .checker h3{font-size:1.2rem;margin-bottom:.4rem;}
+  .checker > p{margin:0 0 1.2rem;font-size:.9rem;color:var(--ink-soft);}
+  .toggles{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1.6rem;}
+  @media (max-width:640px){ .toggles{grid-template-columns:1fr;} }
+  .tg{display:flex;align-items:center;gap:.9rem;cursor:pointer;position:relative;}
+  .tg input{position:absolute;opacity:0;width:1px;height:1px;}
+  .sw{width:38px;height:20px;background:var(--line);position:relative;flex-shrink:0;transition:background .15s;}
+  .sw::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;background:var(--paper-raised);transition:left .15s;}
+  .tg input:checked + .sw{background:var(--warm);}
+  .tg input:checked + .sw::after{left:20px;}
+  .tg input:focus-visible + .sw{outline:2px solid var(--accent);outline-offset:2px;}
+  .tg span.l{font-size:.9rem;}
+  .verdict{margin-top:1.4rem;padding-top:1.4rem;border-top:1px solid var(--line);}
+  .badge{display:inline-block;font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;padding:.35rem .7rem;margin-bottom:.8rem;}
+  .badge.ok{background:var(--accent-soft);color:var(--accent-ink);}
+  .badge.mid{background:var(--warm-soft);color:var(--warm);}
+  .badge.hot{background:var(--ink);color:var(--paper);}
+  .verdict p{margin:0 0 .7rem;font-size:.92rem;color:var(--ink-soft);max-width:64ch;}
+  .verdict ul{margin:0;padding-left:1.2rem;font-size:.88rem;color:var(--ink-soft);}
+  .verdict li{margin-bottom:.3rem;}
+
+  /* how it works */
+  .rows{display:flex;flex-direction:column;}
+  .row{display:grid;grid-template-columns:200px 1fr;gap:1.6rem;padding-block:1.2rem;border-top:1px solid var(--line);}
+  .row:first-child{border-top:none;}
+  .row h4{font-size:1.02rem;}
+  .row p{margin:0;font-size:.92rem;color:var(--ink-soft);max-width:60ch;}
+  @media (max-width:640px){ .row{grid-template-columns:1fr;gap:.3rem;} }
+
+  /* contact */
+  .contact-grid{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.8rem;}
+  .clink{border:1px solid var(--line);padding:1rem 1.3rem;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:.2rem;flex:1 1 200px;min-width:0;}
+  .clink:hover{border-color:var(--accent);}
+  .clink .k{font-family:var(--mono);font-size:.7rem;color:var(--graphite);text-transform:uppercase;letter-spacing:.06em;}
+  .clink .v{font-size:.98rem;overflow-wrap:anywhere;}
+  footer{padding-block:2.5rem 3rem;border-top:1px solid var(--line);}
+  footer .fl{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-family:var(--mono);font-size:.75rem;color:var(--graphite);}
+  footer a{color:var(--graphite);}
+
+  .reveal{opacity:.5;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in-view{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){ .reveal{transition:none;opacity:1;transform:none;} }
+</style>
+<script>
+(function(){ try { var t = localStorage.getItem('rm-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();
+</script>
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="mark" href="index.html">Rory <span>McClelland</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="#programme" class="hide-narrow">Programme</a>
+      <a href="#safety">Safety</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="hero-text">
+        <div class="kicker">AI mentoring &amp; education</div>
+        <h1 class="headline">Helping young builders take an idea all the way to the real world, <em>safely</em>.</h1>
+        <p class="subline">I mentor young people who are curious about AI, technology and starting things of their own. Learning how AI works is the starting point. The lessons that stay with them come later: putting something in front of real users, looking after those users, and learning from what happens next. I bring three years of teaching children in Japanese schools, twenty years of taking products to real users, and a background in privacy and user safety at Google and Bumble.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#programme">See a sample programme</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-portrait">
+        <img src="headshot.jpg" alt="Portrait of Rory McClelland">
+        <div class="portrait-cap">Rory McClelland, London</div>
+      </div>
+    </div>
+    <div class="quickfacts">
+      <div><span class="num">3 yrs</span><span class="lbl">teaching in Japanese elementary and junior high schools</span></div>
+      <div><span class="num">20 yrs</span><span class="lbl">taking products from idea to real users</span></div>
+      <div><span class="num">2</span><span class="lbl">privacy and safety leadership roles: Google Chrome, Bumble</span></div>
+      <div><span class="num">MSc</span><span class="lbl">Computer Science, Distinction, Birmingham</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="eyebrow">01 · Why me</div>
+    <h2 class="title reveal">Three things a young builder rarely finds in one mentor.</h2>
+    <div class="trio reveal">
+      <div>
+        <div class="si">A teacher first</div>
+        <h3>I know how children of this age learn</h3>
+        <p>I taught for three years in elementary and junior high schools in Shiga, Japan, including special needs classes. That is where I learned what keeps children of this age motivated, what makes them switch off, and how to explain a difficult idea without talking down to anyone.</p>
+      </div>
+      <div>
+        <div class="si">Someone who ships</div>
+        <h3>Real users, beyond the demo</h3>
+        <p>For twenty years my job has been getting products out of the building and into people's hands: a new-to-market app at Soho House, privacy features in Google Chrome, and AI pilots running on real data. The same discipline is taught here, at a smaller scale.</p>
+      </div>
+      <div>
+        <div class="si">Safety built in</div>
+        <h3>Privacy and safety from the inside</h3>
+        <p>I led privacy for Google Chrome and product safety at Bumble. A young builder learns to protect their own data and their users' data, and to ask who could be harmed by what they make before it launches, instead of afterwards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gap">
+  <div class="wrap">
+    <div class="eyebrow">02 · The gap</div>
+    <h2 class="title reveal">Most AI tuition stops at the demo.</h2>
+    <p class="lede">Building a working demo with an AI tool is now an afternoon's work. Understanding how AI works, and using the tools well, is covered by most courses. The harder and more valuable lessons start afterwards: when real people use what you have made, when something breaks, and when you are responsible for other people's data.</p>
+    <div class="ladder reveal">
+      <div class="ladder-inner">
+        <div class="rungs">
+          <div class="rung early"><span class="n">1</span><h4>Understand</h4><p>How AI works, in plain terms.</p></div>
+          <div class="rung early"><span class="n">2</span><h4>Use</h4><p>Getting good results from AI tools.</p></div>
+          <div class="rung early"><span class="n">3</span><h4>Build</h4><p>A working prototype.</p></div>
+          <div class="rung later"><span class="n">4</span><h4>Ship</h4><p>Real users, real feedback, a launch.</p></div>
+          <div class="rung later"><span class="n">5</span><h4>Run safely</h4><p>Privacy, safety, looking after users.</p></div>
+        </div>
+        <div class="cover"><span class="cl">Typical AI tuition</span><div class="track"><div class="fill typical"></div></div></div>
+        <div class="cover"><span class="cl">This programme</span><div class="track"><div class="fill here"></div></div></div>
+      </div>
+    </div>
+    <p class="gap-note">The last two rungs are where product development, marketing, project management and responsibility are actually learned, because they stop being theory. They are also the rungs I have spent my career on.</p>
+  </div>
+</section>
+
+<section id="programme">
+  <div class="wrap">
+    <div class="eyebrow">03 · A sample programme</div>
+    <h2 class="title reveal">Twelve weeks, from first idea to something real.</h2>
+    <p class="lede">The programme follows the same five-stage method I use with businesses, sized for a young builder of roughly 11 to 16. Each stage ends with something tangible, and each one adds a safety habit. It is shaped around the student's own interests, so choose a track to see how it changes.</p>
+
+    <div class="pillbar" role="group" aria-label="Choose a project track">
+      <button type="button" class="pill" data-track="game" aria-pressed="true">A game</button>
+      <button type="button" class="pill" data-track="app" aria-pressed="false">An app</button>
+      <button type="button" class="pill" data-track="biz" aria-pressed="false">A small business</button>
+    </div>
+
+    <div class="stagebar" role="tablist" aria-label="Programme stages" id="stagebar"></div>
+    <div class="stagepanel" role="tabpanel" id="stagepanel" aria-live="polite">
+      <p class="sp-q" id="spQ"></p>
+      <div class="sp-grid">
+        <div><b>What is learned</b><p id="spLearn"></p></div>
+        <div><b>What gets made</b><p id="spMake"></p></div>
+        <div class="safe"><b>Safety habit</b><p id="spSafe"></p></div>
+      </div>
+      <div class="example"><b>In practice: <span id="spTrack">a game</span></b><p id="spEx"></p></div>
+    </div>
+    <p class="prog-note">A sample only. The pace, projects and balance between building, marketing and business are agreed with the student and family at the start, and revisited at the end of each stage.</p>
+  </div>
+</section>
+
+<section id="safety">
+  <div class="wrap">
+    <div class="eyebrow">04 · Safety &amp; governance</div>
+    <h2 class="title reveal">Governance, sized for a young builder.</h2>
+    <p class="lede">With businesses, I spend a good deal of time on AI governance: who can see the data, what a system is allowed to do, and who is accountable when something goes wrong. The same questions apply to a young person's first app, in simpler words. Most young builders are never asked them, and they are far easier to learn at twelve than to unlearn at twenty-five.</p>
+    <div class="quad reveal">
+      <div><h4>My data</h4><p>What should never be typed into an AI tool, how to check a tool's privacy settings, and why 'free' usually means the user is paying some other way.</p></div>
+      <div><h4>Tools and ages</h4><p>Many AI tools set minimum ages in their terms of use. Tools and accounts are chosen and set up with parents, and parents can see what is being used and why.</p></div>
+      <div><h4>My users' data</h4><p>Collect the minimum, keep it safe and delete it when it is no longer needed. In the UK, services likely to be used by children must follow the ICO's Children's Code, which is a useful checklist in its own right.</p></div>
+      <div><h4>Checking the machine</h4><p>AI tools can be confidently wrong, and can be steered by text hidden in what they read. So their work is checked, and nothing important is left to them unsupervised.</p></div>
+    </div>
+
+    <div class="checker reveal">
+      <h3>Before you launch: a quick check</h3>
+      <p>A simplified version of the risk check I use with businesses. Tick what applies to the project.</p>
+      <div class="toggles">
+        <label class="tg"><input type="checkbox" id="ck-data"><span class="sw"></span><span class="l">It collects personal information</span></label>
+        <label class="tg"><input type="checkbox" id="ck-talk"><span class="sw"></span><span class="l">Users can message or post to each other</span></label>
+        <label class="tg"><input type="checkbox" id="ck-money"><span class="sw"></span><span class="l">It takes payments</span></label>
+        <label class="tg"><input type="checkbox" id="ck-ai"><span class="sw"></span><span class="l">AI writes what users see</span></label>
+      </div>
+      <div class="verdict">
+        <span class="badge ok" id="ckBadge">Ready for testers</span>
+        <p id="ckText"></p>
+        <ul id="ckList"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow">05 · How it works</div>
+    <h2 class="title reveal">Working with families.</h2>
+    <div class="rows reveal">
+      <div class="row"><h4>Sessions</h4><p>Mostly online, and scheduled around the school timetable and term dates. Occasional in-person sessions are arranged where they help, for a launch or a demo day, for instance.</p></div>
+      <div class="row"><h4>Keeping parents informed</h4><p>A short written update at the end of each stage: what was learned, what was made, and what comes next. Parents are invited to the end-of-programme demo.</p></div>
+      <div class="row"><h4>Independence</h4><p>The aim is a student who can research, plan and solve problems on their own. Support is stepped back as confidence grows, which is also how autonomy is handed to AI systems in business.</p></div>
+      <div class="row"><h4>Checks</h4><p>I am happy to undergo enhanced background checks, and to agree ground rules for online sessions with the family at the outset.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">06 · Contact</div>
+    <h2 class="title reveal">Get in touch about mentoring.</h2>
+    <p class="lede">Email is the best way to reach me. I am happy to talk through what a programme could look like for a particular student, and I read and reply to email myself, usually within a day.</p>
+    <div class="contact-grid">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="index.html"><span class="k">Main site</span><span class="v">Product &amp; AI transformation</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · AI mentoring &amp; education</span>
+    <span><a href="index.html">Back to the main site</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tracks = { game: 'a game', app: 'an app', biz: 'a small business' };
+  var stages = [
+    { id:'discover', weeks:'Weeks 1–2', name:'Discover',
+      q:'What is worth building, and for whom?',
+      learn:'How AI works, in plain terms. Which tools do what. How to spot a problem worth solving, and how to ask people about it.',
+      make:'A longlist of ideas and a one-page pitch for the favourite.',
+      safe:'What never goes into an AI tool: names, addresses, passwords, photos of friends.',
+      ex:{ game:'A browser game idea based on something they already love playing, with what makes it fun written down before anything is built.',
+           app:'A small tool for a real problem at school, such as a revision planner or a homework tracker.',
+           biz:'An idea for a small product or service that people might actually pay for.' } },
+    { id:'choose', weeks:'Week 3', name:'Choose',
+      q:'Which idea goes first, and why that one?',
+      learn:'Competitor analysis, a simple scoring method, and deciding exactly who the user is.',
+      make:'A scored shortlist, a competitor map and one chosen idea.',
+      safe:'Checking each tool’s age limits and terms, together with a parent.',
+      ex:{ game:'Three ideas compared with similar games online: what they do well, and what is missing that ours could offer.',
+           app:'Existing apps compared, and one feature chosen that none of them does well.',
+           biz:'A simple market and competitor map, and a first go at a price.' } },
+    { id:'build', weeks:'Weeks 4–7', name:'Build',
+      q:'Can we make it work?',
+      learn:'Building with AI coding tools, writing clear instructions for them, testing, and finding out why the AI is confidently wrong.',
+      make:'A working prototype.',
+      safe:'Never trust, always check. Secrets such as passwords and keys are kept out of the code.',
+      ex:{ game:'A playable first level, built with an AI coding tool, with scores saved on the player’s own device.',
+           app:'A working web app, built with an AI coding tool and tested on the student’s own timetable first.',
+           biz:'A landing page and a simple prototype, built with AI tools, to find out whether anyone is interested.' } },
+    { id:'launch', weeks:'Weeks 8–10', name:'Launch',
+      q:'Will real people use it?',
+      learn:'Putting it online, writing a short launch message, gathering feedback, and running the work as a small project with a plan and deadlines.',
+      make:'A live version, used by a small group of real testers: friends, family or classmates.',
+      safe:'The pre-launch check below, with a parent signing off.',
+      ex:{ game:'The game shared with a group of friends, with a feedback form and a leaderboard that only shows first names.',
+           app:'Live with a handful of classmates, collecting no more personal information than it needs.',
+           biz:'Launched to a small audience, with a parent overseeing anything to do with money.' } },
+    { id:'grow', weeks:'Weeks 11–12', name:'Grow',
+      q:'What did we learn, and what comes next?',
+      learn:'Reading simple usage data, deciding what to change, and presenting the work to an audience.',
+      make:'A short demo for family, and a plan for the next version.',
+      safe:'Looking after users: handling problems they report, and deleting data that is no longer needed.',
+      ex:{ game:'Play data used to find the level that is too hard, and a second level planned.',
+           app:'Feedback turned into a shortlist for version two, ranked the same way as in week 3.',
+           biz:'Sign-ups and feedback measured against the original goal, then a decision: carry on, change course or stop.' } }
+  ];
+  var state = { track:'game', stage:0 };
+  function $(id){ return document.getElementById(id); }
+
+  var bar = $('stagebar');
+  stages.forEach(function(s, i){
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'stab'; b.setAttribute('role','tab'); b.id = 'tab-' + s.id;
+    b.setAttribute('aria-controls','stagepanel');
+    b.innerHTML = '<span class="w">' + s.weeks + '</span><span class="t">' + s.name + '</span>';
+    b.addEventListener('click', function(){ state.stage = i; render(); });
+    b.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        state.stage = (state.stage + (e.key === 'ArrowRight' ? 1 : stages.length - 1)) % stages.length;
+        render(); bar.children[state.stage].focus();
+      }
+    });
+    bar.appendChild(b);
+  });
+
+  var pills = document.querySelectorAll('.pill');
+  pills.forEach(function(p){
+    p.addEventListener('click', function(){ state.track = p.getAttribute('data-track'); render(); });
+  });
+
+  function render(){
+    var s = stages[state.stage];
+    Array.prototype.forEach.call(bar.children, function(b, i){
+      b.setAttribute('aria-selected', i === state.stage ? 'true' : 'false');
+      b.tabIndex = i === state.stage ? 0 : -1;
+    });
+    pills.forEach(function(p){ p.setAttribute('aria-pressed', p.getAttribute('data-track') === state.track ? 'true' : 'false'); });
+    $('stagepanel').setAttribute('aria-labelledby', 'tab-' + s.id);
+    $('spQ').textContent = s.q;
+    $('spLearn').textContent = s.learn;
+    $('spMake').textContent = s.make;
+    $('spSafe').textContent = s.safe;
+    $('spTrack').textContent = tracks[state.track] + ', ' + s.name.toLowerCase();
+    $('spEx').textContent = s.ex[state.track];
+  }
+
+  // pre-launch checker
+  var checks = {
+    data:  'Collect only what is needed, say clearly what it is used for, and delete it when it is no longer needed. Check the plan against the ICO Children’s Code.',
+    talk:  'Decide how anything unkind or unsafe gets reported and removed, and who does it. Keep testers to people you know at first.',
+    money: 'A parent owns anything to do with payments. Use an established payment provider and never handle card details yourself.',
+    ai:    'Test what the AI says with awkward and unexpected inputs, add limits on what it can produce, and tell users that AI is involved.'
+  };
+  var ids = ['data','talk','money','ai'];
+  function updateCheck(){
+    var on = ids.filter(function(k){ return $('ck-' + k).checked; });
+    var badge = $('ckBadge'), text = $('ckText'), list = $('ckList');
+    badge.classList.remove('ok','mid','hot');
+    list.innerHTML = '';
+    if (on.length === 0) {
+      badge.classList.add('ok'); badge.textContent = 'Ready for testers';
+      text.textContent = 'Nothing personal is collected, nobody can contact anybody, and no money changes hands. Share it with friends and family and watch what they do with it.';
+    } else if (on.length === 1 && on[0] !== 'money') {
+      badge.classList.add('mid'); badge.textContent = 'Talk it through first';
+      text.textContent = 'One area needs a plan before launch. It is a short conversation, and a useful one.';
+    } else {
+      badge.classList.add('hot'); badge.textContent = 'Parent sign-off needed';
+      text.textContent = on.indexOf('money') > -1 ? 'Money is involved, so a parent signs off before launch, whatever else is ticked.' : 'Several areas combine here, and each one makes the others riskier. Plan each one, then a parent signs off before launch.';
+    }
+    on.forEach(function(k){ var li = document.createElement('li'); li.textContent = checks[k]; list.appendChild(li); });
+  }
+  ids.forEach(function(k){ $('ck-' + k).addEventListener('change', updateCheck); });
+
+  // theme toggle, shared with the main site
+  var tt = $('themeToggle');
+  tt.addEventListener('click', function(){
+    var cur = document.documentElement.getAttribute('data-theme');
+    if (!cur) cur = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    var next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('rm-theme', next); } catch (e) {}
+  });
+
+  // gentle reveal from a visible resting state
+  var els = document.querySelectorAll('.reveal');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in-view'); io.unobserve(en.target); } });
+    }, { rootMargin:'0px 0px -10% 0px', threshold:0.05 });
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in-view'); }); }
+
+  render();
+  updateCheck();
+})();
+</script>
+</body>
+</html>

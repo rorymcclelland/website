@@ -1,0 +1,1473 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Rory McClelland</title>
+<meta name="description" content="Product leader and AI transformation practitioner helping organisations redesign how they work around AI: mapped, proven on real data, and made safe to run unattended.">
+<meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111417" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rory McClelland · Product &amp; AI-native transformation">
+<meta property="og:description" content="Product leader and AI transformation practitioner helping organisations redesign how they work around AI: mapped, proven on real data, and made safe to run unattended.">
+<meta property="og:image" content="headshot.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rory McClelland · Product &amp; AI-native transformation">
+<meta name="twitter:description" content="Product leader and AI transformation practitioner helping organisations redesign how they work around AI: mapped, proven on real data, and made safe to run unattended.">
+<meta name="twitter:image" content="headshot.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --ink:#15181B;
+    --ink-soft:#3B4046;
+    --paper:#F7F6F2;
+    --paper-raised:#FFFFFF;
+    --graphite:#5B6167;
+    --line:#DBDAD3;
+    --accent:#1F6F5C;
+    --accent-soft:#DEEBE6;
+    --accent-ink:#0F3F34;
+    --l0:#9AA0A6;
+    --l1:#79AC9C;
+    --l2:#2F8471;
+    --l3:#123B31;
+    --warn:#A9612C;
+    --shadow-y: 0 1px 0 var(--line);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#ECEBE6;
+      --ink-soft:#C7CBCE;
+      --paper:#111417;
+      --paper-raised:#181C1F;
+      --graphite:#9CA2A8;
+      --line:#2A2F33;
+      --accent:#57C2A4;
+      --accent-soft:#173A32;
+      --accent-ink:#BEEFDF;
+      --l0:#6B7076;
+      --l1:#4F8B78;
+      --l2:#57C2A4;
+      --l3:#BEEFDF;
+      --warn:#D08A50;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#ECEBE6;
+    --ink-soft:#C7CBCE;
+    --paper:#111417;
+    --paper-raised:#181C1F;
+    --graphite:#9CA2A8;
+    --line:#2A2F33;
+    --accent:#57C2A4;
+    --accent-soft:#173A32;
+    --accent-ink:#BEEFDF;
+    --l0:#6B7076;
+    --l1:#4F8B78;
+    --l2:#57C2A4;
+    --l3:#BEEFDF;
+    --warn:#D08A50;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    padding-inline:20px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);}
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, 'Times New Roman', serif;
+    font-weight:600;
+    line-height:1.08;
+    text-wrap:balance;
+    color:var(--ink);
+    margin:0;
+  }
+  .mono{font-family:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;}
+  .wrap{max-width:920px;margin-inline:auto;position:relative;z-index:1;}
+  .eyebrow{
+    font-family:'IBM Plex Mono';
+    font-size:0.75rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    gap:.6em;
+    margin-bottom:1.1rem;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--accent);display:inline-block;}
+
+  /* ---------- nav ---------- */
+  .topnav{
+    position:sticky;
+    top:env(safe-area-inset-top,0px);
+    z-index:40;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-block:14px;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+    margin-inline:-20px;
+    padding-inline:20px;
+  }
+  .topnav .mark{
+    font-family:'Fraunces';
+    font-weight:600;
+    font-size:1.05rem;
+    letter-spacing:.01em;
+  }
+  .topnav .mark span{color:var(--accent);}
+  .nav-right{display:flex;align-items:center;gap:1.4rem;}
+  .navlinks{display:flex;gap:1.6rem;font-family:'IBM Plex Mono';font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;}
+  .navlinks a{color:var(--ink-soft);text-decoration:none;}
+  .navlinks a:hover{color:var(--accent);}
+  @media (max-width:640px){ .navlinks{gap:1rem;} .navlinks span.hide-narrow{display:none;} }
+  @media (max-width:460px){ .navlinks a:nth-child(5), .navlinks a:nth-child(1){display:none;} }
+
+  .theme-toggle{
+    display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+    width:32px;height:32px;border:1px solid var(--line);background:transparent;
+    color:var(--ink-soft);cursor:pointer;padding:0;
+  }
+  .theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+  .theme-toggle svg{width:15px;height:15px;}
+  .theme-toggle .sun{display:none;}
+  .theme-toggle .moon{display:block;}
+  :root[data-theme="dark"] .theme-toggle .sun{display:block;}
+  :root[data-theme="dark"] .theme-toggle .moon{display:none;}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-toggle .sun{display:block;}
+    :root:not([data-theme="light"]) .theme-toggle .moon{display:none;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding-block:5.5rem 4rem;
+    overflow:hidden;
+  }
+  .hero-top{display:grid;grid-template-columns:1.3fr .8fr;gap:3rem;align-items:center;}
+  .hero-portrait{border:1px solid var(--line);background:var(--paper-raised);padding:10px;}
+  .hero-portrait img{width:100%;display:block;object-fit:cover;aspect-ratio:4/5;}
+  .portrait-cap{font-family:'IBM Plex Mono';font-size:.7rem;color:var(--graphite);margin-top:.7rem;letter-spacing:.02em;}
+  @media (max-width:800px){
+    .hero-top{grid-template-columns:1fr;gap:2rem;}
+    .hero-portrait{max-width:220px;}
+  }
+  .hero-net{
+    position:absolute;inset:-10% -5% auto -5%;height:120%;
+    z-index:0;opacity:.16;pointer-events:none;
+  }
+  :root[data-theme="dark"] .hero-net{opacity:.12;}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .hero-net{opacity:.12;} }
+  .hero-inner{position:relative;z-index:1;}
+  .kicker{font-family:'IBM Plex Mono';font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite);margin-bottom:1rem;}
+  h1.headline{font-size:clamp(2.1rem, 4.6vw + .6rem, 3.6rem);max-width:16ch;}
+  h1.headline em{font-style:italic;color:var(--accent);font-weight:500;}
+  .subline{margin-top:1.3rem;max-width:56ch;font-size:1.08rem;color:var(--ink-soft);}
+  .hero-ctas{display:flex;gap:.9rem;margin-top:2.2rem;flex-wrap:wrap;}
+  .btn{
+    font-family:'IBM Plex Mono';font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;
+    padding:.85rem 1.3rem;border:1px solid var(--ink);color:var(--ink);text-decoration:none;
+    display:inline-flex;align-items:center;gap:.5em;
+  }
+  .btn.primary{background:var(--ink);color:var(--paper);}
+  .btn:hover{background:var(--accent);border-color:var(--accent);color:#fff;}
+
+  .quickfacts{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border:1px solid var(--line);margin-top:3rem;
+  }
+  .quickfacts div{padding:1.1rem 1rem;border-right:1px solid var(--line);}
+  .quickfacts div:last-child{border-right:none;}
+  .quickfacts .num{font-family:'IBM Plex Mono';font-variant-numeric:tabular-nums;font-size:1.5rem;color:var(--accent);display:block;}
+  .quickfacts .lbl{font-size:.76rem;color:var(--graphite);margin-top:.25rem;}
+  @media (max-width:700px){ .quickfacts{grid-template-columns:repeat(2,1fr);} .quickfacts div:nth-child(2){border-right:none;} }
+
+  /* ---------- sections ---------- */
+  section{padding-block:4.5rem;border-top:1px solid var(--line);position:relative;}
+  section.hero{border-top:none;}
+  h2.title{font-size:clamp(1.7rem,2.2vw + 1rem,2.35rem);max-width:20ch;margin-bottom:1.4rem;}
+  .lede{font-size:1.05rem;color:var(--ink-soft);max-width:64ch;margin-bottom:2.2rem;}
+
+  /* ---------- section background photography ---------- */
+  /* Real, licensed photos (Rory's own picks, fetched and supplied by him), kept quiet: desaturated,
+     low-opacity, faded to the page background at top and bottom so they read as texture, not imagery. */
+  .photo-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+  .photo-bg img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.15;filter:grayscale(1) contrast(1.05);}
+  .photo-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, var(--paper) 0%, transparent 20%, transparent 80%, var(--paper) 100%);}
+  @media (prefers-reduced-motion:no-preference){ .photo-bg img{transition:opacity .4s ease;} }
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:start;}
+  .bio p{margin:0 0 1rem 0;max-width:58ch;}
+  .bio p:last-child{margin-bottom:0;}
+  .highlights{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1rem;}
+  .highlights li{padding-left:1.3rem;position:relative;font-size:.95rem;color:var(--ink-soft);}
+  .highlights li::before{content:"–";position:absolute;left:0;color:var(--accent);}
+  @media (max-width:760px){ .about-grid{grid-template-columns:1fr;gap:2rem;} }
+
+  /* what i do */
+  .services{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .service{background:var(--paper);padding:1.6rem 1.7rem;}
+  .service .si{font-family:'IBM Plex Mono';color:var(--accent);font-size:.78rem;letter-spacing:.06em;}
+  .service h3{font-size:1.15rem;margin-top:.5rem;margin-bottom:.6rem;}
+  .service p{margin:0;font-size:.92rem;color:var(--ink-soft);}
+  @media (max-width:700px){ .services{grid-template-columns:1fr;} }
+
+  /* method */
+  .method-premise{
+    border-left:2px solid var(--accent);padding:.2rem 0 .2rem 1.4rem;margin-bottom:2.6rem;
+    font-family:'Fraunces';font-style:italic;font-weight:500;font-size:1.2rem;color:var(--ink);max-width:52ch;
+  }
+  .loop-label{font-family:'IBM Plex Mono';font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--graphite);margin:2.6rem 0 1.1rem;}
+  .stages{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--line);}
+  .stage{padding:1.3rem 1.1rem;border-right:1px solid var(--line);position:relative;}
+  .stage:last-child{border-right:none;}
+  .stage .n{font-family:'IBM Plex Mono';color:var(--accent);font-size:.78rem;}
+  .stage h4{font-family:'Fraunces';font-size:1.05rem;font-weight:600;margin:.4rem 0 .6rem;}
+  .stage .q{font-size:.83rem;color:var(--ink-soft);font-style:italic;margin-bottom:.7rem;}
+  .stage .row{font-size:.76rem;color:var(--graphite);margin-top:.4rem;}
+  .stage .row b{color:var(--ink-soft);font-weight:600;display:block;font-family:'IBM Plex Mono';font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.15rem;}
+  @media (max-width:900px){
+    .stages{grid-template-columns:1fr;}
+    .stage{border-right:none;border-bottom:1px solid var(--line);}
+    .stage:last-child{border-bottom:none;}
+  }
+
+  .rungs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .rung{background:var(--paper);padding:1.2rem 1.3rem;}
+  .rung .r{font-family:'IBM Plex Mono';font-size:.75rem;color:var(--accent);}
+  .rung h4{font-family:'Fraunces';font-size:1rem;margin:.35rem 0 .5rem;}
+  .rung p{margin:0;font-size:.85rem;color:var(--ink-soft);}
+  @media (max-width:700px){ .rungs{grid-template-columns:1fr;} }
+
+  .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:1.6rem;}
+  .lstep{padding:.9rem .8rem;color:#fff;}
+  .lstep .t{font-family:'IBM Plex Mono';font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;opacity:.9;}
+  .lstep .h{font-family:'Fraunces';font-weight:600;font-size:.98rem;margin:.25rem 0;}
+  .lstep .p{font-size:.76rem;opacity:.92;}
+  .lstep.l0{background:var(--l0);color:#1a1a1a;}
+  .lstep.l1{background:var(--l1);color:#0e2620;}
+  .lstep.l2{background:var(--l2);}
+  .lstep.l3{background:var(--l3);}
+  @media (max-width:700px){ .ladder{grid-template-columns:1fr 1fr;} }
+
+  .r2-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:2.4rem;align-items:center;margin-top:1.6rem;}
+  .r2-text p{font-size:.92rem;color:var(--ink-soft);margin:0 0 .9rem;}
+  .r2-text p:last-child{margin-bottom:0;}
+  .r2-text b{color:var(--ink);}
+  @media (max-width:800px){ .r2-wrap{grid-template-columns:1fr;} }
+  .r2-circ{transition:fill-opacity .3s ease,stroke-width .3s ease,stroke-opacity .3s ease;}
+  .r2-circ.r2-active{fill-opacity:0.42;stroke-width:2.75px;}
+  .r2-circ.r2-dim{fill-opacity:.05;stroke-opacity:.3;}
+  .r2-lbl{transition:fill .25s ease,font-weight .25s ease,fill-opacity .25s ease;}
+  .r2-lbl.r2-active{font-weight:700;fill:var(--ink);}
+  .r2-lbl.r2-dim{fill-opacity:.45;}
+
+  .commitments{display:flex;flex-direction:column;gap:1.1rem;margin-top:1.6rem;}
+  .commit{display:grid;grid-template-columns:26px 1fr;gap:.9rem;align-items:baseline;}
+  .commit .cn{font-family:'IBM Plex Mono';color:var(--accent);font-size:.85rem;}
+  .commit p{margin:0;font-size:.92rem;color:var(--ink-soft);}
+  .commit b{color:var(--ink);}
+
+  .beliefs{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem 2rem;margin-top:1.6rem;}
+  .belief{border-left:2px solid var(--line);padding-left:1rem;}
+  .belief h5{font-family:'Fraunces';font-weight:600;font-size:1rem;margin:0 0 .35rem;}
+  .belief p{margin:0;font-size:.85rem;color:var(--graphite);}
+  @media (max-width:700px){ .beliefs{grid-template-columns:1fr;} }
+
+  .pull{
+    font-family:'Fraunces';font-style:italic;font-weight:500;
+    font-size:clamp(1.15rem,1.4vw + .8rem,1.5rem);
+    max-width:44ch;color:var(--ink);line-height:1.35;
+    margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);
+  }
+  .pull cite{display:block;font-family:'IBM Plex Mono';font-style:normal;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;color:var(--graphite);margin-top:1rem;}
+
+  /* method — interactive */
+  .industry-bar{display:flex;flex-wrap:wrap;gap:.6rem;margin:0 0 2.6rem;}
+  .ipill{font-family:'IBM Plex Mono';font-size:.78rem;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--line);background:transparent;color:var(--ink-soft);cursor:pointer;}
+  .ipill.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+  .ipill:hover:not(.active){border-color:var(--accent);color:var(--ink);}
+  .ipill:focus-visible, .enode:focus-visible, .auto-node:focus-visible, td.cell:focus-visible, .sd-back:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  /* engine — pinned, horizontal, scroll-jacked (Apple-product-page style). Both instances now
+     sit directly in the section (see HTML) rather than nested inside the 920px .wrap column,
+     so they run the section's full width instead of being boxed into the narrower content
+     column — closer to the full-bleed panels on the Apple pages this pattern borrows from. */
+  .hscroll-wrap{position:relative;height:500vh;margin-top:1.6rem;}
+  .hscroll-pin{
+    position:sticky;top:calc(64px + env(safe-area-inset-top,0px));
+    height:calc(100vh - 64px - env(safe-area-inset-top,0px));min-height:460px;max-height:760px;
+    overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+
+  /* persistent stage map — pinned above the track for the full 500vh scroll, so it's always
+     visible alongside whichever slide is showing: makes the five stages read as one linear
+     sequence rather than five unrelated screens, and doubles as click-to-jump navigation. */
+  .hstage-tracker{flex:0 0 auto;padding:1.1rem 1.6rem .95rem;border-bottom:1px solid var(--line);background:var(--paper-raised);position:relative;z-index:3;}
+  .hstage-row{position:relative;display:grid;grid-template-columns:repeat(5,1fr);}
+  .hstage-line{position:absolute;top:13px;left:10%;width:80%;height:2px;background:var(--line);}
+  .hstage-line-fill{position:absolute;top:13px;left:10%;width:0%;height:2px;background:var(--accent);transition:width .25s ease;}
+  .hstage-node{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:.45rem;background:none;border:none;font-family:inherit;cursor:pointer;padding:0;}
+  .hstage-dot{width:27px;height:27px;border-radius:50%;background:var(--paper-raised);border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono';font-size:.68rem;color:var(--graphite);transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;}
+  .hstage-label{font-family:'IBM Plex Mono';font-size:.64rem;text-transform:uppercase;letter-spacing:.03em;color:var(--graphite);text-align:center;transition:color .2s ease;}
+  .hstage-node.done .hstage-dot{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .hstage-node.done .hstage-label{color:var(--ink-soft);}
+  .hstage-node.active .hstage-dot{background:var(--ink);border-color:var(--ink);color:var(--paper);transform:scale(1.18);}
+  .hstage-node.active .hstage-label{color:var(--ink);font-weight:600;}
+  .hstage-node:hover .hstage-dot{border-color:var(--accent);}
+  @media (max-width:760px){ .hstage-label{font-size:.58rem;} }
+
+  .hscroll-track{display:flex;flex:1 1 auto;min-height:0;will-change:transform;}
+  .hslide{flex:0 0 100%;width:100%;height:100%;display:flex;align-items:flex-start;justify-content:center;box-sizing:border-box;padding:2.2rem 7%;overflow-y:auto;}
+  .hslide-inner{max-width:620px;width:100%;}
+  .hs-num{font-family:'IBM Plex Mono';font-weight:600;font-size:clamp(2rem,3.2vw + 1.2rem,2.75rem);line-height:1;color:var(--accent);letter-spacing:-.01em;}
+  .hs-name{font-family:'Fraunces';font-weight:600;font-size:clamp(1.5rem,2.4vw + 1rem,2.2rem);margin:.1rem 0 1rem;}
+  .hs-q{font-style:italic;color:var(--ink-soft);font-size:1rem;margin-bottom:1.1rem;max-width:46ch;}
+  .hs-diagram{margin-bottom:1.1rem;font-size:.92em;}
+  .hs-diagram .lens, .hs-diagram .opsgroup{padding:.55rem .5rem;}
+  .hs-diagram .opsgroup ul{font-size:.7rem;}
+  /* the Prove stage carries two stacked timeline rows — the tallest diagram of the five —
+     so it gets its own tighter rhythm to keep the slide from needing an inner scrollbar. */
+  .hs-diagram .tmini-cell{padding:.42rem .5rem;font-size:.68rem;line-height:1.3;}
+  .hs-diagram .tmini-cell .tw{margin-bottom:.15rem;}
+  .hs-diagram .tmini-row-label{font-size:.6rem;margin-bottom:.25rem;}
+  .hs-diagram .tmini-row-label.second{margin-top:.55rem;}
+  .hs-diagram .wrow{font-size:.72rem;}
+  .hs-meta{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.1rem;}
+  .hs-meta div b{display:block;font-family:'IBM Plex Mono';font-size:.64rem;text-transform:uppercase;letter-spacing:.05em;color:var(--graphite);margin-bottom:.2rem;}
+  .hs-meta div p{margin:0;font-size:.82rem;color:var(--ink-soft);}
+  .hs-example{border-left:2px solid var(--accent);padding:.7rem .9rem;background:var(--accent-soft);font-size:.82rem;}
+  .hs-example b{display:block;font-family:'IBM Plex Mono';font-size:.62rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent-ink);margin-bottom:.3rem;}
+  .hs-example p{margin:0;color:var(--ink);}
+  .hscroll-hint{position:absolute;bottom:14px;right:18px;z-index:2;font-family:'IBM Plex Mono';font-size:.64rem;color:var(--graphite);letter-spacing:.02em;background:color-mix(in srgb, var(--paper-raised) 85%, transparent);border:1px solid var(--line);padding:.3rem .6rem;}
+  @media (max-width:600px){.hscroll-hint{display:none;} .hs-meta{grid-template-columns:1fr;}}
+
+  /* fallback: stacked, normal vertical scroll (narrow viewports / reduced motion / short screens) */
+  .hscroll-wrap.stacked{height:auto;}
+  .hscroll-wrap.stacked .hscroll-pin{position:static;height:auto;min-height:0;max-height:none;overflow:visible;border:none;background:none;}
+  .hscroll-wrap.stacked .hscroll-track{display:flex;flex-direction:column;transform:none!important;height:auto;}
+  .hscroll-wrap.stacked .hslide{flex:none;width:100%;height:auto;padding:2.2rem 0;border-top:1px solid var(--line);}
+  .hscroll-wrap.stacked .hslide:first-child{border-top:none;padding-top:0;}
+  .hscroll-wrap.stacked .hstage-tracker,.hscroll-wrap.stacked .hscroll-hint{display:none;}
+
+  /* scroll-reveal + progress */
+  .nav-progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--accent);width:0%;}
+  .reveal{opacity:.5;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{transition:none;opacity:1;transform:none;}
+  }
+
+  .lenses-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .lens{background:var(--paper);padding:.8rem .7rem;font-size:.76rem;color:var(--ink-soft);}
+  .lens b{display:block;font-family:'Fraunces';font-size:.85rem;color:var(--ink);margin-bottom:.3rem;font-weight:600;}
+  @media(max-width:700px){.lenses-grid{grid-template-columns:repeat(2,1fr);}}
+
+  .weights{display:flex;flex-direction:column;gap:.55rem;}
+  .wrow{display:grid;grid-template-columns:130px 1fr 30px;gap:.6rem;align-items:center;font-size:.78rem;}
+  .wtrack{height:8px;background:var(--line);position:relative;}
+  .wfill{height:100%;background:var(--accent);}
+  .wlabel{color:var(--ink-soft);}
+  .wval{font-family:'IBM Plex Mono';text-align:right;color:var(--graphite);}
+
+  .tmini-row-label{font-family:'IBM Plex Mono';font-size:.65rem;text-transform:uppercase;letter-spacing:.04em;color:var(--graphite);margin:0 0 .4rem;}
+  .tmini-row-label.second{margin-top:1rem;}
+  .timeline-mini{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);font-size:.72rem;}
+  .tmini-cell{background:var(--paper);padding:.6rem .55rem;color:var(--ink-soft);}
+  .tmini-cell .tw{font-family:'IBM Plex Mono';color:var(--accent);display:block;margin-bottom:.3rem;}
+  @media(max-width:700px){.timeline-mini{grid-template-columns:1fr 1fr;}}
+
+  .ops-check{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .opsgroup{background:var(--paper);padding:.8rem .8rem;}
+  .opsgroup b{font-family:'IBM Plex Mono';font-size:.68rem;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.4rem;}
+  .opsgroup ul{margin:0;padding-left:1.1rem;font-size:.78rem;color:var(--ink-soft);}
+  .opsgroup li{margin-bottom:.3rem;}
+  @media(max-width:700px){.ops-check{grid-template-columns:1fr;}}
+
+  /* Grid, not flex: the four captions vary in length (some wrap to an extra line), so bottom-
+     aligning flex COLUMNS doesn't bottom-align the BARS inside them — a taller caption pushes
+     its whole column down and its bar along with it. Grid puts every bar in one shared 80px
+     row, independent of caption height, so all four sit on the exact same baseline. */
+  .reuse-bars{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:80px auto;column-gap:1rem;row-gap:.5rem;padding-top:1rem;}
+  .rbar-track{grid-row:1;width:100%;height:100%;display:flex;align-items:flex-end;}
+  .rbar{width:100%;background:var(--accent);}
+  .reuse-bars span{grid-row:2;font-size:.68rem;color:var(--graphite);text-align:center;font-family:'IBM Plex Mono';line-height:1.3;align-self:start;}
+
+  /* the autonomy engine's content (one short word, a paragraph, two bars) is far lighter
+     than the method engine's diagrams above, so it gets a pin sized to its own content
+     instead of the full-viewport-tall pin used up there, and a much shorter scroll
+     distance to match — otherwise the page scrolls a long way past mostly-empty space
+     to get through four short slides. */
+  #autoScrollWrap{height:200vh;}
+  #autoScrollWrap .hscroll-pin{height:auto;min-height:400px;max-height:560px;}
+
+  /* autonomy tracker — reused as the pinned header of its own scroll-jacked engine, exactly
+     like the method engine above: numbered dots, a connecting line, done/active states, now
+     driven by scroll position (and still click-to-jump) instead of clicks alone. */
+  .auto-tracker{flex:0 0 auto;padding:1.1rem 1.6rem .95rem;border-bottom:1px solid var(--line);background:var(--paper-raised);position:relative;z-index:3;}
+  .auto-row{position:relative;display:grid;grid-template-columns:repeat(4,1fr);}
+  .auto-line{position:absolute;top:13px;left:12.5%;width:75%;height:2px;background:var(--line);}
+  .auto-line-fill{position:absolute;top:13px;left:12.5%;width:0%;height:2px;background:var(--accent);transition:width .25s ease;}
+  .auto-node{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:.5rem;background:none;border:none;font-family:inherit;cursor:pointer;padding:0;}
+  .auto-dot{width:27px;height:27px;border-radius:50%;background:var(--paper-raised);border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono';font-size:.68rem;color:var(--graphite);transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;}
+  .auto-label{font-family:'IBM Plex Mono';font-size:.7rem;text-transform:uppercase;letter-spacing:.03em;color:var(--graphite);text-align:center;transition:color .2s ease;}
+  .auto-label .sub{display:block;font-family:'Fraunces';font-weight:600;font-size:.88rem;text-transform:none;letter-spacing:0;color:var(--ink-soft);margin-top:.2rem;transition:color .2s ease;}
+  .auto-node.done .auto-dot{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .auto-node.done .auto-label{color:var(--ink-soft);}
+  .auto-node.active .auto-dot{background:var(--ink);border-color:var(--ink);color:var(--paper);transform:scale(1.18);}
+  .auto-node.active .auto-label{color:var(--ink);font-weight:600;}
+  .auto-node.active .auto-label .sub{color:var(--ink);}
+  .auto-node:hover .auto-dot{border-color:var(--accent);}
+  @media (max-width:600px){ .auto-label{font-size:.6rem;} .auto-label .sub{font-size:.72rem;} }
+  .hs-body{font-size:.92rem;color:var(--ink-soft);margin-bottom:1.1rem;max-width:52ch;}
+  .engine-hint{margin-top:1.3rem;font-size:.88rem;color:var(--graphite);border-top:1px solid var(--line);padding-top:1.1rem;}
+  .meters{display:flex;flex-direction:column;gap:.7rem;margin-top:1.3rem;}
+  .meter-row{display:grid;grid-template-columns:150px 1fr;gap:1rem;align-items:center;}
+  .meter-row .ml{font-family:'IBM Plex Mono';font-size:.7rem;color:var(--graphite);text-transform:uppercase;}
+  .meter{height:8px;background:var(--line);position:relative;}
+  .meter-fill{height:100%;transition:width .3s ease;}
+  .meter-fill.cap{background:var(--accent);}
+  .meter-fill.risk{background:var(--warn);}
+  @media(max-width:600px){.meter-row{grid-template-columns:100px 1fr;}}
+
+  .matrix-scroll{overflow-x:auto;margin-top:1.6rem;}
+  table.matrix{border-collapse:collapse;min-width:720px;width:100%;font-size:.8rem;}
+  table.matrix th, table.matrix td{border:1px solid var(--line);padding:.6rem .5rem;text-align:left;}
+  table.matrix thead th{font-family:'IBM Plex Mono';font-size:.66rem;text-transform:uppercase;letter-spacing:.02em;color:var(--graphite);background:var(--paper-raised);vertical-align:bottom;font-weight:500;}
+  table.matrix tbody th{font-size:.78rem;color:var(--ink-soft);white-space:nowrap;font-weight:500;background:var(--paper-raised);}
+  table.matrix td.cell{cursor:pointer;text-align:center;font-family:'IBM Plex Mono';font-size:.66rem;text-transform:uppercase;letter-spacing:.02em;}
+  td.cell.v-green{background:var(--accent-soft);color:var(--accent-ink);}
+  td.cell.v-amber{background:color-mix(in srgb, var(--warn) 20%, transparent);color:var(--warn);}
+  td.cell.v-grey{background:color-mix(in srgb, var(--graphite) 14%, transparent);color:var(--graphite);}
+  td.cell:hover, td.cell.selected{outline:2px solid var(--ink);outline-offset:-2px;}
+  .matrix-legend{display:flex;gap:1.3rem;margin-top:.9rem;font-size:.76rem;color:var(--graphite);flex-wrap:wrap;}
+  .matrix-legend span{display:inline-flex;align-items:center;gap:.4rem;}
+  .legend-dot{width:10px;height:10px;display:inline-block;}
+  .matrix-detail{margin-top:1.2rem;border:1px solid var(--line);padding:1rem 1.2rem;font-size:.9rem;color:var(--ink-soft);min-height:3em;}
+  .matrix-detail b{color:var(--ink);}
+  .matrix-note{margin-top:1.5rem;font-size:.9rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:1.3rem;}
+
+  .riskcalc{margin-top:1.8rem;border:1px solid var(--line);padding:1.6rem;}
+  .riskcalc-toggles{display:flex;flex-direction:column;gap:1rem;}
+  .rtoggle{display:flex;align-items:center;gap:.9rem;cursor:pointer;position:relative;}
+  .rswitch{width:38px;height:20px;background:var(--line);position:relative;flex-shrink:0;transition:background .15s;}
+  .rswitch::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;background:var(--paper-raised);transition:left .15s;}
+  .rtoggle input{position:absolute;opacity:0;width:1px;height:1px;}
+  .rtoggle input:checked + .rswitch{background:var(--accent);}
+  .rtoggle input:checked + .rswitch::after{left:20px;}
+  .rtoggle .rlabel{font-size:.9rem;color:var(--ink);}
+  .risk-result{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line);}
+  .risk-verdict{display:inline-block;font-family:'IBM Plex Mono';font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;padding:.35rem .7rem;margin-bottom:.8rem;}
+  .risk-verdict.ok{background:var(--accent-soft);color:var(--accent-ink);}
+  .risk-verdict.mid{background:color-mix(in srgb, var(--warn) 20%, transparent);color:var(--warn);}
+  /* var(--l3) flips from a dark teal in light mode to a pale mint in dark mode (it doubles as
+     a light-mode-only "swatch" colour elsewhere), so pairing it with a fixed white made this
+     badge unreadable in dark mode. var(--ink)/var(--paper) invert together across themes —
+     the same pairing already used for the site's other "active" pills and dots — so this
+     badge stays high-contrast in both. */
+  .risk-verdict.hot{background:var(--ink);color:var(--paper);}
+  .risk-guide{font-size:.92rem;color:var(--ink-soft);margin-bottom:.9rem;}
+  .risk-example{border-left:2px solid var(--accent);padding:.7rem 1rem;background:var(--accent-soft);font-size:.85rem;}
+  .risk-example b{display:block;font-family:'IBM Plex Mono';font-size:.64rem;text-transform:uppercase;color:var(--accent-ink);margin-bottom:.3rem;}
+  .risk-example p{margin:0;color:var(--ink);}
+
+  /* experience */
+  .timeline{display:flex;flex-direction:column;}
+  .role{display:grid;grid-template-columns:150px 1fr;gap:1.6rem;padding-block:1.5rem;border-top:1px solid var(--line);}
+  .role:first-child{border-top:none;}
+  .role .when{font-family:'IBM Plex Mono';font-size:.78rem;color:var(--graphite);padding-top:.2rem;}
+  .role h4{font-size:1.08rem;margin-bottom:.15rem;}
+  .role .co{font-size:.82rem;color:var(--accent);font-family:'IBM Plex Mono';margin-bottom:.6rem;}
+  .role p{margin:0;font-size:.92rem;color:var(--ink-soft);max-width:58ch;}
+  @media (max-width:640px){ .role{grid-template-columns:1fr;gap:.4rem;} }
+
+  .earlier{margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid var(--line);font-size:.86rem;color:var(--graphite);}
+  .earlier b{color:var(--ink-soft);}
+
+  /* builds */
+  .builds{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;}
+  .build{border:1px solid var(--line);padding:1.6rem;}
+  .build .tag{font-family:'IBM Plex Mono';font-size:.72rem;color:var(--graphite);text-transform:uppercase;letter-spacing:.05em;}
+  .build h4{font-size:1.15rem;margin:.5rem 0 .7rem;}
+  .build p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+  @media (max-width:700px){ .builds{grid-template-columns:1fr;} }
+
+  /* contact */
+  .contact-grid{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.8rem;}
+  .clink{
+    border:1px solid var(--line);padding:1rem 1.3rem;text-decoration:none;color:var(--ink);
+    display:flex;flex-direction:column;gap:.2rem;flex:1 1 200px;
+  }
+  .clink:hover{border-color:var(--accent);}
+  .clink .k{font-family:'IBM Plex Mono';font-size:.7rem;color:var(--graphite);text-transform:uppercase;letter-spacing:.06em;}
+  .clink .v{font-size:.98rem;}
+
+  .contact-signoff{display:flex;align-items:center;gap:1.1rem;margin:1.8rem 0 0;}
+  .signoff-photo{width:60px;height:60px;border-radius:50%;object-fit:cover;border:1px solid var(--line);flex-shrink:0;}
+  .contact-signoff p{margin:0;font-size:.9rem;color:var(--ink-soft);max-width:44ch;}
+
+  footer{padding-block:2.5rem 3rem;border-top:1px solid var(--line);}
+  footer .fl{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-family:'IBM Plex Mono';font-size:.75rem;color:var(--graphite);}
+  .xlink{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;}
+  .xlink p{margin:0;max-width:60ch;color:var(--ink-soft);}
+  @media (max-width:700px){ .xlink{grid-template-columns:1fr;gap:1.2rem;} .xlink .btn{justify-self:start;} }
+  .photo-credit{margin-top:1rem;font-family:'IBM Plex Mono';font-size:.68rem;color:var(--graphite);opacity:.75;}
+</style>
+
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('rm-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="mark">Rory <span>McClelland</span></div>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#method">Method</a>
+      <span class="hide-narrow"><a href="#experience">Experience</a></span>
+      <a href="teaching.html">Teaching</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+
+<section class="hero">
+  <svg class="hero-net" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g stroke="var(--accent)" stroke-width="1" fill="none">
+      <line x1="80" y1="120" x2="260" y2="60"/>
+      <line x1="260" y1="60" x2="430" y2="140"/>
+      <line x1="430" y1="140" x2="640" y2="90"/>
+      <line x1="260" y1="60" x2="300" y2="220"/>
+      <line x1="300" y1="220" x2="430" y2="140"/>
+      <line x1="300" y1="220" x2="150" y2="320"/>
+      <line x1="430" y1="140" x2="560" y2="260"/>
+      <line x1="560" y1="260" x2="640" y2="90"/>
+      <line x1="560" y1="260" x2="740" y2="300"/>
+      <line x1="150" y1="320" x2="330" y2="410"/>
+      <line x1="330" y1="410" x2="560" y2="260"/>
+      <line x1="330" y1="410" x2="520" y2="480"/>
+      <line x1="740" y1="300" x2="820" y2="440"/>
+      <line x1="520" y1="480" x2="740" y2="300"/>
+    </g>
+    <g fill="var(--accent)">
+      <circle cx="80" cy="120" r="3.5"/><circle cx="260" cy="60" r="3.5"/><circle cx="430" cy="140" r="4.5"/>
+      <circle cx="640" cy="90" r="3.5"/><circle cx="300" cy="220" r="3.5"/><circle cx="150" cy="320" r="3.5"/>
+      <circle cx="560" cy="260" r="4.5"/><circle cx="740" cy="300" r="3.5"/><circle cx="330" cy="410" r="3.5"/>
+      <circle cx="520" cy="480" r="3.5"/><circle cx="820" cy="440" r="3.5"/>
+    </g>
+  </svg>
+  <div class="wrap hero-inner">
+    <div class="hero-top">
+      <div class="hero-text">
+        <div class="kicker">Product leader &amp; AI transformation practitioner</div>
+        <h1 class="headline">Redesigning how organisations work, <em>not</em> decorating the old way with new tools.</h1>
+        <p class="subline">I have spent twenty years running product organisations end to end, and most recently I have been helping companies work out how AI agents (software that can act on its own, as well as answer questions) can be built safely into the way they operate. In practice, that means working out what is worth automating, testing it against real data instead of a tidy demo, and putting the safeguards in place that let it run unattended, without anyone having to hold their breath.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#method">See the method</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-portrait">
+        <img src="headshot.jpg" alt="Portrait of Rory McClelland">
+        <div class="portrait-cap">Rory McClelland, London</div>
+      </div>
+    </div>
+    <div class="quickfacts">
+      <div><span class="num">20</span><span class="lbl">years in product, end to end</span></div>
+      <div><span class="num">2</span><span class="lbl">operating models rebuilt from scratch</span></div>
+      <div><span class="num">$2M→$55M</span><span class="lbl">P&amp;L owned through one platform rebuild</span></div>
+      <div><span class="num">MSc</span><span class="lbl">Computer Science, Distinction, Birmingham</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="photo-bg" aria-hidden="true"><img src="bg-about-skyline.jpg" alt=""></div>
+  <div class="wrap">
+    <div class="eyebrow">01 · About</div>
+    <h2 class="title reveal">A product leader who also prototypes.</h2>
+    <div class="about-grid reveal">
+      <div class="bio">
+        <p>I have spent twenty years running product organisations, and more recently I have been building working prototypes with AI coding tools, alongside the engineers who build production systems. That combination is the point. I am as comfortable talking an executive team through a new operating model as I am sitting with an engineer to work out why an AI agent has started giving the wrong answer (often because it has been asked to hold too much in its head at once, which is known, a little grandly, as its 'context window' filling up).</p>
+        <p>I have restructured two companies around a new way of working. IPOINT moved from a services-led business to a product-led one, and Soho House's member platform was rebuilt from a booking tool into a content-led product, with full P&amp;L ownership throughout. The method is much the same each time: prototype the workflow, test it with real users, and then build the governance underneath it, so that other people can keep building safely after I have gone.</p>
+        <p>Before product came engineering: an MSc in Computer Science and a BEng in Electronic &amp; Computer Engineering, both from the University of Birmingham. Before that, I spent three years teaching in elementary and junior high schools in rural Japan, including special needs classes, which is where my interest in working across languages, regulations and very different management cultures began.</p>
+      </div>
+      <ul class="highlights">
+        <li>I have restructured two companies' operating models end to end, with full ownership of the redesign in both cases.</li>
+        <li>I have designed and built two working prototypes with AI coding tools: one drafts answers to requests for information (RFIs) from a library of approved responses, and the other decides when a conversation needs a meeting.</li>
+        <li>Full P&amp;L ownership of product launches from $2M to $55M, and of cross-functional teams of up to twenty people.</li>
+        <li>Experience spans financial services, travel, retail, hospitality, dating and consumer privacy. The constraints change from one to the next; the discipline needed to introduce AI into a business responsibly doesn't.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="what-i-do">
+  <div class="wrap">
+    <div class="eyebrow">02 · How I help</div>
+    <h2 class="title reveal">Four pieces of work, usually taken in order.</h2>
+    <p class="lede">Each piece of work stands on its own and can be commissioned separately. Taken together, they trace the route from a handful of people using an AI assistant well to AI being part of how the company runs, day to day.</p>
+    <div class="services reveal">
+      <div class="service">
+        <div class="si">01 · MAP &amp; RANK</div>
+        <h3>Find the right first workflow</h3>
+        <p>Two to three weeks are spent breaking the organisation's work into its parts: the purpose behind it, the decisions involved, the information it needs, how it is carried out and what tends to go wrong. The candidates are then ranked against evidence, instead of against whoever is most enthusiastic about them. The result is one chosen piece of work, a baseline to measure progress against, and a short written case for why it goes first.</p>
+      </div>
+      <div class="service">
+        <div class="si">02 · PROVE</div>
+        <h3>Build the pilot that settles the argument</h3>
+        <p>Over four to six weeks, a working pilot is built on your own data, in your own environment. It is then tested against examples nobody on the team has seen before, to check that the system has learned the task and has not simply memorised the answers. It ends with a working system and a clear recommendation on whether to proceed.</p>
+      </div>
+      <div class="service">
+        <div class="si">03 · OPERATIONALISE</div>
+        <h3>Make it safe to run unattended</h3>
+        <p>Autonomy is handed over gradually. Each AI agent gets its own restricted identity, so it can only touch what it needs to (much as a new employee gets limited system access on their first day), and its work is checked against a proper set of test cases before it is trusted with more. This stage also designs for the one risk that more secure hosting cannot fix: that something an agent reads, such as an email, a document or a web page, steers what it does next. Every workflow that comes out of this stage has a named owner and a written statement of the remaining risk, which somebody has read and signed.</p>
+      </div>
+      <div class="service">
+        <div class="si">04 · SCALE</div>
+        <h3>Make the next one cheaper</h3>
+        <p>The groundwork for the first workflow (how information is gathered and fed in, how the parts of the system talk to one another, how it is evaluated and how it is kept under control) is turned into something reusable: a platform the rest of the organisation can build on. The effect compounds, so by the time a fourth workflow comes along, it tends to cost a fraction of the first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <div class="eyebrow">03 · The method</div>
+    <h2 class="title reveal">Redesigning a business around AI</h2>
+    <p class="lede">Most organisations arrive at AI in much the same way. A few people start using an assistant on their own initiative, one or two get rather good at it, and licences are bought more widely. A dashboard shows adoption climbing, and everyone takes some comfort from that. Eighteen months later, the company works exactly as it always did, because the work itself never changed, only the tool people used to do it. What follows is a method for changing the work.</p>
+    <p class="method-premise">Adopting AI tools changes what people use. Redesigning the work around AI changes what a company can do, and that is the part that shows up in the numbers.</p>
+
+    <div class="loop-label">See it through an industry lens: this changes the examples below</div>
+    <div class="industry-bar" role="group" aria-label="Choose an industry">
+      <button type="button" class="ipill active" data-industry="fs">Financial services</button>
+      <button type="button" class="ipill" data-industry="prof">Professional services</button>
+      <button type="button" class="ipill" data-industry="travel">Travel &amp; hospitality</button>
+      <button type="button" class="ipill" data-industry="retail">Retail &amp; leisure</button>
+    </div>
+
+    <div class="loop-label">The engine: five stages, four decision gates. Keep scrolling; the page pins and moves sideways with you.</div>
+  </div>
+
+  <div class="hscroll-wrap" id="hscrollWrap">
+      <div class="hscroll-pin">
+        <div class="hstage-tracker">
+          <div class="hstage-row">
+            <div class="hstage-line"></div>
+            <div class="hstage-line-fill" id="hstageFill"></div>
+            <button type="button" class="hstage-node active" data-stage="map"><span class="hstage-dot">1</span><span class="hstage-label">Map</span></button>
+            <button type="button" class="hstage-node" data-stage="rank"><span class="hstage-dot">2</span><span class="hstage-label">Rank</span></button>
+            <button type="button" class="hstage-node" data-stage="prove"><span class="hstage-dot">3</span><span class="hstage-label">Prove</span></button>
+            <button type="button" class="hstage-node" data-stage="operationalise"><span class="hstage-dot">4</span><span class="hstage-label">Operationalise</span></button>
+            <button type="button" class="hstage-node" data-stage="scale"><span class="hstage-dot">5</span><span class="hstage-label">Scale</span></button>
+          </div>
+        </div>
+        <div class="hscroll-hint">Scroll ↓</div>
+        <div class="hscroll-track" id="hscrollTrack">
+          <div class="hslide" data-stage="map"><div class="hslide-inner">
+            <div class="hs-num">01</div><h4 class="hs-name">Map</h4>
+            <div class="hs-q">Where could this help, and what's it worth?</div>
+            <div class="hs-diagram" data-stage="map"></div>
+            <div class="hs-meta"><div><b>Produces</b><p>A longlist of candidate workflows, each with a baseline and a rough value.</p></div><div><b>Gate</b><p>Is there anything here worth a pilot?</p></div></div>
+            <div class="hs-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="map"></p></div>
+          </div></div>
+          <div class="hslide" data-stage="rank"><div class="hslide-inner">
+            <div class="hs-num">02</div><h4 class="hs-name">Rank</h4>
+            <div class="hs-q">What do we do first, and why that?</div>
+            <div class="hs-diagram" data-stage="rank"></div>
+            <div class="hs-meta"><div><b>Produces</b><p>A scored shortlist, one chosen workflow, a locked baseline.</p></div><div><b>Gate</b><p>Do we fund the pilot?</p></div></div>
+            <div class="hs-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="rank"></p></div>
+          </div></div>
+          <div class="hslide" data-stage="prove"><div class="hslide-inner">
+            <div class="hs-num">03</div><h4 class="hs-name">Prove</h4>
+            <div class="hs-q">Does it work on our data, in our environment?</div>
+            <div class="hs-diagram" data-stage="prove"></div>
+            <div class="hs-meta"><div><b>Produces</b><p>A working system on a contained slice, measured against the baseline, plus a named reusable core.</p></div><div><b>Gate</b><p>Go / no-go to production.</p></div></div>
+            <div class="hs-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="prove"></p></div>
+          </div></div>
+          <div class="hslide" data-stage="operationalise"><div class="hslide-inner">
+            <div class="hs-num">04</div><h4 class="hs-name">Operationalise</h4>
+            <div class="hs-q">Can it run in production, safely, without us watching?</div>
+            <div class="hs-diagram" data-stage="operationalise"></div>
+            <div class="hs-meta"><div><b>Produces</b><p>A production workflow with an owner, authority, evaluation, monitoring and an off switch.</p></div><div><b>Gate</b><p>Do we extend to the next domain?</p></div></div>
+            <div class="hs-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="operationalise"></p></div>
+          </div></div>
+          <div class="hslide" data-stage="scale"><div class="hslide-inner">
+            <div class="hs-num">05</div><h4 class="hs-name">Scale</h4>
+            <div class="hs-q">How does the next one get cheaper?</div>
+            <div class="hs-diagram" data-stage="scale"></div>
+            <div class="hs-meta"><div><b>Produces</b><p>A reused foundation, a growing component library, internal teams building on it.</p></div><div><b>Gate</b><p>Ongoing, reviewed on value delivered, never on time elapsed.</p></div></div>
+            <div class="hs-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="scale"></p></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+  <div class="wrap">
+    <div class="loop-label">The practice: while the engine rebuilds workflows, this changes how people work day to day</div>
+    <div class="rungs">
+      <div class="rung">
+        <div class="r">L1 · Assisted</div>
+        <h4>The starting line</h4>
+        <p>Here, the AI produces a first draft and the person edits it, so it becomes less a blank page and more a thinking partner to argue with. Everyone in the organisation should reach a confident L1 fairly quickly.</p>
+      </div>
+      <div class="rung">
+        <div class="r">L2 · Delegated</div>
+        <h4>Where most people should live</h4>
+        <p>Whole tasks are handed over and reviewed afterwards, from within a saved workspace that already has the right context loaded into it. It's here that most of the model's mistakes tend to get caught.</p>
+      </div>
+      <div class="rung">
+        <div class="r">L3 · Orchestrated</div>
+        <h4>Power users, function champions</h4>
+        <p>At this level, people design multi-step workflows that run with proper checkpoints built in, build reusable components that others go on to use, and mentor those still working their way up from L1.</p>
+      </div>
+    </div>
+
+    <div class="loop-label">How autonomy is earned: four stages every workflow passes through before it acts unattended. Keep scrolling; this panel pins and moves with you too.</div>
+  </div>
+
+  <div class="hscroll-wrap" id="autoScrollWrap">
+        <div class="hscroll-pin">
+          <div class="auto-tracker">
+            <div class="auto-row" role="group" aria-label="Autonomy stages">
+              <div class="auto-line"></div>
+              <div class="auto-line-fill" id="autoLineFill"></div>
+              <button type="button" class="auto-node active" data-autonomy="0"><span class="auto-dot">1</span><span class="auto-label">Shadow<span class="sub">Watch</span></span></button>
+              <button type="button" class="auto-node" data-autonomy="1"><span class="auto-dot">2</span><span class="auto-label">Assisted<span class="sub">Recommend</span></span></button>
+              <button type="button" class="auto-node" data-autonomy="2"><span class="auto-dot">3</span><span class="auto-label">Delegated<span class="sub">Act, bounded</span></span></button>
+              <button type="button" class="auto-node" data-autonomy="3"><span class="auto-dot">4</span><span class="auto-label">Extended<span class="sub">Widen on evidence</span></span></button>
+            </div>
+          </div>
+          <div class="hscroll-hint">Scroll ↓</div>
+          <div class="hscroll-track" id="autoScrollTrack">
+            <div class="hslide" data-autonomy="0"><div class="hslide-inner">
+              <div class="hs-num">01</div><h4 class="hs-name">Shadow</h4>
+              <div class="hs-q">Watch</div>
+              <p class="hs-body">At this stage, the system runs in the background on live data, but nobody acts on what it produces yet. Its job is to show that it behaves as people would have. It moves on once its agreement with human judgement has settled, and any disagreements have been understood, not just explained away.</p>
+              <div class="meters">
+                <div class="meter-row"><span class="ml">Capability unlocked</span><div class="meter"><div class="meter-fill cap" style="width:20%"></div></div></div>
+                <div class="meter-row"><span class="ml">Risk if unmanaged</span><div class="meter"><div class="meter-fill risk" style="width:5%"></div></div></div>
+              </div>
+            </div></div>
+            <div class="hslide" data-autonomy="1"><div class="hslide-inner">
+              <div class="hs-num">02</div><h4 class="hs-name">Assisted</h4>
+              <div class="hs-q">Recommend</div>
+              <p class="hs-body">A recommendation is now produced, with the evidence behind it, but a person still makes the decision. It moves on once people rarely need to correct it, that rate is still falling and, just as importantly, the people using it every day trust it.</p>
+              <div class="meters">
+                <div class="meter-row"><span class="ml">Capability unlocked</span><div class="meter"><div class="meter-fill cap" style="width:45%"></div></div></div>
+                <div class="meter-row"><span class="ml">Risk if unmanaged</span><div class="meter"><div class="meter-fill risk" style="width:30%"></div></div></div>
+              </div>
+            </div></div>
+            <div class="hslide" data-autonomy="2"><div class="hslide-inner">
+              <div class="hs-num">03</div><h4 class="hs-name">Delegated, within bounds</h4>
+              <div class="hs-q">Act, bounded</div>
+              <p class="hs-body">The system now acts on its own, but only within defined limits: value limits, particular case types, and confidence thresholds below which it will not proceed. Anything outside those limits goes to a person instead of being guessed at. It passes this stage once exception handling is proven and the escalation route has held up under real load, not only in a test environment.</p>
+              <div class="meters">
+                <div class="meter-row"><span class="ml">Capability unlocked</span><div class="meter"><div class="meter-fill cap" style="width:75%"></div></div></div>
+                <div class="meter-row"><span class="ml">Risk if unmanaged</span><div class="meter"><div class="meter-fill risk" style="width:65%"></div></div></div>
+              </div>
+            </div></div>
+            <div class="hslide" data-autonomy="3"><div class="hslide-inner">
+              <div class="hs-num">04</div><h4 class="hs-name">Extended authority</h4>
+              <div class="hs-q">Widen on evidence</div>
+              <p class="hs-body">From here, the limits are widened gradually, as evidence builds that it is safe to do so. They are reviewed against measured performance throughout, never simply because time has passed since the last review.</p>
+              <div class="meters">
+                <div class="meter-row"><span class="ml">Capability unlocked</span><div class="meter"><div class="meter-fill cap" style="width:100%"></div></div></div>
+                <div class="meter-row"><span class="ml">Risk if unmanaged</span><div class="meter"><div class="meter-fill risk" style="width:100%"></div></div></div>
+              </div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+  <div class="wrap">
+    <div class="engine-hint">One finding is worth pausing on: capability and risk rise together, on the same dial. The job is therefore to turn that dial deliberately, one step at a time, on the strength of the evidence, instead of trying to reduce the risk to zero.</div>
+
+    <div class="loop-label">Where deployment and exposure meet</div>
+    <p class="lede" style="margin-bottom:1rem;">Two quite different questions tend to get asked together, and answered as if they were the same. <b>Where does it run</b> decides who can see the data, and what it all costs. <b>What may it touch</b> decides what the system is allowed near in the first place. Once the two are separated and set against each other, the right deployment option for a piece of work tends to become clear, and it is rarely the same answer twice. Click a cell to see why.</p>
+    <div class="matrix-scroll">
+      <table class="matrix" id="deployMatrix">
+        <thead>
+          <tr><th></th><th>In-suite AI</th><th>Enterprise assistant</th><th>Own agents, vendor API</th><th>Own agents, own tenant</th><th>Open-weight, self-hosted</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Public / low-sensitivity</th>
+            <td class="cell v-green" data-row="Public / low-sensitivity" data-col="In-suite AI" data-verdict="Proceed" data-note="No sensitivity to manage: any option works, including the cheapest.">Proceed</td>
+            <td class="cell v-green" data-row="Public / low-sensitivity" data-col="Enterprise assistant" data-verdict="Proceed" data-note="Fine for public material: enterprise features aren't the point here.">Proceed</td>
+            <td class="cell v-green" data-row="Public / low-sensitivity" data-col="Own agents, vendor API" data-verdict="Proceed" data-note="Works, though this class rarely needs an owned agent layer at all.">Proceed</td>
+            <td class="cell v-green" data-row="Public / low-sensitivity" data-col="Own agents, own tenant" data-verdict="Proceed" data-note="Works, but this is more control than public material needs.">Proceed</td>
+            <td class="cell v-green" data-row="Public / low-sensitivity" data-col="Open-weight, self-hosted" data-verdict="Proceed" data-note="Technically fine: the self-hosting build cost buys nothing extra for this class.">Proceed</td>
+          </tr>
+          <tr>
+            <th>General internal</th>
+            <td class="cell v-green" data-row="General internal" data-col="In-suite AI" data-verdict="Proceed" data-note="The default for everyday internal work, once oversharing and stale access are cleaned up.">Proceed</td>
+            <td class="cell v-green" data-row="General internal" data-col="Enterprise assistant" data-verdict="Proceed" data-note="A sound default for general internal work handled outside the core suite.">Proceed</td>
+            <td class="cell v-green" data-row="General internal" data-col="Own agents, vendor API" data-verdict="Proceed" data-note="Reasonable once a workflow needs its own agents rather than a general assistant.">Proceed</td>
+            <td class="cell v-green" data-row="General internal" data-col="Own agents, own tenant" data-verdict="Proceed" data-note="Works, but usually more infrastructure than general internal work justifies.">Proceed</td>
+            <td class="cell v-amber" data-row="General internal" data-col="Open-weight, self-hosted" data-verdict="Conditional" data-note="Technically fine, rarely worth the build and running cost for work this ordinary.">Conditional</td>
+          </tr>
+          <tr>
+            <th>Confidential business</th>
+            <td class="cell v-amber" data-row="Confidential business" data-col="In-suite AI" data-verdict="Conditional" data-note="Only if the contract you already have with this vendor explicitly covers confidential material.">Conditional</td>
+            <td class="cell v-amber" data-row="Confidential business" data-col="Enterprise assistant" data-verdict="Conditional" data-note="Only with enterprise-grade retention and no-training terms switched on.">Conditional</td>
+            <td class="cell v-green" data-row="Confidential business" data-col="Own agents, vendor API" data-verdict="Proceed" data-note="The usual fit: your own agents, through a gateway you control, with logging.">Proceed</td>
+            <td class="cell v-green" data-row="Confidential business" data-col="Own agents, own tenant" data-verdict="Proceed" data-note="Also a good fit, with the added assurance of your own tenant.">Proceed</td>
+            <td class="cell v-grey" data-row="Confidential business" data-col="Open-weight, self-hosted" data-verdict="Avoid" data-note="Disproportionate: the cost and complexity of self-hosting, for a class a gateway already handles.">Avoid</td>
+          </tr>
+          <tr>
+            <th>Employee personal data</th>
+            <td class="cell v-grey" data-row="Employee personal data" data-col="In-suite AI" data-verdict="Avoid" data-note="Avoid by default: general in-suite AI wasn't built with this class in mind.">Avoid</td>
+            <td class="cell v-amber" data-row="Employee personal data" data-col="Enterprise assistant" data-verdict="Conditional" data-note="Possible, subject to legal counsel's view on where this data may be processed.">Conditional</td>
+            <td class="cell v-amber" data-row="Employee personal data" data-col="Own agents, vendor API" data-verdict="Conditional" data-note="Possible, subject to the same question: where the data is actually allowed to go.">Conditional</td>
+            <td class="cell v-green" data-row="Employee personal data" data-col="Own agents, own tenant" data-verdict="Proceed" data-note="The usual default for this class: data stays inside a tenant you control, in the region you need.">Proceed</td>
+            <td class="cell v-grey" data-row="Employee personal data" data-col="Open-weight, self-hosted" data-verdict="Avoid" data-note="Not recommended for this class: the build doesn't buy proportionate protection.">Avoid</td>
+          </tr>
+          <tr>
+            <th>Customer personal data</th>
+            <td class="cell v-grey" data-row="Customer personal data" data-col="In-suite AI" data-verdict="Avoid" data-note="Avoid: this class belongs to a different decision entirely.">Avoid</td>
+            <td class="cell v-grey" data-row="Customer personal data" data-col="Enterprise assistant" data-verdict="Avoid" data-note="Avoid for the internal operating-model programme: this is product-programme territory.">Avoid</td>
+            <td class="cell v-grey" data-row="Customer personal data" data-col="Own agents, vendor API" data-verdict="Avoid" data-note="Avoid here: this class is usually decided inside the customer-facing product programme.">Avoid</td>
+            <td class="cell v-amber" data-row="Customer personal data" data-col="Own agents, own tenant" data-verdict="Conditional" data-note="Possible, but this belongs to the customer-facing product programme, not the internal one: a separate decision, with its own owner.">Conditional</td>
+            <td class="cell v-grey" data-row="Customer personal data" data-col="Open-weight, self-hosted" data-verdict="Avoid" data-note="Not recommended, and in any case a decision for the product programme, not this one.">Avoid</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="matrix-legend">
+      <span><span class="legend-dot" style="background:var(--accent-soft);border:1px solid var(--accent);"></span>Proceed</span>
+      <span><span class="legend-dot" style="background:color-mix(in srgb, var(--warn) 30%, transparent);border:1px solid var(--warn);"></span>Conditional: check terms, counsel or scope first</span>
+      <span><span class="legend-dot" style="background:color-mix(in srgb, var(--graphite) 25%, transparent);border:1px solid var(--graphite);"></span>Avoid, or belongs to a different decision</span>
+    </div>
+    <div class="matrix-detail" id="matrixDetail">Click a cell above to see the guidance behind it.</div>
+    <p class="matrix-note">Moving right along this table only changes who can see the data and what it all costs. It changes nothing about who could steer the model through something it reads, what it is allowed to do, or who is accountable when it gets something wrong. Those are decisions about architecture and management, not hosting, and they are what the next diagram is about.</p>
+
+    <div class="loop-label">Is this safe to run unattended? Try classifying one.</div>
+    <div class="r2-wrap">
+      <svg viewBox="0 0 340 285" aria-hidden="true" style="width:100%;max-width:340px;">
+        <circle id="r2c-data" class="r2-circ" cx="140" cy="110" r="95" fill="var(--accent)" fill-opacity="0.16" stroke="var(--accent)" stroke-width="1.5"/>
+        <circle id="r2c-content" class="r2-circ" cx="205" cy="110" r="95" fill="var(--warn)" fill-opacity="0.16" stroke="var(--warn)" stroke-width="1.5"/>
+        <circle id="r2c-act" class="r2-circ" cx="172" cy="175" r="95" fill="var(--ink)" fill-opacity="0.10" stroke="var(--ink-soft)" stroke-width="1.5"/>
+        <text id="r2t-data" class="r2-lbl" x="72" y="70" font-family="IBM Plex Mono" font-size="11" fill="var(--ink-soft)">Private data</text>
+        <text id="r2t-content" class="r2-lbl" x="228" y="70" font-family="IBM Plex Mono" font-size="11" fill="var(--ink-soft)">Untrusted content</text>
+        <text id="r2t-act" class="r2-lbl" x="128" y="240" font-family="IBM Plex Mono" font-size="11" fill="var(--ink-soft)">Ability to act</text>
+        <text x="172" y="150" font-family="IBM Plex Mono" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">only with</text>
+        <text x="172" y="163" font-family="IBM Plex Mono" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">containment</text>
+      </svg>
+      <div class="r2-text">
+        <p>It is worth being clear about one thing: a language model cannot reliably tell a real instruction from its user apart from one hidden in something it is reading, such as a stray line of text on a web page or an email dressed up as something else. The major AI labs say so themselves, and none of them describe it as solved. Where the model runs changes who can see the data and what it all costs. It changes nothing about this risk.</p>
+        <p>What works is containment, sometimes called the <b>Rule of Two</b>. An AI session can reasonably run unattended if it has no more than two of three properties: access to private data, exposure to content it did not write, and the ability to act or communicate with the outside world. Give it all three at once, unsupervised, and you have built exactly the thing a security team loses sleep over.</p>
+      </div>
+    </div>
+    <div class="riskcalc">
+      <div class="riskcalc-toggles">
+        <label class="rtoggle"><input type="checkbox" id="rk-data"><span class="rswitch"></span><span class="rlabel">Has access to private data</span></label>
+        <label class="rtoggle"><input type="checkbox" id="rk-content"><span class="rswitch"></span><span class="rlabel">Reads content it didn't write</span></label>
+        <label class="rtoggle"><input type="checkbox" id="rk-act"><span class="rswitch"></span><span class="rlabel">Can act, or talk to the outside world</span></label>
+      </div>
+      <div class="risk-result">
+        <span class="risk-verdict ok" id="riskVerdictBadge">Low exposure</span>
+        <p class="risk-guide" id="riskGuide">No meaningful exposure from this combination, so not the interesting case. Tick a box above.</p>
+        <div class="risk-example" id="riskExampleBox" hidden>
+          <b>In practice: <span id="riskExampleIndustry">financial services</span></b>
+          <p id="riskExampleText"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="loop-label">Three architectural commitments</div>
+    <div class="commitments">
+      <div class="commit"><span class="cn">01</span><p><b>A deterministic core, with models kept to the edges.</b> Language models are used to interpret, draft and triage. Calculations, transactions and records of decisions are kept in deterministic code, which behaves the same way every time and so can be replayed and audited. That is what makes a system built partly on unpredictable AI explainable to a risk function, when the question is asked (and it always is).</p></div>
+      <div class="commit"><span class="cn">02</span><p><b>Decisions become precedent.</b> Every approved judgement is saved as a reusable precedent, so the system becomes more capable through use, as well as through further development.</p></div>
+      <div class="commit"><span class="cn">03</span><p><b>No vendor becomes the system of record.</b> Context, skills, evaluation sets and traces are all kept in formats the organisation owns. The choice of model therefore stays a decision that can be revisited for each workflow, on the evidence, instead of being locked in from the start.</p></div>
+    </div>
+
+    <div class="loop-label">Four of the beliefs underneath it</div>
+    <div class="beliefs">
+      <div class="belief"><h5>Value over hype</h5><p>What matters is hours given back, lead times cut and error rates reduced. Seats issued and prompts run measure activity, not value. If the value cannot be named and shown against a proper baseline, the work has not been done yet.</p></div>
+      <div class="belief"><h5>Working software beats slideware</h5><p>A prototype that runs on the organisation's own data, built in weeks, tends to settle debates that a hundred slides never could, not least because it is put in front of the people who will have to live with the result.</p></div>
+      <div class="belief"><h5>Start small, earn the right to scale</h5><p>The destination is described; only the next step is committed to. Each phase is a real decision gate, and the first one is kept cheap enough that stopping there would cost almost nothing.</p></div>
+      <div class="belief"><h5>Augment judgement, don't replace it</h5><p>AI does the assembly work and the first pass; the decisions with real consequences are still made by people. For that reason, confidence thresholds and escalation routes are designed in from day one, instead of being added after something has gone wrong.</p></div>
+    </div>
+
+    <blockquote class="pull">"Where a model runs decides who can see the data and what it all costs. How the system is designed decides what can go wrong, and that is the part that gets my attention."<cite>The sentence I ask a board to remember</cite></blockquote>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow">04 · Experience</div>
+    <h2 class="title reveal">Twenty years, six operating environments.</h2>
+    <div class="timeline reveal">
+      <div class="role">
+        <div class="when">2026</div>
+        <div>
+          <h4>Principal Product Manager</h4>
+          <div class="co">Elsewhen, London · contract</div>
+          <p>Product strategy for enterprise AI platforms across financial services, travel and retail, from discovery through to production pilots. Designed and ran the four-week pilot model: map the workflow, prototype with real users, measure before scaling. Led discovery and a four-week production pilot for &amp;Beyond: an AI agent that cut quote preparation from over two hours to under two minutes, with 100% accuracy.</p>
+        </div>
+      </div>
+      <div class="role">
+        <div class="when">2025</div>
+        <div>
+          <h4>Product Director</h4>
+          <div class="co">IPOINT Systems, Berlin</div>
+          <p>Go-to-market for a new AI-enabled B2B SaaS platform unifying compliance and sustainability reporting, reporting to the CPO. Redesigned the product organisation and shifted the company from a services-led delivery model to a product-led one, building the pricing model to support it.</p>
+        </div>
+      </div>
+      <div class="role">
+        <div class="when">2022–2024</div>
+        <div>
+          <h4>Director, Soho Connect</h4>
+          <div class="co">Soho House &amp; Co, London</div>
+          <p>Full P&amp;L ownership of a new-to-market digital product; rebuilt the member app from a transactional booking utility into a content-led platform. Owned four functions end to end (Product, Design &amp; UX, Data and Platform) and authored the six-year plan the business adopted as its roadmap (revenue $2M → $55M, members 29k → 328k).</p>
+        </div>
+      </div>
+      <div class="role">
+        <div class="when">2021–2022</div>
+        <div>
+          <h4>Product Director, Safety &amp; Integrity</h4>
+          <div class="co">Bumble, Taipei · contract</div>
+          <p>Built product safety strategy across Bumble and Badoo, translating policy intent into a concrete product and team structure, and aligned executive sponsors across London and Barcelona.</p>
+        </div>
+      </div>
+      <div class="role">
+        <div class="when">2018–2021</div>
+        <div>
+          <h4>Product Lead, Chrome Privacy</h4>
+          <div class="co">Google, Munich</div>
+          <p>Owned Incognito Mode, browsing-data controls and Chrome's privacy settings architecture: the privacy and permissions gate every other feature had to clear before shipping, working closely with Legal, PR and Product Marketing.</p>
+        </div>
+      </div>
+      <div class="role">
+        <div class="when">2016–2018</div>
+        <div>
+          <h4>Head of Product Management</h4>
+          <div class="co">Babbel, Berlin</div>
+          <p>Built and led a team of four product managers across web, iOS and Android; led Babbel's shift from a single consumer app into a multi-product, B2B platform business.</p>
+        </div>
+      </div>
+    </div>
+    <div class="earlier"><b>Earlier:</b> Engineering Manager, then Product Manager, North Plains Systems, London (2007–2016). Assistant language teacher in elementary and junior high schools, JET Programme, Shiga, Japan (2001–2004). <b>Education:</b> MSc Computer Science (Distinction) and BEng Electronic &amp; Computer Engineering, University of Birmingham. Pragmatic Product Marketing; PRINCE2 Practitioner.</div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="photo-bg" aria-hidden="true"><img src="bg-work-circuit.jpg" alt=""></div>
+  <div class="wrap">
+    <div class="eyebrow">05 · Featured builds</div>
+    <h2 class="title reveal">Two prototypes I designed and built with AI tools.</h2>
+    <p class="lede">Both were designed from the ground up and built with an AI coding tool: I wrote the requirements, and the tool wrote the code.</p>
+    <div class="builds reveal">
+      <div class="build">
+        <div class="tag">Designed from 65 job stories · built with an AI coding tool</div>
+        <h4>RFI Response Tool</h4>
+        <p>Questionnaire questions are matched against a library of approved answers, and a draft response is produced for each one, with its sources. Questions that need a specialist are routed to a named expert, and every answer is tracked through to approval and export.</p>
+      </div>
+      <div class="build">
+        <div class="tag">Asynchronous by default · built with an AI coding tool</div>
+        <h4>Meeting Tool</h4>
+        <p>Built on the principle that work should be asynchronous by default. It is designed to follow Slack and email conversations and suggest a meeting only when ambiguity, confusion and frustration reach a set level, then find a free slot and send the invitations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="teaching-link">
+  <div class="wrap">
+    <div class="eyebrow">Also · Teaching &amp; mentoring</div>
+    <div class="xlink reveal">
+      <div>
+        <h2 class="title" style="margin-bottom:.8rem;">Mentoring young people who want to build with AI.</h2>
+        <p>The same method, sized for a young builder: from understanding how AI works to putting something real in front of real users, with privacy and safety built in from the first week. It draws on three years of teaching in Japanese schools as well as twenty years in product.</p>
+      </div>
+      <a class="btn primary" href="teaching.html">Teaching &amp; mentoring →</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">06 · Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="headshot.jpg" alt="" class="signoff-photo">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span>Based in the UK, working with teams wherever they are</span>
+  </div>
+  <div class="wrap photo-credit">Photography via Unsplash. London skyline: Hooman R.; circuit board: Alexandre Debiève.</div>
+</footer>
+
+<script>
+(function(){
+  var industries = {
+    fs: 'financial services',
+    prof: 'professional services',
+    travel: 'travel & hospitality',
+    retail: 'retail & leisure'
+  };
+
+  var stages = {
+    map: {
+      title: '01 · Map',
+      q: "Where could this help, and what's it worth?",
+      produces: 'A longlist of candidate workflows, each with a baseline and a rough value.',
+      gate: 'Is there anything here worth a pilot?',
+      diagram: '<div class="lenses-grid">' +
+        '<div class="lens"><b>Coordination tax</b>Where time goes to work about work, not the work.</div>' +
+        '<div class="lens"><b>Context assembly tax</b>What has to be gathered before real work can start.</div>' +
+        '<div class="lens"><b>Judgement bottleneck</b>Whose desk everything unusual lands on.</div>' +
+        '<div class="lens"><b>The queue</b>Processes with a lead time the business complains about.</div>' +
+        '<div class="lens"><b>The thing we can’t do at all</b>What’s never attempted because it would take too many people.</div>' +
+        '</div>',
+      examples: {
+        fs: 'The judgement-bottleneck and queue lenses both pointed at the same place here: a loan portfolio being migrated between two record-keeping systems, done entirely by hand, one exception at a time.',
+        prof: 'In a reconciliation process, from quote through to cash received, the coordination tax is usually the giveaway: the work passes through several hand-offs before anyone can see whether the numbers agree.',
+        travel: 'This lens usually lands on booking exceptions and refund queues in this sector: work with a clear beginning and end, and a lead time the business already complains about.',
+        retail: 'The thing-we-cannot-do lens tends to surface first here: reviewing every piece of guest feedback, instead of a sample, because nobody has the headcount to read it all.'
+      }
+    },
+    rank: {
+      title: '02 · Rank',
+      q: 'What do we do first, and why that?',
+      produces: 'A scored shortlist, one chosen workflow, a locked baseline.',
+      gate: 'Do we fund the pilot?',
+      diagram: '<div class="weights">' +
+        '<div class="wrow"><span class="wlabel">Business value</span><div class="wtrack"><div class="wfill" style="width:100%"></div></div><span class="wval">×3</span></div>' +
+        '<div class="wrow"><span class="wlabel">Confidence</span><div class="wtrack"><div class="wfill" style="width:100%"></div></div><span class="wval">×3</span></div>' +
+        '<div class="wrow"><span class="wlabel">Reuse</span><div class="wtrack"><div class="wfill" style="width:66%"></div></div><span class="wval">×2</span></div>' +
+        '<div class="wrow"><span class="wlabel">Effort (inverted)</span><div class="wtrack"><div class="wfill" style="width:66%"></div></div><span class="wval">×2</span></div>' +
+        '<div class="wrow"><span class="wlabel">Risk (inverted)</span><div class="wtrack"><div class="wfill" style="width:66%"></div></div><span class="wval">×2</span></div>' +
+        '<div class="wrow"><span class="wlabel">Adoption</span><div class="wtrack"><div class="wfill" style="width:33%"></div></div><span class="wval">×1</span></div>' +
+        '</div>',
+      examples: {
+        fs: 'The migration slice, in this case, qualified on all five gates: it was contained to one sub-process, offered high reuse for the next migration to come, had a baseline the operations team already tracked, had sandboxed data ready by week one, and had a named sponsor willing to sit through the final playback.',
+        prof: 'A reconciliation workflow tends to score highly on confidence, being a well-bounded task governed largely by clear rules, and even more highly on reuse: the same underlying plumbing (the part that maps one system’s data onto another’s, and checks the results) can go on to serve the next workflows across the estate.',
+        travel: 'A booking-exception workflow tends to score well on effort and risk in this sector, being small, internal and easily reversible. However, it is the scorecard itself that usually stops a more glamorous, customer-facing idea from jumping the queue.',
+        retail: "This is usually where an enthusiastic sponsor's pet idea is re-sequenced instead of killed outright: it is scored fairly, and held back for the second wave if it fails the containment test."
+      }
+    },
+    prove: {
+      title: '03 · Prove',
+      q: 'Does it work on our data, in our environment?',
+      produces: 'A working system on a contained slice, measured against the baseline, plus a named reusable core.',
+      gate: 'Go / no-go to production.',
+      diagram: '<div class="tmini-row-label">Discovery &amp; validation</div>' +
+        '<div class="timeline-mini">' +
+        '<div class="tmini-cell"><span class="tw">Week 1</span>Scope, baseline, define the split between person and system.</div>' +
+        '<div class="tmini-cell"><span class="tw">Week 2</span>Expert review of v1 against held-out examples.</div>' +
+        '<div class="tmini-cell"><span class="tw">Week 3</span>Validate v2 against held-out data; exceptions aggregated.</div>' +
+        '<div class="tmini-cell"><span class="tw">Week 4</span>Final validation; analysis and a scaling read.</div>' +
+        '</div>' +
+        '<div class="tmini-row-label second">Build</div>' +
+        '<div class="timeline-mini">' +
+        '<div class="tmini-cell"><span class="tw">Week 1</span>Environment set up; baseline and test cases established.</div>' +
+        '<div class="tmini-cell"><span class="tw">Week 2</span>Build v1, then fold feedback into v1.1.</div>' +
+        '<div class="tmini-cell"><span class="tw">Week 3</span>Iteration sprint: logic, triage, decision trace.</div>' +
+        '<div class="tmini-cell"><span class="tw">Week 4</span>Harden the prototype for a board-ready demo.</div>' +
+        '</div>',
+      examples: {
+        fs: 'Over four weeks, a prototype was built that mapped old loan data onto a new system, flagged and categorised any inconsistencies, and triaged exceptions with a confidence score attached to each. It was then tested against a portfolio nobody on the team had seen before, and the result was a demo ready to put in front of the board.',
+        prof: 'A typical shape here is six weeks, with two streams of work running in parallel. On one side, a reusable foundation: the plumbing that lets AI agents talk to each other, to the model and to the organisation’s own data. On the other, a production pilot on one live reconciliation sub-process, running alongside the existing process, on real data.',
+        travel: 'At a luxury safari company, a four-week production pilot turned customer enquiries into quotes ready for review in under two minutes, down from over two hours, with a consultant approving every quote before it reached a guest.',
+        retail: 'It’s the same shape every time, whatever the workflow: real data, a set of examples held back for testing, and a go/no-go decision a leadership team can defend afterwards.'
+      }
+    },
+    operationalise: {
+      title: '04 · Operationalise',
+      q: 'Can it run in production, safely, without us watching?',
+      produces: 'A production workflow with an owner, authority, evaluation, monitoring and an off switch.',
+      gate: 'Do we extend to the next domain?',
+      diagram: '<div class="ops-check">' +
+        '<div class="opsgroup"><b>Identity &amp; authority</b><ul><li>Named human owner, explicit authority level</li><li>Least-privilege access, its own identity</li><li>A tested way to suspend, revoke and roll back</li></ul></div>' +
+        '<div class="opsgroup"><b>Evaluation &amp; observability</b><ul><li>An evaluation set that gates every change</li><li>Full traces of every run, retained</li><li>Live metrics and regression alerting</li></ul></div>' +
+        '<div class="opsgroup"><b>Operational ownership</b><ul><li>A named owning function, not the build team</li><li>A documented exception process, owned by a person</li><li>A deliberate retirement path</li></ul></div>' +
+        '</div>',
+      examples: {
+        fs: "The migration agent was moved from shadow to assisted only once its agreement rate with the operations team's own decisions had settled down and its disagreements had been understood, not because a launch date had arrived.",
+        prof: 'A reconciliation agent would run with its identity and access wired through the client’s own permission system, a human review step for every package it checks, and full visibility in the client’s existing monitoring tools, so nothing about it is hidden from the team that owns it.',
+        travel: "Being production-ready here means more than a working demo: a named owner outside the transformation team, a tested way to suspend the system, and an exception process written into somebody's job description.",
+        retail: 'The test applied is the same one every time: could this be switched off safely, by someone other than the person who built it, without anyone finding out the hard way that it couldn’t?'
+      }
+    },
+    scale: {
+      title: '05 · Scale',
+      q: 'How does the next one get cheaper?',
+      produces: 'A reused foundation, a growing component library, internal teams building on it.',
+      gate: 'Ongoing, reviewed on value delivered, never on time elapsed.',
+      diagram: '<div class="reuse-bars">' +
+        '<div class="rbar-track"><div class="rbar" style="height:100%"></div></div>' +
+        '<div class="rbar-track"><div class="rbar" style="height:55%"></div></div>' +
+        '<div class="rbar-track"><div class="rbar" style="height:32%"></div></div>' +
+        '<div class="rbar-track"><div class="rbar" style="height:18%"></div></div>' +
+        '<span>Workflow 1<br>full foundation</span>' +
+        '<span>Workflow 2<br>reuses most of it</span>' +
+        '<span>Workflow 3<br>mostly domain logic</span>' +
+        '<span>Workflow 4<br>your own team builds it</span>' +
+        '</div>',
+      examples: {
+        fs: 'The data-mapping and testing tools built for the first migration became the accelerator for the next one. Before the engagement closed, the reusable core was clearly named and separated out from the logic specific to that one client.',
+        prof: 'The plumbing built for a first reconciliation workflow (the parts that feed it information, coordinate its steps and connect it to the model) should be documented as a reusable core, so that the next workflow in the estate can be built without starting from scratch.',
+        travel: "Once the first workflow's foundation exists, a second one in the same estate (a different queue, but on the same underlying systems) tends to cost a fraction of the first.",
+        retail: 'This is the real test of whether the work was ever a proper programme or just a series of one-off builds: does the fourth workflow cost what the first one did, or a fraction of it?'
+      }
+    }
+  };
+
+  var riskExamples = {
+    A: {
+      fs: 'The weekly exception pack is assembled for the operations team, drawn entirely from the migration pilot’s own outputs.',
+      prof: 'A completed reconciliation run is turned into the client’s board-ready accuracy scorecard.',
+      travel: 'The weekly capacity and booking-exception report is drafted for the operations team.',
+      retail: 'Internal stock and returns data is summarised into a category manager’s weekly review.'
+    },
+    B: {
+      fs: 'Inbound customer correspondence about a loan account is read and labelled by topic and urgency. Nothing is ever replied to automatically.',
+      prof: 'An inbound support ticket is triaged by category and priority, for a person to pick up afterwards. No account is changed, and no reply is sent.',
+      travel: 'A guest’s complaint email is read and routed to the right team, without anything being drafted or sent back on their behalf.',
+      retail: 'Public reviews and comments are read and tagged by theme for a person to act on. Nothing is published back automatically.'
+    },
+    C: {
+      fs: 'This would be an agent that reads a customer’s message about their loan and updates the account directly. This is later-phase work, not something attempted in phase one.',
+      prof: 'This would be an agent that reads a client’s support ticket and changes something in their account, entirely unattended.',
+      travel: 'This would be an agent that reads a guest’s message and rebooks or refunds them automatically. This is the last mile, built only once every earlier phase has held up.',
+      retail: 'This would be an agent that reads a customer message and issues a refund or replacement itself, with no person in the loop at all.'
+    }
+  };
+
+  var state = { industry: 'fs', stage: 'map', autonomy: 0 };
+  try {
+    var saved = JSON.parse(localStorage.getItem('rm-method-state') || '{}');
+    if (saved && typeof saved === 'object') {
+      if (saved.industry && industries[saved.industry]) state.industry = saved.industry;
+    }
+  } catch (e) {}
+
+  function persist() {
+    try { localStorage.setItem('rm-method-state', JSON.stringify({ industry: state.industry })); } catch (e) {}
+  }
+
+  function $(id) { return document.getElementById(id); }
+  var stageOrder = ['map', 'rank', 'prove', 'operationalise', 'scale'];
+
+  function fillDiagrams() {
+    var nodes = document.querySelectorAll('.hs-diagram');
+    for (var i = 0; i < nodes.length; i++) {
+      var id = nodes[i].getAttribute('data-stage');
+      if (stages[id]) nodes[i].innerHTML = stages[id].diagram;
+    }
+  }
+
+  function fillIndustryText() {
+    var texts = document.querySelectorAll('.ind-text');
+    for (var i = 0; i < texts.length; i++) {
+      var stageId = texts[i].getAttribute('data-stage');
+      if (stages[stageId]) texts[i].textContent = stages[stageId].examples[state.industry];
+    }
+    var labels = document.querySelectorAll('.ind-label');
+    for (var k = 0; k < labels.length; k++) labels[k].textContent = industries[state.industry];
+  }
+
+  function setIndustry(id) {
+    if (!industries[id]) return;
+    state.industry = id;
+    var pills = document.querySelectorAll('.ipill');
+    for (var i = 0; i < pills.length; i++) {
+      pills[i].classList.toggle('active', pills[i].getAttribute('data-industry') === id);
+    }
+    fillIndustryText();
+    updateRisk();
+    persist();
+  }
+
+  function setVennState(circleId, labelId, on, anyOn) {
+    var c = $(circleId), t = $(labelId);
+    if (c) { c.classList.toggle('r2-active', on); c.classList.toggle('r2-dim', anyOn && !on); }
+    if (t) { t.classList.toggle('r2-active', on); t.classList.toggle('r2-dim', anyOn && !on); }
+  }
+
+  function updateRisk() {
+    var data = $('rk-data').checked;
+    var content = $('rk-content').checked;
+    var act = $('rk-act').checked;
+    var count = (data ? 1 : 0) + (content ? 1 : 0) + (act ? 1 : 0);
+    var anyOn = count > 0;
+    setVennState('r2c-data', 'r2t-data', data, anyOn);
+    setVennState('r2c-content', 'r2t-content', content, anyOn);
+    setVennState('r2c-act', 'r2t-act', act, anyOn);
+
+    var badge = $('riskVerdictBadge'), guide = $('riskGuide'), exBox = $('riskExampleBox');
+    badge.classList.remove('ok', 'mid', 'hot');
+
+    var classKey = null;
+    var guideText = '';
+
+    if (!data && !content && !act) {
+      guideText = 'There is no meaningful exposure from this particular combination, which, admittedly, makes it the less interesting case. Tick a box above to see how that changes.';
+    } else if (data && !content && !act) {
+      classKey = 'A';
+      guideText = 'This is Class A: internal only. Private data goes in, the output goes to a person, and nothing comes in from outside. It is reasonable to proceed here, once permissions have been properly tidied up.';
+    } else if (!data && content && !act) {
+      classKey = 'B';
+      guideText = 'This is Class B: outside content, but no power to act on it. It is reasonable to proceed once a model with no tools of its own reads the content and passes back labels, never instructions.';
+    } else if (data && content && act) {
+      classKey = 'C';
+      guideText = 'This is Class C: all three properties at once, and the one that deserves real caution. Proceed only once containment has been built and properly tested, a human gate has been placed in front of anything irreversible, and the decision to proceed has been made explicitly, not by default.';
+    } else if (data && !content && act) {
+      guideText = 'The system can see private data and act on it, but never reads anything it hasn’t produced itself. It is reasonable to proceed within a clearly defined envelope. However, the moment it starts reading anything external, it should be redesigned as the all-three case above.';
+    } else if (!data && content && act) {
+      guideText = 'Outside content is read and the system can act, but there is no private data on hand to expose. This is reasonably contained, though it still needs testing against prompt injection before any further autonomy is extended.';
+    } else if (data && content && !act) {
+      guideText = 'Private data is read alongside outside material, but no action is taken as a result. It is reasonable to proceed with care once permissions are clean, bearing in mind that adding the ability to act would then be the entire risk.';
+    } else if (!data && !content && act) {
+      guideText = 'The system can act, but has no private data to expose and reads nothing it did not write itself, so there is nothing here for an attacker to steer. This shape is unusual in practice, since most systems worth giving the ability to act also need to see data or content to know what to do with it.';
+    }
+
+    if (count <= 1) badge.classList.add('ok');
+    else if (count === 2) badge.classList.add('mid');
+    else badge.classList.add('hot');
+    badge.textContent = count <= 1 ? 'Low exposure' : (count === 2 ? 'Elevated: be deliberate' : 'Contained design required');
+    guide.textContent = guideText;
+
+    if (classKey) {
+      $('riskExampleIndustry').textContent = industries[state.industry];
+      $('riskExampleText').textContent = riskExamples[classKey][state.industry];
+      exBox.hidden = false;
+    } else {
+      exBox.hidden = true;
+    }
+  }
+
+  // wire up
+  var pills = document.querySelectorAll('.ipill');
+  for (var i = 0; i < pills.length; i++) {
+    pills[i].addEventListener('click', function () { setIndustry(this.getAttribute('data-industry')); });
+  }
+  // pinned, horizontal, scroll-jacked engine (Apple-product-page style), with a
+  // plain stacked fallback for narrow viewports, short viewports and reduced motion.
+  // Generalised into a reusable "engine" so more than one section on the page — the
+  // method engine, and the autonomy graduation — can each pin, hijack scroll and step
+  // through their own slides independently, sharing one scroll/resize listener.
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function isStackedMode() {
+    return window.innerWidth < 880 || window.innerHeight < 560 || reduceMotion;
+  }
+
+  var hEngines = [];
+
+  function createHEngine(opts) {
+    var engine = {
+      wrapId: opts.wrapId,
+      trackId: opts.trackId,
+      fillId: opts.fillId,
+      nodeSelector: opts.nodeSelector,
+      dataAttr: opts.dataAttr,
+      order: opts.order,
+      fillSpan: opts.fillSpan,
+      onIndex: opts.onIndex || function () {}
+    };
+    hEngines.push(engine);
+    return engine;
+  }
+
+  function hEngineSetActive(engine, id) {
+    var idx = engine.order.indexOf(String(id));
+    if (idx < 0) idx = 0;
+    var nodes = document.querySelectorAll(engine.nodeSelector);
+    for (var i = 0; i < nodes.length; i++) {
+      var nodeVal = nodes[i].getAttribute(engine.dataAttr);
+      var nodeIdx = engine.order.indexOf(nodeVal);
+      nodes[i].classList.toggle('active', nodeVal === String(id));
+      nodes[i].classList.toggle('done', nodeIdx > -1 && nodeIdx < idx);
+    }
+    var fill = $(engine.fillId);
+    if (fill) fill.style.width = (idx / (engine.order.length - 1) * engine.fillSpan) + '%';
+    engine.onIndex(idx, engine.order[idx]);
+  }
+
+  function hEngineApplyMode(engine) {
+    var wrap = $(engine.wrapId);
+    if (wrap) wrap.classList.toggle('stacked', isStackedMode());
+  }
+
+  function hEngineUpdateScroll(engine) {
+    var wrap = $(engine.wrapId);
+    if (!wrap || wrap.classList.contains('stacked')) return;
+    var pin = wrap.querySelector('.hscroll-pin');
+    var track = $(engine.trackId);
+    if (!pin || !track) return;
+    var rect = wrap.getBoundingClientRect();
+    var pinH = pin.clientHeight;
+    var totalScrollable = wrap.offsetHeight - pinH;
+    var scrolled = -rect.top;
+    var progress = totalScrollable > 0 ? Math.min(Math.max(scrolled / totalScrollable, 0), 1) : 0;
+    var maxTranslate = track.scrollWidth - pin.clientWidth;
+    track.style.transform = 'translateX(' + (-progress * maxTranslate) + 'px)';
+    var idx = Math.min(engine.order.length - 1, Math.round(progress * (engine.order.length - 1)));
+    hEngineSetActive(engine, engine.order[idx]);
+  }
+
+  function hEngineWireClicks(engine) {
+    var nodes = document.querySelectorAll(engine.nodeSelector);
+    for (var j = 0; j < nodes.length; j++) {
+      nodes[j].addEventListener('click', function () {
+        var id = this.getAttribute(engine.dataAttr);
+        var wrap = $(engine.wrapId);
+        if (wrap.classList.contains('stacked')) {
+          var target = document.querySelector('.hslide[' + engine.dataAttr + '="' + id + '"]');
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+        var pin = wrap.querySelector('.hscroll-pin');
+        var totalScrollable = wrap.offsetHeight - pin.clientHeight;
+        var idx = engine.order.indexOf(id);
+        var frac = idx / (engine.order.length - 1);
+        var wrapTop = wrap.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: wrapTop + frac * totalScrollable + 1, behavior: 'smooth' });
+      });
+    }
+  }
+
+  function applyAllHScrollModes() {
+    for (var i = 0; i < hEngines.length; i++) hEngineApplyMode(hEngines[i]);
+  }
+
+  var hTicking = false;
+  function updateAllHScroll() {
+    hTicking = false;
+    for (var i = 0; i < hEngines.length; i++) hEngineUpdateScroll(hEngines[i]);
+  }
+
+  createHEngine({
+    wrapId: 'hscrollWrap', trackId: 'hscrollTrack', fillId: 'hstageFill',
+    nodeSelector: '.hstage-node', dataAttr: 'data-stage', order: stageOrder, fillSpan: 80,
+    onIndex: function (idx, id) { state.stage = id; }
+  });
+  createHEngine({
+    wrapId: 'autoScrollWrap', trackId: 'autoScrollTrack', fillId: 'autoLineFill',
+    nodeSelector: '.auto-node', dataAttr: 'data-autonomy', order: ['0', '1', '2', '3'], fillSpan: 75,
+    onIndex: function (idx, id) { state.autonomy = idx; }
+  });
+
+  for (var e = 0; e < hEngines.length; e++) hEngineWireClicks(hEngines[e]);
+
+  window.addEventListener('scroll', function () {
+    if (!hTicking) { window.requestAnimationFrame(updateAllHScroll); hTicking = true; }
+  }, { passive: true });
+  window.addEventListener('resize', function () { applyAllHScrollModes(); updateAllHScroll(); });
+
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('in-view'); revealObserver.unobserve(entry.target); }
+      });
+    }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    document.querySelectorAll('.reveal').forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); });
+  }
+  if (reduceMotion) {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); });
+  }
+
+  // top scroll-progress bar
+  var navProgress = $('navProgress');
+  var ticking = false;
+  function updateProgress() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    if (navProgress) navProgress.style.width = pct + '%';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { window.requestAnimationFrame(updateProgress); ticking = true; }
+  }, { passive: true });
+  updateProgress();
+
+  var cells = document.querySelectorAll('td.cell');
+  for (var m = 0; m < cells.length; m++) {
+    cells[m].addEventListener('click', function () {
+      var all = document.querySelectorAll('td.cell.selected');
+      for (var n = 0; n < all.length; n++) all[n].classList.remove('selected');
+      this.classList.add('selected');
+      var row = this.getAttribute('data-row'), col = this.getAttribute('data-col');
+      var verdict = this.getAttribute('data-verdict'), note = this.getAttribute('data-note');
+      $('matrixDetail').innerHTML = '<b>' + row + ' → ' + col + ': ' + verdict + '.</b> ' + note;
+    });
+  }
+  $('rk-data').addEventListener('change', updateRisk);
+  $('rk-content').addEventListener('change', updateRisk);
+  $('rk-act').addEventListener('change', updateRisk);
+
+  // manual light/dark toggle — overrides the system preference once clicked
+  var themeToggle = $('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme');
+      if (!current) {
+        current = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      }
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('rm-theme', next); } catch (e) {}
+    });
+  }
+
+  // initial render
+  fillDiagrams();
+  setIndustry(state.industry);
+  applyAllHScrollModes();
+  updateAllHScroll();
+  updateRisk();
+})();
+</script>
+</body>
+</html>
