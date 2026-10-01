@@ -3,7 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+  /* Headshot: warm-mono light/dark pair follows the theme */
+  .hs-dark{display:none !important;}
+  :root[data-theme="dark"] .hs-light{display:none !important;}
+  :root[data-theme="dark"] .hs-dark{display:block !important;}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .hs-light{display:none !important;}
+    :root:not([data-theme="light"]) .hs-dark{display:block !important;}
+  }
+</style>
 <title>Rory McClelland</title>
 <meta name="description" content="Product leader and AI transformation practitioner helping organisations redesign how they work around AI: mapped, proven on real data, and made safe to run unattended.">
 <meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)">
@@ -163,7 +172,7 @@
     overflow:hidden;
   }
   .hero-top{display:grid;grid-template-columns:1.3fr .8fr;gap:3rem;align-items:center;}
-  .hero-portrait{border:1px solid var(--line);background:var(--paper-raised);padding:10px;}
+  .hero-portrait{}
   .hero-portrait img{width:100%;display:block;object-fit:cover;aspect-ratio:4/5;}
   .portrait-cap{font-family:'IBM Plex Mono';font-size:.7rem;color:var(--graphite);margin-top:.7rem;letter-spacing:.02em;}
   @media (max-width:800px){
@@ -484,7 +493,7 @@
   .clink .v{font-size:.98rem;}
 
   .contact-signoff{display:flex;align-items:center;gap:1.1rem;margin:1.8rem 0 0;}
-  .signoff-photo{width:60px;height:60px;border-radius:50%;object-fit:cover;border:1px solid var(--line);flex-shrink:0;}
+  .signoff-photo{width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:50% 15%;border:1px solid var(--line);flex-shrink:0;}
   .contact-signoff p{margin:0;font-size:.9rem;color:var(--ink-soft);max-width:44ch;}
 
   footer{padding-block:2.5rem 3rem;border-top:1px solid var(--line);}
@@ -561,7 +570,7 @@
         </div>
       </div>
       <div class="hero-portrait">
-        <img src="headshot.jpg" alt="Portrait of Rory McClelland">
+        <img src="headshot-mono-light.jpg" alt="Portrait of Rory McClelland" class="hs-light"><img src="headshot-mono-dark.jpg" alt="Portrait of Rory McClelland" class="hs-dark">
         <div class="portrait-cap">Rory McClelland, London</div>
       </div>
     </div>
@@ -986,7 +995,7 @@
     <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
     <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
     <div class="contact-signoff">
-      <img src="headshot.jpg" alt="" class="signoff-photo">
+      <img src="headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
       <p>I read and reply to email myself, usually within a day.</p>
     </div>
     <div class="contact-grid reveal">
