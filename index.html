@@ -563,7 +563,7 @@
       <div class="hero-text">
         <div class="kicker">Product leader &amp; AI transformation practitioner</div>
         <h1 class="headline">Redesigning how organisations work, <em>not</em> decorating the old way with new tools.</h1>
-        <p class="subline">I have spent twenty years running product organisations end to end, and most recently I have been helping companies work out how AI agents (software that can act on its own, as well as answer questions) can be built safely into the way they operate. In practice, that means working out what is worth automating, testing it against real data instead of a tidy demo, and putting the safeguards in place that let it run unattended, without anyone having to hold their breath.</p>
+        <p class="subline">I have spent twenty years running product organisations end to end, and most recently I have been working on how AI agents (software that can act on its own, as well as answer questions) can be built safely into the way companies operate. In practice, that means working out what is worth automating, testing it against real data instead of a tidy demo, and putting the safeguards in place that let it run unattended, without anyone having to hold their breath.</p>
         <div class="hero-ctas">
           <a class="btn primary" href="#method">See the method</a>
           <a class="btn" href="#contact">Get in touch</a>
@@ -1037,7 +1037,7 @@
         '<div class="lens"><b>The thing we can’t do at all</b>What’s never attempted because it would take too many people.</div>' +
         '</div>',
       examples: {
-        fs: 'The judgement-bottleneck and queue lenses both pointed at the same place here: a loan portfolio being migrated between two record-keeping systems, done entirely by hand, one exception at a time.',
+        fs: 'The judgement-bottleneck and queue lenses often point at the same place here: a loan portfolio being migrated between two record-keeping systems, done entirely by hand, one exception at a time.',
         prof: 'In a reconciliation process, from quote through to cash received, the coordination tax is usually the giveaway: the work passes through several hand-offs before anyone can see whether the numbers agree.',
         travel: 'This lens usually lands on booking exceptions and refund queues in this sector: work with a clear beginning and end, and a lead time the business already complains about.',
         retail: 'The thing-we-cannot-do lens tends to surface first here: reviewing every piece of guest feedback, instead of a sample, because nobody has the headcount to read it all.'
@@ -1057,7 +1057,7 @@
         '<div class="wrow"><span class="wlabel">Adoption</span><div class="wtrack"><div class="wfill" style="width:33%"></div></div><span class="wval">×1</span></div>' +
         '</div>',
       examples: {
-        fs: 'The migration slice, in this case, qualified on all five gates: it was contained to one sub-process, offered high reuse for the next migration to come, had a baseline the operations team already tracked, had sandboxed data ready by week one, and had a named sponsor willing to sit through the final playback.',
+        fs: 'A migration slice of this kind tends to qualify on all five gates: it is contained to one sub-process, offers high reuse for the next migration to come, has a baseline the operations team already tracks, can have sandboxed data ready early, and usually has a named sponsor willing to sit through the final playback.',
         prof: 'A reconciliation workflow tends to score highly on confidence, being a well-bounded task governed largely by clear rules, and even more highly on reuse: the same underlying plumbing (the part that maps one system’s data onto another’s, and checks the results) can go on to serve the next workflows across the estate.',
         travel: 'A booking-exception workflow tends to score well on effort and risk in this sector, being small, internal and easily reversible. However, it is the scorecard itself that usually stops a more glamorous, customer-facing idea from jumping the queue.',
         retail: "This is usually where an enthusiastic sponsor's pet idea is re-sequenced instead of killed outright: it is scored fairly, and held back for the second wave if it fails the containment test."
@@ -1083,7 +1083,7 @@
         '<div class="tmini-cell"><span class="tw">Week 4</span>Harden the prototype for a board-ready demo.</div>' +
         '</div>',
       examples: {
-        fs: 'Over four weeks, a prototype was built that mapped old loan data onto a new system, flagged and categorised any inconsistencies, and triaged exceptions with a confidence score attached to each. It was then tested against a portfolio nobody on the team had seen before, and the result was a demo ready to put in front of the board.',
+        fs: 'A typical pilot here runs for four weeks: a prototype that maps old loan data onto a new system, flags and categorises any inconsistencies, and triages exceptions with a confidence score attached to each. It is then tested against a portfolio nobody on the team has seen before, with the aim of a demo ready to put in front of the board.',
         prof: 'A typical shape here is six weeks, with two streams of work running in parallel. On one side, a reusable foundation: the plumbing that lets AI agents talk to each other, to the model and to the organisation’s own data. On the other, a production pilot on one live reconciliation sub-process, running alongside the existing process, on real data.',
         travel: 'A typical pilot here takes one workflow, such as turning customer enquiries into quotes, and runs it for four weeks on real enquiries. A consultant approves every quote before it reaches a guest, and the time saved is measured against the existing process.',
         retail: 'It’s the same shape every time, whatever the workflow: real data, a set of examples held back for testing, and a go/no-go decision a leadership team can defend afterwards.'
@@ -1100,7 +1100,7 @@
         '<div class="opsgroup"><b>Operational ownership</b><ul><li>A named owning function, not the build team</li><li>A documented exception process, owned by a person</li><li>A deliberate retirement path</li></ul></div>' +
         '</div>',
       examples: {
-        fs: "The migration agent was moved from shadow to assisted only once its agreement rate with the operations team's own decisions had settled down and its disagreements had been understood, not because a launch date had arrived.",
+        fs: "A migration agent should move from shadow to assisted only once its agreement rate with the operations team's own decisions has settled down and its disagreements have been understood, not because a launch date has arrived.",
         prof: 'A reconciliation agent would run with its identity and access wired through the client’s own permission system, a human review step for every package it checks, and full visibility in the client’s existing monitoring tools, so nothing about it is hidden from the team that owns it.',
         travel: "Being production-ready here means more than a working demo: a named owner outside the transformation team, a tested way to suspend the system, and an exception process written into somebody's job description.",
         retail: 'The test applied is the same one every time: could this be switched off safely, by someone other than the person who built it, without anyone finding out the hard way that it couldn’t?'
@@ -1122,7 +1122,7 @@
         '<span>Workflow 4<br>your own team builds it</span>' +
         '</div>',
       examples: {
-        fs: 'The data-mapping and testing tools built for the first migration became the accelerator for the next one. Before the engagement closed, the reusable core was clearly named and separated out from the logic specific to that one client.',
+        fs: 'The data-mapping and testing tools built for a first migration should become the accelerator for the next one. Before the work closes, the reusable core is clearly named and separated out from the logic specific to that one portfolio.',
         prof: 'The plumbing built for a first reconciliation workflow (the parts that feed it information, coordinate its steps and connect it to the model) should be documented as a reusable core, so that the next workflow in the estate can be built without starting from scratch.',
         travel: "Once the first workflow's foundation exists, a second one in the same estate (a different queue, but on the same underlying systems) tends to cost a fraction of the first.",
         retail: 'This is the real test of whether the work was ever a proper programme or just a series of one-off builds: does the fourth workflow cost what the first one did, or a fraction of it?'
