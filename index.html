@@ -498,6 +498,27 @@
 
   footer{padding-block:2.5rem 3rem;border-top:1px solid var(--line);}
   footer .fl{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-family:'IBM Plex Mono';font-size:.75rem;color:var(--graphite);}
+
+  /* Case studies */
+  .principles{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin:0 0 2.6rem;}
+  .principles div{padding:1.1rem 1rem;border-right:1px solid var(--line);}
+  .principles div:last-child{border-right:none;}
+  .principles b{display:block;font-family:'IBM Plex Mono';font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:.45rem;}
+  .principles span{font-size:.86rem;color:var(--ink-soft);line-height:1.45;display:block;}
+  @media (max-width:760px){ .principles{grid-template-columns:1fr 1fr;} .principles div:nth-child(2){border-right:none;} .principles div:nth-child(-n+2){border-bottom:1px solid var(--line);} }
+  @media (max-width:420px){ .principles{grid-template-columns:1fr;} .principles div{border-right:none;border-bottom:1px solid var(--line);} .principles div:last-child{border-bottom:none;} }
+  .cases{display:grid;gap:1.8rem;}
+  .case{display:grid;grid-template-columns:230px 1fr;gap:1.8rem;border:1px solid var(--line);background:var(--paper-raised);padding:1.6rem;}
+  .case .cover{display:block;border:1px solid var(--line);background:#fff;align-self:start;}
+  .case .cover img{display:block;width:100%;height:auto;}
+  .case .tag{font-family:'IBM Plex Mono';font-size:.72rem;color:var(--graphite);text-transform:uppercase;letter-spacing:.05em;}
+  .case h3{font-size:1.35rem;margin:.45rem 0 .7rem;}
+  .case p{margin:0 0 1rem;font-size:.95rem;color:var(--ink-soft);}
+  .case ul.guards{list-style:none;padding:0;margin:0 0 1.3rem;display:grid;gap:.5rem;}
+  .case ul.guards li{font-size:.9rem;color:var(--ink);padding-left:1.3rem;position:relative;line-height:1.45;}
+  .case ul.guards li::before{content:"";position:absolute;left:0;top:.5em;width:.55rem;height:.55rem;border:1.5px solid var(--accent);border-radius:2px;}
+  .case .meta{font-family:'IBM Plex Mono';font-size:.72rem;color:var(--graphite);margin-left:.9rem;}
+  @media (max-width:700px){ .case{grid-template-columns:1fr;padding:1.2rem;gap:1.2rem;} .case .cover{max-width:260px;} .case .meta{display:block;margin:.6rem 0 0;} }
   .xlink{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;}
   .xlink p{margin:0;max-width:60ch;color:var(--ink-soft);}
   @media (max-width:700px){ .xlink{grid-template-columns:1fr;gap:1.2rem;} .xlink .btn{justify-self:start;} }
@@ -522,6 +543,7 @@
       <a href="#about">About</a>
       <a href="#method">Method</a>
       <span class="hide-narrow"><a href="#experience">Experience</a></span>
+      <span class="hide-narrow"><a href="#case-studies">Case studies</a></span>
       <a href="teaching.html">Teaching</a>
       <a href="#contact">Contact</a>
     </div>
@@ -977,6 +999,50 @@
   </div>
 </section>
 
+<section id="case-studies">
+  <div class="wrap">
+    <div class="eyebrow">06 · Case studies</div>
+    <h2 class="title reveal">How I build, and what I build: guardrails first.</h2>
+    <p class="lede">Two write-ups of recent work, each available as a short PDF. The first sets out how I run AI as an engineering team; the second follows one system, an automated job search and application tracker, from design to daily use. In both, safety, privacy and the limits on what a system may do are settled before the first line of code is written.</p>
+    <div class="principles reveal">
+      <div><b>Never list first</b><span>What a system must never do is agreed at the start, and enforced by design rather than by instruction alone.</span></div>
+      <div><b>Data has boundaries</b><span>Which part may see which data is decided before what to build. Some data no AI ever reaches.</span></div>
+      <div><b>Authority is earned</b><span>Read-only first. An AI acts on its own only after it has been tested, and every action can be undone.</span></div>
+      <div><b>Evidence, not assertion</b><span>Tests before code, an independent reviewer, bars set in advance, and a red team that plays the attacker.</span></div>
+    </div>
+    <div class="cases">
+      <article class="case reveal">
+        <a class="cover" href="case-studies/rory-mcclelland-how-i-build-with-ai.pdf" aria-label="Open the How I build with AI case study (PDF)"><img src="case-studies/cover-how-i-build-with-ai.jpg" alt="First page of the How I build with AI case study" loading="lazy" width="662" height="516"></a>
+        <div>
+          <div class="tag">Case study 01 · Way of working</div>
+          <h3>How I build with AI: guardrails first</h3>
+          <p>When I build software, Claude is the engineering team, and I run it as I would a human one: job stories, a ranked backlog, short sprints with a definition of ready, tests before code, and a close that leaves nothing stranded. The note covers where my approach to privacy comes from, the build cycle, and the seven guardrail principles I apply to anything that uses AI, with examples from two of my own builds.</p>
+          <ul class="guards">
+            <li>An AI agent only where isolation, independence or on-demand use calls for one; everything else is ordinary, testable code.</li>
+            <li>Text written by strangers is treated as data, never as instructions.</li>
+            <li>A paper trail a reviewer would ask for: decision log, system card, threat model and a risk register organised by the NIST AI Risk Management Framework.</li>
+          </ul>
+          <a class="btn primary" href="case-studies/rory-mcclelland-how-i-build-with-ai.pdf" download>Download the PDF ↓</a><span class="meta">5 pages · A4</span>
+        </div>
+      </article>
+      <article class="case reveal">
+        <a class="cover" href="case-studies/rory-mcclelland-job-scout-case-study.pdf" aria-label="Open the Job Scout case study (PDF)"><img src="case-studies/cover-job-scout-case-study.jpg" alt="First page of the Job Scout case study" loading="lazy" width="662" height="516"></a>
+        <div>
+          <div class="tag">Case study 02 · Agentic application</div>
+          <h3>Job Scout: a guarded, private job search</h3>
+          <p>An automated job search and application tracker that runs every morning on my own mailbox and career record. It reads alerts and replies, reads the full adverts, scores each role, drafts a CV and letter for the best few, has a second agent check every claim, and lays it all out on a private board. It never applies, replies or contacts anyone; I make every decision.</p>
+          <ul class="guards">
+            <li>Adverts and emails are read by a local model on my own PC, with no tools and no internet access; only a checked summary leaves the machine.</li>
+            <li>An independent reviewer must quote the career record for every claim it accepts, and code confirms each quote exists.</li>
+            <li>Measured, not assumed: 21 of 22 adverts read correctly, and all ten hostile red-team inputs stopped.</li>
+          </ul>
+          <a class="btn primary" href="case-studies/rory-mcclelland-job-scout-case-study.pdf" download>Download the PDF ↓</a><span class="meta">6 pages · A4</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section id="teaching-link">
   <div class="wrap">
     <div class="eyebrow">Also · Teaching &amp; mentoring</div>
@@ -992,7 +1058,7 @@
 
 <section id="contact">
   <div class="wrap">
-    <div class="eyebrow">06 · Contact</div>
+    <div class="eyebrow">07 · Contact</div>
     <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
     <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
     <div class="contact-signoff">
