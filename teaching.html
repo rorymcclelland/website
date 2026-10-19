@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Rory McClelland · Teaching &amp; Mentoring</title>
 <meta name="description" content="Teaching and mentoring people of any age or seniority how to take an idea in AI all the way to something real, safely. A former teacher with twenty years in product and a background in privacy and user safety.">
-<meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111417" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#18171B" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="canonical" href="https://mcclelland.info/teaching">
@@ -18,32 +18,33 @@
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
 <style>
   :root{
-    --ink:#15181B; --ink-soft:#3B4046; --paper:#F7F6F2; --paper-raised:#FFFFFF;
-    --graphite:#5B6167; --line:#DBDAD3;
-    --accent:#1F6F5C; --accent-soft:#DEEBE6; --accent-ink:#0F3F34;
-    --warm:#A9612C; --warm-soft:#F3E4D6;
-    --display:'Fraunces', Georgia, 'Times New Roman', serif;
-    --body:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --mono:'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+    --ink:#1E1C18; --ink-soft:#3A362F; --paper:#FBF8F1; --paper-raised:#FFFDF8;
+    --graphite:#5E594F; --line:#E4DFD3;
+    --accent:#2747C9; --accent-soft:#E4E9FB; --accent-ink:#16288A;
+    --warm:#9A5B12; --warm-soft:#FBF1C7;
+    --display:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+    --body:'Literata', Georgia, 'Times New Roman', serif;
+    --mono:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+    --hl:#F6DD6B;
     color-scheme:light;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --ink:#ECEBE6; --ink-soft:#C7CBCE; --paper:#111417; --paper-raised:#181C1F;
-      --graphite:#9CA2A8; --line:#2A2F33;
-      --accent:#57C2A4; --accent-soft:#173A32; --accent-ink:#BEEFDF;
-      --warm:#D08A50; --warm-soft:#3A2A1C;
+      --ink:#EEEAE0; --ink-soft:#CFCABF; --paper:#18171B; --paper-raised:#211F25;
+      --graphite:#A39D91; --line:#36333B;
+      --accent:#93A6FF; --accent-soft:#252C4D; --accent-ink:#D6DDFF;
+      --warm:#E3A75C; --warm-soft:#3B3218; --hl:#5C5022;
       color-scheme:dark;
     }
   }
   :root[data-theme="dark"]{
-    --ink:#ECEBE6; --ink-soft:#C7CBCE; --paper:#111417; --paper-raised:#181C1F;
-    --graphite:#9CA2A8; --line:#2A2F33;
-    --accent:#57C2A4; --accent-soft:#173A32; --accent-ink:#BEEFDF;
-    --warm:#D08A50; --warm-soft:#3A2A1C;
+    --ink:#EEEAE0; --ink-soft:#CFCABF; --paper:#18171B; --paper-raised:#211F25;
+    --graphite:#A39D91; --line:#36333B;
+    --accent:#93A6FF; --accent-soft:#252C4D; --accent-ink:#D6DDFF;
+    --warm:#E3A75C; --warm-soft:#3B3218; --hl:#5C5022;
     color-scheme:dark;
   }
   :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);}
@@ -213,6 +214,29 @@
     :root:not([data-theme="light"]) .hs-light{display:none !important;}
     :root:not([data-theme="light"]) .hs-dark{display:block !important;}
   }
+
+  /* ---- Margin notes brand layer ---- */
+  body{font-size:16.5px;line-height:1.65;}
+  h1,h2,h3,h4,h5{font-weight:700;letter-spacing:-.022em;line-height:1.06;}
+  a{text-underline-offset:3px;}
+  .hl{background:linear-gradient(transparent 58%, var(--hl) 58%, var(--hl) 94%, transparent 94%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .08em;margin:0 -.08em;}
+  .note{font-family:'Literata',Georgia,serif;font-style:italic;color:var(--accent);}
+  .topnav .mark,.mark{font-weight:800;font-size:1.2rem;letter-spacing:-.025em;text-transform:lowercase;}
+  .navlinks{text-transform:none;letter-spacing:0;font-weight:500;font-size:.95rem;}
+  .eyebrow,.kicker,.loop-label,.label{font-weight:600;letter-spacing:.07em;}
+  .eyebrow{color:var(--accent);}
+  .btn{text-transform:none;letter-spacing:0;font-weight:700;font-size:.98rem;}
+  .btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper);}
+  .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--paper-raised);}
+  h1.headline em{font-style:normal;color:inherit;font-weight:inherit;}
+  .hero-portrait img{background:#FFFFFF;padding:10px 10px 34px;box-shadow:0 8px 24px rgba(30,28,24,.16);transform:rotate(1.6deg);}
+  :root[data-theme="dark"] .hero-portrait img{background:#2A282F;box-shadow:0 8px 24px rgba(0,0,0,.5);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .hero-portrait img{background:#2A282F;box-shadow:0 8px 24px rgba(0,0,0,.5);} }
+  .portrait-cap{font-family:'Literata',Georgia,serif;font-style:italic;font-size:.92rem;letter-spacing:0;color:var(--accent);text-align:center;margin-top:1.1rem;}
+  .quickfacts .num,.hs-num{font-weight:800;letter-spacing:-.02em;}
+  .method-premise,.pull,.sp-q{font-family:'Literata',Georgia,serif;font-style:italic;font-weight:400;}
+  .hs-example,.risk-example,.example{background:color-mix(in srgb, var(--hl) 30%, transparent);border-left-color:var(--accent);}
+  .case .cover{box-shadow:0 6px 18px rgba(30,28,24,.12);}
 </style>
 <script>
 (function(){ try { var t = localStorage.getItem('rm-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();
@@ -221,7 +245,7 @@
 <body>
 
 <nav class="topnav">
-  <a class="mark" href="index.html">Rory <span>McClelland</span></a>
+  <a class="mark" href="index.html">rory mcclelland<span>.</span></a>
   <div class="nav-right">
     <div class="navlinks">
       <a href="index.html">Home</a>
@@ -241,7 +265,7 @@
     <div class="hero-top">
       <div class="hero-text">
         <div class="kicker">AI mentoring &amp; education</div>
-        <h1 class="headline">Helping people take an idea in AI all the way to the real world, <em>safely</em>.</h1>
+        <h1 class="headline">Helping people take an idea in AI all the way to the real world, <span class="hl">safely</span>.</h1>
         <p class="subline">I teach and mentor people who are curious about AI and want to build something real with it: a student finding their feet, a professional picking up a new way of working, or a senior leader learning to direct AI safely rather than write the code themselves. Learning how AI works is the starting point. The lessons that stay with people come later: putting something in front of real users, looking after those users, and learning from what happens next. I bring twenty years of taking products to real users, a background in privacy and user safety at Google and Bumble, and three years teaching children in Japanese schools.</p>
         <div class="hero-ctas">
           <a class="btn primary" href="#programme">See a sample programme</a>
