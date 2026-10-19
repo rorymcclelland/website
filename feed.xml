@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Margin notes · Rory McClelland</title>
+  <link>https://mcclelland.info/writing/</link>
+  <atom:link href="https://mcclelland.info/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Short pieces on redesigning work around AI, building with guardrails, and learning to build.</description>
+  <language>en-gb</language>
+  <item>
+    <title>Capability and risk are the same dial</title>
+    <link>https://mcclelland.info/writing/capability-and-risk-are-the-same-dial/</link>
+    <guid>https://mcclelland.info/writing/capability-and-risk-are-the-same-dial/</guid>
+    <pubDate>Mon, 19 Oct 2026 09:00:00 +0100</pubDate>
+    <description>Each step an AI system takes towards working on its own makes it more useful, and makes a mistake more costly. The two move together, so they have to be managed together.</description>
+  </item>
+</channel>
+</rss>
