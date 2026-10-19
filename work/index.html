@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Work and case studies · Rory McClelland</title>
+<meta name="description" content="Tools designed and built with AI coding tools, guardrails first, with two case studies to download.">
+<meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#18171B" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/work/">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<meta property="og:url" content="https://mcclelland.info/work/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rory McClelland">
+<meta property="og:title" content="Work and case studies · Rory McClelland">
+<meta property="og:description" content="Tools designed and built with AI coding tools, guardrails first, with two case studies to download.">
+<meta property="og:image" content="https://mcclelland.info/headshot.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Work and case studies · Rory McClelland">
+<meta name="twitter:description" content="Tools designed and built with AI coding tools, guardrails first, with two case studies to download.">
+<meta name="twitter:image" content="https://mcclelland.info/headshot.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('rm-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="../writing/">Writing</a>
+      <a href="../work/" aria-current="page">Work</a>
+      <a href="../method/">Method</a>
+      <a href="../about/">About</a>
+      <a href="../teaching/">Teaching</a>
+    </div>
+    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+<section id="work">
+  <div class="photo-bg" aria-hidden="true"><img src="../bg-work-circuit.jpg" alt=""></div>
+  <div class="wrap">
+    <div class="eyebrow">Work and case studies</div>
+    <h1 class="title reveal">How I build, and what I build: guardrails first.</h1>
+    <p class="lede">Tools I have designed and built with AI coding tools, two of them written up in full as short case studies you can download. The first sets out how I run AI as an engineering team; the second follows one system, an automated job search and application tracker, from design to daily use. In each, safety, privacy and the limits on what a system may do are settled before the first line of code is written.</p>
+    <div class="principles reveal">
+      <div><b>Never list first</b><span>What a system must never do is agreed at the start, and enforced by design rather than by instruction alone.</span></div>
+      <div><b>Data has boundaries</b><span>Which part may see which data is decided before what to build. Some data no AI ever reaches.</span></div>
+      <div><b>Authority is earned</b><span>Read-only first. An AI acts on its own only after it has been tested, and every action can be undone.</span></div>
+      <div><b>Evidence, not assertion</b><span>Tests before code, an independent reviewer, bars set in advance, and a red team that plays the attacker.</span></div>
+    </div>
+    <div class="cases" id="case-studies">
+      <article class="case reveal" id="how-i-build">
+        <a class="cover" href="../case-studies/rory-mcclelland-how-i-build-with-ai.pdf" aria-label="Open the How I build with AI case study (PDF)"><img src="../case-studies/cover-how-i-build-with-ai.jpg" alt="First page of the How I build with AI case study" loading="lazy" width="662" height="516"></a>
+        <div>
+          <div class="tag">Case study 01 · Way of working</div>
+          <h3>How I build with AI: guardrails first</h3>
+          <p>When I build software, Claude is the engineering team, and I run it as I would a human one: job stories, a ranked backlog, short sprints with a definition of ready, tests before code, and a close that leaves nothing stranded. The note covers where my approach to privacy comes from, the build cycle, and the seven guardrail principles I apply to anything that uses AI, with examples from two of my own builds.</p>
+          <ul class="guards">
+            <li>An AI agent only where isolation, independence or on-demand use calls for one; everything else is ordinary, testable code.</li>
+            <li>Text written by strangers is treated as data, never as instructions.</li>
+            <li>A paper trail a reviewer would ask for: decision log, system card, threat model and a risk register organised by the NIST AI Risk Management Framework.</li>
+          </ul>
+          <a class="btn primary" href="../case-studies/rory-mcclelland-how-i-build-with-ai.pdf" download>Download the PDF ↓</a><span class="meta">5 pages · A4</span>
+        </div>
+      </article>
+      <article class="case reveal" id="job-scout">
+        <a class="cover" href="../case-studies/rory-mcclelland-job-scout-case-study.pdf" aria-label="Open the Job Scout case study (PDF)"><img src="../case-studies/cover-job-scout-case-study.jpg" alt="First page of the Job Scout case study" loading="lazy" width="662" height="516"></a>
+        <div>
+          <div class="tag">Case study 02 · Agentic application</div>
+          <h3>Job Scout: a guarded, private job search</h3>
+          <p>An automated job search and application tracker that runs every morning on my own mailbox and career record. It reads alerts and replies, reads the full adverts, scores each role, drafts a CV and letter for the best few, has a second agent check every claim, and lays it all out on a private board. It never applies, replies or contacts anyone; I make every decision.</p>
+          <ul class="guards">
+            <li>Adverts and emails are read by a model on the local PC, with no tools and no internet access; only a checked summary leaves the machine.</li>
+            <li>An independent reviewer must quote the career record for every claim it accepts, and code confirms each quote exists.</li>
+            <li>Measured, not assumed: 21 of 22 adverts read correctly, and all ten hostile red-team inputs stopped.</li>
+          </ul>
+          <a class="btn primary" href="../case-studies/rory-mcclelland-job-scout-case-study.pdf" download>Download the PDF ↓</a><span class="meta">6 pages · A4</span>
+        </div>
+      </article>
+    </div>
+    <h3 class="builds-head reveal">Earlier builds</h3>
+    <p class="builds-lede">Two earlier tools, designed from the ground up and built with an AI coding tool. Neither uses AI itself: I wrote the requirements, and the tool wrote the code.</p>
+    <div class="builds reveal">
+      <div class="build">
+        <div class="tag">Designed from 65 job stories · built with an AI coding tool</div>
+        <h4>RFI Response Tool</h4>
+        <p>Questionnaire questions are matched against a library of approved answers, and a draft response is produced for each one, with its sources. Questions that need a specialist are routed to a named expert, and every answer is tracked through to approval and export.</p>
+      </div>
+      <div class="build">
+        <div class="tag">Asynchronous by default · built with an AI coding tool</div>
+        <h4>Meeting Tool</h4>
+        <p>Built on the principle that work should be asynchronous by default. It is designed to follow Slack and email conversations and suggest a meeting only when ambiguity, confusion and frustration reach a set level, then find a free slot and send the invitations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="section-head"><div><div class="eyebrow">Related writing</div><h2 class="title reveal">More on this.</h2></div><a href="../writing/">All writing →</a></div>
+    <div class="latest"><a class="lcard reveal" href="../writing/write-the-never-list-first.html"><span class="theme">Building with AI</span><h3>Write the never list first</h3><p>Before deciding what an AI system should do, I write down what it must never do. Then each line is made true in code.</p></a><a class="lcard reveal" href="../writing/private-from-whom.html"><span class="theme">Privacy</span><h3>Private from whom?</h3><p>Why “I want privacy” is not yet a requirement, and the two questions that turn it into one.</p></a><a class="lcard reveal" href="../writing/teach-the-thinking.html"><span class="theme">AI in organisations</span><h3>The method should outlast the consultant</h3><p>The most valuable thing an AI programme can leave behind is a way of thinking the organisation can run for itself.</p></a></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+  </div>
+  <div class="wrap photo-credit">Photography via Unsplash. Circuit board: Alexandre Debiève.</div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
