@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>Margin notes · Rory McClelland</title>
+  <title>Writing · Rory McClelland</title>
   <link>https://mcclelland.info/writing/</link>
   <atom:link href="https://mcclelland.info/feed.xml" rel="self" type="application/rss+xml"/>
-  <description>Short pieces on redesigning work around AI, building with guardrails, and learning to build.</description>
+  <description>Notes on building with AI, privacy and safety, and bringing AI into organisations.</description>
   <language>en-gb</language>
   <item>
-    <title>Capability and risk are the same dial</title>
-    <link>https://mcclelland.info/writing/capability-and-risk-are-the-same-dial/</link>
-    <guid>https://mcclelland.info/writing/capability-and-risk-are-the-same-dial/</guid>
+    <title>Private from whom?</title>
+    <link>https://mcclelland.info/writing/private-from-whom.html</link>
+    <guid>https://mcclelland.info/writing/private-from-whom.html</guid>
     <pubDate>Mon, 19 Oct 2026 09:00:00 +0100</pubDate>
-    <description>Each step an AI system takes towards working on its own makes it more useful, and makes a mistake more costly. The two move together, so they have to be managed together.</description>
+    <description>Why "I want privacy" is not yet a requirement, and the two questions that turn it into one.</description>
+  </item>
+  <item>
+    <title>Write the never list first</title>
+    <link>https://mcclelland.info/writing/write-the-never-list-first.html</link>
+    <guid>https://mcclelland.info/writing/write-the-never-list-first.html</guid>
+    <pubDate>Mon, 19 Oct 2026 09:00:00 +0100</pubDate>
+    <description>Before deciding what an AI system should do, I write down what it must never do. Then each line is made true in code.</description>
+  </item>
+  <item>
+    <title>The method should outlast the consultant</title>
+    <link>https://mcclelland.info/writing/teach-the-thinking.html</link>
+    <guid>https://mcclelland.info/writing/teach-the-thinking.html</guid>
+    <pubDate>Mon, 19 Oct 2026 09:00:00 +0100</pubDate>
+    <description>The most valuable thing an AI programme can leave behind is a way of thinking the organisation can run for itself.</description>
   </item>
 </channel>
 </rss>

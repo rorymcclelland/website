@@ -3,28 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Margin notes · Writing by Rory McClelland</title>
-<meta name="description" content="Short pieces on redesigning work around AI, building with guardrails, and learning to build.">
+<title>Writing · Rory McClelland</title>
+<meta name="description" content="Notes on building with AI, privacy and safety, and bringing AI into organisations.">
+<meta name="author" content="Rory McClelland">
 <meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#18171B" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="https://mcclelland.info/writing/">
-<link rel="alternate" type="application/rss+xml" title="Margin notes · Rory McClelland" href="https://mcclelland.info/feed.xml">
-<meta property="og:url" content="https://mcclelland.info/writing/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Rory McClelland">
-<meta property="og:title" content="Margin notes · Writing by Rory McClelland">
-<meta property="og:description" content="Short pieces on redesigning work around AI, building with guardrails, and learning to build.">
+<meta property="og:title" content="Writing · Rory McClelland">
+<meta property="og:description" content="Notes on building with AI, privacy and safety, and bringing AI into organisations.">
+<meta property="og:url" content="https://mcclelland.info/writing/">
 <meta property="og:image" content="https://mcclelland.info/headshot.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Margin notes · Writing by Rory McClelland">
-<meta name="twitter:description" content="Short pieces on redesigning work around AI, building with guardrails, and learning to build.">
 <meta name="twitter:image" content="https://mcclelland.info/headshot.jpg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
 <link rel="stylesheet" href="../assets/site.css">
-<script>(function(){try{var t=localStorage.getItem('rm-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="stylesheet" href="../assets/writing.css">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<script>(function(){ try { var t = localStorage.getItem('rm-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();</script>
 </head>
 <body>
 <nav class="topnav">
@@ -35,7 +34,7 @@
       <a href="../work/">Work</a>
       <a href="../method/">Method</a>
       <a href="../about/">About</a>
-      <a href="../teaching.html">Teaching</a>
+      <a href="../teaching/">Teaching</a>
     </div>
     <a class="btn primary nav-cta" href="#contact">Get in touch</a>
     <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
@@ -45,25 +44,43 @@
   </div>
   <div class="nav-progress" id="navProgress"></div>
 </nav>
-
-<section class="page-head">
-  <div class="wrap">
-    <div class="preview-flag">Preview · one sample post; the other titles are placeholders</div>
+<main class="wrap">
+  <header class="ix-head">
     <div class="eyebrow">Writing</div>
-    <h1 class="title">Margin notes.</h1>
-    <p class="lede">Short pieces on redesigning work around AI, building with guardrails, and learning to build. Written as much for people new to AI as for those who aren't.</p>
-    <div class="follow"><a href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener">Follow on LinkedIn</a><a href="../feed.xml">Subscribe by RSS</a></div>
-  </div>
-</section>
-<section style="border-top:none;padding-top:1.5rem">
-  <div class="wrap">
-    <div class="filters" role="group" aria-label="Filter by theme"><button type="button" class="ipill active" data-filter="all" aria-pressed="true">All</button><button type="button" class="ipill" data-filter="redesign" aria-pressed="false">Redesigning work</button><button type="button" class="ipill" data-filter="guardrails" aria-pressed="false">Guardrails & safety</button><button type="button" class="ipill" data-filter="building" aria-pressed="false">Building with AI</button><button type="button" class="ipill" data-filter="learning" aria-pressed="false">Learning to build</button></div>
-    <div class="post-list">
-      <a class="pcard" data-topic="redesign" href="../writing/capability-and-risk-are-the-same-dial/"><div class="pmeta"><span class="theme">Redesigning work</span>Draft · 5 min read</div><div><h3>Capability and risk are the same dial</h3><p>Each step an AI system takes towards working on its own makes it more useful, and makes a mistake more costly. The two move together, so they have to be managed together.</p></div></a><div class="pcard planned" data-topic="guardrails"><div class="pmeta"><span class="theme">Guardrails & safety</span>Planned</div><div><h3>Write the never list first<span class="ptag">Sample</span></h3><p>What a system must never do is the first thing agreed, and the one decision that shapes every other.</p></div></div><div class="pcard planned" data-topic="building"><div class="pmeta"><span class="theme">Building with AI</span>Planned</div><div><h3>Running AI as an engineering team<span class="ptag">Sample</span></h3><p>Job stories, a ranked backlog, short sprints and tests before code: the same disciplines, with a different team.</p></div></div><div class="pcard planned" data-topic="guardrails"><div class="pmeta"><span class="theme">Guardrails & safety</span>Planned</div><div><h3>Text written by strangers is data<span class="ptag">Sample</span></h3><p>Why adverts, emails and web pages are never allowed to give an AI system instructions.</p></div></div><div class="pcard planned" data-topic="redesign"><div class="pmeta"><span class="theme">Redesigning work</span>Planned</div><div><h3>Test it on real data<span class="ptag">Sample</span></h3><p>A tidy demo proves very little. What a pilot has to show before anyone relies on it.</p></div></div><div class="pcard planned" data-topic="learning"><div class="pmeta"><span class="theme">Learning to build</span>Planned</div><div><h3>What teaching in rural Japan taught me about teaching AI<span class="ptag">Sample</span></h3><p>Three years in elementary and junior high schools, and why they shape how I teach people to build with AI.</p></div></div>
+    <h1>Notes from building with AI, <span class="hl">guardrails first.</span></h1>
+    <p class="lede">Short pieces on privacy and safety in product, on how I build AI systems, and on what it takes for an organisation to adopt AI well. Each one comes from work I have done myself.</p>
+    <div class="ix-follow"><a href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener">Follow on LinkedIn</a><a href="../feed.xml">Subscribe by RSS</a></div>
+  </header>
+  <section class="posts" aria-label="Posts">
+  <a class="pcard" href="private-from-whom.html">
+    <svg viewBox="0 0 1200 630" role="img" aria-labelledby="c0t"><title id="c0t">A person at the centre of five rings, each ring a different party they might want privacy from: the next person on the device, the websites visited, the provider, anyone who can compel the provider, and the model.</title><rect class="s-bg" width="1200" height="630"/><circle class="k-gr" cx="838" cy="330" r="80" stroke-width="1.4" stroke-dasharray="3 7" stroke-linecap="round"/><circle class="k-gr" cx="838" cy="330" r="140" stroke-width="1.4" stroke-dasharray="3 7" stroke-linecap="round"/><circle class="k-acc" cx="838" cy="330" r="200" stroke-width="2.4" stroke-linecap="round"/><circle class="k-gr" cx="838" cy="330" r="260" stroke-width="1.4" stroke-dasharray="3 7" stroke-linecap="round"/><circle class="k-gr" cx="838" cy="330" r="318" stroke-width="1.4" stroke-dasharray="3 7" stroke-linecap="round"/><rect class="s-paper" x="700" y="235" width="275" height="30" rx="15"/><text class="t-lab s-ink" x="838" y="255" font-size="15.5" text-anchor="middle">the next person on the device</text><rect class="s-paper" x="739" y="175" width="198" height="30" rx="15"/><text class="t-lab s-ink" x="838" y="195" font-size="15.5" text-anchor="middle">the websites visited</text><rect class="s-hl" x="773" y="115" width="129" height="30" rx="15"/><text class="t-lab s-ink" x="838" y="135" font-size="15.5" text-anchor="middle">the provider</text><rect class="s-paper" x="679" y="55" width="318" height="30" rx="15"/><text class="t-lab s-ink" x="838" y="75" font-size="15.5" text-anchor="middle">anyone who can compel the provider</text><rect class="s-paper" x="687" y="7" width="301" height="30" rx="15"/><text class="t-lab s-ink" x="838" y="27" font-size="15.5" text-anchor="middle">the model, if it learns from you</text><circle class="s-ink" cx="838" cy="322" r="17"/><path class="s-ink" d="M806,370 C806,342 822,342 838,342 C854,342 870,342 870,370 Z"/><rect class="s-hl" x="56" y="290" width="392" height="30"/><text class="t-disp s-ink" x="60" y="240" font-size="72">private</text><text class="t-disp s-ink" x="60" y="314" font-size="72">from whom?</text><text class="t-note s-acc" x="62" y="430" font-size="25">each ring is a different design.</text><path class="k-acc" d="M400,422 C470,410 540,394 616,372" stroke-width="2" stroke-linecap="round"/><path class="k-acc" d="M600,366 L618,371 L608,386" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg>
+    <div>
+      <div class="tag">Privacy</div>
+      <h2>Private from whom?</h2>
+      <p>Why “I want privacy” is not yet a requirement, and the two questions that turn it into one.</p>
+      <div class="m">October 2026 · 4 min read</div>
     </div>
-  </div>
-</section>
-
+  </a>
+  <a class="pcard" href="write-the-never-list-first.html">
+    <svg viewBox="0 0 1200 630" role="img" aria-labelledby="c1t"><title id="c1t">An index card headed never, listing four things Job Scout must never do, each marked with a padlock: apply for a role, reply to or follow up any message, edit the profile or a sent document, share the board or change the rules.</title><rect class="s-bg" width="1200" height="630"/><g transform="rotate(-2.2 600 315)"><rect x="318" y="96" width="560" height="452" fill="#000" opacity=".07" transform="translate(8 10)"/><rect class="s-paper" style="stroke:var(--line)" x="318" y="96" width="560" height="452" stroke-width="1.5"/><line class="k-acc" x1="380" y1="96" x2="380" y2="548" stroke-width="1.4" opacity=".6"/><text class="t-disp s-ink" x="402" y="186" font-size="72">never<tspan class="s-acc">.</tspan></text><line class="k-line" x1="330" y1="284" x2="866" y2="284" stroke-width="1.2"/><text class="t-body s-ink" x="402" y="268" font-size="26">apply for a role</text><rect class="s-acc" x="830" y="254" width="18" height="14" rx="2"/><path class="k-acc" d="M834,254 v-5 a5,5 0 0 1 10,0 v5" stroke-width="2.4"/><line class="k-line" x1="330" y1="356" x2="866" y2="356" stroke-width="1.2"/><text class="t-body s-ink" x="402" y="340" font-size="26">reply to or follow up any message</text><rect class="s-acc" x="830" y="326" width="18" height="14" rx="2"/><path class="k-acc" d="M834,326 v-5 a5,5 0 0 1 10,0 v5" stroke-width="2.4"/><line class="k-line" x1="330" y1="428" x2="866" y2="428" stroke-width="1.2"/><text class="t-body s-ink" x="402" y="412" font-size="26">edit the profile or a sent document</text><rect class="s-acc" x="830" y="398" width="18" height="14" rx="2"/><path class="k-acc" d="M834,398 v-5 a5,5 0 0 1 10,0 v5" stroke-width="2.4"/><line class="k-line" x1="330" y1="500" x2="866" y2="500" stroke-width="1.2"/><text class="t-body s-ink" x="402" y="484" font-size="26">share the board or change the rules</text><rect class="s-acc" x="830" y="470" width="18" height="14" rx="2"/><path class="k-acc" d="M834,470 v-5 a5,5 0 0 1 10,0 v5" stroke-width="2.4"/></g><rect class="s-hl" x="540" y="68" width="150" height="40" opacity=".85" transform="rotate(4 615 88)"/><text class="t-note s-acc" x="928" y="276" font-size="25">each lock is</text><text class="t-note s-acc" x="928" y="308" font-size="25">enforced in code.</text><path class="k-acc" d="M926,326 C900,350 884,360 866,366" stroke-width="2" stroke-linecap="round"/><path class="k-acc" d="M882,356 L864,367 L880,378" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="t-lab s-gr" x="60" y="96" font-size="15" letter-spacing="1.2">JOB SCOUT</text><text class="t-lab s-gr" x="60" y="120" font-size="15" letter-spacing="1.2">THE NEVER LIST</text><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg>
+    <div>
+      <div class="tag">Building with AI</div>
+      <h2>Write the never list first</h2>
+      <p>Before deciding what an AI system should do, I write down what it must never do. Then each line is made true in code.</p>
+      <div class="m">October 2026 · 3 min read</div>
+    </div>
+  </a>
+  <a class="pcard" href="teach-the-thinking.html">
+    <svg viewBox="0 0 1200 630" role="img" aria-labelledby="c2t"><title id="c2t">Three loops, each smaller than the last, labelled lap one, two and three. The outer loop passes through four stages, discover, prioritise, deliver one and consolidate, with four gates marked on it.</title><rect class="s-bg" width="1200" height="630"/><defs><marker id="c2a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--graphite)"/></marker><marker id="c2b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker></defs><path class="k-gr" d="M954.0,73.2 A268,268 0 1 1 736.0,73.2" stroke-width="2" marker-end="url(#c2a)"/><text class="t-lab s-gr" x="845" y="55" font-size="14" text-anchor="middle">lap 1</text><path class="k-gr" d="M920.7,148.1 A186,186 0 1 1 769.3,148.1" stroke-width="2" marker-end="url(#c2a)"/><text class="t-lab s-gr" x="845" y="137" font-size="14" text-anchor="middle">lap 2</text><path class="k-acc" d="M887.3,223.0 A104,104 0 1 1 802.7,223.0" stroke-width="3" marker-end="url(#c2b)"/><text class="t-lab s-acc" x="845" y="219" font-size="14" text-anchor="middle">lap 3</text><line x1="1024.6" y1="138.4" x2="1044.4" y2="118.6" style="stroke:var(--ink)" stroke-width="7" stroke-linecap="square"/><line x1="1024.6" y1="497.6" x2="1044.4" y2="517.4" style="stroke:var(--ink)" stroke-width="7" stroke-linecap="square"/><line x1="665.4" y1="497.6" x2="645.6" y2="517.4" style="stroke:var(--ink)" stroke-width="7" stroke-linecap="square"/><line x1="665.4" y1="138.4" x2="645.6" y2="118.6" style="stroke:var(--ink)" stroke-width="7" stroke-linecap="square"/><rect class="s-paper" style="stroke:var(--ink)" x="1055" y="302" width="116" height="32" stroke-width="1.4"/><text class="t-lab s-ink" x="1113" y="324" font-size="16" text-anchor="middle">Prioritise</text><rect class="s-paper" style="stroke:var(--ink)" x="782" y="570" width="125" height="32" stroke-width="1.4"/><text class="t-lab s-ink" x="845" y="592" font-size="16" text-anchor="middle">Deliver one</text><rect class="s-paper" style="stroke:var(--ink)" x="514" y="302" width="125" height="32" stroke-width="1.4"/><text class="t-lab s-ink" x="577" y="324" font-size="16" text-anchor="middle">Consolidate</text><rect class="s-paper" style="stroke:var(--ink)" x="787" y="8" width="116" height="32" stroke-width="1.4"/><text class="t-lab s-ink" x="845" y="30" font-size="16" text-anchor="middle">Discover</text><circle class="s-acc" cx="845" cy="318" r="9"/><rect class="s-hl" x="56" y="210" width="272" height="34"/><text class="t-disp s-ink" x="60" y="160" font-size="66">each lap</text><text class="t-disp s-ink" x="60" y="236" font-size="66">cheaper</text><text class="t-disp s-ink" x="60" y="312" font-size="66">than the last.</text><text class="t-note s-acc" x="62" y="420" font-size="23">if lap two costs what</text><text class="t-note s-acc" x="62" y="450" font-size="23">lap one did, stop.</text><line x1="62" y1="510" x2="76" y2="510" style="stroke:var(--ink)" stroke-width="7"/><text class="t-lab s-gr" x="88" y="515" font-size="14">gate: each one is allowed to say no</text><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg>
+    <div>
+      <div class="tag">AI in organisations</div>
+      <h2>The method should outlast the consultant</h2>
+      <p>The most valuable thing an AI programme can leave behind is a way of thinking the organisation can run for itself.</p>
+      <div class="m">October 2026 · 3 min read</div>
+    </div>
+  </a>
+  </section>
+</main>
 <section id="contact">
   <div class="wrap">
     <div class="eyebrow">Contact</div>
@@ -90,3 +107,4 @@
 <script src="../assets/site.js"></script>
 </body>
 </html>
+
