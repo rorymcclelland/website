@@ -50,7 +50,7 @@
   <div class="wrap">
     <div class="eyebrow">Work and case studies</div>
     <h1 class="title reveal">How I build, and what I build: guardrails first.</h1>
-    <p class="lede">Tools I have designed and built with AI coding tools, two of them written up in full as short case studies you can download. The first sets out how I run AI as an engineering team; the second follows one system, an automated job search and application tracker, from design to daily use. In each, safety, privacy and the limits on what a system may do are settled before the first line of code is written.</p>
+    <p class="lede">Tools I have designed and built with AI coding tools, two of them written up in full as short case studies you can download, and one with its full code on GitHub. The first sets out how I run AI as an engineering team; the second follows one system, an automated job search and application tracker, from design to daily use. In each, safety, privacy and the limits on what a system may do are settled before the first line of code is written.</p>
     <div class="principles reveal">
       <div><b>Never list first</b><span>What a system must never do is agreed at the start, and enforced by design rather than by instruction alone.</span></div>
       <div><b>Data has boundaries</b><span>Which part may see which data is decided before what to build. Some data no AI ever reaches.</span></div>
@@ -84,6 +84,20 @@
             <li>Measured, not assumed: 21 of 22 adverts read correctly, and all ten hostile red-team inputs stopped.</li>
           </ul>
           <a class="btn primary" href="../case-studies/rory-mcclelland-job-scout-case-study.pdf" download>Download the PDF ↓</a><span class="meta">6 pages · A4</span>
+        </div>
+      </article>
+      <article class="case reveal" id="task-oversight">
+        <a class="cover" href="https://github.com/rorymcclelland/task-manager" aria-label="Open the Task oversight code on GitHub"><img src="../case-studies/cover-task-oversight.jpg" alt="The Task oversight matrix view, with sample tasks from five sources placed by importance and urgency" loading="lazy" width="662" height="516"></a>
+        <div>
+          <div class="tag">Open code 03 · Product build on GitHub</div>
+          <h3>Task oversight: one list I can trust</h3>
+          <p>My tasks were spread across two AI assistants, a task manager and notes on the local PC, and no single list was complete. This app pulls them into one view, ranks them on an Eisenhower matrix and sets them against the calendar. It was built in seven phases from a job-story backlog, with every structural choice written down, and the full code and documentation are public.</p>
+          <ul class="guards">
+            <li>Local only: tasks stay in one file on the local PC, every source is read-only, and only the app's own page may change a task.</li>
+            <li>Nothing is ever deleted, and a task file the app can't read is never overwritten.</li>
+            <li>18 written decisions, and a full QA pass whose every finding was fixed with a test that failed first: 154 tests in all.</li>
+          </ul>
+          <a class="btn primary" href="https://github.com/rorymcclelland/task-manager" target="_blank" rel="noopener">View the code on GitHub ↗</a><span class="meta">TypeScript · Node.js</span>
         </div>
       </article>
     </div>
