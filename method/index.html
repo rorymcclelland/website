@@ -24,6 +24,7 @@
 <meta name="twitter:image" content="https://mcclelland.info/headshot.jpg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
 <link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/method.css">
 <link rel="stylesheet" href="../assets/build.css">
 <script>(function(){try{var t=localStorage.getItem('rm-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
@@ -54,263 +55,347 @@
     <p class="lede">Most organisations arrive at AI in much the same way. A few people start using an assistant on their own initiative, one or two get rather good at it, and licences are bought more widely. A dashboard shows adoption climbing, and everyone takes some comfort from that. Eighteen months later, the company works exactly as it always did, because the work itself never changed, only the tool people used to do it. What follows is a method for changing the work.</p>
     <p class="method-premise">Adopting AI tools changes what people use. Redesigning the work around AI changes what a company can do, and that is the part that shows up in the numbers.</p>
 
-    <div class="loop-label">See it through an industry lens: this changes the examples below</div>
-    <div class="industry-bar" role="group" aria-label="Choose an industry">
-      <button type="button" class="ipill active" data-industry="fs">Financial services</button>
-      <button type="button" class="ipill" data-industry="prof">Professional services</button>
-      <button type="button" class="ipill" data-industry="travel">Travel &amp; hospitality</button>
-      <button type="button" class="ipill" data-industry="retail">Retail &amp; leisure</button>
-    </div>
-
-    <div class="loop-label">The engine: five stages, four decision gates. Keep scrolling; the page pins and moves sideways with you.</div>
+    <ol class="m-toc" aria-label="On this page">
+      <li><a href="#engine">The engine</a></li>
+      <li><a href="#practice">The practice</a></li>
+      <li><a href="#autonomy">Earning autonomy</a></li>
+      <li><a href="#deployment-exposure">Deployment and exposure</a></li>
+      <li><a href="#rule-of-two">The Rule of Two</a></li>
+      <li><a href="#principles">Principles</a></li>
+      <li><a href="#build">The build</a></li>
+    </ol>
   </div>
 
-  <div class="hscroll-wrap" id="hscrollWrap">
-      <div class="hscroll-pin">
-        <div class="hstage-tracker">
-          <div class="hstage-row">
-            <div class="hstage-line"></div>
-            <div class="hstage-line-fill" id="hstageFill"></div>
-            <button type="button" class="hstage-node active" data-stage="map"><span class="hstage-dot">1</span><span class="hstage-label">Map</span></button>
-            <button type="button" class="hstage-node" data-stage="rank"><span class="hstage-dot">2</span><span class="hstage-label">Rank</span></button>
-            <button type="button" class="hstage-node" data-stage="prove"><span class="hstage-dot">3</span><span class="hstage-label">Prove</span></button>
-            <button type="button" class="hstage-node" data-stage="operationalise"><span class="hstage-dot">4</span><span class="hstage-label">Operationalise</span></button>
-            <button type="button" class="hstage-node" data-stage="scale"><span class="hstage-dot">5</span><span class="hstage-label">Scale</span></button>
-          </div>
-        </div>
-        <div class="hscroll-hint">Scroll ↓</div>
-        <div class="hscroll-track" id="hscrollTrack">
-          <div class="hslide" data-stage="map"><div class="hslide-inner">
-            <div class="hs-num">01</div><h4 class="hs-name">Map</h4>
-            <div class="hs-q">Where could this help, and what's it worth?</div>
-            <div class="hs-diagram" data-stage="map"></div>
-            <div class="hs-meta"><div><b>Produces</b><p>A longlist of candidate workflows, each with a baseline and a rough value.</p></div><div><b>Gate</b><p>Is there anything here worth a pilot?</p></div></div>
-            <div class="hs-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="map"></p></div>
-          </div></div>
-          <div class="hslide" data-stage="rank"><div class="hslide-inner">
-            <div class="hs-num">02</div><h4 class="hs-name">Rank</h4>
-            <div class="hs-q">What do we do first, and why that?</div>
-            <div class="hs-diagram" data-stage="rank"></div>
-            <div class="hs-meta"><div><b>Produces</b><p>A scored shortlist, one chosen workflow, a locked baseline.</p></div><div><b>Gate</b><p>Do we fund the pilot?</p></div></div>
-            <div class="hs-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="rank"></p></div>
-          </div></div>
-          <div class="hslide" data-stage="prove"><div class="hslide-inner">
-            <div class="hs-num">03</div><h4 class="hs-name">Prove</h4>
-            <div class="hs-q">Does it work on our data, in our environment?</div>
-            <div class="hs-diagram" data-stage="prove"></div>
-            <div class="hs-meta"><div><b>Produces</b><p>A working system on a contained slice, measured against the baseline, plus a named reusable core.</p></div><div><b>Gate</b><p>Go / no-go to production.</p></div></div>
-            <div class="hs-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="prove"></p></div>
-          </div></div>
-          <div class="hslide" data-stage="operationalise"><div class="hslide-inner">
-            <div class="hs-num">04</div><h4 class="hs-name">Operationalise</h4>
-            <div class="hs-q">Can it run in production, safely, without us watching?</div>
-            <div class="hs-diagram" data-stage="operationalise"></div>
-            <div class="hs-meta"><div><b>Produces</b><p>A production workflow with an owner, authority, evaluation, monitoring and an off switch.</p></div><div><b>Gate</b><p>Do we extend to the next domain?</p></div></div>
-            <div class="hs-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="operationalise"></p></div>
-          </div></div>
-          <div class="hslide" data-stage="scale"><div class="hslide-inner">
-            <div class="hs-num">05</div><h4 class="hs-name">Scale</h4>
-            <div class="hs-q">How does the next one get cheaper?</div>
-            <div class="hs-diagram" data-stage="scale"></div>
-            <div class="hs-meta"><div><b>Produces</b><p>A reused foundation, a growing component library, internal teams building on it.</p></div><div><b>Gate</b><p>Ongoing, reviewed on value delivered, never on time elapsed.</p></div></div>
-            <div class="hs-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="scale"></p></div>
-          </div></div>
-        </div>
+  <div class="m-lens" id="industryLens">
+    <div class="m-lens-inner">
+      <span class="m-lens-label">Examples shown for</span>
+      <div class="industry-bar" role="group" aria-label="Choose an industry for the examples">
+        <button type="button" class="ipill active" data-industry="fs" aria-pressed="true"><span class="long">Financial services</span><span class="short">Finance</span></button>
+        <button type="button" class="ipill" data-industry="prof" aria-pressed="false"><span class="long">Professional services</span><span class="short">Prof.</span></button>
+        <button type="button" class="ipill" data-industry="travel" aria-pressed="false"><span class="long">Travel &amp; hospitality</span><span class="short">Travel</span></button>
+        <button type="button" class="ipill" data-industry="retail" aria-pressed="false"><span class="long">Retail &amp; leisure</span><span class="short">Retail</span></button>
       </div>
     </div>
+  </div>
 
   <div class="wrap">
-    <div class="loop-label">The practice: while the engine rebuilds workflows, this changes how people work day to day</div>
-    <div class="rungs">
-      <div class="rung">
-        <div class="r">L1 · Assisted</div>
-        <h4>The starting line</h4>
-        <p>Here, the AI produces a first draft and the person edits it, so it becomes less a blank page and more a thinking partner to argue with. Everyone in the organisation should reach a confident L1 fairly quickly.</p>
-      </div>
-      <div class="rung">
-        <div class="r">L2 · Delegated</div>
-        <h4>Where most people should live</h4>
-        <p>Whole tasks are handed over and reviewed afterwards, from within a saved workspace that already has the right context loaded into it. It's here that most of the model's mistakes tend to get caught.</p>
-      </div>
-      <div class="rung">
-        <div class="r">L3 · Orchestrated</div>
-        <h4>Power users, function champions</h4>
-        <p>At this level, people design multi-step workflows that run with proper checkpoints built in, build reusable components that others go on to use, and mentor those still working their way up from L1.</p>
-      </div>
-    </div>
 
-    <div class="loop-label">How autonomy is earned: four stages every workflow passes through before it acts unattended. Keep scrolling; this panel pins and moves with you too.</div>
-  </div>
+    <div class="m-part" id="engine">
+      <div class="m-part-head">
+        <span class="m-part-num">01</span>
+        <h2>The engine: five stages, four decision gates</h2>
+        <p>Each stage answers one question and produces something a leadership team can decide on. Nothing moves forward without passing its gate, so the programme can stop cheaply at any point. Switch industry above to see how each stage tends to play out.</p>
+      </div>
 
-  <div class="hscroll-wrap" id="autoScrollWrap">
-        <div class="hscroll-pin">
-          <div class="auto-tracker">
-            <div class="auto-row" role="group" aria-label="Autonomy stages">
-              <div class="auto-line"></div>
-              <div class="auto-line-fill" id="autoLineFill"></div>
-              <button type="button" class="auto-node active" data-autonomy="0"><span class="auto-dot">1</span><span class="auto-label">Shadow<span class="sub">Watch</span></span></button>
-              <button type="button" class="auto-node" data-autonomy="1"><span class="auto-dot">2</span><span class="auto-label">Assisted<span class="sub">Recommend</span></span></button>
-              <button type="button" class="auto-node" data-autonomy="2"><span class="auto-dot">3</span><span class="auto-label">Delegated<span class="sub">Act, bounded</span></span></button>
-              <button type="button" class="auto-node" data-autonomy="3"><span class="auto-dot">4</span><span class="auto-label">Extended<span class="sub">Widen on evidence</span></span></button>
+      <div class="m-stages">
+        <article class="m-stage reveal">
+          <span class="m-dot">01</span>
+          <div>
+            <h3>Map</h3>
+            <p class="m-q">Where could this help, and what's it worth?</p>
+            <dl class="m-meta">
+              <div><dt>Produces</dt><dd>A longlist of candidate workflows, each with a baseline and a rough value.</dd></div>
+              <div class="gate"><dt>Gate</dt><dd>Is there anything here worth a pilot?</dd></div>
+            </dl>
+          </div>
+          <div class="m-body">
+            <div class="m-fig">
+              <p class="m-fig-cap"><span>Five lenses for finding the work</span><span>Lit up for <span class="ind-label">financial services</span></span></p>
+              <div class="lenses-grid">
+                <div class="lens" data-ind="prof"><b>Coordination tax</b>Where time goes to work about work, not the work.</div>
+                <div class="lens" data-ind=""><b>Context assembly tax</b>What has to be gathered before real work can start.</div>
+                <div class="lens" data-ind="fs"><b>Judgement bottleneck</b>Whose desk everything unusual lands on.</div>
+                <div class="lens" data-ind="fs travel"><b>The queue</b>Processes with a lead time the business complains about.</div>
+                <div class="lens" data-ind="retail"><b>The thing we can't do at all</b>What's never attempted because it would take too many people.</div>
+              </div>
             </div>
+            <div class="m-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="map"></p></div>
           </div>
-          <div class="hscroll-hint">Scroll ↓</div>
-          <div class="hscroll-track" id="autoScrollTrack">
-            <div class="hslide" data-autonomy="0"><div class="hslide-inner">
-              <div class="hs-num">01</div><h4 class="hs-name">Shadow</h4>
-              <div class="hs-q">Watch</div>
-              <p class="hs-body">At this stage, the system runs in the background on live data, but nobody acts on what it produces yet. Its job is to show that it behaves as people would have. It moves on once its agreement with human judgement has settled, and any disagreements have been understood, not just explained away.</p>
-              <div class="meters">
-                <div class="meter-row"><span class="ml">Capability unlocked</span><div class="meter"><div class="meter-fill cap" style="width:20%"></div></div></div>
-                <div class="meter-row"><span class="ml">Risk if unmanaged</span><div class="meter"><div class="meter-fill risk" style="width:5%"></div></div></div>
-              </div>
-            </div></div>
-            <div class="hslide" data-autonomy="1"><div class="hslide-inner">
-              <div class="hs-num">02</div><h4 class="hs-name">Assisted</h4>
-              <div class="hs-q">Recommend</div>
-              <p class="hs-body">A recommendation is now produced, with the evidence behind it, but a person still makes the decision. It moves on once people rarely need to correct it, that rate is still falling and, just as importantly, the people using it every day trust it.</p>
-              <div class="meters">
-                <div class="meter-row"><span class="ml">Capability unlocked</span><div class="meter"><div class="meter-fill cap" style="width:45%"></div></div></div>
-                <div class="meter-row"><span class="ml">Risk if unmanaged</span><div class="meter"><div class="meter-fill risk" style="width:30%"></div></div></div>
-              </div>
-            </div></div>
-            <div class="hslide" data-autonomy="2"><div class="hslide-inner">
-              <div class="hs-num">03</div><h4 class="hs-name">Delegated, within bounds</h4>
-              <div class="hs-q">Act, bounded</div>
-              <p class="hs-body">The system now acts on its own, but only within defined limits: value limits, particular case types, and confidence thresholds below which it will not proceed. Anything outside those limits goes to a person instead of being guessed at. It passes this stage once exception handling is proven and the escalation route has held up under real load, not only in a test environment.</p>
-              <div class="meters">
-                <div class="meter-row"><span class="ml">Capability unlocked</span><div class="meter"><div class="meter-fill cap" style="width:75%"></div></div></div>
-                <div class="meter-row"><span class="ml">Risk if unmanaged</span><div class="meter"><div class="meter-fill risk" style="width:65%"></div></div></div>
-              </div>
-            </div></div>
-            <div class="hslide" data-autonomy="3"><div class="hslide-inner">
-              <div class="hs-num">04</div><h4 class="hs-name">Extended authority</h4>
-              <div class="hs-q">Widen on evidence</div>
-              <p class="hs-body">From here, the limits are widened gradually, as evidence builds that it is safe to do so. They are reviewed against measured performance throughout, never simply because time has passed since the last review.</p>
-              <div class="meters">
-                <div class="meter-row"><span class="ml">Capability unlocked</span><div class="meter"><div class="meter-fill cap" style="width:100%"></div></div></div>
-                <div class="meter-row"><span class="ml">Risk if unmanaged</span><div class="meter"><div class="meter-fill risk" style="width:100%"></div></div></div>
-              </div>
-            </div></div>
+        </article>
+
+        <article class="m-stage reveal">
+          <span class="m-dot">02</span>
+          <div>
+            <h3>Rank</h3>
+            <p class="m-q">What do we do first, and why that?</p>
+            <dl class="m-meta">
+              <div><dt>Produces</dt><dd>A scored shortlist, one chosen workflow, a locked baseline.</dd></div>
+              <div class="gate"><dt>Gate</dt><dd>Do we fund the pilot?</dd></div>
+            </dl>
           </div>
+          <div class="m-body">
+            <div class="m-fig">
+              <p class="m-fig-cap"><span>Weighted scorecard, illustrative scores</span><span class="ind-label">financial services</span></p>
+              <div class="m-rank" id="rankFig"></div>
+            </div>
+            <div class="m-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="rank"></p></div>
+          </div>
+        </article>
+
+        <article class="m-stage reveal">
+          <span class="m-dot">03</span>
+          <div>
+            <h3>Prove</h3>
+            <p class="m-q">Does it work on our data, in our environment?</p>
+            <dl class="m-meta">
+              <div><dt>Produces</dt><dd>A working system on a contained slice, measured against the baseline, plus a named reusable core.</dd></div>
+              <div class="gate"><dt>Gate</dt><dd>Go or no-go to production.</dd></div>
+            </dl>
+          </div>
+          <div class="m-body">
+            <div class="m-fig">
+              <p class="m-fig-cap"><span>A typical four-week pilot: two streams side by side</span></p>
+              <div class="tmini-row-label">Discovery &amp; validation</div>
+              <div class="timeline-mini">
+                <div class="tmini-cell"><span class="tw">Week 1</span>Scope, baseline, define the split between person and system.</div>
+                <div class="tmini-cell"><span class="tw">Week 2</span>Expert review of v1 against held-out examples.</div>
+                <div class="tmini-cell"><span class="tw">Week 3</span>Validate v2 against held-out data; exceptions aggregated.</div>
+                <div class="tmini-cell"><span class="tw">Week 4</span>Final validation; analysis and a scaling read.</div>
+              </div>
+              <div class="tmini-row-label second">Build</div>
+              <div class="timeline-mini">
+                <div class="tmini-cell"><span class="tw">Week 1</span>Environment set up; baseline and test cases established.</div>
+                <div class="tmini-cell"><span class="tw">Week 2</span>Build v1, then fold feedback into v1.1.</div>
+                <div class="tmini-cell"><span class="tw">Week 3</span>Iteration sprint: logic, triage, decision trace.</div>
+                <div class="tmini-cell"><span class="tw">Week 4</span>Harden the prototype for a board-ready demo.</div>
+              </div>
+            </div>
+            <div class="m-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="prove"></p></div>
+          </div>
+        </article>
+
+        <article class="m-stage reveal">
+          <span class="m-dot">04</span>
+          <div>
+            <h3>Operationalise</h3>
+            <p class="m-q">Can it run in production, safely, without us watching?</p>
+            <dl class="m-meta">
+              <div><dt>Produces</dt><dd>A production workflow with an owner, authority, evaluation, monitoring and an off switch.</dd></div>
+              <div class="gate"><dt>Gate</dt><dd>Do we extend to the next domain?</dd></div>
+            </dl>
+          </div>
+          <div class="m-body">
+            <div class="m-fig">
+              <p class="m-fig-cap"><span>Readiness checklist</span><span>Where <span class="ind-label">financial services</span> tends to focus</span></p>
+              <div class="ops-check">
+                <div class="opsgroup"><b>Identity &amp; authority</b><ul><li data-ind="">Named human owner, explicit authority level</li><li data-ind="prof">Least-privilege access, its own identity</li><li data-ind="travel retail">A tested way to suspend, revoke and roll back</li></ul></div>
+                <div class="opsgroup"><b>Evaluation &amp; observability</b><ul><li data-ind="fs">An evaluation set that gates every change</li><li data-ind="prof">Full traces of every run, retained</li><li data-ind="fs prof">Live metrics and regression alerting</li></ul></div>
+                <div class="opsgroup"><b>Operational ownership</b><ul><li data-ind="travel retail">A named owning function, not the build team</li><li data-ind="travel">A documented exception process, owned by a person</li><li data-ind="">A deliberate retirement path</li></ul></div>
+              </div>
+            </div>
+            <div class="m-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="operationalise"></p></div>
+          </div>
+        </article>
+
+        <article class="m-stage reveal">
+          <span class="m-dot">05</span>
+          <div>
+            <h3>Scale</h3>
+            <p class="m-q">How does the next one get cheaper?</p>
+            <dl class="m-meta">
+              <div><dt>Produces</dt><dd>A reused foundation, a growing component library, internal teams building on it.</dd></div>
+              <div class="gate"><dt>Gate</dt><dd>Ongoing, reviewed on value delivered, never on time elapsed.</dd></div>
+            </dl>
+          </div>
+          <div class="m-body">
+            <div class="m-fig">
+              <p class="m-fig-cap"><span>Relative build cost of each new workflow</span><span class="ind-label">financial services</span></p>
+              <div class="reuse-bars">
+                <div class="rbar-track"><div class="rbar" style="height:100%"></div></div>
+                <div class="rbar-track"><div class="rbar" style="height:55%"></div></div>
+                <div class="rbar-track"><div class="rbar" style="height:32%"></div></div>
+                <div class="rbar-track"><div class="rbar" style="height:18%"></div></div>
+                <span class="wf" data-i="0"></span><span class="wf" data-i="1"></span><span class="wf" data-i="2"></span><span class="wf" data-i="3"></span>
+                <span class="sub">Full foundation</span><span class="sub">Reuses most of it</span><span class="sub">Mostly domain logic</span><span class="sub">Your own team builds it</span>
+              </div>
+            </div>
+            <div class="m-example"><b>In practice: <span class="ind-label">financial services</span></b><p class="ind-text" data-stage="scale"></p></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="m-part" id="practice">
+      <div class="m-part-head">
+        <span class="m-part-num">02</span>
+        <h2>The practice: how people work day to day</h2>
+        <p>While the engine rebuilds workflows, people's own use of AI has to grow alongside it. Three levels describe that, and most of an organisation should end up at the second.</p>
+      </div>
+      <div class="rungs reveal">
+        <div class="rung">
+          <div class="r">L1 · Assisted</div>
+          <h4>The starting line</h4>
+          <p>Here, the AI produces a first draft and the person edits it, so it becomes less a blank page and more a thinking partner to argue with. Everyone in the organisation should reach a confident L1 fairly quickly.</p>
         </div>
-      </div>
-
-  <div class="wrap">
-    <div class="engine-hint">One finding is worth pausing on: capability and risk rise together, on the same dial. The job is therefore to turn that dial deliberately, one step at a time, on the strength of the evidence, instead of trying to reduce the risk to zero.</div>
-
-    <div class="loop-label" id="deployment-exposure">Where deployment and exposure meet</div>
-    <p class="lede" style="margin-bottom:1rem;">Two quite different questions tend to get asked together, and answered as if they were the same. <b>Where does it run</b> decides who can see the data, and what it all costs. <b>What may it touch</b> decides what the system is allowed near in the first place. Once the two are separated and set against each other, the right deployment option for a piece of work tends to become clear, and it is rarely the same answer twice. Click a cell to see why.</p>
-    <div class="matrix-scroll">
-      <table class="matrix" id="deployMatrix">
-        <thead>
-          <tr><th></th><th>In-suite AI</th><th>Enterprise assistant</th><th>Own agents, vendor API</th><th>Own agents, own tenant</th><th>Open-weight, self-hosted</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Public / low-sensitivity</th>
-            <td class="cell v-green" data-row="Public / low-sensitivity" data-col="In-suite AI" data-verdict="Proceed" data-note="No sensitivity to manage: any option works, including the cheapest.">Proceed</td>
-            <td class="cell v-green" data-row="Public / low-sensitivity" data-col="Enterprise assistant" data-verdict="Proceed" data-note="Fine for public material: enterprise features aren't the point here.">Proceed</td>
-            <td class="cell v-green" data-row="Public / low-sensitivity" data-col="Own agents, vendor API" data-verdict="Proceed" data-note="Works, though this class rarely needs an owned agent layer at all.">Proceed</td>
-            <td class="cell v-green" data-row="Public / low-sensitivity" data-col="Own agents, own tenant" data-verdict="Proceed" data-note="Works, but this is more control than public material needs.">Proceed</td>
-            <td class="cell v-green" data-row="Public / low-sensitivity" data-col="Open-weight, self-hosted" data-verdict="Proceed" data-note="Technically fine: the self-hosting build cost buys nothing extra for this class.">Proceed</td>
-          </tr>
-          <tr>
-            <th>General internal</th>
-            <td class="cell v-green" data-row="General internal" data-col="In-suite AI" data-verdict="Proceed" data-note="The default for everyday internal work, once oversharing and stale access are cleaned up.">Proceed</td>
-            <td class="cell v-green" data-row="General internal" data-col="Enterprise assistant" data-verdict="Proceed" data-note="A sound default for general internal work handled outside the core suite.">Proceed</td>
-            <td class="cell v-green" data-row="General internal" data-col="Own agents, vendor API" data-verdict="Proceed" data-note="Reasonable once a workflow needs its own agents rather than a general assistant.">Proceed</td>
-            <td class="cell v-green" data-row="General internal" data-col="Own agents, own tenant" data-verdict="Proceed" data-note="Works, but usually more infrastructure than general internal work justifies.">Proceed</td>
-            <td class="cell v-amber" data-row="General internal" data-col="Open-weight, self-hosted" data-verdict="Conditional" data-note="Technically fine, rarely worth the build and running cost for work this ordinary.">Conditional</td>
-          </tr>
-          <tr>
-            <th>Confidential business</th>
-            <td class="cell v-amber" data-row="Confidential business" data-col="In-suite AI" data-verdict="Conditional" data-note="Only if the contract you already have with this vendor explicitly covers confidential material.">Conditional</td>
-            <td class="cell v-amber" data-row="Confidential business" data-col="Enterprise assistant" data-verdict="Conditional" data-note="Only with enterprise-grade retention and no-training terms switched on.">Conditional</td>
-            <td class="cell v-green" data-row="Confidential business" data-col="Own agents, vendor API" data-verdict="Proceed" data-note="The usual fit: your own agents, through a gateway you control, with logging.">Proceed</td>
-            <td class="cell v-green" data-row="Confidential business" data-col="Own agents, own tenant" data-verdict="Proceed" data-note="Also a good fit, with the added assurance of your own tenant.">Proceed</td>
-            <td class="cell v-grey" data-row="Confidential business" data-col="Open-weight, self-hosted" data-verdict="Avoid" data-note="Disproportionate: the cost and complexity of self-hosting, for a class a gateway already handles.">Avoid</td>
-          </tr>
-          <tr>
-            <th>Employee personal data</th>
-            <td class="cell v-grey" data-row="Employee personal data" data-col="In-suite AI" data-verdict="Avoid" data-note="Avoid by default: general in-suite AI wasn't built with this class in mind.">Avoid</td>
-            <td class="cell v-amber" data-row="Employee personal data" data-col="Enterprise assistant" data-verdict="Conditional" data-note="Possible, subject to legal counsel's view on where this data may be processed.">Conditional</td>
-            <td class="cell v-amber" data-row="Employee personal data" data-col="Own agents, vendor API" data-verdict="Conditional" data-note="Possible, subject to the same question: where the data is actually allowed to go.">Conditional</td>
-            <td class="cell v-green" data-row="Employee personal data" data-col="Own agents, own tenant" data-verdict="Proceed" data-note="The usual default for this class: data stays inside a tenant you control, in the region you need.">Proceed</td>
-            <td class="cell v-grey" data-row="Employee personal data" data-col="Open-weight, self-hosted" data-verdict="Avoid" data-note="Not recommended for this class: the build doesn't buy proportionate protection.">Avoid</td>
-          </tr>
-          <tr>
-            <th>Customer personal data</th>
-            <td class="cell v-grey" data-row="Customer personal data" data-col="In-suite AI" data-verdict="Avoid" data-note="Avoid: this class belongs to a different decision entirely.">Avoid</td>
-            <td class="cell v-grey" data-row="Customer personal data" data-col="Enterprise assistant" data-verdict="Avoid" data-note="Avoid for the internal operating-model programme: this is product-programme territory.">Avoid</td>
-            <td class="cell v-grey" data-row="Customer personal data" data-col="Own agents, vendor API" data-verdict="Avoid" data-note="Avoid here: this class is usually decided inside the customer-facing product programme.">Avoid</td>
-            <td class="cell v-amber" data-row="Customer personal data" data-col="Own agents, own tenant" data-verdict="Conditional" data-note="Possible, but this belongs to the customer-facing product programme, not the internal one: a separate decision, with its own owner.">Conditional</td>
-            <td class="cell v-grey" data-row="Customer personal data" data-col="Open-weight, self-hosted" data-verdict="Avoid" data-note="Not recommended, and in any case a decision for the product programme, not this one.">Avoid</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="matrix-legend">
-      <span><span class="legend-dot" style="background:var(--accent-soft);border:1px solid var(--accent);"></span>Proceed</span>
-      <span><span class="legend-dot" style="background:color-mix(in srgb, var(--warn) 30%, transparent);border:1px solid var(--warn);"></span>Conditional: check terms, counsel or scope first</span>
-      <span><span class="legend-dot" style="background:color-mix(in srgb, var(--graphite) 25%, transparent);border:1px solid var(--graphite);"></span>Avoid, or belongs to a different decision</span>
-    </div>
-    <div class="matrix-detail" id="matrixDetail">Click a cell above to see the guidance behind it.</div>
-    <p class="matrix-note">Moving right along this table only changes who can see the data and what it all costs. It changes nothing about who could steer the model through something it reads, what it is allowed to do, or who is accountable when it gets something wrong. Those are decisions about architecture and management, not hosting, and they are what the next diagram is about.</p>
-
-    <div class="loop-label" id="rule-of-two">Is this safe to run unattended? Try classifying one.</div>
-    <div class="r2-wrap">
-      <svg viewBox="0 0 340 285" aria-hidden="true" style="width:100%;max-width:340px;">
-        <circle id="r2c-data" class="r2-circ" cx="140" cy="110" r="95" fill="var(--accent)" fill-opacity="0.16" stroke="var(--accent)" stroke-width="1.5"/>
-        <circle id="r2c-content" class="r2-circ" cx="205" cy="110" r="95" fill="var(--warn)" fill-opacity="0.16" stroke="var(--warn)" stroke-width="1.5"/>
-        <circle id="r2c-act" class="r2-circ" cx="172" cy="175" r="95" fill="var(--ink)" fill-opacity="0.10" stroke="var(--ink-soft)" stroke-width="1.5"/>
-        <text id="r2t-data" class="r2-lbl" x="72" y="70" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Private data</text>
-        <text id="r2t-content" class="r2-lbl" x="228" y="70" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Untrusted content</text>
-        <text id="r2t-act" class="r2-lbl" x="128" y="240" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Ability to act</text>
-        <text x="172" y="150" font-family="Bricolage Grotesque" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">only with</text>
-        <text x="172" y="163" font-family="Bricolage Grotesque" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">containment</text>
-      </svg>
-      <div class="r2-text">
-        <p>It is worth being clear about one thing: a language model cannot reliably tell a real instruction from its user apart from one hidden in something it is reading, such as a stray line of text on a web page or an email dressed up as something else. The major AI labs say so themselves, and none of them describe it as solved. Where the model runs changes who can see the data and what it all costs. It changes nothing about this risk.</p>
-        <p>What works is containment, sometimes called the <b>Rule of Two</b>. An AI session can reasonably run unattended if it has no more than two of three properties: access to private data, exposure to content it did not write, and the ability to act or communicate with the outside world. Give it all three at once, unsupervised, and you have built exactly the thing a security team loses sleep over.</p>
-      </div>
-    </div>
-    <div class="riskcalc">
-      <div class="riskcalc-toggles">
-        <label class="rtoggle"><input type="checkbox" id="rk-data"><span class="rswitch"></span><span class="rlabel">Has access to private data</span></label>
-        <label class="rtoggle"><input type="checkbox" id="rk-content"><span class="rswitch"></span><span class="rlabel">Reads content it didn't write</span></label>
-        <label class="rtoggle"><input type="checkbox" id="rk-act"><span class="rswitch"></span><span class="rlabel">Can act, or talk to the outside world</span></label>
-      </div>
-      <div class="risk-result">
-        <span class="risk-verdict ok" id="riskVerdictBadge">Low exposure</span>
-        <p class="risk-guide" id="riskGuide">No meaningful exposure from this combination, so not the interesting case. Tick a box above.</p>
-        <div class="risk-example" id="riskExampleBox" hidden>
-          <b>In practice: <span id="riskExampleIndustry">financial services</span></b>
-          <p id="riskExampleText"></p>
+        <div class="rung">
+          <div class="r">L2 · Delegated</div>
+          <h4>Where most people should live</h4>
+          <p>Whole tasks are handed over and reviewed afterwards, from within a saved workspace that already has the right context loaded into it. It's here that most of the model's mistakes tend to get caught.</p>
+        </div>
+        <div class="rung">
+          <div class="r">L3 · Orchestrated</div>
+          <h4>Power users, function champions</h4>
+          <p>At this level, people design multi-step workflows that run with proper checkpoints built in, build reusable components that others go on to use, and mentor those still working their way up from L1.</p>
         </div>
       </div>
     </div>
 
-    <p class="ix-follow"><a href="../safety/">Why this matters: the safety and governance techniques behind the method →</a></p>
-
-    <div class="loop-label">Three architectural commitments</div>
-    <div class="commitments">
-      <div class="commit"><span class="cn">01</span><p><b>A deterministic core, with models kept to the edges.</b> Language models are used to interpret, draft and triage. Calculations, transactions and records of decisions are kept in deterministic code, which behaves the same way every time and so can be replayed and audited. That is what makes a system built partly on unpredictable AI explainable to a risk function, when the question is asked (and it always is).</p></div>
-      <div class="commit"><span class="cn">02</span><p><b>Decisions become precedent.</b> Every approved judgement is saved as a reusable precedent, so the system becomes more capable through use, as well as through further development.</p></div>
-      <div class="commit"><span class="cn">03</span><p><b>No vendor becomes the system of record.</b> Context, skills, evaluation sets and traces are all kept in formats the organisation owns. The choice of model therefore stays a decision that can be revisited for each workflow, on the evidence, instead of being locked in from the start.</p></div>
+    <div class="m-part" id="autonomy">
+      <div class="m-part-head">
+        <span class="m-part-num">03</span>
+        <h2>Earning autonomy: four stages before it acts unattended</h2>
+        <p>Every workflow passes through the same four stages. Capability and risk rise together, on the same dial, so the job is to turn that dial deliberately, one step at a time, on the strength of the evidence, instead of trying to reduce the risk to zero.</p>
+      </div>
+      <div class="m-auto-chart reveal">
+        <svg viewBox="0 0 640 170" role="img" aria-label="Capability unlocked and risk if unmanaged both rise across the four stages, from Shadow to Extended authority">
+          <g stroke="var(--line)" stroke-width="1"><line x1="40" y1="20" x2="620" y2="20"/><line x1="40" y1="70" x2="620" y2="70"/><line x1="40" y1="120" x2="620" y2="120"/><line x1="40" y1="145" x2="620" y2="145"/></g>
+          <polyline fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" points="112,120 257,88 402,51 547,20"/>
+          <polyline fill="none" stroke="var(--warn)" stroke-width="3" stroke-dasharray="7 5" stroke-linejoin="round" points="112,139 257,107 402,62 547,20"/>
+          <g fill="var(--accent)"><circle cx="112" cy="120" r="4.5"/><circle cx="257" cy="88" r="4.5"/><circle cx="402" cy="51" r="4.5"/><circle cx="547" cy="20" r="4.5"/></g>
+          <g fill="var(--warn)"><circle cx="112" cy="139" r="4.5"/><circle cx="257" cy="107" r="4.5"/><circle cx="402" cy="62" r="4.5"/></g>
+          <g font-family="Bricolage Grotesque" font-size="12" fill="var(--graphite)" text-anchor="middle"><text x="112" y="165">Shadow</text><text x="257" y="165">Assisted</text><text x="402" y="165">Delegated</text><text x="547" y="165">Extended</text></g>
+          <text x="40" y="14" font-family="Bricolage Grotesque" font-size="11" fill="var(--graphite)">Higher</text>
+        </svg>
+        <div class="m-auto-key"><span><i style="background:var(--accent)"></i>Capability unlocked</span><span><i style="background:var(--warn)"></i>Risk if unmanaged</span></div>
+      </div>
+      <div class="m-auto reveal">
+        <div><span class="k">1 · Watch</span><h4>Shadow</h4><p>The system runs in the background on live data, but nobody acts on what it produces yet. Its job is to show that it behaves as people would have.</p><span class="exit"><b>Moves on when</b> its agreement with human judgement has settled, and any disagreements have been understood, not just explained away.</span></div>
+        <div><span class="k">2 · Recommend</span><h4>Assisted</h4><p>A recommendation is now produced, with the evidence behind it, but a person still makes the decision.</p><span class="exit"><b>Moves on when</b> people rarely need to correct it, that rate is still falling and, just as importantly, the people using it every day trust it.</span></div>
+        <div><span class="k">3 · Act, bounded</span><h4>Delegated, within bounds</h4><p>The system acts on its own, but only within defined limits: value limits, particular case types, and confidence thresholds below which it will not proceed. Anything outside goes to a person instead of being guessed at.</p><span class="exit"><b>Moves on when</b> exception handling is proven and the escalation route has held up under real load, not only in a test environment.</span></div>
+        <div><span class="k">4 · Widen on evidence</span><h4>Extended authority</h4><p>From here, the limits are widened gradually, as evidence builds that it is safe to do so.</p><span class="exit"><b>Kept honest by</b> reviews against measured performance throughout, never simply because time has passed since the last one.</span></div>
+      </div>
     </div>
 
-    <div class="loop-label">Four of the beliefs underneath it</div>
-    <div class="beliefs">
-      <div class="belief"><h5>Value over hype</h5><p>What matters is hours given back, lead times cut and error rates reduced. Seats issued and prompts run measure activity, not value. If the value cannot be named and shown against a proper baseline, the work has not been done yet.</p></div>
-      <div class="belief"><h5>Working software beats slideware</h5><p>A prototype that runs on the organisation's own data, built in weeks, tends to settle debates that a hundred slides never could, not least because it is put in front of the people who will have to live with the result.</p></div>
-      <div class="belief"><h5>Start small, earn the right to scale</h5><p>The destination is described; only the next step is committed to. Each phase is a real decision gate, and the first one is kept cheap enough that stopping there would cost almost nothing.</p></div>
-      <div class="belief"><h5>Augment judgement, don't replace it</h5><p>AI does the assembly work and the first pass; the decisions with real consequences are still made by people. For that reason, confidence thresholds and escalation routes are designed in from day one, instead of being added after something has gone wrong.</p></div>
+    <div class="m-part" id="deployment-exposure">
+      <div class="m-part-head">
+        <span class="m-part-num">04</span>
+        <h2>Where deployment and exposure meet</h2>
+        <p>Two quite different questions tend to get asked together, and answered as if they were the same. <b>Where does it run</b> decides who can see the data, and what it all costs. <b>What may it touch</b> decides what the system is allowed near in the first place. Set against each other, the right deployment option for a piece of work tends to become clear, and it is rarely the same answer twice. Click a cell to see why.</p>
+      </div>
+      <div class="matrix-scroll">
+        <table class="matrix" id="deployMatrix">
+          <thead>
+            <tr><th></th><th>In-suite AI</th><th>Enterprise assistant</th><th>Own agents, vendor API</th><th>Own agents, own tenant</th><th>Open-weight, self-hosted</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Public / low-sensitivity</th>
+              <td class="cell v-green" data-row="Public / low-sensitivity" data-col="In-suite AI" data-verdict="Proceed" data-note="No sensitivity to manage: any option works, including the cheapest.">Proceed</td>
+              <td class="cell v-green" data-row="Public / low-sensitivity" data-col="Enterprise assistant" data-verdict="Proceed" data-note="Fine for public material: enterprise features aren't the point here.">Proceed</td>
+              <td class="cell v-green" data-row="Public / low-sensitivity" data-col="Own agents, vendor API" data-verdict="Proceed" data-note="Works, though this class rarely needs an owned agent layer at all.">Proceed</td>
+              <td class="cell v-green" data-row="Public / low-sensitivity" data-col="Own agents, own tenant" data-verdict="Proceed" data-note="Works, but this is more control than public material needs.">Proceed</td>
+              <td class="cell v-green" data-row="Public / low-sensitivity" data-col="Open-weight, self-hosted" data-verdict="Proceed" data-note="Technically fine: the self-hosting build cost buys nothing extra for this class.">Proceed</td>
+            </tr>
+            <tr>
+              <th>General internal</th>
+              <td class="cell v-green" data-row="General internal" data-col="In-suite AI" data-verdict="Proceed" data-note="The default for everyday internal work, once oversharing and stale access are cleaned up.">Proceed</td>
+              <td class="cell v-green" data-row="General internal" data-col="Enterprise assistant" data-verdict="Proceed" data-note="A sound default for general internal work handled outside the core suite.">Proceed</td>
+              <td class="cell v-green" data-row="General internal" data-col="Own agents, vendor API" data-verdict="Proceed" data-note="Reasonable once a workflow needs its own agents rather than a general assistant.">Proceed</td>
+              <td class="cell v-green" data-row="General internal" data-col="Own agents, own tenant" data-verdict="Proceed" data-note="Works, but usually more infrastructure than general internal work justifies.">Proceed</td>
+              <td class="cell v-amber" data-row="General internal" data-col="Open-weight, self-hosted" data-verdict="Conditional" data-note="Technically fine, rarely worth the build and running cost for work this ordinary.">Conditional</td>
+            </tr>
+            <tr>
+              <th>Confidential business</th>
+              <td class="cell v-amber" data-row="Confidential business" data-col="In-suite AI" data-verdict="Conditional" data-note="Only if the contract you already have with this vendor explicitly covers confidential material.">Conditional</td>
+              <td class="cell v-amber" data-row="Confidential business" data-col="Enterprise assistant" data-verdict="Conditional" data-note="Only with enterprise-grade retention and no-training terms switched on.">Conditional</td>
+              <td class="cell v-green" data-row="Confidential business" data-col="Own agents, vendor API" data-verdict="Proceed" data-note="The usual fit: your own agents, through a gateway you control, with logging.">Proceed</td>
+              <td class="cell v-green" data-row="Confidential business" data-col="Own agents, own tenant" data-verdict="Proceed" data-note="Also a good fit, with the added assurance of your own tenant.">Proceed</td>
+              <td class="cell v-grey" data-row="Confidential business" data-col="Open-weight, self-hosted" data-verdict="Avoid" data-note="Disproportionate: the cost and complexity of self-hosting, for a class a gateway already handles.">Avoid</td>
+            </tr>
+            <tr>
+              <th>Employee personal data</th>
+              <td class="cell v-grey" data-row="Employee personal data" data-col="In-suite AI" data-verdict="Avoid" data-note="Avoid by default: general in-suite AI wasn't built with this class in mind.">Avoid</td>
+              <td class="cell v-amber" data-row="Employee personal data" data-col="Enterprise assistant" data-verdict="Conditional" data-note="Possible, subject to legal counsel's view on where this data may be processed.">Conditional</td>
+              <td class="cell v-amber" data-row="Employee personal data" data-col="Own agents, vendor API" data-verdict="Conditional" data-note="Possible, subject to the same question: where the data is actually allowed to go.">Conditional</td>
+              <td class="cell v-green" data-row="Employee personal data" data-col="Own agents, own tenant" data-verdict="Proceed" data-note="The usual default for this class: data stays inside a tenant you control, in the region you need.">Proceed</td>
+              <td class="cell v-grey" data-row="Employee personal data" data-col="Open-weight, self-hosted" data-verdict="Avoid" data-note="Not recommended for this class: the build doesn't buy proportionate protection.">Avoid</td>
+            </tr>
+            <tr>
+              <th>Customer personal data</th>
+              <td class="cell v-grey" data-row="Customer personal data" data-col="In-suite AI" data-verdict="Avoid" data-note="Avoid: this class belongs to a different decision entirely.">Avoid</td>
+              <td class="cell v-grey" data-row="Customer personal data" data-col="Enterprise assistant" data-verdict="Avoid" data-note="Avoid for the internal operating-model programme: this is product-programme territory.">Avoid</td>
+              <td class="cell v-grey" data-row="Customer personal data" data-col="Own agents, vendor API" data-verdict="Avoid" data-note="Avoid here: this class is usually decided inside the customer-facing product programme.">Avoid</td>
+              <td class="cell v-amber" data-row="Customer personal data" data-col="Own agents, own tenant" data-verdict="Conditional" data-note="Possible, but this belongs to the customer-facing product programme, not the internal one: a separate decision, with its own owner.">Conditional</td>
+              <td class="cell v-grey" data-row="Customer personal data" data-col="Open-weight, self-hosted" data-verdict="Avoid" data-note="Not recommended, and in any case a decision for the product programme, not this one.">Avoid</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="matrix-legend">
+        <span><span class="legend-dot" style="background:var(--accent-soft);border:1px solid var(--accent);"></span>Proceed</span>
+        <span><span class="legend-dot" style="background:color-mix(in srgb, var(--warn) 30%, transparent);border:1px solid var(--warn);"></span>Conditional: check terms, counsel or scope first</span>
+        <span><span class="legend-dot" style="background:color-mix(in srgb, var(--graphite) 25%, transparent);border:1px solid var(--graphite);"></span>Avoid, or belongs to a different decision</span>
+      </div>
+      <div class="matrix-detail" id="matrixDetail">Click a cell above to see the guidance behind it.</div>
+      <p class="matrix-note">Moving right along this table only changes who can see the data and what it all costs. It changes nothing about who could steer the model through something it reads, what it is allowed to do, or who is accountable when it gets something wrong. Those are decisions about architecture and management, not hosting, and they are what the next diagram is about.</p>
+
     </div>
 
-    <blockquote class="pull">"Where a model runs decides who can see the data and what it all costs. How the system is designed decides what can go wrong, and that is the part that gets my attention."<cite>The sentence I ask a board to remember</cite></blockquote>
+    <div class="m-part" id="rule-of-two">
+      <div class="m-part-head">
+        <span class="m-part-num">05</span>
+        <h2>The Rule of Two: is this safe to run unattended?</h2>
+        <p>Tick the properties a piece of work would have. The verdict, and an example from the industry chosen above, update as you go.</p>
+      </div>
+      <div class="r2-wrap">
+        <svg viewBox="0 0 340 285" aria-hidden="true" style="width:100%;max-width:340px;">
+          <circle id="r2c-data" class="r2-circ" cx="140" cy="110" r="95" fill="var(--accent)" fill-opacity="0.16" stroke="var(--accent)" stroke-width="1.5"/>
+          <circle id="r2c-content" class="r2-circ" cx="205" cy="110" r="95" fill="var(--warn)" fill-opacity="0.16" stroke="var(--warn)" stroke-width="1.5"/>
+          <circle id="r2c-act" class="r2-circ" cx="172" cy="175" r="95" fill="var(--ink)" fill-opacity="0.10" stroke="var(--ink-soft)" stroke-width="1.5"/>
+          <text id="r2t-data" class="r2-lbl" x="72" y="70" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Private data</text>
+          <text id="r2t-content" class="r2-lbl" x="228" y="70" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Untrusted content</text>
+          <text id="r2t-act" class="r2-lbl" x="128" y="240" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Ability to act</text>
+          <text x="172" y="150" font-family="Bricolage Grotesque" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">only with</text>
+          <text x="172" y="163" font-family="Bricolage Grotesque" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">containment</text>
+        </svg>
+        <div class="r2-text">
+          <p>It is worth being clear about one thing: a language model cannot reliably tell a real instruction from its user apart from one hidden in something it is reading, such as a stray line of text on a web page or an email dressed up as something else. The major AI labs say so themselves, and none of them describe it as solved. Where the model runs changes who can see the data and what it all costs. It changes nothing about this risk.</p>
+          <p>What works is containment, sometimes called the <b>Rule of Two</b>. An AI session can reasonably run unattended if it has no more than two of three properties: access to private data, exposure to content it did not write, and the ability to act or communicate with the outside world. Give it all three at once, unsupervised, and you have built exactly the thing a security team loses sleep over.</p>
+        </div>
+      </div>
+      <div class="riskcalc">
+        <div class="riskcalc-toggles">
+          <label class="rtoggle"><input type="checkbox" id="rk-data"><span class="rswitch"></span><span class="rlabel">Has access to private data</span></label>
+          <label class="rtoggle"><input type="checkbox" id="rk-content"><span class="rswitch"></span><span class="rlabel">Reads content it didn't write</span></label>
+          <label class="rtoggle"><input type="checkbox" id="rk-act"><span class="rswitch"></span><span class="rlabel">Can act, or talk to the outside world</span></label>
+        </div>
+        <div class="risk-result">
+          <span class="risk-verdict ok" id="riskVerdictBadge">Low exposure</span>
+          <p class="risk-guide" id="riskGuide">No meaningful exposure from this combination, so not the interesting case. Tick a box above.</p>
+          <div class="risk-example" id="riskExampleBox" hidden>
+            <b>In practice: <span id="riskExampleIndustry">financial services</span></b>
+            <p id="riskExampleText"></p>
+          </div>
+        </div>
+      </div>
 
-    <p class="ix-follow"><a href="#build">Next: how the build itself is run →</a></p>
+      <p class="ix-follow"><a href="../safety/">Why this matters: the safety and governance techniques behind the method →</a></p>
+    </div>
+
+    <div class="m-part" id="principles">
+      <div class="m-part-head">
+        <span class="m-part-num">06</span>
+        <h2>Principles: what holds it together</h2>
+        <p>Three architectural commitments, and four of the beliefs underneath them.</p>
+      </div>
+      <div class="commitments">
+        <div class="commit"><span class="cn">01</span><p><b>A deterministic core, with models kept to the edges.</b> Language models are used to interpret, draft and triage. Calculations, transactions and records of decisions are kept in deterministic code, which behaves the same way every time and so can be replayed and audited. That is what makes a system built partly on unpredictable AI explainable to a risk function, when the question is asked (and it always is).</p></div>
+        <div class="commit"><span class="cn">02</span><p><b>Decisions become precedent.</b> Every approved judgement is saved as a reusable precedent, so the system becomes more capable through use, as well as through further development.</p></div>
+        <div class="commit"><span class="cn">03</span><p><b>No vendor becomes the system of record.</b> Context, skills, evaluation sets and traces are all kept in formats the organisation owns. The choice of model therefore stays a decision that can be revisited for each workflow, on the evidence, instead of being locked in from the start.</p></div>
+      </div>
+
+      <div class="loop-label">Four of the beliefs underneath it</div>
+      <div class="beliefs">
+        <div class="belief"><h5>Value over hype</h5><p>What matters is hours given back, lead times cut and error rates reduced. Seats issued and prompts run measure activity, not value. If the value cannot be named and shown against a proper baseline, the work has not been done yet.</p></div>
+        <div class="belief"><h5>Working software beats slideware</h5><p>A prototype that runs on the organisation's own data, built in weeks, tends to settle debates that a hundred slides never could, not least because it is put in front of the people who will have to live with the result.</p></div>
+        <div class="belief"><h5>Start small, earn the right to scale</h5><p>The destination is described; only the next step is committed to. Each phase is a real decision gate, and the first one is kept cheap enough that stopping there would cost almost nothing.</p></div>
+        <div class="belief"><h5>Augment judgement, don't replace it</h5><p>AI does the assembly work and the first pass; the decisions with real consequences are still made by people. For that reason, confidence thresholds and escalation routes are designed in from day one, instead of being added after something has gone wrong.</p></div>
+      </div>
+
+      <blockquote class="pull">"Where a model runs decides who can see the data and what it all costs. How the system is designed decides what can go wrong, and that is the part that gets my attention."<cite>The sentence I ask a board to remember</cite></blockquote>
+
+      <p class="ix-follow"><a href="#build">Next: how the build itself is run →</a></p>
+    </div>
   </div>
 </section>
 
@@ -466,111 +551,53 @@
     retail: 'retail & leisure'
   };
 
-  var stages = {
+  var examples = {
     map: {
-      title: '01 · Map',
-      q: "Where could this help, and what's it worth?",
-      produces: 'A longlist of candidate workflows, each with a baseline and a rough value.',
-      gate: 'Is there anything here worth a pilot?',
-      diagram: '<div class="lenses-grid">' +
-        '<div class="lens"><b>Coordination tax</b>Where time goes to work about work, not the work.</div>' +
-        '<div class="lens"><b>Context assembly tax</b>What has to be gathered before real work can start.</div>' +
-        '<div class="lens"><b>Judgement bottleneck</b>Whose desk everything unusual lands on.</div>' +
-        '<div class="lens"><b>The queue</b>Processes with a lead time the business complains about.</div>' +
-        '<div class="lens"><b>The thing we can’t do at all</b>What’s never attempted because it would take too many people.</div>' +
-        '</div>',
-      examples: {
-        fs: 'The judgement-bottleneck and queue lenses often point at the same place here: a loan portfolio being migrated between two record-keeping systems, done entirely by hand, one exception at a time.',
-        prof: 'In a reconciliation process, from quote through to cash received, the coordination tax is usually the giveaway: the work passes through several hand-offs before anyone can see whether the numbers agree.',
-        travel: 'This lens usually lands on booking exceptions and refund queues in this sector: work with a clear beginning and end, and a lead time the business already complains about.',
-        retail: 'The thing-we-cannot-do lens tends to surface first here: reviewing every piece of guest feedback, instead of a sample, because nobody has the headcount to read it all.'
-      }
+      fs: 'The judgement-bottleneck and queue lenses often point at the same place here: a loan portfolio being migrated between two record-keeping systems, done entirely by hand, one exception at a time.',
+      prof: 'In a reconciliation process, from quote through to cash received, the coordination tax is usually the giveaway: the work passes through several hand-offs before anyone can see whether the numbers agree.',
+      travel: 'This lens usually lands on booking exceptions and refund queues in this sector: work with a clear beginning and end, and a lead time the business already complains about.',
+      retail: 'The thing-we-cannot-do lens tends to surface first here: reviewing every piece of guest feedback, instead of a sample, because nobody has the headcount to read it all.'
     },
     rank: {
-      title: '02 · Rank',
-      q: 'What do we do first, and why that?',
-      produces: 'A scored shortlist, one chosen workflow, a locked baseline.',
-      gate: 'Do we fund the pilot?',
-      diagram: '<div class="weights">' +
-        '<div class="wrow"><span class="wlabel">Business value</span><div class="wtrack"><div class="wfill" style="width:100%"></div></div><span class="wval">×3</span></div>' +
-        '<div class="wrow"><span class="wlabel">Confidence</span><div class="wtrack"><div class="wfill" style="width:100%"></div></div><span class="wval">×3</span></div>' +
-        '<div class="wrow"><span class="wlabel">Reuse</span><div class="wtrack"><div class="wfill" style="width:66%"></div></div><span class="wval">×2</span></div>' +
-        '<div class="wrow"><span class="wlabel">Effort (inverted)</span><div class="wtrack"><div class="wfill" style="width:66%"></div></div><span class="wval">×2</span></div>' +
-        '<div class="wrow"><span class="wlabel">Risk (inverted)</span><div class="wtrack"><div class="wfill" style="width:66%"></div></div><span class="wval">×2</span></div>' +
-        '<div class="wrow"><span class="wlabel">Adoption</span><div class="wtrack"><div class="wfill" style="width:33%"></div></div><span class="wval">×1</span></div>' +
-        '</div>',
-      examples: {
-        fs: 'A migration slice of this kind tends to qualify on all five gates: it is contained to one sub-process, offers high reuse for the next migration to come, has a baseline the operations team already tracks, can have sandboxed data ready early, and usually has a named sponsor willing to sit through the final playback.',
-        prof: 'A reconciliation workflow tends to score highly on confidence, being a well-bounded task governed largely by clear rules, and even more highly on reuse: the same underlying plumbing (the part that maps one system’s data onto another’s, and checks the results) can go on to serve the next workflows across the estate.',
-        travel: 'A booking-exception workflow tends to score well on effort and risk in this sector, being small, internal and easily reversible. However, it is the scorecard itself that usually stops a more glamorous, customer-facing idea from jumping the queue.',
-        retail: "This is usually where an enthusiastic sponsor's pet idea is re-sequenced instead of killed outright: it is scored fairly, and held back for the second wave if it fails the containment test."
-      }
+      fs: 'A migration slice of this kind tends to qualify on all five gates: it is contained to one sub-process, offers high reuse for the next migration to come, has a baseline the operations team already tracks, can have sandboxed data ready early, and usually has a named sponsor willing to sit through the final playback.',
+      prof: 'A reconciliation workflow tends to score highly on confidence, being a well-bounded task governed largely by clear rules, and even more highly on reuse: the same underlying plumbing (the part that maps one system’s data onto another’s, and checks the results) can go on to serve the next workflows across the estate.',
+      travel: 'A booking-exception workflow tends to score well on effort and risk in this sector, being small, internal and easily reversible. However, it is the scorecard itself that usually stops a more glamorous, customer-facing idea from jumping the queue.',
+      retail: "This is usually where an enthusiastic sponsor's pet idea is re-sequenced instead of killed outright: it is scored fairly, and held back for the second wave if it fails the containment test."
     },
     prove: {
-      title: '03 · Prove',
-      q: 'Does it work on our data, in our environment?',
-      produces: 'A working system on a contained slice, measured against the baseline, plus a named reusable core.',
-      gate: 'Go / no-go to production.',
-      diagram: '<div class="tmini-row-label">Discovery &amp; validation</div>' +
-        '<div class="timeline-mini">' +
-        '<div class="tmini-cell"><span class="tw">Week 1</span>Scope, baseline, define the split between person and system.</div>' +
-        '<div class="tmini-cell"><span class="tw">Week 2</span>Expert review of v1 against held-out examples.</div>' +
-        '<div class="tmini-cell"><span class="tw">Week 3</span>Validate v2 against held-out data; exceptions aggregated.</div>' +
-        '<div class="tmini-cell"><span class="tw">Week 4</span>Final validation; analysis and a scaling read.</div>' +
-        '</div>' +
-        '<div class="tmini-row-label second">Build</div>' +
-        '<div class="timeline-mini">' +
-        '<div class="tmini-cell"><span class="tw">Week 1</span>Environment set up; baseline and test cases established.</div>' +
-        '<div class="tmini-cell"><span class="tw">Week 2</span>Build v1, then fold feedback into v1.1.</div>' +
-        '<div class="tmini-cell"><span class="tw">Week 3</span>Iteration sprint: logic, triage, decision trace.</div>' +
-        '<div class="tmini-cell"><span class="tw">Week 4</span>Harden the prototype for a board-ready demo.</div>' +
-        '</div>',
-      examples: {
-        fs: 'A typical pilot here runs for four weeks: a prototype that maps old loan data onto a new system, flags and categorises any inconsistencies, and triages exceptions with a confidence score attached to each. It is then tested against a portfolio nobody on the team has seen before, with the aim of a demo ready to put in front of the board.',
-        prof: 'A typical shape here is six weeks, with two streams of work running in parallel. On one side, a reusable foundation: the plumbing that lets AI agents talk to each other, to the model and to the organisation’s own data. On the other, a production pilot on one live reconciliation sub-process, running alongside the existing process, on real data.',
-        travel: 'A typical pilot here takes one workflow, such as turning customer enquiries into quotes, and runs it for four weeks on real enquiries. A consultant approves every quote before it reaches a guest, and the time saved is measured against the existing process.',
-        retail: 'It’s the same shape every time, whatever the workflow: real data, a set of examples held back for testing, and a go/no-go decision a leadership team can defend afterwards.'
-      }
+      fs: 'A typical pilot here runs for four weeks: a prototype that maps old loan data onto a new system, flags and categorises any inconsistencies, and triages exceptions with a confidence score attached to each. It is then tested against a portfolio nobody on the team has seen before, with the aim of a demo ready to put in front of the board.',
+      prof: 'A typical shape here is six weeks, with two streams of work running in parallel. On one side, a reusable foundation: the plumbing that lets AI agents talk to each other, to the model and to the organisation’s own data. On the other, a production pilot on one live reconciliation sub-process, running alongside the existing process, on real data.',
+      travel: 'A typical pilot here takes one workflow, such as turning customer enquiries into quotes, and runs it for four weeks on real enquiries. A consultant approves every quote before it reaches a guest, and the time saved is measured against the existing process.',
+      retail: 'It’s the same shape every time, whatever the workflow: real data, a set of examples held back for testing, and a go/no-go decision a leadership team can defend afterwards.'
     },
     operationalise: {
-      title: '04 · Operationalise',
-      q: 'Can it run in production, safely, without us watching?',
-      produces: 'A production workflow with an owner, authority, evaluation, monitoring and an off switch.',
-      gate: 'Do we extend to the next domain?',
-      diagram: '<div class="ops-check">' +
-        '<div class="opsgroup"><b>Identity &amp; authority</b><ul><li>Named human owner, explicit authority level</li><li>Least-privilege access, its own identity</li><li>A tested way to suspend, revoke and roll back</li></ul></div>' +
-        '<div class="opsgroup"><b>Evaluation &amp; observability</b><ul><li>An evaluation set that gates every change</li><li>Full traces of every run, retained</li><li>Live metrics and regression alerting</li></ul></div>' +
-        '<div class="opsgroup"><b>Operational ownership</b><ul><li>A named owning function, not the build team</li><li>A documented exception process, owned by a person</li><li>A deliberate retirement path</li></ul></div>' +
-        '</div>',
-      examples: {
-        fs: "A migration agent should move from shadow to assisted only once its agreement rate with the operations team's own decisions has settled down and its disagreements have been understood, not because a launch date has arrived.",
-        prof: 'A reconciliation agent would run with its identity and access wired through the client’s own permission system, a human review step for every package it checks, and full visibility in the client’s existing monitoring tools, so nothing about it is hidden from the team that owns it.',
-        travel: "Being production-ready here means more than a working demo: a named owner outside the transformation team, a tested way to suspend the system, and an exception process written into somebody's job description.",
-        retail: 'The test applied is the same one every time: could this be switched off safely, by someone other than the person who built it, without anyone finding out the hard way that it couldn’t?'
-      }
+      fs: "A migration agent should move from shadow to assisted only once its agreement rate with the operations team's own decisions has settled down and its disagreements have been understood, not because a launch date has arrived.",
+      prof: 'A reconciliation agent would run with its identity and access wired through the client’s own permission system, a human review step for every package it checks, and full visibility in the client’s existing monitoring tools, so nothing about it is hidden from the team that owns it.',
+      travel: "Being production-ready here means more than a working demo: a named owner outside the transformation team, a tested way to suspend the system, and an exception process written into somebody's job description.",
+      retail: 'The test applied is the same one every time: could this be switched off safely, by someone other than the person who built it, without anyone finding out the hard way that it couldn’t?'
     },
     scale: {
-      title: '05 · Scale',
-      q: 'How does the next one get cheaper?',
-      produces: 'A reused foundation, a growing component library, internal teams building on it.',
-      gate: 'Ongoing, reviewed on value delivered, never on time elapsed.',
-      diagram: '<div class="reuse-bars">' +
-        '<div class="rbar-track"><div class="rbar" style="height:100%"></div></div>' +
-        '<div class="rbar-track"><div class="rbar" style="height:55%"></div></div>' +
-        '<div class="rbar-track"><div class="rbar" style="height:32%"></div></div>' +
-        '<div class="rbar-track"><div class="rbar" style="height:18%"></div></div>' +
-        '<span>Workflow 1<br>full foundation</span>' +
-        '<span>Workflow 2<br>reuses most of it</span>' +
-        '<span>Workflow 3<br>mostly domain logic</span>' +
-        '<span>Workflow 4<br>your own team builds it</span>' +
-        '</div>',
-      examples: {
-        fs: 'The data-mapping and testing tools built for a first migration should become the accelerator for the next one. Before the work closes, the reusable core is clearly named and separated out from the logic specific to that one portfolio.',
-        prof: 'The plumbing built for a first reconciliation workflow (the parts that feed it information, coordinate its steps and connect it to the model) should be documented as a reusable core, so that the next workflow in the estate can be built without starting from scratch.',
-        travel: "Once the first workflow's foundation exists, a second one in the same estate (a different queue, but on the same underlying systems) tends to cost a fraction of the first.",
-        retail: 'This is the real test of whether the work was ever a proper programme or just a series of one-off builds: does the fourth workflow cost what the first one did, or a fraction of it?'
-      }
+      fs: 'The data-mapping and testing tools built for a first migration should become the accelerator for the next one. Before the work closes, the reusable core is clearly named and separated out from the logic specific to that one portfolio.',
+      prof: 'The plumbing built for a first reconciliation workflow (the parts that feed it information, coordinate its steps and connect it to the model) should be documented as a reusable core, so that the next workflow in the estate can be built without starting from scratch.',
+      travel: "Once the first workflow's foundation exists, a second one in the same estate (a different queue, but on the same underlying systems) tends to cost a fraction of the first.",
+      retail: 'This is the real test of whether the work was ever a proper programme or just a series of one-off builds: does the fourth workflow cost what the first one did, or a fraction of it?'
     }
+  };
+
+  // Illustrative scores (1 to 5) for the chosen workflow and a tempting alternative.
+  var criteria = [['Business value', 3], ['Confidence', 3], ['Reuse', 2], ['Effort (inverted)', 2], ['Risk (inverted)', 2], ['Adoption', 1]];
+  var rank = {
+    fs: { a: 'Loan migration slice', b: 'Customer-facing advice assistant', sa: [5, 4, 5, 3, 4, 4], sb: [5, 2, 2, 2, 1, 3] },
+    prof: { a: 'Quote-to-cash reconciliation', b: 'Client-facing proposal generator', sa: [4, 5, 5, 3, 4, 3], sb: [4, 3, 2, 3, 2, 3] },
+    travel: { a: 'Booking-exception queue', b: 'Guest-facing trip-planning chatbot', sa: [4, 4, 3, 5, 5, 4], sb: [4, 2, 2, 2, 1, 4] },
+    retail: { a: 'Read every piece of guest feedback', b: "Sponsor's personalised-offers engine", sa: [4, 4, 3, 4, 5, 4], sb: [5, 2, 3, 2, 2, 3] }
+  };
+
+  var scaleLabels = {
+    fs: ['First migration', 'Next portfolio', 'Third system', 'In-house build'],
+    prof: ['First reconciliation', 'Next reconciliation', 'Adjacent finance flow', 'In-house build'],
+    travel: ['Booking exceptions', 'Refunds queue', 'Supplier changes', 'In-house build'],
+    retail: ['Guest feedback', 'Returns reasons', 'Supplier queries', 'In-house build']
   };
 
   var riskExamples = {
@@ -594,53 +621,42 @@
     }
   };
 
-  var state = { industry: 'fs', stage: 'map', autonomy: 0 };
+  var state = { industry: 'fs' };
   try {
     var saved = JSON.parse(localStorage.getItem('rm-method-state') || '{}');
-    if (saved && typeof saved === 'object') {
-      if (saved.industry && industries[saved.industry]) state.industry = saved.industry;
-    }
+    if (saved && saved.industry && industries[saved.industry]) state.industry = saved.industry;
   } catch (e) {}
-
   function persist() {
     try { localStorage.setItem('rm-method-state', JSON.stringify({ industry: state.industry })); } catch (e) {}
   }
-
   function $(id) { return document.getElementById(id); }
-  var stageOrder = ['map', 'rank', 'prove', 'operationalise', 'scale'];
+  function each(sel, fn) { var n = document.querySelectorAll(sel); for (var i = 0; i < n.length; i++) fn(n[i], i); }
+  function lit(el, id) { return (' ' + (el.getAttribute('data-ind') || '') + ' ').indexOf(' ' + id + ' ') > -1; }
 
-  function fillDiagrams() {
-    var nodes = document.querySelectorAll('.hs-diagram');
-    for (var i = 0; i < nodes.length; i++) {
-      var id = nodes[i].getAttribute('data-stage');
-      if (stages[id]) nodes[i].innerHTML = stages[id].diagram;
+  // Build the scorecard rows once, then update widths per industry.
+  (function buildRank() {
+    var html = '<div class="m-rank-key"><span><i style="background:var(--accent)"></i><span id="rkA"></span></span><span><i style="background:var(--graphite);opacity:.55"></i><span id="rkB"></span></span></div>';
+    for (var i = 0; i < criteria.length; i++) {
+      html += '<div class="m-rrow"><span class="lbl">' + criteria[i][0] + '</span><div class="m-bars"><div class="m-bar a"><span data-r="a' + i + '"></span></div><div class="m-bar b"><span data-r="b' + i + '"></span></div></div><span class="w">×' + criteria[i][1] + '</span></div>';
     }
+    html += '<div class="m-rank-total"><span>Weighted total, chosen</span><b class="ta" id="rkTA"></b><span>Weighted total, held for a later wave</span><b class="tb" id="rkTB"></b></div>';
+    $('rankFig').innerHTML = html;
+  })();
+
+  function renderRank(id) {
+    var d = rank[id], ta = 0, tb = 0, max = 0;
+    $('rkA').textContent = d.a + ' (chosen)';
+    $('rkB').textContent = d.b + ' (held back)';
+    for (var i = 0; i < criteria.length; i++) {
+      var w = criteria[i][1];
+      document.querySelector('[data-r="a' + i + '"]').style.width = (d.sa[i] * 20) + '%';
+      document.querySelector('[data-r="b' + i + '"]').style.width = (d.sb[i] * 20) + '%';
+      ta += d.sa[i] * w; tb += d.sb[i] * w; max += 5 * w;
+    }
+    $('rkTA').textContent = ta + ' / ' + max;
+    $('rkTB').textContent = tb + ' / ' + max;
   }
 
-  function fillIndustryText() {
-    var texts = document.querySelectorAll('.ind-text');
-    for (var i = 0; i < texts.length; i++) {
-      var stageId = texts[i].getAttribute('data-stage');
-      if (stages[stageId]) texts[i].textContent = stages[stageId].examples[state.industry];
-    }
-    var labels = document.querySelectorAll('.ind-label');
-    for (var k = 0; k < labels.length; k++) labels[k].textContent = industries[state.industry];
-  }
-
-  function setIndustry(id) {
-    if (!industries[id]) return;
-    state.industry = id;
-    var pills = document.querySelectorAll('.ipill');
-    for (var i = 0; i < pills.length; i++) {
-      pills[i].classList.toggle('active', pills[i].getAttribute('data-industry') === id);
-    }
-    fillIndustryText();
-    updateRisk();
-    persist();
-  }
-
-  // Rule of Two logic lives in assets/rule-of-two.js, shared with the Safety page;
-  // this page adds the industry-specific example for classes A to C.
   var refreshRisk = null;
   function showRiskExample(classKey) {
     var exBox = $('riskExampleBox');
@@ -653,180 +669,84 @@
     }
   }
   function updateRisk() {
+    if (!window.RuleOfTwo) return;
     if (!refreshRisk) { refreshRisk = window.RuleOfTwo.render(showRiskExample); } else { refreshRisk(); }
   }
 
-  var pills = document.querySelectorAll('.ipill');
-  for (var i = 0; i < pills.length; i++) {
-    pills[i].addEventListener('click', function () { setIndustry(this.getAttribute('data-industry')); });
+  function setIndustry(id, animate) {
+    if (!industries[id]) return;
+    state.industry = id;
+    each('.ipill', function (p) {
+      var on = p.getAttribute('data-industry') === id;
+      p.classList.toggle('active', on);
+      p.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    each('.ind-label', function (el) { el.textContent = industries[id]; });
+    each('.ind-text', function (el) { el.textContent = examples[el.getAttribute('data-stage')][id]; });
+    each('.lens[data-ind]', function (el) { el.classList.toggle('is-lit', lit(el, id)); });
+    each('.opsgroup li[data-ind]', function (el) { el.classList.toggle('is-lit', lit(el, id)); });
+    each('.reuse-bars .wf', function (el) { el.textContent = scaleLabels[id][+el.getAttribute('data-i')]; });
+    renderRank(id);
+    updateRisk();
+    if (animate) {
+      each('.m-example, .risk-example', function (el) { el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); });
+    }
+    persist();
   }
+  each('.ipill', function (p) { p.addEventListener('click', function () { setIndustry(this.getAttribute('data-industry'), true); }); });
+
+  // Keep the industry lens just below the sticky nav, whatever height the nav wraps to.
+  var nav = document.querySelector('.topnav');
+  function setNavH() { if (nav) document.documentElement.style.setProperty('--navh', nav.offsetHeight + 'px'); }
+  setNavH();
+  window.addEventListener('resize', setNavH);
+
+  // Deployment matrix
+  each('td.cell', function (cell) {
+    cell.setAttribute('tabindex', '0');
+    function pick() {
+      each('td.cell.selected', function (c) { c.classList.remove('selected'); });
+      cell.classList.add('selected');
+      $('matrixDetail').innerHTML = '<b>' + cell.getAttribute('data-row') + ' → ' + cell.getAttribute('data-col') + ': ' + cell.getAttribute('data-verdict') + '.</b> ' + cell.getAttribute('data-note');
+    }
+    cell.addEventListener('click', pick);
+    cell.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
+  });
+
+  // Reveal on scroll
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function isStackedMode() {
-    return window.innerWidth < 880 || window.innerHeight < 560 || reduceMotion;
-  }
-
-  var hEngines = [];
-
-  function createHEngine(opts) {
-    var engine = {
-      wrapId: opts.wrapId,
-      trackId: opts.trackId,
-      fillId: opts.fillId,
-      nodeSelector: opts.nodeSelector,
-      dataAttr: opts.dataAttr,
-      order: opts.order,
-      fillSpan: opts.fillSpan,
-      onIndex: opts.onIndex || function () {}
-    };
-    hEngines.push(engine);
-    return engine;
-  }
-
-  function hEngineSetActive(engine, id) {
-    var idx = engine.order.indexOf(String(id));
-    if (idx < 0) idx = 0;
-    var nodes = document.querySelectorAll(engine.nodeSelector);
-    for (var i = 0; i < nodes.length; i++) {
-      var nodeVal = nodes[i].getAttribute(engine.dataAttr);
-      var nodeIdx = engine.order.indexOf(nodeVal);
-      nodes[i].classList.toggle('active', nodeVal === String(id));
-      nodes[i].classList.toggle('done', nodeIdx > -1 && nodeIdx < idx);
-    }
-    var fill = $(engine.fillId);
-    if (fill) fill.style.width = (idx / (engine.order.length - 1) * engine.fillSpan) + '%';
-    engine.onIndex(idx, engine.order[idx]);
-  }
-
-  function hEngineApplyMode(engine) {
-    var wrap = $(engine.wrapId);
-    if (wrap) wrap.classList.toggle('stacked', isStackedMode());
-  }
-
-  function hEngineUpdateScroll(engine) {
-    var wrap = $(engine.wrapId);
-    if (!wrap || wrap.classList.contains('stacked')) return;
-    var pin = wrap.querySelector('.hscroll-pin');
-    var track = $(engine.trackId);
-    if (!pin || !track) return;
-    var rect = wrap.getBoundingClientRect();
-    var pinH = pin.clientHeight;
-    var totalScrollable = wrap.offsetHeight - pinH;
-    var scrolled = -rect.top;
-    var progress = totalScrollable > 0 ? Math.min(Math.max(scrolled / totalScrollable, 0), 1) : 0;
-    var maxTranslate = track.scrollWidth - pin.clientWidth;
-    track.style.transform = 'translateX(' + (-progress * maxTranslate) + 'px)';
-    var idx = Math.min(engine.order.length - 1, Math.round(progress * (engine.order.length - 1)));
-    hEngineSetActive(engine, engine.order[idx]);
-  }
-
-  function hEngineWireClicks(engine) {
-    var nodes = document.querySelectorAll(engine.nodeSelector);
-    for (var j = 0; j < nodes.length; j++) {
-      nodes[j].addEventListener('click', function () {
-        var id = this.getAttribute(engine.dataAttr);
-        var wrap = $(engine.wrapId);
-        if (wrap.classList.contains('stacked')) {
-          var target = document.querySelector('.hslide[' + engine.dataAttr + '="' + id + '"]');
-          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          return;
-        }
-        var pin = wrap.querySelector('.hscroll-pin');
-        var totalScrollable = wrap.offsetHeight - pin.clientHeight;
-        var idx = engine.order.indexOf(id);
-        var frac = idx / (engine.order.length - 1);
-        var wrapTop = wrap.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({ top: wrapTop + frac * totalScrollable + 1, behavior: 'smooth' });
-      });
-    }
-  }
-
-  function applyAllHScrollModes() {
-    for (var i = 0; i < hEngines.length; i++) hEngineApplyMode(hEngines[i]);
-  }
-
-  var hTicking = false;
-  function updateAllHScroll() {
-    hTicking = false;
-    for (var i = 0; i < hEngines.length; i++) hEngineUpdateScroll(hEngines[i]);
-  }
-
-  createHEngine({
-    wrapId: 'hscrollWrap', trackId: 'hscrollTrack', fillId: 'hstageFill',
-    nodeSelector: '.hstage-node', dataAttr: 'data-stage', order: stageOrder, fillSpan: 80,
-    onIndex: function (idx, id) { state.stage = id; }
-  });
-  createHEngine({
-    wrapId: 'autoScrollWrap', trackId: 'autoScrollTrack', fillId: 'autoLineFill',
-    nodeSelector: '.auto-node', dataAttr: 'data-autonomy', order: ['0', '1', '2', '3'], fillSpan: 75,
-    onIndex: function (idx, id) { state.autonomy = idx; }
-  });
-
-  for (var e = 0; e < hEngines.length; e++) hEngineWireClicks(hEngines[e]);
-
-  window.addEventListener('scroll', function () {
-    if (!hTicking) { window.requestAnimationFrame(updateAllHScroll); hTicking = true; }
-  }, { passive: true });
-  window.addEventListener('resize', function () { applyAllHScrollModes(); updateAllHScroll(); });
-
-  if ('IntersectionObserver' in window) {
-    var revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) { entry.target.classList.add('in-view'); revealObserver.unobserve(entry.target); }
-      });
-    }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
-    document.querySelectorAll('.reveal').forEach(function (el) { revealObserver.observe(el); });
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); } });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    each('.reveal', function (el) { io.observe(el); });
   } else {
-    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); });
-  }
-  if (reduceMotion) {
-    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); });
+    each('.reveal', function (el) { el.classList.add('in-view'); });
   }
 
-  var navProgress = $('navProgress');
-  var ticking = false;
+  // Reading progress
+  var navProgress = $('navProgress'), ticking = false;
   function updateProgress() {
-    var h = document.documentElement;
-    var max = h.scrollHeight - h.clientHeight;
-    var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
-    if (navProgress) navProgress.style.width = pct + '%';
+    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    if (navProgress) navProgress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
     ticking = false;
   }
-  window.addEventListener('scroll', function () {
-    if (!ticking) { window.requestAnimationFrame(updateProgress); ticking = true; }
-  }, { passive: true });
+  window.addEventListener('scroll', function () { if (!ticking) { window.requestAnimationFrame(updateProgress); ticking = true; } }, { passive: true });
   updateProgress();
 
-  var cells = document.querySelectorAll('td.cell');
-  for (var m = 0; m < cells.length; m++) {
-    cells[m].addEventListener('click', function () {
-      var all = document.querySelectorAll('td.cell.selected');
-      for (var n = 0; n < all.length; n++) all[n].classList.remove('selected');
-      this.classList.add('selected');
-      var row = this.getAttribute('data-row'), col = this.getAttribute('data-col');
-      var verdict = this.getAttribute('data-verdict'), note = this.getAttribute('data-note');
-      $('matrixDetail').innerHTML = '<b>' + row + ' → ' + col + ': ' + verdict + '.</b> ' + note;
-    });
-  }
-
+  // Theme toggle
   var themeToggle = $('themeToggle');
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
       var current = document.documentElement.getAttribute('data-theme');
-      if (!current) {
-        current = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
-      }
+      if (!current) current = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
       var next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
       try { localStorage.setItem('rm-theme', next); } catch (e) {}
     });
   }
 
-  fillDiagrams();
-  setIndustry(state.industry);
-  applyAllHScrollModes();
-  updateAllHScroll();
-  updateRisk();
+  setIndustry(state.industry, false);
 })();
 </script>
 </body>
