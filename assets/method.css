@@ -1,0 +1,120 @@
+/* Method page: linear layout with a sticky industry lens. Uses the shared tokens in site.css. */
+
+/* Contents strip */
+.m-toc{display:flex;flex-wrap:wrap;gap:.4rem .5rem;margin:2rem 0 0;padding:0;list-style:none;counter-reset:toc;}
+.m-toc li{counter-increment:toc;}
+.m-toc a{display:inline-flex;align-items:baseline;gap:.45rem;padding:.45rem .8rem;border:1px solid var(--line);font-family:var(--display);font-size:.8rem;font-weight:600;color:var(--ink-soft);text-decoration:none;}
+.m-toc a::before{content:counter(toc, decimal-leading-zero);color:var(--accent);font-size:.72rem;}
+.m-toc a:hover{border-color:var(--accent);color:var(--ink);}
+
+/* Sticky industry lens */
+.m-lens{position:sticky;top:calc(var(--navh, 64px) - 1px);z-index:30;margin:2.4rem -20px 0;padding:.65rem 20px;background:color-mix(in srgb, var(--paper) 92%, transparent);backdrop-filter:blur(8px);border-block:1px solid var(--line);}
+.m-lens-inner{max-width:920px;margin-inline:auto;display:flex;align-items:center;gap:.5rem 1rem;flex-wrap:wrap;}
+.m-lens-label{font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--graphite);}
+.m-lens .industry-bar{margin:0;gap:.35rem;}
+.m-lens .ipill{padding:.4rem .8rem;font-size:.76rem;}
+.m-lens .ipill .short{display:none;}
+@media (max-width:640px){
+  .m-lens-label{display:none;}
+  .m-lens .industry-bar{display:grid;grid-template-columns:repeat(4,1fr);width:100%;}
+  .m-lens .ipill{padding:.45rem .3rem;text-align:center;}
+  .m-lens .ipill .long{display:none;}
+  .m-lens .ipill .short{display:inline;}
+}
+
+/* Part headings */
+.m-part{padding-top:4rem;scroll-margin-top:calc(var(--navh, 64px) + 70px);}
+.m-part:first-of-type{padding-top:3rem;}
+.m-part-head{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1rem;align-items:baseline;margin-bottom:1rem;}
+.m-part-num{font-family:var(--display);font-weight:700;font-size:.85rem;color:var(--accent);}
+.m-part-head h2{font-family:var(--display);font-size:clamp(1.45rem,1.6vw + 1rem,1.9rem);margin:0;}
+.m-part-head p{grid-column:2;margin:.5rem 0 0;color:var(--ink-soft);max-width:62ch;font-size:1rem;}
+#deployment-exposure,#rule-of-two{scroll-margin-top:calc(var(--navh, 64px) + 70px);}
+
+/* Engine stages */
+.m-stages{position:relative;margin-top:2rem;}
+.m-stages::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;width:2px;background:var(--line);}
+.m-stage{position:relative;display:grid;grid-template-columns:250px 1fr;gap:1.2rem 2.2rem;padding:0 0 2.8rem 64px;}
+.m-stage:last-child{padding-bottom:0;}
+.m-dot{position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--paper);border:2px solid var(--accent);font-family:var(--display);font-weight:700;font-size:.9rem;color:var(--accent);}
+.m-stage h3{font-family:var(--display);font-size:1.5rem;margin:.35rem 0 .4rem;}
+.m-q{font-family:'Literata',Georgia,serif;font-style:italic;color:var(--ink-soft);margin:0 0 1rem;font-size:1rem;}
+.m-meta{margin:0;display:flex;flex-direction:column;gap:.75rem;}
+.m-meta dt{font-family:var(--display);font-size:.66rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--graphite);margin-bottom:.15rem;}
+.m-meta dd{margin:0;font-size:.86rem;color:var(--ink-soft);}
+.m-meta .gate dt::before{content:"";display:inline-block;width:7px;height:7px;margin-right:.4rem;background:var(--warn);transform:rotate(45deg);vertical-align:1px;}
+.m-meta .gate dd{color:var(--ink);font-weight:500;}
+.m-body{display:flex;flex-direction:column;gap:1rem;min-width:0;}
+.m-fig{border:1px solid var(--line);background:var(--paper-raised, var(--paper));padding:1rem;}
+.m-fig-cap{font-family:var(--display);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin:0 0 .7rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.m-fig-cap .ind-label{color:var(--accent);}
+
+/* Industry example boxes, flash on change */
+.m-example{border-left:2px solid var(--accent);padding:.75rem 1rem;background:color-mix(in srgb, var(--hl) 30%, transparent);font-size:.88rem;}
+.m-example b{display:block;font-family:var(--display);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-ink, var(--accent));margin-bottom:.3rem;}
+.m-example p{margin:0;color:var(--ink);}
+@keyframes m-flash{from{background:color-mix(in srgb, var(--hl) 75%, transparent);}to{background:color-mix(in srgb, var(--hl) 30%, transparent);}}
+.m-example.flash{animation:m-flash .9s ease-out;}
+@media (prefers-reduced-motion:reduce){.m-example.flash{animation:none;}}
+
+/* Map: lenses light up per industry */
+.m-fig .lenses-grid{grid-template-columns:repeat(5,1fr);}
+.m-fig .lens{transition:background .3s ease, color .3s ease;position:relative;}
+.m-fig .lens.is-lit{background:var(--accent-soft);color:var(--ink);box-shadow:inset 0 3px 0 var(--accent);}
+@media (max-width:760px){.m-fig .lenses-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* Rank: two candidates scored */
+.m-rank{display:flex;flex-direction:column;gap:.55rem;}
+.m-rank-key{display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;font-size:.78rem;color:var(--ink-soft);margin-bottom:.3rem;}
+.m-rank-key i{display:inline-block;width:12px;height:8px;margin-right:.4rem;vertical-align:0;}
+.m-rrow{display:grid;grid-template-columns:120px 1fr 26px;gap:.7rem;align-items:center;font-size:.76rem;}
+.m-rrow .lbl{color:var(--ink-soft);}
+.m-rrow .w{font-family:var(--display);color:var(--graphite);text-align:right;}
+.m-bars{display:flex;flex-direction:column;gap:3px;}
+.m-bar{height:7px;background:var(--line);}
+.m-bar span{display:block;height:100%;transition:width .45s ease;}
+.m-bar.a span{background:var(--accent);}
+.m-bar.b span{background:var(--graphite);opacity:.55;}
+.m-rank-total{display:grid;grid-template-columns:1fr auto;gap:.3rem 1rem;border-top:1px solid var(--line);padding-top:.6rem;margin-top:.2rem;font-size:.82rem;}
+.m-rank-total b{font-family:var(--display);}
+.m-rank-total .ta{color:var(--accent);}
+.m-rank-total .tb{color:var(--graphite);}
+
+/* Operationalise: checklist items light up */
+.m-fig .opsgroup li{transition:color .3s ease;}
+.m-fig .opsgroup li.is-lit{color:var(--ink);font-weight:600;}
+.m-fig .opsgroup li.is-lit::marker{color:var(--accent);content:"● ";}
+
+/* Scale: bar labels change */
+.m-fig .reuse-bars{grid-template-rows:110px auto auto;padding-top:.2rem;}
+.m-fig .reuse-bars .wf{grid-row:2;font-weight:600;color:var(--ink);font-size:.74rem;}
+.m-fig .reuse-bars .sub{grid-row:3;}
+.m-fig .rbar{transition:height .45s ease;}
+
+/* Practice rungs keep site styles; autonomy */
+.m-auto-chart{border:1px solid var(--line);background:var(--paper-raised, var(--paper));padding:1rem 1rem .6rem;margin-top:1.6rem;}
+.m-auto-chart svg{display:block;width:100%;height:auto;}
+.m-auto-key{display:flex;gap:1.2rem;font-size:.78rem;color:var(--ink-soft);margin-top:.3rem;}
+.m-auto-key i{display:inline-block;width:14px;height:3px;margin-right:.4rem;vertical-align:middle;}
+.m-auto{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-top:none;}
+.m-auto > div{background:var(--paper);padding:1.1rem 1.1rem 1.2rem;}
+.m-auto .k{font-family:var(--display);font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);}
+.m-auto h4{font-family:var(--display);font-size:1rem;margin:.3rem 0 .5rem;}
+.m-auto p{margin:0;font-size:.83rem;color:var(--ink-soft);}
+.m-auto .exit{display:block;margin-top:.7rem;padding-top:.6rem;border-top:1px dashed var(--line);font-size:.78rem;color:var(--graphite);}
+.m-auto .exit b{font-family:var(--display);color:var(--ink);font-weight:600;}
+
+@media (max-width:860px){
+  .m-stage{grid-template-columns:1fr;padding-left:58px;}
+  .m-auto{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:560px){
+  .m-stages::before{left:17px;}
+  .m-dot{width:36px;height:36px;font-size:.8rem;}
+  .m-stage{padding-left:50px;}
+  .m-auto{grid-template-columns:1fr;}
+  .m-rrow{grid-template-columns:92px 1fr 22px;}
+  .m-part-head{grid-template-columns:1fr;}
+  .m-part-head p{grid-column:1;}
+}
+@media (max-width:760px){.m-fig .lenses-grid .lens:last-child{grid-column:1 / -1;}}
