@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The approximation tax · Rory McClelland</title>
+<meta name="description" content="AI makes it cheap to build exactly the software you need. That changes what people are willing to pay for the rest.">
+<meta name="author" content="Rory McClelland">
+<meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#18171B" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/writing/the-approximation-tax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The approximation tax · Rory McClelland">
+<meta property="og:description" content="AI makes it cheap to build exactly the software you need. That changes what people are willing to pay for the rest.">
+<meta property="og:url" content="https://mcclelland.info/writing/the-approximation-tax">
+<meta property="og:image" content="https://mcclelland.info/writing/img/the-approximation-tax.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mcclelland.info/writing/img/the-approximation-tax.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/writing.css">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<script>(function(){ try { var t = localStorage.getItem('rm-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="../writing/" aria-current="page">Writing</a>
+      <a href="../work/">Work</a>
+      <a href="../method/">Method</a>
+      <a href="../safety/">Safety</a>
+      <a href="../about/">About</a>
+      <a href="../teaching/">Teaching</a>
+    </div>
+    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+<main class="wrap">
+  <header class="post-head read">
+    <div class="eyebrow">Writing · Building with AI</div>
+    <h1>The approximation tax</h1>
+    <p class="dek">AI makes it cheap to build exactly the software you need. That changes what people are willing to pay for the rest.</p>
+    <div class="meta"><span><b>Rory McClelland</b></span><span>October 2026</span><span>5 min read</span></div>
+  </header>
+  <figure class="hero-fig"><svg viewBox="0 0 1200 630" role="img" aria-labelledby="h1t"><title id="h1t">An off-the-shelf product drawn as a box of twenty feature tiles with a price tag reading per seat, per month. Four tiles are filled in, the ones you use; the other sixteen are dotted outlines you pay for anyway.</title><rect class="s-bg" width="1200" height="630"/><rect x="624" y="142" width="516" height="360" fill="#000" opacity=".06" transform="translate(8 10)"/><rect class="s-paper" style="stroke:var(--ink)" x="616" y="138" width="516" height="360" stroke-width="1.5"/><text class="t-lab s-gr" x="616" y="120" font-size="15" letter-spacing="1.2">THE OFF-THE-SHELF PRODUCT</text><rect class="k-gr" x="640" y="170" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="s-acc" x="740" y="170" width="84" height="60" rx="3"/><rect class="k-gr" x="840" y="170" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="k-gr" x="940" y="170" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="k-gr" x="1040" y="170" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="k-gr" x="640" y="246" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="k-gr" x="740" y="246" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="k-gr" x="840" y="246" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="s-acc" x="940" y="246" width="84" height="60" rx="3"/><rect class="k-gr" x="1040" y="246" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="s-acc" x="640" y="322" width="84" height="60" rx="3"/><rect class="k-gr" x="740" y="322" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="k-gr" x="840" y="322" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="k-gr" x="940" y="322" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="k-gr" x="1040" y="322" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="k-gr" x="640" y="398" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="k-gr" x="740" y="398" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="s-acc" x="840" y="398" width="84" height="60" rx="3"/><rect class="k-gr" x="940" y="398" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><rect class="k-gr" x="1040" y="398" width="84" height="60" rx="3" stroke-width="1.4" stroke-dasharray="3 6" stroke-linecap="round"/><g transform="rotate(6 1080 120)"><rect class="s-hl" x="990" y="96" width="180" height="40" rx="4"/><circle class="s-bg" cx="1004" cy="116" r="5"/><text class="t-lab s-ink" x="1090" y="122" font-size="15" text-anchor="middle">per seat, per month</text></g><rect class="s-hl" x="56" y="322" width="132" height="36"/><text class="t-disp s-ink" x="60" y="196" font-size="64">the</text><text class="t-disp s-ink" x="60" y="272" font-size="64">approximation</text><text class="t-disp s-ink" x="60" y="348" font-size="64">tax.</text><text class="t-note s-acc" x="62" y="440" font-size="25">you use four of these.</text><path class="k-acc" d="M330,432 C450,420 540,396 628,362" stroke-width="2" stroke-linecap="round"/><path class="k-acc" d="M610,358 L630,361 L618,377" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="t-note s-acc" x="640" y="540" font-size="25">and pay for all twenty.</text><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg></figure>
+  <article class="read prose">
+    <p>Earlier this month a developer called Brandon Thomas released ArtCraft, a free, open-source suite of seven apps intended to replace Adobe's Creative Cloud: equivalents of Photoshop, Lightroom, Illustrator, Premiere Pro, After Effects, InDesign and Acrobat. He <a href="https://www.techrepublic.com/article/news-developer-ai-free-adobe-creative-cloud-alternatives/">built them in Rust with the help of Claude</a>, and his motivation was frustration with Adobe's subscription model, in particular its cancellation fees. (Adobe agreed a proposed $150 million settlement with the US Department of Justice in March over how those fees were disclosed, whilst denying any wrongdoing.) <a href="https://cybernews.com/ai-news/ai-adobe-alternatives-open-source/">"No more subscriptions with cancellation fees,"</a> was how he put it. He followed the suite with replacements for Word, Excel and PowerPoint, and summed up his view in three words: "Software is over."</p>
+    <p>It is fair to say the apps are not there yet. They are in early alpha, reviewers have found problems with file saving and missing video-editing functions, and his own estimate for near feature parity has moved from a month to several months. Maintaining seven professional creative tools is a very different job from launching them, and Adobe still has the colour management, plug-in ecosystem and production workflows that professionals depend on. As a replacement for Creative Cloud in a busy studio, ArtCraft is some way off.</p>
+    <p>I still think he is onto something. What AI threatens is one specific part of the SaaS model, the part I have come to think of as the approximation tax.</p>
+
+    <h2>What the approximation tax is</h2>
+    <p>Most SaaS products are built for the median customer. The vendor finds the overlapping needs of thousands of organisations, builds one product to cover them, and charges everyone for all of it. You get the feature you need, plus the features you will never open, plus roadmap decisions made for someone else's business, plus a pricing tier designed around what the vendor can capture.</p>
+    <p>For a long time that was a fair deal. Bespoke software was slow, expensive and risky, so an off-the-shelf approximation was the rational choice for almost everyone.</p>
+    <p>I know this from the selling side. At North Plains I launched On Brand, our brand-management product, as a multi-tenant SaaS offering on private cloud, and the economics depended on exactly this: one product, configured for many customers, with onboarding cut from months to a week or two. Customers accepted the compromises because building their own was never a realistic option.</p>
+    <p class="aside">Once building is cheap, the vendor has to earn the subscription every month.</p>
+    <p>AI changes that cost. When one person can describe what they need and have a working tool within days, the question a buyer asks starts to shift. It used to be "does this product do what I need?" It is becoming "is this product worth paying for, given I could build the 20% I actually use?"</p>
+    <p>I am running that experiment myself. I use Lunatask for task management and its calendar, and none of its notes, habits, mood or contact tracking. I also have tasks scattered across Claude, Gemini and the local PC, which no product was ever going to pull together for me. So I am building my own app around an Eisenhower matrix, with Claude writing the code whilst I read it and question it. It does what I need, nothing more, and it will never have a pricing tier.</p>
+    <p>Investors have noticed too. The sell-off in software stocks in February was widely put down to exactly this fear, and the term 'SaaSpocalypse' has stuck.</p>
+
+    <h2>What survives</h2>
+    <p>Before declaring SaaS dead, the counter-argument deserves a fair hearing, because it is a strong one. <a href="https://devinterrupted.substack.com/p/the-ai-saaspocalypse-is-a-mirage">LinearB put it neatly</a>: "The build cost is the deposit, and the maintenance cost is the mortgage." Building a tool once is cheap now. Keeping it secure, compatible and working for years is not.</p>
+    <p>Three other things hold up well:</p>
+    <ul>
+      <li><strong>Systems of record.</strong> Shared data and shared business rules are what make software useful across a team, and an agent with nothing to read from or write to is, in LinearB's words, "a goldfish with a great vocabulary".</li>
+      <li><strong>Trust and compliance.</strong> A vendor that has passed its SOC 2 audit passes that assurance to its customers, whereas a home-built tool inherits the audit.</li>
+      <li><strong>Ecosystems.</strong> Adobe's real moat is less Photoshop itself than the file formats, the plug-ins and the fact that the agency down the road uses the same tools.</li>
+    </ul>
+    <p>Gartner still projects $1.44 trillion of worldwide software spending this year, which is not what a dying industry looks like.</p>
+    <p>So I expect SaaS to split. Products that act as systems of record, hold proprietary data or carry regulated trust will be fine, and may even grow as agents read from and write to them. The exposed products are the ones whose value is a convenient interface over a commodity function, priced per seat and padded with features. The middle of the market, where you pay a lot for something approximately right, is the part that gets squeezed.</p>
+
+    <h2>The cost that arrives later</h2>
+    <p>Building precise software on demand has a cost that does not show up at the start: you now own it. Every tool someone builds for themselves is a tool somebody has to secure, update and, eventually, retire. A <a href="https://cloudsecurityalliance.org/artifacts/autonomous-but-not-controlled-ai-agent-incidents-now-common-in-enterprises">Cloud Security Alliance survey</a> published in April found that 82% of organisations had discovered AI agents running that they did not know about, and only 21% had a formal process for decommissioning them. If the next few years bring thousands of small, precise, home-built tools into organisations, the old shadow IT problem will look quite manageable by comparison.</p>
+    <p>This is where product thinking matters. The skills that made a good SaaS product manager (understanding the actual job to be done, learning how to say 'no' well, deciding what a product must never do) are exactly the skills needed to build precisely. Without them, cheap building simply produces cheap sprawl. When I built Job Scout, I <a href="write-the-never-list-first.html">wrote down what it must never do</a> before any code existed, and that list did more to keep it safe than anything added afterwards.</p>
+
+    <h2>So is SaaS dying?</h2>
+    <p>Not in the way the headlines suggest. What is ending is the period in which an expensive approximation was the only sensible option. Vendors will have to earn the subscription every month, because "it was easier than building it ourselves" is no longer much of a reason. Buyers, in turn, will have to accept that whatever they build, they also have to run.</p>
+    <p>Whether ArtCraft reaches parity is almost beside the point. (I have my fingers crossed, if only for the cancellation fees.) The argument it made has landed either way.</p>
+
+    <div class="after">
+      <div class="who"><img src="../headshot-mono-light.jpg" alt=""><p>Rory McClelland leads product, with a background in privacy and user safety at Google Chrome and Bumble, and now builds with AI. <a href="../work/">See the work</a> or write to <a href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a>.</p></div>
+      <div class="next-step"><p><b>See a build like this</b>The task app mentioned above is written up as a case study, with its code on GitHub.</p><a class="btn primary" href="../work/#task-oversight">Read the case study →</a></div>
+      <div class="more"><a href="write-the-never-list-first.html"><span class="k">Building with AI</span><span class="t">Write the never list first</span></a><a href="teach-the-thinking.html"><span class="k">AI in organisations</span><span class="t">The method should outlast the consultant</span></a></div>
+    </div>
+  </article>
+</main>
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
+
