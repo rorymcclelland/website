@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Attack it before anyone else does · Rory McClelland</title>
-<meta name="description" content="Every system I build is attacked on purpose before I trust it. The pass mark matters less than the bugs the attack turns up.">
+<meta name="description" content="Every system I build goes through a red team before I trust it: a deliberate attempt to make it fail. The bugs it finds matter more than the pass mark.">
 <meta name="author" content="Rory McClelland">
 <meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#18171B" media="(prefers-color-scheme: dark)">
@@ -14,7 +14,7 @@
 <link rel="canonical" href="https://mcclelland.info/writing/attack-it-first">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Attack it before anyone else does · Rory McClelland">
-<meta property="og:description" content="Every system I build is attacked on purpose before I trust it. The pass mark matters less than the bugs the attack turns up.">
+<meta property="og:description" content="Every system I build goes through a red team before I trust it: a deliberate attempt to make it fail. The bugs it finds matter more than the pass mark.">
 <meta property="og:url" content="https://mcclelland.info/writing/attack-it-first">
 <meta property="og:image" content="https://mcclelland.info/writing/img/attack-it-first.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -47,15 +47,15 @@
 </nav>
 <main class="wrap">
   <header class="post-head read">
-    <div class="eyebrow">Writing · Safety</div>
+    <div class="eyebrow">Writing · Red team</div>
     <h1>Attack it before anyone else does</h1>
-    <p class="dek">Every system I build is attacked on purpose before I trust it. The pass mark matters less than the bugs the attack turns up.</p>
+    <p class="dek">Every system I build goes through a red team before I trust it: a deliberate attempt to make it fail. The bugs it finds matter more than the pass mark.</p>
     <div class="meta"><span><b>Rory McClelland</b></span><span>October 2026</span><span>5 min read</span></div>
   </header>
   <figure class="hero-fig"><svg viewBox="0 0 1200 630" role="img" aria-labelledby="h1t"><title id="h1t">A scorecard headed red team, quarterly: hostile inputs 10, stopped 10, bugs found 4, with the four highlighted and a handwritten note saying the four is the point.</title><rect class="s-bg" width="1200" height="630"/><g transform="rotate(-1.6 890 310)"><rect x="660" y="112" width="460" height="400" fill="#000" opacity=".07" transform="translate(8 10)"/><rect class="s-paper" style="stroke:var(--ink)" x="660" y="112" width="460" height="400" stroke-width="1.5"/><text class="t-lab s-gr" x="692" y="156" font-size="15" letter-spacing="1.2">RED TEAM · QUARTERLY</text><line class="k-line" x1="672" y1="178" x2="1108" y2="178" stroke-width="1.2"/><text class="t-body s-ink" x="692" y="250" font-size="27">hostile inputs</text><text class="t-disp s-ink" x="1084" y="256" font-size="62" text-anchor="end">10</text><line class="k-line" x1="672" y1="290" x2="1108" y2="290" stroke-width="1.2"/><text class="t-body s-ink" x="692" y="362" font-size="27">stopped</text><text class="t-disp s-ink" x="1084" y="368" font-size="62" text-anchor="end">10</text><line class="k-line" x1="672" y1="402" x2="1108" y2="402" stroke-width="1.2"/><rect class="s-hl" x="1032" y="424" width="64" height="62"/><text class="t-body s-ink" x="692" y="474" font-size="27">bugs found</text><text class="t-disp s-acc" x="1084" y="480" font-size="62" text-anchor="end">4</text></g><rect class="s-hl" x="56" y="322" width="292" height="34"/><text class="t-disp s-ink" x="60" y="196" font-size="62">attack it</text><text class="t-disp s-ink" x="60" y="272" font-size="62">before anyone</text><text class="t-disp s-ink" x="60" y="348" font-size="62">else does.</text><text class="t-note s-acc" x="62" y="456" font-size="25">the four is the point.</text><path class="k-acc" d="M318,452 C560,560 950,592 1062,528" stroke-width="2" stroke-linecap="round"/><path class="k-acc" d="M1044,526 L1063,527 L1058,509" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg></figure>
   <article class="read prose">
     <p>Every quarter, ten hostile inputs go through Job Scout, the automated job search I run each morning. In the first exercise all ten were stopped. It also found four genuine bugs, and those four are the reason the exercise exists.</p>
-    <p>That exercise is a red team: a deliberate attempt to make a system fail, by someone playing the attacker, before a real attacker gets the chance. The term comes from military war games, where the red side played the opposing force so that plans were tested against an opponent with no interest in them succeeding. Security teams adopted it for the same reason, and AI gives it a great deal more to do.</p>
+    <p>That exercise is a red team: someone plays the attacker, on purpose, before a real attacker gets the chance. The term comes from military war games, where the red side played the opposing force so that plans were tested against an opponent with no interest in them succeeding. Security teams adopted it for the same reason, and AI gives it a great deal more to do.</p>
 
     <h2>Why builders cannot mark their own work</h2>
     <p>A builder testing their own system tests the cases they thought of, which are the cases the system was built to handle. Everybody does this, because the same assumptions that shaped the design also shape the tests. A red team's whole job is to bring different assumptions, and to be pleased when something breaks.</p>
