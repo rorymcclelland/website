@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AI safety and governance · Rory McClelland</title>
+<meta name="description" content="The safety and governance techniques behind the work, from Chrome's privacy review and Bumble's safety team to guarded AI builds: the idea behind each one, and where it has been put into practice.">
+<meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#18171B" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/safety/">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<meta property="og:url" content="https://mcclelland.info/safety/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rory McClelland">
+<meta property="og:title" content="AI safety and governance · Rory McClelland">
+<meta property="og:description" content="The safety and governance techniques behind the work: the idea behind each one, and where it has been put into practice.">
+<meta property="og:image" content="https://mcclelland.info/headshot.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI safety and governance · Rory McClelland">
+<meta name="twitter:description" content="The safety and governance techniques behind the work: the idea behind each one, and where it has been put into practice.">
+<meta name="twitter:image" content="https://mcclelland.info/headshot.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/safety.css">
+<script>(function(){try{var t=localStorage.getItem('rm-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="../writing/">Writing</a>
+      <a href="../work/">Work</a>
+      <a href="../method/">Method</a>
+      <a href="../safety/" aria-current="page">Safety</a>
+      <a href="../about/">About</a>
+      <a href="../teaching/">Teaching</a>
+    </div>
+    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+
+<section class="page-head" id="safety">
+  <div class="wrap">
+    <div class="eyebrow">AI safety and governance</div>
+    <h1 class="title reveal">Safety is a product decision.</h1>
+    <p class="lede">Most of the hard calls in a product are made long before a safety team sees it: what data is collected, what the system is allowed to do, and what counts as harm. This page sets out the techniques I use to make those calls, each shown as a pair: the idea behind it, and where it has been put into practice. They run from a browser used by billions, through a dating app's safety team, to the AI systems I build today.</p>
+    <div class="track reveal">
+      <div><span class="when">2018–2021 · Google</span><b>Chrome Privacy</b><span class="d">Product lead for the privacy review every Chrome launch had to clear.</span></div>
+      <div><span class="when">2021–2022 · Bumble</span><b>Safety &amp; Integrity</b><span class="d">Product safety strategy across two dating apps, and their first proactive safety feature.</span></div>
+      <div><span class="when">Now</span><b>Guarded AI builds</b><span class="d">AI systems designed around what they must never do, then tested as an attacker would.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="beliefs">
+  <div class="wrap">
+    <div class="eyebrow">What I believe</div>
+    <h2 class="title reveal">Five beliefs underneath the techniques.</h2>
+    <div class="beliefs five reveal">
+      <div class="belief"><h5>Ask “private from whom?” before “how private?”</h5><p>“I want privacy” is not yet a requirement. It becomes one when it says who the user wants privacy from, and whom they are willing to trust to get it.</p></div>
+      <div class="belief"><h5>Write the never list before the feature list</h5><p>What a system must never do is agreed first, and each line is then made true by design, rather than by an instruction the system might ignore.</p></div>
+      <div class="belief"><h5>Capability and risk are the same dial</h5><p>Every permission that makes an AI system more useful also makes it more dangerous. The job is to turn the dial deliberately, one step at a time, on evidence.</p></div>
+      <div class="belief"><h5>Some risks are managed, not eliminated</h5><p>Where a risk cannot be removed, it is reduced by design, watched continuously, and owned by a named person who accepts in writing what remains.</p></div>
+      <div class="belief"><h5>Measure both kinds of error, or you are only measuring one</h5><p>A safety system that is judged only on what it catches will quietly punish the people it wrongly flags. What it misses and what it gets wrong are both counted, from the start.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="techniques">
+  <div class="wrap">
+    <div class="eyebrow">The techniques</div>
+    <h2 class="title reveal">Theory and practice, side by side.</h2>
+    <p class="lede">Each technique below pairs the idea with a place it has been used, and links to the evidence where there is some on this site. Open any card for the detail, or filter by the stage of the work it belongs to.</p>
+    <div class="reg-bar" role="group" aria-label="Filter techniques">
+      <button type="button" class="ipill" data-group="all" aria-pressed="true">All</button>
+      <button type="button" class="ipill" data-group="frame" aria-pressed="false">Frame the problem</button>
+      <button type="button" class="ipill" data-group="gate" aria-pressed="false">Gate and govern</button>
+      <button type="button" class="ipill" data-group="contain" aria-pressed="false">Contain by design</button>
+      <button type="button" class="ipill" data-group="measure" aria-pressed="false">Measure and test</button>
+      <button type="button" class="reg-toggle" id="regToggle">Open all</button>
+    </div>
+    <p class="reg-count" id="regCount" aria-live="polite"></p>
+    <div class="register" id="register">
+
+      <details class="tech" data-group="frame">
+        <summary><span class="grp">Frame the problem</span><h3>Private from whom?</h3><span class="gist">Turn “I want privacy” into a requirement by asking who the threat is and whom the user trusts.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>Privacy cannot be designed in the abstract. The same feature can protect a user who trusts the provider but fears a third party, and expose one who wants privacy from the provider itself.</p></div><div class="practice"><b>In practice</b><p>Used to untangle how Incognito sessions should be handled on the server at Chrome, and to decide where each kind of data may go in Job Scout, whose most private reading happens on the local PC.</p></div></div>
+        <a class="see" href="../writing/private-from-whom.html">Read: Private from whom? →</a>
+      </details>
+
+      <details class="tech" data-group="frame">
+        <summary><span class="grp">Frame the problem</span><h3>Privacy as a hygiene factor</h3><span class="gist">For most users privacy has to clear a bar, not win a competition.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>Privacy work is usually revenue-negative, or neutral at best, and few users choose a product for it. It is the reason they leave, not the reason they join, so the case for it has to be made on trust and reputation.</p></div><div class="practice"><b>In practice</b><p>The strategic argument for privacy investment in Chrome, at a time when competing browsers had begun to position themselves on privacy.</p></div></div>
+        <a class="see" href="#story-chrome">The Chrome story →</a>
+      </details>
+
+      <details class="tech" data-group="frame">
+        <summary><span class="grp">Frame the problem</span><h3>Name the trade between safety and privacy</h3><span class="gist">The two are sometimes aligned and sometimes opposed; the trade is made explicitly.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>Protecting people often means knowing more about what they do, which costs them privacy. Neither side wins by default, so the trade is named, argued and decided rather than left to whoever shouts loudest.</p></div><div class="practice"><b>In practice</b><p>Browser protection against dangerous sites works better the more it is told about the pages a user visits: a clear case of privacy traded for safety, with no single right answer.</p></div></div>
+      </details>
+
+      <details class="tech" data-group="frame">
+        <summary><span class="grp">Frame the problem</span><h3>Safety and quality as one problem</h3><span class="gist">Fix the harm and you often fix the experience too.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>Harmful behaviour and poor experience often share a cause. Treating them as separate problems splits the effort and the data.</p></div><div class="practice"><b>In practice</b><p>At Bumble, a safety team and a team working on the quality of conversations were tackling the same behaviour from two sides. I brought them together to work on it as one problem.</p></div></div>
+        <a class="see" href="#story-bumble">The Bumble story →</a>
+      </details>
+
+      <details class="tech" data-group="gate">
+        <summary><span class="grp">Gate and govern</span><h3>A launch review with three verdicts</h3><span class="gist">Yes; yes, but with required changes; or blocked.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>A review gate is only as good as the people in it. With engineers in the room it becomes a technical review rather than a policy sign-off, and a middle verdict, “yes, but”, turns it from a veto into a design partner.</p></div><div class="practice"><b>In practice</b><p>The privacy review every Chrome launch had to clear, with early consultation offered to teams that spotted a risk themselves, and escalation to senior leadership when a block was contested.</p></div></div>
+        <a class="see" href="#story-chrome">The Chrome story →</a>
+      </details>
+
+      <details class="tech" data-group="gate">
+        <summary><span class="grp">Gate and govern</span><h3>Offer the privacy-preserving route</h3><span class="gist">The “yes, but” answer: meet the need with less data.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>A review that only says no teaches teams to avoid it. A review that offers a better design, even a harder one to build, gets used.</p></div><div class="practice"><b>In practice</b><p>Matching a user's contacts by comparing hashed values, rather than uploading the contact list as it stands: heavier engineering, much better privacy.</p></div></div>
+        <a class="see" href="#story-chrome">The Chrome story →</a>
+      </details>
+
+      <details class="tech" data-group="gate">
+        <summary><span class="grp">Gate and govern</span><h3>Turn policy into product structure</h3><span class="gist">A policy position only protects people once a team and a backlog own it.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>Safety policy written in the abstract changes little. It has to become teams, owners, priorities and features before it reaches a user.</p></div><div class="practice"><b>In practice</b><p>The product safety strategy across Bumble and Badoo, turning policy intent into a concrete product and team structure, with executive sponsors aligned across two offices.</p></div></div>
+        <a class="see" href="../about/#experience">Experience →</a>
+      </details>
+
+      <details class="tech" data-group="gate">
+        <summary><span class="grp">Gate and govern</span><h3>Human gates before anything is built</h3><span class="gist">Nothing is built until the boundaries are checked and the tests agreed.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>The cheapest place to stop an unsafe feature is before it exists. A definition of ready that includes the boundaries makes that check routine rather than heroic.</p></div><div class="practice"><b>In practice</b><p>In every build, the product owner signs off refined stories, with their tests and boundary checks, before Claude, as an AI coding agent, writes any code.</p></div></div>
+        <a class="see" href="../work/#how-i-build">How I build with AI →</a>
+      </details>
+
+      <details class="tech" data-group="gate">
+        <summary><span class="grp">Gate and govern</span><h3>A paper trail a reviewer would ask for</h3><span class="gist">Decisions, risks and limits written down, so the reasoning outlives the conversation.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>Governance depends on being able to show why a decision was made and what risk was accepted. Recognised frameworks give that record a shape that reviewers already know.</p></div><div class="practice"><b>In practice</b><p>Job Scout carries a numbered decision log, a system card, a threat model and a risk register organised by the <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST AI Risk Management Framework</a>.</p></div></div>
+        <a class="see" href="../work/#job-scout">Job Scout case study →</a>
+      </details>
+
+      <details class="tech" data-group="gate">
+        <summary><span class="grp">Gate and govern</span><h3>Managed, not eliminated</h3><span class="gist">Treat prompt injection the way phishing is treated: reduced by design, watched, and owned.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>No AI provider has solved the problem of models being steered by what they read, and the major ones say so. Waiting for a fix means nothing starts; pretending there is one is worse.</p></div><div class="practice"><b>In practice</b><p>The governance model I propose to leadership teams introducing AI agents: a named executive owner accepts the remaining risk in writing, thresholds are set before anything is built, and failures are reported alongside successes.</p></div></div>
+        <a class="see" href="../method/">The method →</a>
+      </details>
+
+      <details class="tech" data-group="gate">
+        <summary><span class="grp">Gate and govern</span><h3>Give security the design, not a veto</h3><span class="gist">Ask a scoped question with a deadline, not an open one.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>Asked an open question with no scope, no deadline and no decision rights, the only safe answer a security team can give is no. Overruling them fails too, because an overruled team designs nothing.</p></div><div class="practice"><b>In practice</b><p>The request I recommend leadership teams put to their security team: design the safest set-up for a named list of processes, state the risk that cannot be removed, and deliver in weeks, so that management can decide whether to accept it.</p></div></div>
+      </details>
+
+      <details class="tech" data-group="contain">
+        <summary><span class="grp">Contain by design</span><h3>The never list</h3><span class="gist">What the system must never do, written first and enforced by design.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>A list of what a system must never do is shorter, clearer and easier to test than a list of what it should do. Each line is then made true in code, not left to an instruction.</p></div><div class="practice"><b>In practice</b><p>Job Scout never applies, replies or contacts anyone on the user's behalf. The task app never writes back to its sources, never deletes and never merges on its own.</p></div></div>
+        <a class="see" href="../writing/write-the-never-list-first.html">Read: Write the never list first →</a>
+      </details>
+
+      <details class="tech" data-group="contain">
+        <summary><span class="grp">Contain by design</span><h3>The Rule of Two</h3><span class="gist">Private data, untrusted content, the ability to act: never all three unsupervised.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>An AI session can reasonably run unattended with at most two of the three. With all three, a single hidden instruction in something it reads can turn it against its user.</p></div><div class="practice"><b>In practice</b><p>Used to decide which parts of a build may run as an agent and which stay as ordinary code, and the basis of the classification I use with organisations deciding what may run unattended.</p></div></div>
+        <a class="see" href="#try-it">Try the calculator →</a>
+      </details>
+
+      <details class="tech" data-group="contain">
+        <summary><span class="grp">Contain by design</span><h3>Data class decides where it runs</h3><span class="gist">How sensitive the data is decides which deployment is acceptable.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>Where a model runs decides who can see the data and what it costs. Setting each class of data against each deployment option makes the right choice for a piece of work plain, and it is rarely the same twice.</p></div><div class="practice"><b>In practice</b><p>The deployment and exposure matrix I use with organisations, from public material that can go anywhere to customer personal data that belongs to a separate decision entirely.</p></div></div>
+        <a class="see" href="../method/#deployment-exposure">See the matrix →</a>
+      </details>
+
+      <details class="tech" data-group="contain">
+        <summary><span class="grp">Contain by design</span><h3>Text from strangers is data, never instructions</h3><span class="gist">Untrusted text is fenced off, cleaned and capped before a model sees it.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>A model cannot reliably tell its user's instructions from instructions hidden in what it reads. So untrusted text is marked as data, stripped of instruction-like lines and limited in length.</p></div><div class="practice"><b>In practice</b><p>Every job advert and email Job Scout reads is treated this way, and anything removed is flagged for the user to see.</p></div></div>
+        <a class="see" href="../work/#job-scout">Job Scout case study →</a>
+      </details>
+
+      <details class="tech" data-group="contain">
+        <summary><span class="grp">Contain by design</span><h3>Isolation and least privilege</h3><span class="gist">Each part gets only the access its job needs, and some data no AI ever reaches.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>The less a component can see and do, the less harm a mistake or an attack can cause. Where untrusted content meets private data, the reader is isolated from everything else.</p></div><div class="practice"><b>In practice</b><p>Job Scout's mail access is read-only and its credentials are encrypted. Adverts and emails are read by a model on the local PC with no tools and no internet access. The task app reads every source read-only.</p></div></div>
+        <a class="see" href="../work/#job-scout">Job Scout case study →</a>
+      </details>
+
+      <details class="tech" data-group="contain">
+        <summary><span class="grp">Contain by design</span><h3>Code checks the AI</h3><span class="gist">Nothing a model produces is written anywhere until ordinary code has checked it.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>Models are used to interpret, draft and triage; deterministic code validates what they produce and keeps the record. An AI agent is used only where isolation, independence or on-demand use calls for one.</p></div><div class="practice"><b>In practice</b><p>In Job Scout, an independent reviewer must quote the career record for every claim it accepts in a draft CV, and code confirms each quote exists before anything is saved.</p></div></div>
+        <a class="see" href="../work/#job-scout">Job Scout case study →</a>
+      </details>
+
+      <details class="tech" data-group="contain">
+        <summary><span class="grp">Contain by design</span><h3>Authority is earned</h3><span class="gist">Shadow, assisted, delegated, extended: one step at a time, and back a step after an incident.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>A system starts by watching, then suggests, then acts within bounds, and only then is given more. Each step is earned on evidence, and a confirmed incident steps it back automatically.</p></div><div class="practice"><b>In practice</b><p>The autonomy ladder in the method. In Job Scout: read-only first, a pause switch on the board, and caps on how much a run can do, which also cap its cost.</p></div></div>
+        <a class="see" href="../method/">The method →</a>
+      </details>
+
+      <details class="tech" data-group="measure">
+        <summary><span class="grp">Measure and test</span><h3>Relative signals over absolute thresholds</h3><span class="gist">When normal behaviour looks like harm, measure change rather than level.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>A single score with a fixed threshold works only when normal use scores low. Where it does not, the signal is in the difference between people and in how fast things change.</p></div><div class="practice"><b>In practice</b><p>Bumble's proactive toxicity detection, which looked at the gap in toxicity between the two people in a conversation and how quickly it was rising, because flirting scores as toxic.</p></div></div>
+        <a class="see" href="#story-bumble">The Bumble story →</a>
+      </details>
+
+      <details class="tech" data-group="measure">
+        <summary><span class="grp">Measure and test</span><h3>Measure both kinds of error</h3><span class="gist">Count what the system wrongly flags as carefully as what it misses.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>False positives fall on innocent users and erode trust; false negatives leave harm in place. Each needs its own route to be found and counted.</p></div><div class="practice"><b>In practice</b><p>At Bumble, a wrongly flagged message could be disputed from within the chat and went to human review, while missed cases surfaced through the existing reporting system.</p></div></div>
+        <a class="see" href="#story-bumble">The Bumble story →</a>
+      </details>
+
+      <details class="tech" data-group="measure">
+        <summary><span class="grp">Measure and test</span><h3>Red team and independent review</h3><span class="gist">Attack your own system, have it checked by something that did not build it, and set the bar first.</span></summary>
+        <div class="pair"><div><b>The idea</b><p>A builder grading its own work finds what it expects to find. Pass marks are set before the results are in, so a result cannot be argued with afterwards.</p></div><div class="practice"><b>In practice</b><p>Job Scout stopped all ten hostile inputs its red team tried and read 21 of 22 test adverts correctly. A separate agent reviews code it did not write, and every finding in the task app's QA pass was fixed with a test that failed first.</p></div></div>
+        <a class="see" href="../work/#case-studies">The case studies →</a>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<section id="stories">
+  <div class="wrap">
+    <div class="eyebrow">In depth</div>
+    <h2 class="title reveal">Three stories behind the techniques.</h2>
+    <div class="stories">
+      <article class="story reveal" id="story-chrome">
+        <div class="meta"><span class="tag">Google · Chrome Privacy</span><h3>The review every launch had to clear</h3><p>Launch review · the “yes, but” · privacy as a hygiene factor</p></div>
+        <div class="beats">
+          <p><b>The problem.</b> Every Chrome launch had to pass a privacy review before it shipped. Engineers sat in the review alongside product, so it tested the design rather than the paperwork, and it returned one of three verdicts: yes; yes, but with required changes; or blocked. Teams could also come early, when they had spotted a risk themselves.</p>
+          <p><b>The tension.</b> The hardest calls were rarely about engineering. Blocking third-party cookies in Incognito was about two weeks of build. At Chrome's scale, though, it meant modelling the effect on advertising revenue from scratch, and months of competition-law review, because restricting a cookie that rival ad businesses depended on carried risks of its own.</p>
+          <p><b>The decision.</b> It was held back, then shipped in 2020, once another major browser had made the same move and the change had become the industry norm.</p>
+          <p class="lesson">Safety and privacy work is mostly the work around the build: the stakeholders, the money and the law.</p>
+        </div>
+      </article>
+      <article class="story reveal" id="story-bumble">
+        <div class="meta"><span class="tag">Bumble · Safety &amp; Integrity</span><h3>When flirting looks like abuse</h3><p>Relative signals · both kinds of error · safety and quality as one problem</p></div>
+        <div class="beats">
+          <p><b>The problem.</b> Bumble's first proactive safety feature was designed to step in while a conversation was turning, rather than after a report. It used a beta toxicity-scoring model from Google, which rates a message between 0 and 1.</p>
+          <p><b>The tension.</b> The obvious design, flagging anything above a threshold, fails on a dating app. People are meant to flirt and be direct, and flirting scores as toxic. Research also showed that much of the harm came from people unaware of how they were coming across, so the feature was as much about the quality of conversation as about safety.</p>
+          <p><b>The decision.</b> Two relative signals replaced the absolute score: the gap in toxicity between the two people, and how quickly it was rising. Wrongly flagged messages could be disputed in the chat and went to human review; missed ones surfaced through user reports. A separate team working on conversation quality was brought together with the safety team, and the problem was tackled as one.</p>
+          <p class="lesson">The right measure depends on what normal looks like for the people using the product.</p>
+        </div>
+      </article>
+      <article class="story reveal" id="story-job-scout">
+        <div class="meta"><span class="tag">Own build · Job Scout</span><h3>Guardrails on a personal AI agent</h3><p>Never list · containment · red team</p></div>
+        <div class="beats">
+          <p><b>The problem.</b> Job Scout runs a job search every morning on a private mailbox and career record. It reads alerts and adverts, scores each role and drafts a CV and letter for the best few: private data and text written by strangers, in the same system.</p>
+          <p><b>The tension.</b> Every useful step adds risk. An agent that could apply, reply or follow up would save the most time, and would also be the most dangerous thing to leave running.</p>
+          <p><b>The decision.</b> The never list came first: it never applies, replies or contacts anyone, and every decision stays with the user. Adverts and emails are read on the local PC by a model with no tools and no internet access, and only a checked summary leaves the machine. Claims in each draft are verified against the career record by code. Then it was attacked: all ten hostile red-team inputs were stopped.</p>
+          <p class="lesson">Decide what it must never do before deciding what it should do.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="try-it">
+  <div class="wrap">
+    <div class="eyebrow">Try it</div>
+    <h2 class="title reveal">Is this safe to run unattended?</h2>
+    <div class="r2-wrap">
+      <svg viewBox="0 0 340 285" aria-hidden="true" style="width:100%;max-width:340px;">
+        <circle id="r2c-data" class="r2-circ" cx="140" cy="110" r="95" fill="var(--accent)" fill-opacity="0.16" stroke="var(--accent)" stroke-width="1.5"/>
+        <circle id="r2c-content" class="r2-circ" cx="205" cy="110" r="95" fill="var(--warn)" fill-opacity="0.16" stroke="var(--warn)" stroke-width="1.5"/>
+        <circle id="r2c-act" class="r2-circ" cx="172" cy="175" r="95" fill="var(--ink)" fill-opacity="0.10" stroke="var(--ink-soft)" stroke-width="1.5"/>
+        <text id="r2t-data" class="r2-lbl" x="72" y="70" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Private data</text>
+        <text id="r2t-content" class="r2-lbl" x="228" y="70" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Untrusted content</text>
+        <text id="r2t-act" class="r2-lbl" x="128" y="240" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Ability to act</text>
+        <text x="172" y="150" font-family="Bricolage Grotesque" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">only with</text>
+        <text x="172" y="163" font-family="Bricolage Grotesque" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">containment</text>
+      </svg>
+      <div class="r2-text">
+        <p>A language model cannot reliably tell an instruction from its user apart from one hidden in something it is reading. The major AI labs say so themselves, and none describes the problem as solved. Where the model runs changes who can see the data and what it costs; it changes nothing about this risk.</p>
+        <p>What works is containment, known as the <b>Rule of Two</b>. An AI session can reasonably run unattended if it has no more than two of three properties: access to private data, exposure to content it did not write, and the ability to act or communicate with the outside world. Tick the boxes to classify a system.</p>
+      </div>
+    </div>
+    <div class="riskcalc">
+      <div class="riskcalc-toggles">
+        <label class="rtoggle"><input type="checkbox" id="rk-data"><span class="rswitch"></span><span class="rlabel">Has access to private data</span></label>
+        <label class="rtoggle"><input type="checkbox" id="rk-content"><span class="rswitch"></span><span class="rlabel">Reads content it didn't write</span></label>
+        <label class="rtoggle"><input type="checkbox" id="rk-act"><span class="rswitch"></span><span class="rlabel">Can act, or talk to the outside world</span></label>
+      </div>
+      <div class="risk-result">
+        <span class="risk-verdict ok" id="riskVerdictBadge">Low exposure</span>
+        <p class="risk-guide" id="riskGuide"></p>
+        <div class="risk-example r2-practice">
+          <b>In practice: Job Scout</b>
+          <p>The model that reads adverts and emails holds untrusted content, but runs on the local PC with no tools and no internet access, so it cannot act on anything it reads. Only a checked summary leaves the machine, and nothing in the system can apply, reply or contact anyone.</p>
+        </div>
+      </div>
+    </div>
+    <p class="ix-follow"><a href="../method/#rule-of-two">See worked examples by industry in the method →</a></p>
+  </div>
+</section>
+
+<section id="downloads">
+  <div class="wrap">
+    <div class="section-head"><div><div class="eyebrow">Downloads</div><h2 class="title reveal">The full write-ups.</h2></div><a href="../work/">All work →</a></div>
+    <div class="downloads reveal">
+      <a class="cmini" href="../case-studies/rory-mcclelland-how-i-build-with-ai.pdf" download><img src="../case-studies/cover-how-i-build-with-ai.jpg" alt="" loading="lazy" width="662" height="516"><div><div class="tag">Way of working · 5 pages</div><h3>How I build with AI: guardrails first</h3><p>The build cycle and the seven guardrail principles applied to anything that uses AI.</p><span class="dl">Download the PDF ↓</span></div></a>
+      <a class="cmini" href="../case-studies/rory-mcclelland-job-scout-case-study.pdf" download><img src="../case-studies/cover-job-scout-case-study.jpg" alt="" loading="lazy" width="662" height="516"><div><div class="tag">Agentic application · 6 pages</div><h3>Job Scout: a guarded, private job search</h3><p>The never list, data boundaries, red team results and threat model for one system.</p><span class="dl">Download the PDF ↓</span></div></a>
+      <a class="cmini" href="../case-studies/rory-mcclelland-task-oversight-case-study.pdf" download><img src="../case-studies/cover-task-oversight-case-study.jpg" alt="" loading="lazy" width="662" height="516"><div><div class="tag">Product build · 5 pages</div><h3>Task oversight: one list I can trust</h3><p>A local-only, read-only design, with every QA finding fixed and the code public.</p><span class="dl">Download the PDF ↓</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="wrap">
+    <div class="eyebrow">Where the ideas come from</div>
+    <h2 class="title reveal">Further reading.</h2>
+    <p class="lede">Several of these techniques build on published work. These are the sources worth reading first.</p>
+    <ul class="reading">
+      <li><a href="https://ai.meta.com/blog/practical-ai-agent-security/" target="_blank" rel="noopener">Agents Rule of Two: A Practical Approach to AI Agent Security</a><span class="src">Meta AI · October 2025</span><p>The rule behind the calculator above: an agent should hold no more than two of untrusted input, access to private data or sensitive systems, and the ability to change state or communicate externally.</p></li>
+      <li><a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/" target="_blank" rel="noopener">The lethal trifecta for AI agents</a><span class="src">Simon Willison · June 2025</span><p>The clearest explanation of why private data, untrusted content and external communication are dangerous in combination.</p></li>
+      <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">AI Risk Management Framework (AI RMF 1.0)</a><span class="src">NIST · January 2023</span><p>The framework used to organise the risk registers in my builds, around four functions: govern, map, measure and manage.</p></li>
+    </ul>
+    <div class="next-step"><p><b>Also on this site</b>How the same thinking is taught to students, new builders and leadership teams, sized to whoever is building.</p><a class="btn" href="../teaching/#safety">Safety in teaching →</a></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/rule-of-two.js"></script>
+<script>
+(function () {
+  window.RuleOfTwo.render();
+
+  var reg = document.getElementById('register');
+  var cards = Array.prototype.slice.call(reg.querySelectorAll('details.tech'));
+  var pills = Array.prototype.slice.call(document.querySelectorAll('.reg-bar .ipill'));
+  var toggle = document.getElementById('regToggle');
+  var count = document.getElementById('regCount');
+
+  function visible() { return cards.filter(function (c) { return !c.hidden; }); }
+  function syncToggle() {
+    var v = visible();
+    var allOpen = v.length > 0 && v.every(function (c) { return c.open; });
+    toggle.textContent = allOpen ? 'Close all' : 'Open all';
+  }
+  function filter(group) {
+    cards.forEach(function (c) { c.hidden = !(group === 'all' || c.getAttribute('data-group') === group); });
+    pills.forEach(function (p) { p.setAttribute('aria-pressed', p.getAttribute('data-group') === group ? 'true' : 'false'); });
+    var n = visible().length;
+    count.textContent = n + (n === 1 ? ' technique' : ' techniques') + (group === 'all' ? '' : ' in this group');
+    syncToggle();
+  }
+  pills.forEach(function (p) { p.addEventListener('click', function () { filter(p.getAttribute('data-group')); }); });
+  toggle.addEventListener('click', function () {
+    var v = visible(), open = !v.every(function (c) { return c.open; });
+    v.forEach(function (c) { c.open = open; });
+    syncToggle();
+  });
+  cards.forEach(function (c) { c.addEventListener('toggle', syncToggle); });
+  filter('all');
+})();
+</script>
+</body>
+</html>

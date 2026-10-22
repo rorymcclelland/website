@@ -9,6 +9,7 @@ Source for [mcclelland.info](https://mcclelland.info): the professional site of 
 | `index.html` | Home |
 | `work/` | Work and case studies, with downloadable PDFs in `case-studies/` |
 | `method/` | How the work is approached |
+| `safety/` | AI safety and governance: techniques, stories, Rule of Two calculator |
 | `writing/` | Writing (RSS at `feed.xml`) |
 | `about/` | About |
 | `teaching/` | Teaching and AI mentoring |

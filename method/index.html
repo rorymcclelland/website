@@ -34,6 +34,7 @@
       <a href="../writing/">Writing</a>
       <a href="../work/">Work</a>
       <a href="../method/" aria-current="page">Method</a>
+      <a href="../safety/">Safety</a>
       <a href="../about/">About</a>
       <a href="../teaching/">Teaching</a>
     </div>
@@ -197,7 +198,7 @@
   <div class="wrap">
     <div class="engine-hint">One finding is worth pausing on: capability and risk rise together, on the same dial. The job is therefore to turn that dial deliberately, one step at a time, on the strength of the evidence, instead of trying to reduce the risk to zero.</div>
 
-    <div class="loop-label">Where deployment and exposure meet</div>
+    <div class="loop-label" id="deployment-exposure">Where deployment and exposure meet</div>
     <p class="lede" style="margin-bottom:1rem;">Two quite different questions tend to get asked together, and answered as if they were the same. <b>Where does it run</b> decides who can see the data, and what it all costs. <b>What may it touch</b> decides what the system is allowed near in the first place. Once the two are separated and set against each other, the right deployment option for a piece of work tends to become clear, and it is rarely the same answer twice. Click a cell to see why.</p>
     <div class="matrix-scroll">
       <table class="matrix" id="deployMatrix">
@@ -256,7 +257,7 @@
     <div class="matrix-detail" id="matrixDetail">Click a cell above to see the guidance behind it.</div>
     <p class="matrix-note">Moving right along this table only changes who can see the data and what it all costs. It changes nothing about who could steer the model through something it reads, what it is allowed to do, or who is accountable when it gets something wrong. Those are decisions about architecture and management, not hosting, and they are what the next diagram is about.</p>
 
-    <div class="loop-label">Is this safe to run unattended? Try classifying one.</div>
+    <div class="loop-label" id="rule-of-two">Is this safe to run unattended? Try classifying one.</div>
     <div class="r2-wrap">
       <svg viewBox="0 0 340 285" aria-hidden="true" style="width:100%;max-width:340px;">
         <circle id="r2c-data" class="r2-circ" cx="140" cy="110" r="95" fill="var(--accent)" fill-opacity="0.16" stroke="var(--accent)" stroke-width="1.5"/>
@@ -288,6 +289,8 @@
         </div>
       </div>
     </div>
+
+    <p class="ix-follow"><a href="../safety/">Why this matters: the safety and governance techniques behind the method →</a></p>
 
     <div class="loop-label">Three architectural commitments</div>
     <div class="commitments">
@@ -338,6 +341,7 @@
     <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
   </div>
 </footer>
+<script src="../assets/rule-of-two.js"></script>
 <script>
 (function(){
   var industries = {
@@ -520,55 +524,11 @@
     persist();
   }
 
-  function setVennState(circleId, labelId, on, anyOn) {
-    var c = $(circleId), t = $(labelId);
-    if (c) { c.classList.toggle('r2-active', on); c.classList.toggle('r2-dim', anyOn && !on); }
-    if (t) { t.classList.toggle('r2-active', on); t.classList.toggle('r2-dim', anyOn && !on); }
-  }
-
-  function updateRisk() {
-    var data = $('rk-data').checked;
-    var content = $('rk-content').checked;
-    var act = $('rk-act').checked;
-    var count = (data ? 1 : 0) + (content ? 1 : 0) + (act ? 1 : 0);
-    var anyOn = count > 0;
-    setVennState('r2c-data', 'r2t-data', data, anyOn);
-    setVennState('r2c-content', 'r2t-content', content, anyOn);
-    setVennState('r2c-act', 'r2t-act', act, anyOn);
-
-    var badge = $('riskVerdictBadge'), guide = $('riskGuide'), exBox = $('riskExampleBox');
-    badge.classList.remove('ok', 'mid', 'hot');
-
-    var classKey = null;
-    var guideText = '';
-
-    if (!data && !content && !act) {
-      guideText = 'There is no meaningful exposure from this particular combination, which, admittedly, makes it the less interesting case. Tick a box above to see how that changes.';
-    } else if (data && !content && !act) {
-      classKey = 'A';
-      guideText = 'This is Class A: internal only. Private data goes in, the output goes to a person, and nothing comes in from outside. It is reasonable to proceed here, once permissions have been properly tidied up.';
-    } else if (!data && content && !act) {
-      classKey = 'B';
-      guideText = 'This is Class B: outside content, but no power to act on it. It is reasonable to proceed once a model with no tools of its own reads the content and passes back labels, never instructions.';
-    } else if (data && content && act) {
-      classKey = 'C';
-      guideText = 'This is Class C: all three properties at once, and the one that deserves real caution. Proceed only once containment has been built and properly tested, a human gate has been placed in front of anything irreversible, and the decision to proceed has been made explicitly, not by default.';
-    } else if (data && !content && act) {
-      guideText = 'The system can see private data and act on it, but never reads anything it hasn’t produced itself. It is reasonable to proceed within a clearly defined envelope. However, the moment it starts reading anything external, it should be redesigned as the all-three case above.';
-    } else if (!data && content && act) {
-      guideText = 'Outside content is read and the system can act, but there is no private data on hand to expose. This is reasonably contained, though it still needs testing against prompt injection before any further autonomy is extended.';
-    } else if (data && content && !act) {
-      guideText = 'Private data is read alongside outside material, but no action is taken as a result. It is reasonable to proceed with care once permissions are clean, bearing in mind that adding the ability to act would then be the entire risk.';
-    } else if (!data && !content && act) {
-      guideText = 'The system can act, but has no private data to expose and reads nothing it did not write itself, so there is nothing here for an attacker to steer. This shape is unusual in practice, since most systems worth giving the ability to act also need to see data or content to know what to do with it.';
-    }
-
-    if (count <= 1) badge.classList.add('ok');
-    else if (count === 2) badge.classList.add('mid');
-    else badge.classList.add('hot');
-    badge.textContent = count <= 1 ? 'Low exposure' : (count === 2 ? 'Elevated: be deliberate' : 'Contained design required');
-    guide.textContent = guideText;
-
+  // Rule of Two logic lives in assets/rule-of-two.js, shared with the Safety page;
+  // this page adds the industry-specific example for classes A to C.
+  var refreshRisk = null;
+  function showRiskExample(classKey) {
+    var exBox = $('riskExampleBox');
     if (classKey) {
       $('riskExampleIndustry').textContent = industries[state.industry];
       $('riskExampleText').textContent = riskExamples[classKey][state.industry];
@@ -576,6 +536,9 @@
     } else {
       exBox.hidden = true;
     }
+  }
+  function updateRisk() {
+    if (!refreshRisk) { refreshRisk = window.RuleOfTwo.render(showRiskExample); } else { refreshRisk(); }
   }
 
   var pills = document.querySelectorAll('.ipill');
@@ -730,9 +693,6 @@
       $('matrixDetail').innerHTML = '<b>' + row + ' → ' + col + ': ' + verdict + '.</b> ' + note;
     });
   }
-  $('rk-data').addEventListener('change', updateRisk);
-  $('rk-content').addEventListener('change', updateRisk);
-  $('rk-act').addEventListener('change', updateRisk);
 
   var themeToggle = $('themeToggle');
   if (themeToggle) {
