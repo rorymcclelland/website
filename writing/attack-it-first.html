@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Attack it before anyone else does · Rory McClelland</title>
+<meta name="description" content="Every system I build is attacked on purpose before I trust it. The pass mark matters less than the bugs the attack turns up.">
+<meta name="author" content="Rory McClelland">
+<meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#18171B" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/writing/attack-it-first">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Attack it before anyone else does · Rory McClelland">
+<meta property="og:description" content="Every system I build is attacked on purpose before I trust it. The pass mark matters less than the bugs the attack turns up.">
+<meta property="og:url" content="https://mcclelland.info/writing/attack-it-first">
+<meta property="og:image" content="https://mcclelland.info/writing/img/attack-it-first.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mcclelland.info/writing/img/attack-it-first.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/writing.css">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<script>(function(){ try { var t = localStorage.getItem('rm-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="../writing/" aria-current="page">Writing</a>
+      <a href="../work/">Work</a>
+      <a href="../method/">Method</a>
+      <a href="../safety/">Safety</a>
+      <a href="../about/">About</a>
+      <a href="../teaching/">Teaching</a>
+    </div>
+    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+<main class="wrap">
+  <header class="post-head read">
+    <div class="eyebrow">Writing · Safety</div>
+    <h1>Attack it before anyone else does</h1>
+    <p class="dek">Every system I build is attacked on purpose before I trust it. The pass mark matters less than the bugs the attack turns up.</p>
+    <div class="meta"><span><b>Rory McClelland</b></span><span>October 2026</span><span>5 min read</span></div>
+  </header>
+  <figure class="hero-fig"><svg viewBox="0 0 1200 630" role="img" aria-labelledby="h1t"><title id="h1t">A scorecard headed red team, quarterly: hostile inputs 10, stopped 10, bugs found 4, with the four highlighted and a handwritten note saying the four is the point.</title><rect class="s-bg" width="1200" height="630"/><g transform="rotate(-1.6 890 310)"><rect x="660" y="112" width="460" height="400" fill="#000" opacity=".07" transform="translate(8 10)"/><rect class="s-paper" style="stroke:var(--ink)" x="660" y="112" width="460" height="400" stroke-width="1.5"/><text class="t-lab s-gr" x="692" y="156" font-size="15" letter-spacing="1.2">RED TEAM · QUARTERLY</text><line class="k-line" x1="672" y1="178" x2="1108" y2="178" stroke-width="1.2"/><text class="t-body s-ink" x="692" y="250" font-size="27">hostile inputs</text><text class="t-disp s-ink" x="1084" y="256" font-size="62" text-anchor="end">10</text><line class="k-line" x1="672" y1="290" x2="1108" y2="290" stroke-width="1.2"/><text class="t-body s-ink" x="692" y="362" font-size="27">stopped</text><text class="t-disp s-ink" x="1084" y="368" font-size="62" text-anchor="end">10</text><line class="k-line" x1="672" y1="402" x2="1108" y2="402" stroke-width="1.2"/><rect class="s-hl" x="1032" y="424" width="64" height="62"/><text class="t-body s-ink" x="692" y="474" font-size="27">bugs found</text><text class="t-disp s-acc" x="1084" y="480" font-size="62" text-anchor="end">4</text></g><rect class="s-hl" x="56" y="322" width="292" height="34"/><text class="t-disp s-ink" x="60" y="196" font-size="62">attack it</text><text class="t-disp s-ink" x="60" y="272" font-size="62">before anyone</text><text class="t-disp s-ink" x="60" y="348" font-size="62">else does.</text><text class="t-note s-acc" x="62" y="456" font-size="25">the four is the point.</text><path class="k-acc" d="M318,452 C560,560 950,592 1062,528" stroke-width="2" stroke-linecap="round"/><path class="k-acc" d="M1044,526 L1063,527 L1058,509" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg></figure>
+  <article class="read prose">
+    <p>Every quarter, ten hostile inputs go through Job Scout, the automated job search I run each morning. In the first exercise all ten were stopped. It also found four genuine bugs, and those four are the reason the exercise exists.</p>
+    <p>That exercise is a red team: a deliberate attempt to make a system fail, by someone playing the attacker, before a real attacker gets the chance. The term comes from military war games, where the red side played the opposing force so that plans were tested against an opponent with no interest in them succeeding. Security teams adopted it for the same reason, and AI gives it a great deal more to do.</p>
+
+    <h2>Why builders cannot mark their own work</h2>
+    <p>A builder testing their own system tests the cases they thought of, which are the cases the system was built to handle. Everybody does this, because the same assumptions that shaped the design also shape the tests. A red team's whole job is to bring different assumptions, and to be pleased when something breaks.</p>
+    <p>AI systems widen the gap. A conventional system can be attacked through its code and its interfaces. An AI system can also be attacked through words: any text it reads, whether an email, a web page or a job advert, can carry instructions of its own (known as prompt injection). The people who build these models say openly that this cannot be fully solved, which means the defence has to sit in what the system is allowed to do. The only way to know that defence holds is to attack it.</p>
+    <p class="aside">A red team that never finds anything is a reason to worry.</p>
+
+    <h2>Where the habit started</h2>
+    <p>My first experience of this was at Google, as the first product manager for Chrome Privacy. Every Chrome launch had to clear a privacy review, and the review could return one of three verdicts: yes, yes with required changes, or blocked. Engineers sat in the review, so it was a technical gate. Nobody called it a red team, but it did the same job. People who had not built a feature sat down to work out how it could go wrong, before it reached Chrome's users.</p>
+    <p>I now apply the same idea, at a much smaller scale, to everything I build with AI.</p>
+
+    <h2>Job Scout: ten hostile inputs</h2>
+    <p>Job Scout reads my job alerts and email, scores roles and drafts applications, so it reads a great deal of text written by strangers. Its <a href="write-the-never-list-first.html">never list</a> says it must never apply, reply, edit or share anything. The red team checks whether that holds when someone tries to make it break those rules. All of the inputs are made up, so no real person's data is involved.</p>
+
+    <figure class="fig">
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Hostile input</th><th>What it tests</th></tr></thead>
+          <tbody>
+            <tr><td>Hidden instructions in an alert, an advert or an email subject line</td><td>Whether text from a stranger can steer the system</td></tr>
+            <tr><td>A request to send data elsewhere</td><td>Whether anything can leave the local PC that should not</td></tr>
+            <tr><td>A fake recruiter</td><td>Whether the system can be talked into acting for someone else</td></tr>
+            <tr><td>A fake job offer asking for bank details</td><td>Whether a scam is flagged before a person sees it</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <figcaption>The kinds of input in Job Scout's quarterly red team, and the question each one asks.</figcaption>
+    </figure>
+
+    <p>All ten attacks failed, because the design gives them nothing to work with. The model that reads strangers' text has no tools and no internet access, so a hidden instruction has nothing to act on. The bugs were found around the edges. An instruction placed in an email's subject line reached the cloud without being removed. A warning on a reply ("asks for bank details") was raised but never appeared on the board. Each was logged, then fixed or scheduled.</p>
+
+    <h2>The task app: the serious finding had nothing to do with AI</h2>
+    <p>My task app uses no AI at all, but it went through the same discipline before I trusted it: deliberate attempts to break it with impossible dates, damaged files, odd encodings and requests from other websites. That last one found the only high-severity issue. Any website open in the browser could add, complete or drop tasks through the running app, because browsers let any page send certain simple requests without asking, and the server accepted them.</p>
+    <p>The fix was three checks on every request, and the retest ran the same probes again. Thirteen issues were found in total, and all thirteen were fixed, each with an automated test that failed before the fix went in. Red teaming is usually discussed as an AI safety technique. In reality the biggest hole in this project was ordinary web security, which is exactly why the attacker's view has to cover the whole system.</p>
+
+    <h2>What makes it work</h2>
+    <ol>
+      <li><strong>Set the bar first.</strong> Pass marks are agreed before the results are in, so a disappointing result cannot be argued away afterwards.</li>
+      <li><strong>Use something that did not build it.</strong> A separate agent that has not seen the work reviews the code before each delivery. Before one Job Scout release it found eleven issues; nine were fixed and two were accepted, with the reasons recorded.</li>
+      <li><strong>Count the bugs as well as the passes.</strong> Ten out of ten stopped is reassuring. The four bugs are what made the system better.</li>
+      <li><strong>Repeat it.</strong> Attacks change and systems change, so the exercise runs every quarter, with new inputs added as new tricks appear.</li>
+      <li><strong>Keep it in proportion.</strong> A personal tool gets ten inputs and an afternoon. A system that touches customers or money gets a great deal more.</li>
+    </ol>
+
+    <h2>In an organisation</h2>
+    <p>The same thinking scales up. When I set out an AI adoption plan for an organisation recently, the red team was written into the plan itself: security attacks the first pilot that reads outside content with hidden-instruction attempts, before it starts and while it runs, and one of the checkpoints for widening its use simply asks whether the safeguards held when tested. Making the attack a planned stage means nobody has to argue for it later, when a deadline is close.</p>
+    <p>Job Scout has run every morning since mid-October. The number of applications, replies or messages it has sent on my behalf is still zero, and the red team is how I know that figure is earned. (It is also the only part of the project where finding a problem counts as a good day.)</p>
+
+    <div class="after">
+      <div class="who"><img src="../headshot-mono-light.jpg" alt=""><p>Rory McClelland leads product, with a background in privacy and user safety at Google Chrome and Bumble, and now builds with AI. <a href="../work/">See the work</a> or write to <a href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a>.</p></div>
+      <div class="next-step"><p><b>See it in full</b>Job Scout’s red team results, threat model and never list are written up as a case study.</p><a class="btn primary" href="../work/#job-scout">Read the case study →</a></div>
+      <div class="more"><a href="write-the-never-list-first.html"><span class="k">Building with AI</span><span class="t">Write the never list first</span></a><a href="private-from-whom.html"><span class="k">Privacy</span><span class="t">Private from whom?</span></a></div>
+    </div>
+  </article>
+</main>
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
+

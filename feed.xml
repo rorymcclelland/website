@@ -7,6 +7,13 @@
   <description>Notes on building with AI, privacy and safety, and bringing AI into organisations.</description>
   <language>en-gb</language>
   <item>
+    <title>Attack it before anyone else does</title>
+    <link>https://mcclelland.info/writing/attack-it-first.html</link>
+    <guid>https://mcclelland.info/writing/attack-it-first.html</guid>
+    <pubDate>Thu, 22 Oct 2026 14:00:00 +0100</pubDate>
+    <description>Every system I build is attacked on purpose before I trust it. The pass mark matters less than the bugs the attack turns up.</description>
+  </item>
+  <item>
     <title>The approximation tax</title>
     <link>https://mcclelland.info/writing/the-approximation-tax.html</link>
     <guid>https://mcclelland.info/writing/the-approximation-tax.html</guid>
