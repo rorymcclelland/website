@@ -26,8 +26,11 @@
   .tablewrap table{border-collapse:collapse;width:100%;min-width:30rem;font-size:.95rem;line-height:1.5;}
   .tablewrap th{font-family:var(--display);font-weight:700;text-align:left;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);padding:.8rem 1rem;border-bottom:1px solid var(--line);}
   .tablewrap td{padding:.85rem 1rem;border-top:1px solid var(--line);vertical-align:top;color:var(--ink-soft);}
-  .tablewrap td:first-child{font-family:var(--display);font-weight:700;color:var(--ink);white-space:nowrap;}
-  .tablewrap td:first-child::before{content:"never ";color:var(--accent);font-weight:600;}
+  .tablewrap td:first-child{font-family:var(--display);font-weight:700;color:var(--ink);}
+  .tablewrap table.never td:first-child{white-space:nowrap;}
+  .tablewrap table.never td:first-child::before{content:"never ";color:var(--accent);font-weight:600;}
+  .tablewrap table.split{min-width:0;}
+  .tablewrap table.split th:first-child{width:46%;}
 
   /* Fork figure (post 1) */
   .fork{border:1px solid var(--line);background:var(--paper-raised);padding:1.4rem;display:grid;gap:1rem;}
