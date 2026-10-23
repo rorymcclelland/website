@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>The method: redesigning a business around AI · Rory McClelland</title>
 <meta name="description" content="A method for redesigning work around AI: five stages from mapping to scale, four levels of autonomy, deployment options by data sensitivity, and the Rule of Two.">
-<meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#18171B" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FBF8F1">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -627,7 +626,7 @@
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
       var current = document.documentElement.getAttribute('data-theme');
-      if (!current) current = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      if (!current) current = 'light';
       var next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
       try { localStorage.setItem('rm-theme', next); } catch (e) {}

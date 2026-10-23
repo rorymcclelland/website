@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Teaching &amp; mentoring · Rory McClelland</title>
 <meta name="description" content="Teaching and mentoring people of any age or seniority how to take an idea in AI all the way to something real, safely. A former teacher with twenty years in product and a background in privacy and user safety.">
-<meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#18171B" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FBF8F1">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -323,7 +322,7 @@
   var tt = $('themeToggle');
   tt.addEventListener('click', function(){
     var cur = document.documentElement.getAttribute('data-theme');
-    if (!cur) cur = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    if (!cur) cur = 'light';
     var next = cur === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     try { localStorage.setItem('rm-theme', next); } catch (e) {}
