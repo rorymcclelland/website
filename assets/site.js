@@ -4,7 +4,7 @@
     toggle.addEventListener('click', function () {
       var current = document.documentElement.getAttribute('data-theme');
       if (!current) {
-        current = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        current = 'light';
       }
       var next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
