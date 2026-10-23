@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Keep your voice on your own machine · Rory McClelland</title>
+<meta name="description" content="I have swapped a cloud dictation app for OpenWhispr, which transcribes speech on the local PC. It is a touch slower, it costs nothing, and my voice stays with me.">
+<meta name="author" content="Rory McClelland">
+<meta name="theme-color" content="#FBF8F1">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/writing/keep-your-voice-local">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Keep your voice on your own machine · Rory McClelland">
+<meta property="og:description" content="I have swapped a cloud dictation app for OpenWhispr, which transcribes speech on the local PC. It is a touch slower, it costs nothing, and my voice stays with me.">
+<meta property="og:url" content="https://mcclelland.info/writing/keep-your-voice-local">
+<meta property="og:image" content="https://mcclelland.info/writing/img/keep-your-voice-local.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mcclelland.info/writing/img/keep-your-voice-local.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/writing.css">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<script>(function(){ try { var t = localStorage.getItem('rm-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="../writing/" aria-current="page">Writing</a>
+      <a href="../work/">Work</a>
+      <a href="../method/">Method</a>
+      <a href="../build/">Build</a>
+      <a href="../safety/">Safety</a>
+      <a href="../about/">About</a>
+      <a href="../teaching/">Teaching</a>
+    </div>
+    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+<main class="wrap">
+  <header class="post-head read">
+    <div class="eyebrow">Writing · Privacy</div>
+    <h1>Keep your voice on your own machine</h1>
+    <p class="dek">I have swapped a cloud dictation app for OpenWhispr, which transcribes speech on the local PC. It is a touch slower, it costs nothing, and my voice stays with me.</p>
+    <div class="meta"><span><b>Rory McClelland</b></span><span>October 2026</span><span>5 min read</span></div>
+  </header>
+  <figure class="hero-fig"><svg viewBox="0 0 1200 630" role="img" aria-labelledby="h1t"><title id="h1t">A voice waveform flowing into a box labelled local PC, whisper.cpp, and coming out as typed text, with a margin note saying the audio stays on the device.</title><rect class="s-bg" width="1200" height="630"/><rect class="s-hl" x="56" y="250" width="376" height="32"/><text class="t-disp s-ink" x="60" y="200" font-size="72">your voice,</text><text class="t-disp s-ink" x="60" y="274" font-size="72">kept local.</text><text class="t-note s-acc" x="62" y="380" font-size="25">the audio never</text><text class="t-note s-acc" x="62" y="412" font-size="25">leaves the device.</text><rect class="s-acc" x="560" y="139" width="15" height="61" rx="2"/><rect class="s-acc" x="580" y="143" width="15" height="55" rx="2"/><rect class="s-acc" x="600" y="154" width="15" height="33" rx="2"/><rect class="s-acc" x="620" y="146" width="15" height="47" rx="2"/><rect class="s-acc" x="640" y="149" width="15" height="42" rx="2"/><rect class="s-acc" x="660" y="153" width="15" height="34" rx="2"/><rect class="s-acc" x="680" y="139" width="15" height="63" rx="2"/><rect class="s-acc" x="700" y="150" width="15" height="41" rx="2"/><rect class="s-acc" x="720" y="151" width="15" height="38" rx="2"/><rect class="s-acc" x="740" y="142" width="15" height="56" rx="2"/><rect class="s-acc" x="760" y="158" width="15" height="23" rx="2"/><rect class="s-acc" x="780" y="144" width="15" height="52" rx="2"/><rect class="s-acc" x="800" y="143" width="15" height="53" rx="2"/><rect class="s-acc" x="820" y="153" width="15" height="34" rx="2"/><rect class="s-acc" x="840" y="145" width="15" height="51" rx="2"/><rect class="s-acc" x="860" y="144" width="15" height="53" rx="2"/><rect class="s-acc" x="880" y="160" width="15" height="20" rx="2"/><rect class="s-acc" x="900" y="142" width="15" height="57" rx="2"/><rect class="s-acc" x="920" y="150" width="15" height="40" rx="2"/><rect class="s-acc" x="940" y="151" width="15" height="39" rx="2"/><rect class="s-acc" x="960" y="139" width="15" height="61" rx="2"/><rect class="s-acc" x="980" y="152" width="15" height="37" rx="2"/><path class="k-gr" d="M1010,170 L1060,170" stroke-width="2" stroke-dasharray="4 6"/><rect class="s-paper" style="stroke:var(--ink)" x="560" y="262" width="580" height="118" stroke-width="1.5"/><text class="t-lab s-gr" x="584" y="296" font-size="14" letter-spacing="1.2">LOCAL PC</text><text class="t-disp s-ink" x="584" y="346" font-size="40">whisper.cpp</text><rect class="s-acc" x="1050" y="306" width="18" height="14" rx="2"/><path class="k-acc" d="M1054,306 v-5 a5,5 0 0 1 10,0 v5" stroke-width="2.4"/><path class="k-acc" d="M780,206 L780,254" stroke-width="2"/><path class="k-acc" d="M772,244 L780,256 L788,244" stroke-width="2" stroke-linejoin="round"/><path class="k-acc" d="M780,388 L780,436" stroke-width="2"/><path class="k-acc" d="M772,426 L780,438 L788,426" stroke-width="2" stroke-linejoin="round"/><rect class="s-paper" style="stroke:var(--line)" x="560" y="452" width="580" height="74" stroke-width="1.2"/><text class="t-body s-ink" x="584" y="497" font-size="22">Hi Sam, thanks for sending the brief over.</text><rect class="s-ink" x="1030" y="476" width="3" height="28"/><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg></figure>
+  <article class="read prose">
+    <p>Dictation has become a large part of how I work with AI. I can talk through a prompt, a backlog item or an awkward email much faster than I can type it, and the result is often better, because I explain things more fully out loud.</p>
+    <p>For a while I used Wispr Flow, which is very good at it. It is also a cloud service: what I say is sent to its servers to be transcribed and tidied up. I have since moved to <a href="https://openwhispr.com">OpenWhispr</a>, an open-source alternative that can do the whole job on the local PC.</p>
+
+    <h2>Why voice is different</h2>
+    <p>Dictation sits upstream of almost everything else. Whatever I am working on passes through it: client notes, a CV, a message to a friend, a question I would not type into a search engine. A dictation app hears all of it before any other tool sees it.</p>
+    <p>Voice also carries the speaker. A recording can be used to identify the person speaking, which is why data protection law treats biometric data with particular care. Text can be anonymised, whereas a voice is much harder to separate from the person it belongs to.</p>
+
+    <h2>Defaults decide</h2>
+    <p>Wispr Flow documents its controls openly, which is to its credit. According to its own <a href="https://docs.wisprflow.ai/articles/3147443438-security-overview">security overview</a>, a feature called Context Awareness is on by default and uses context from your screen to improve accuracy, and Privacy Mode, which stops your dictation being stored or used for training, is off by default. With it off, dictation data may be used to improve the product.</p>
+    <p>Both settings can be changed. The trouble is that very few people change a default, which I saw again and again at Chrome. Whatever a product ships with is, in practice, the privacy most of its users get.</p>
+    <p class="aside">The default is the privacy most users get.</p>
+
+    <h2>What OpenWhispr does instead</h2>
+    <p>From the user's side, OpenWhispr works in the same way. A system-wide shortcut starts recording, you speak, and punctuated text appears wherever the cursor is: an email, a document, Slack or an AI chat. It runs on Mac, Windows and Linux.</p>
+    <p>Underneath, it bundles whisper.cpp to run OpenAI's open Whisper models, and it can also run NVIDIA's Parakeet models. A model is downloaded once, from <a href="https://docs.openwhispr.com/guides/local-models">about 75 MB for the smallest Whisper model to about 3 GB for the largest</a>, and from then on transcription happens on your own hardware, using the graphics card where there is one and the processor where there is not. The audio stays on the device.</p>
+    <p>It is worth checking the set-up, though, because OpenWhispr offers cloud options too: its own cloud service, and your own API keys for OpenAI, Anthropic, Gemini or Groq. The AI clean-up of the text can also run either locally or in the cloud. 'Local' is a setting you choose, so choose it for both transcription and clean-up.</p>
+
+    <h2>What it costs</h2>
+    <p>Wispr Flow's free plan stops at 2,000 words a week, and Pro is about $15 a month, or $144 a year. OpenWhispr's local models are free, with no word limit. For something I use all day, that is a real saving as well as a private one.</p>
+    <p>The trade-off is a short wait. There is a beat between finishing a sentence and the text appearing that I did not notice with the cloud version, and it varies with the size of model chosen. The accuracy has been just as good for my use, and a custom dictionary handles the names and jargon that any model gets wrong.</p>
+
+    <h2>The question worth asking</h2>
+    <p>Between this and the tab sorter I wrote about in <a href="what-your-tabs-say.html">What your open tabs say about you</a>, local AI has stopped being a hobbyist's project for me. For small, personal jobs it is simply what I use. The question I now ask of any AI feature is whether the data actually needs to leave my machine, and more and more often the answer is no.</p>
+    <p>It is the same principle I build with. In Job Scout, job adverts and emails are read by a model on the local PC with no tools and no internet access, and only a checked summary goes any further. Keeping personal data local is far easier than protecting it once it has left.</p>
+
+    <div class="after">
+      <div class="who"><img src="../headshot-mono-light.jpg" alt=""><p>Rory McClelland leads product, with a background in privacy and user safety at Google Chrome and Bumble, and now builds with AI. <a href="../work/">See the work</a> or write to <a href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a>.</p></div>
+      <div class="next-step"><p><b>See it in a build</b>Job Scout keeps adverts and emails on the local PC, and the case study shows how.</p><a class="btn primary" href="../work/#job-scout">Read the case study →</a></div>
+      <div class="more"><a href="what-your-tabs-say.html"><span class="k">Privacy</span><span class="t">What your open tabs say about you</span></a><a href="private-from-whom.html"><span class="k">Privacy</span><span class="t">Private from whom?</span></a></div>
+    </div>
+  </article>
+</main>
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
+
