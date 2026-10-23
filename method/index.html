@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>The method: redesigning a business around AI · Rory McClelland</title>
-<meta name="description" content="A method for redesigning work around AI: five stages from mapping to scale, four levels of autonomy, deployment options by data sensitivity, the Rule of Two, and how the build is run in sprints with AI.">
+<meta name="description" content="A method for redesigning work around AI: five stages from mapping to scale, four levels of autonomy, deployment options by data sensitivity, and the Rule of Two.">
 <meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#18171B" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -16,16 +16,15 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rory McClelland">
 <meta property="og:title" content="The method: redesigning a business around AI · Rory McClelland">
-<meta property="og:description" content="A method for redesigning work around AI: five stages from mapping to scale, four levels of autonomy, deployment options by data sensitivity, the Rule of Two, and how the build is run in sprints with AI.">
+<meta property="og:description" content="A method for redesigning work around AI: five stages from mapping to scale, four levels of autonomy, deployment options by data sensitivity, and the Rule of Two.">
 <meta property="og:image" content="https://mcclelland.info/headshot.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The method: redesigning a business around AI · Rory McClelland">
-<meta name="twitter:description" content="A method for redesigning work around AI: five stages from mapping to scale, four levels of autonomy, deployment options by data sensitivity, the Rule of Two, and how the build is run in sprints with AI.">
+<meta name="twitter:description" content="A method for redesigning work around AI: five stages from mapping to scale, four levels of autonomy, deployment options by data sensitivity, and the Rule of Two.">
 <meta name="twitter:image" content="https://mcclelland.info/headshot.jpg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="stylesheet" href="../assets/method.css">
-<link rel="stylesheet" href="../assets/build.css">
 <script>(function(){try{var t=localStorage.getItem('rm-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
@@ -36,6 +35,7 @@
       <a href="../writing/">Writing</a>
       <a href="../work/">Work</a>
       <a href="../method/" aria-current="page">Method</a>
+      <a href="../build/">Build</a>
       <a href="../safety/">Safety</a>
       <a href="../about/">About</a>
       <a href="../teaching/">Teaching</a>
@@ -62,7 +62,7 @@
       <li><a href="#deployment-exposure">Deployment and exposure</a></li>
       <li><a href="#rule-of-two">The Rule of Two</a></li>
       <li><a href="#principles">Principles</a></li>
-      <li><a href="#build">The build</a></li>
+      <li><a href="../build/">The build →</a></li>
     </ol>
   </div>
 
@@ -394,120 +394,8 @@
 
       <blockquote class="pull">"Where a model runs decides who can see the data and what it all costs. How the system is designed decides what can go wrong, and that is the part that gets my attention."<cite>The sentence I ask a board to remember</cite></blockquote>
 
-      <p class="ix-follow"><a href="#build">Next: how the build itself is run →</a></p>
+      <p class="ix-follow"><a href="../build/">Next: how the build itself is run →</a></p>
     </div>
-  </div>
-</section>
-
-<section id="build">
-  <div class="wrap">
-    <div class="eyebrow">The build</div>
-    <h2 class="title reveal">From backlog to working software</h2>
-    <p class="lede">The method above decides what is worth building. This is how it then gets built. I lead product, and when I build software, AI is the engineering team. I run it the way I would run a human one: a ranked backlog, short sprints, a definition of ready, tests before code, an independent review, and a retrospective that leaves nothing stranded. The speed is real, but it isn't the interesting part. The discipline is, because AI makes good practice much faster to follow and just as much faster to skip.</p>
-
-    <div class="bd-stats reveal">
-      <div><b>4 days</b><span>from the first version of Job Scout to version 0.12</span></div>
-      <div><b>14</b><span>releases, each one ending in working software</span></div>
-      <div><b>244</b><span>automated tests: 131 for the code, 113 for the checking tools</span></div>
-      <div><b>0</b><span>applications, replies or messages sent on the user's behalf</span></div>
-    </div>
-    <p class="bd-stats-note">Figures from Job Scout, an automated job search built this way and run every morning since mid-October 2026.</p>
-
-    <div class="loop-label">The team: every role a human team would have, each one played deliberately</div>
-    <p class="lede" style="margin-bottom:1.2rem;">A single AI asked to do everything will plan, build and mark its own homework. So the roles are separated, as they would be in a well-run team, and the recurring ceremonies are written down as reusable skills, so that every project runs them the same way and nothing depends on remembering how it was done last time.</p>
-    <div class="bd-team">
-      <div class="bd-role">
-        <span class="bd-human">Product owner</span>
-        <h4>Owns the why, and the two gates</h4>
-        <p>I write the job stories, rank the backlog and decide. Nothing is built until I have agreed the refined stories, and nothing new starts until I have confirmed the next sprint.</p>
-        <span class="bd-who po">Product owner</span>
-      </div>
-      <div class="bd-role">
-        <span class="bd-human">Tech lead, in refinement</span>
-        <h4>Turns stories into build-ready work</h4>
-        <p>A refinement skill takes the next sprint's stories and adds numbered test cases, risks, out-of-scope notes, open questions (each with a recommended answer) and a size.</p>
-        <span class="bd-who ai">AI · refinement skill</span>
-      </div>
-      <div class="bd-role">
-        <span class="bd-human">Engineers</span>
-        <h4>Tests first, then code</h4>
-        <p>Claude, as an AI coding agent, writes the agreed tests and then the code that makes them pass. I read and question every change, and every file is checked on disk rather than taken on trust.</p>
-        <span class="bd-who ai">AI · coding agent</span>
-      </div>
-      <div class="bd-role">
-        <span class="bd-human">Code review and QA</span>
-        <h4>Checked by something that didn't build it</h4>
-        <p>A separate agent, which has not seen the work being produced, reviews the code before each delivery. Each finding is fixed, or accepted with the reason written down.</p>
-        <span class="bd-who ind">Independent agent</span>
-      </div>
-      <div class="bd-role">
-        <span class="bd-human">Security and red team</span>
-        <h4>Plays the attacker, on a schedule</h4>
-        <p>Hostile inputs are designed against the system every quarter: hidden instructions, fake recruiters, scam offers. The pass mark is set before the results are in, and every bug found becomes a backlog row.</p>
-        <span class="bd-who ind">Independent agent</span>
-      </div>
-      <div class="bd-role">
-        <span class="bd-human">Delivery lead, at the retro</span>
-        <h4>Closes the sprint properly</h4>
-        <p>A closing skill runs the retrospective the same way every time: each item done or returned, every finding logged the same day, the risk register reviewed and the whole backlog re-ranked.</p>
-        <span class="bd-who ai">AI · close skill</span>
-      </div>
-    </div>
-
-    <div class="loop-label">The sprint cycle: short sprints, each one ending in working software</div>
-    <ol class="bd-cycle reveal">
-      <li class="bd-step po"><h5>Backlog</h5><span class="bd-owner">Product owner</span><p>Job stories in plain words, grouped by stage of the job and ranked by value and risk. The never list is written before any of them.</p></li>
-      <li class="bd-step ai"><h5>Refine</h5><span class="bd-owner">AI · refinement</span><p>The next sprint only, just in time. Tests for normal, edge, failure and hostile cases; risks; questions; size.</p></li>
-      <li class="bd-step po"><h5>Agree</h5><span class="bd-owner">Product owner · gate</span><p>Questions answered. A story is ready only when its tests are agreed and its boundaries checked. Then go.</p></li>
-      <li class="bd-step ai"><h5>Build</h5><span class="bd-owner">AI · coding agent</span><p>Tests first, then code. Documentation is updated in the same sprint, not saved up for later.</p></li>
-      <li class="bd-step ind"><h5>Check</h5><span class="bd-owner">Independent agent</span><p>Reviews code it did not write. Findings are fixed, or accepted with a reason.</p></li>
-      <li class="bd-step both"><h5>Review</h5><span class="bd-owner">Both</span><p>Judged on a live run with real data, not only on its tests, because real use finds what tests cannot.</p></li>
-      <li class="bd-step ai"><h5>Close</h5><span class="bd-owner">AI · close skill</span><p>The retrospective. Done or returned, findings logged, backlog re-ranked, next sprint proposed for sign-off.</p></li>
-      <li class="bd-return"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 3 3 9 9 9"/></svg><p>Back to 1. Unfinished work and every review finding return to the backlog, which is re-ranked before the next sprint is confirmed.</p></li>
-    </ol>
-    <div class="bd-spike">
-      <b>Spikes</b>
-      <p>Where something can't be known without trying it, a time-boxed spike answers the question instead of a guess. A story that depends on a spike never shares the spike's sprint: it waits for the next one, and is refined at the spike's close on what was actually learned. Putting the spike first in the same sprint only hides the dependency.</p>
-    </div>
-    <div class="bd-legend">
-      <span><i style="background:var(--accent)"></i>Product owner decides</span>
-      <span><i style="background:var(--ink-soft)"></i>AI builds or facilitates</span>
-      <span><i style="background:var(--warn)"></i>Independent check</span>
-      <span><i style="background:var(--hl, var(--accent))"></i>Both</span>
-    </div>
-
-    <div class="loop-label">Four habits that hold the cycle together</div>
-    <div class="beliefs">
-      <div class="belief"><h5>Start with the job, not the feature</h5><p>Every build starts by agreeing how success will be measured, the constraints, and what the system must never do. "Find the emails about my applications, and only those" is a job; "build an email filter" is not. The first sprint is a thin slice through every stage of the job, so something genuinely usable exists straight away; later sprints deepen it.</p></div>
-      <div class="belief"><h5>Just in time, never too early</h5><p>Only the next sprint is refined in detail. Later work stays as one-line stories with acceptance criteria, because detail written too early tends to go stale at the very next review.</p></div>
-      <div class="belief"><h5>Nothing stranded</h5><p>Part-finished work is split: the finished part closes and the rest returns to the backlog. Returned items are re-scored on the same terms as everything else, not moved to the front by default. Nothing raised at a review is allowed to live only in the review notes.</p></div>
-      <div class="belief"><h5>In proportion</h5><p>A half-day item gets a short note, not a design document. A personal tool gets an afternoon of red teaming; a system that touches customers or money gets a great deal more. The rigour scales with what could go wrong.</p></div>
-    </div>
-
-    <div class="loop-label">Testing: nothing is reported as working until it has been seen to work</div>
-    <div class="bd-layers reveal">
-      <div class="bd-layer"><span class="n">01</span><div><h5>Test cases agreed in refinement</h5><p>Every acceptance criterion becomes numbered cases: normal, edge, failure and hostile input. They are agreed before a line of code is written.</p></div><p class="eg">The hostile cases matter most for AI: any text written by someone else is treated as data, never as instructions.</p></div>
-      <div class="bd-layer"><span class="n">02</span><div><h5>Automated tests, written first</h5><p>The build has to make the agreed tests pass, and a fix arrives with a test that failed before it went in.</p></div><p class="eg"><b>244</b> automated tests across Job Scout's code and its checking tools by version 0.12.</p></div>
-      <div class="bd-layer"><span class="n">03</span><div><h5>Independent code review</h5><p>A separate agent that did not write the code reviews it before each delivery.</p></div><p class="eg">Before one release it found <b>eleven</b> issues: nine fixed, two accepted with reasons recorded.</p></div>
-      <div class="bd-layer"><span class="n">04</span><div><h5>AI measured against bars set in advance</h5><p>Every AI component has a pass mark agreed before it is tested, so a disappointing result can't be argued away afterwards.</p></div><p class="eg">The local advert reader had to get requirements and pay right for nine adverts in ten before it was used. It managed <b>21 of 22</b>.</p></div>
-      <div class="bd-layer"><span class="n">05</span><div><h5>Red team, every quarter</h5><p>Deliberate attempts to break the system, across the whole of it, not only the AI.</p></div><p class="eg">In the task app, the one high-severity finding was ordinary web security. <b>Thirteen</b> issues found, all thirteen fixed and retested.</p></div>
-      <div class="bd-layer"><span class="n">06</span><div><h5>The live run</h5><p>Each sprint is closed against real use, because AI systems often fail where they meet the real world, not in their reasoning.</p></div><p class="eg">Daily use surfaced a power-saving mode that blocked the morning wake-up, and a graphics setting that ran the local model at a tenth of its speed. Both are fixed and in the runbook.</p></div>
-    </div>
-
-    <div class="loop-label">The paper trail: kept with the code, updated at every sprint close</div>
-    <p class="lede" style="margin-bottom:1rem;">Every project leaves behind the documents a reviewer, an auditor or a new team member would ask for. They are written as the work happens, so the reasoning survives the conversation it came from.</p>
-    <table class="bd-docs">
-      <tr><th>Backlog and refinement notes</th><td>What is planned, why it is ranked where it is, and the agreed test cases, risks and answers for each sprint.</td></tr>
-      <tr><th>Decision log</th><td>Why it is built this way: each decision numbered and dated, with the reasoning and what it cost.</td></tr>
-      <tr><th>System card and agent catalogue</th><td>What each AI component is for and not for, what it sees and can do, its instructions, permissions and evaluation, and where it fails.</td></tr>
-      <tr><th>Threat model</th><td>What needs protecting, where text from strangers enters, and which control stops each threat.</td></tr>
-      <tr><th>Risk register</th><td>Each risk with its control, owner and last-checked date, organised by the NIST AI Risk Management Framework, and reviewed at every close.</td></tr>
-      <tr><th>Runbook and delivery history</th><td>How to operate it when something goes wrong, and what each sprint planned, delivered and learned.</td></tr>
-    </table>
-
-    <blockquote class="pull">"None of this is exotic. It is ordinary good practice; AI simply makes it much faster to follow, and just as much faster to skip."<cite>Why the process matters more than the tool</cite></blockquote>
-
-    <p class="ix-follow"><a href="../case-studies/rory-mcclelland-how-i-build-with-ai.pdf" download>Download the full write-up: How I build with AI (PDF) ↓</a><a href="../work/">See the builds →</a><a href="../safety/">The guardrails behind them →</a></p>
   </div>
 </section>
 

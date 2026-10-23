@@ -589,3 +589,5 @@
     .theme-toggle{position:absolute;top:12px;right:max(20px, env(safe-area-inset-right,0px));}
     .navlinks{gap:1rem;font-size:.9rem;width:100%;}
   }
+
+  @media (max-width:430px){ .navlinks{gap:.75rem;font-size:.84rem;} }
