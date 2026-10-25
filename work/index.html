@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Work and case studies · Rory McClelland</title>
-<meta name="description" content="Tools designed and built with AI coding tools, guardrails first, with two case studies to download.">
+<meta name="description" content="Tools designed and built with AI coding tools, guardrails first, with four case studies to download.">
 <meta name="theme-color" content="#FBF8F1">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
@@ -15,11 +15,11 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rory McClelland">
 <meta property="og:title" content="Work and case studies · Rory McClelland">
-<meta property="og:description" content="Tools designed and built with AI coding tools, guardrails first, with two case studies to download.">
+<meta property="og:description" content="Tools designed and built with AI coding tools, guardrails first, with four case studies to download.">
 <meta property="og:image" content="https://mcclelland.info/headshot.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Work and case studies · Rory McClelland">
-<meta name="twitter:description" content="Tools designed and built with AI coding tools, guardrails first, with two case studies to download.">
+<meta name="twitter:description" content="Tools designed and built with AI coding tools, guardrails first, with four case studies to download.">
 <meta name="twitter:image" content="https://mcclelland.info/headshot.jpg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
 <link rel="stylesheet" href="../assets/site.css">
@@ -51,7 +51,7 @@
   <div class="wrap">
     <div class="eyebrow">Work and case studies</div>
     <h1 class="title reveal">How I build, and what I build: guardrails first.</h1>
-    <p class="lede">Tools I have designed and built with AI coding tools, three of them written up in full as short case studies you can download. The first sets out how I run AI as an engineering team; the second follows one system, an automated job search and application tracker, from design to daily use; the third applies the same method to a small product whose full code is public on GitHub. In each, safety, privacy and the limits on what a system may do are settled before the first line of code is written.</p>
+    <p class="lede">Tools I have designed and built with AI coding tools, four of them written up in full as short case studies you can download. The first sets out how I run AI as an engineering team; the second follows one system, an automated job search and application tracker, from design to daily use; the third applies the same method to a small product whose full code is public on GitHub; and the fourth shows how AI can be designed into a knowledge-heavy business process to make it faster, more accurate and more repeatable. In each, safety, privacy and the limits on what a system may do are settled before the first line of code is written.</p>
     <div class="principles reveal">
       <div><b>Never list first</b><span>What a system must never do is agreed at the start, and enforced by design rather than by instruction alone.</span></div>
       <div><b>Data has boundaries</b><span>Which part may see which data is decided before what to build. Some data no AI ever reaches.</span></div>
@@ -103,15 +103,24 @@
           <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center"><a class="btn primary" href="../case-studies/rory-mcclelland-task-oversight-case-study.pdf" download>Download the PDF ↓</a><a class="btn" href="https://github.com/rorymcclelland/task-manager" target="_blank" rel="noopener">View the code on GitHub ↗</a><span class="meta" style="margin-left:.3rem">5 pages · A4</span></div>
         </div>
       </article>
+      <article class="case reveal" id="rfi-respond">
+        <a class="cover" href="../case-studies/rory-mcclelland-rfi-respond-case-study.pdf" aria-label="Open the RFI Respond case study (PDF)"><img src="../case-studies/cover-rfi-respond-case-study.jpg" alt="First page of the RFI Respond case study" loading="lazy" width="662" height="516"></a>
+        <div>
+          <div class="tag">Case study 04 · AI product build</div>
+          <h3>RFI Respond: drafting from what the organisation already knows</h3>
+          <p>An internal tool that answers procurement questionnaires from an organisation's own knowledge base, rebuilt in ten sprints from a prototype whose "confidence" was partly a random number. It shows how AI can be designed into a knowledge-heavy business process to make it faster, more accurate and more repeatable, and how the same pattern carries over to support, HR, onboarding, bids and other flows.</p>
+          <ul class="guards">
+            <li>Drafts only from cited sources, checked in code: all 305 claims in the test drafts judged supported, and the judge caught 95 of 95 planted ones.</li>
+            <li>Confidence is calibrated, not guessed; bulk approval needs the checker's "yes", and pricing and legal questions always go to a person.</li>
+            <li>The knowledge base learns from every response, with provenance, review dates and an admin's review of members' changes.</li>
+          </ul>
+          <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center"><a class="btn primary" href="../case-studies/rory-mcclelland-rfi-respond-case-study.pdf" download>Download the PDF ↓</a><a class="btn" href="https://github.com/rorymcclelland/RFI-responder" target="_blank" rel="noopener">View the code on GitHub ↗</a><span class="meta" style="margin-left:.3rem">7 pages · A4</span></div>
+        </div>
+      </article>
     </div>
-    <h3 class="builds-head reveal">Earlier builds</h3>
-    <p class="builds-lede">Two earlier tools, designed from the ground up and built with an AI coding tool. Neither uses AI itself: I wrote the requirements, and the tool wrote the code.</p>
+    <h3 class="builds-head reveal">Earlier build</h3>
+    <p class="builds-lede">An earlier tool, designed from the ground up and built with an AI coding tool. It does not use AI itself: I wrote the requirements, and the tool wrote the code. It is next in line for the same rebuild as RFI Respond.</p>
     <div class="builds reveal">
-      <div class="build">
-        <div class="tag">Designed from 65 job stories · built with an AI coding tool</div>
-        <h4>RFI Response Tool</h4>
-        <p>Questionnaire questions are matched against a library of approved answers, and a draft response is produced for each one, with its sources. Questions that need a specialist are routed to a named expert, and every answer is tracked through to approval and export.</p>
-      </div>
       <div class="build">
         <div class="tag">Asynchronous by default · built with an AI coding tool</div>
         <h4>Meeting Tool</h4>
