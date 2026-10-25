@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tools without a method · Rory McClelland</title>
+<meta name="description" content="Apollo's chief economist finds no sign of an AI payoff outside big tech. My reading: most companies added AI to work they never redesigned, and never measured where they started.">
+<meta name="author" content="Rory McClelland">
+<meta name="theme-color" content="#FBF8F1">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/writing/tools-without-a-method">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tools without a method · Rory McClelland">
+<meta property="og:description" content="Apollo's chief economist finds no sign of an AI payoff outside big tech. My reading: most companies added AI to work they never redesigned, and never measured where they started.">
+<meta property="og:url" content="https://mcclelland.info/writing/tools-without-a-method">
+<meta property="og:image" content="https://mcclelland.info/writing/img/tools-without-a-method.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mcclelland.info/writing/img/tools-without-a-method.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/writing.css">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<script>(function(){ try { var t = localStorage.getItem('rm-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="../writing/" aria-current="page">Writing</a>
+      <a href="../work/">Work</a>
+      <a href="../method/">Method</a>
+      <a href="../build/">Build</a>
+      <a href="../safety/">Safety</a>
+      <a href="../about/">About</a>
+      <a href="../teaching/">Teaching</a>
+    </div>
+    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+<main class="wrap">
+  <header class="post-head read">
+    <div class="eyebrow">Writing · AI in organisations</div>
+    <h1>Tools without a method</h1>
+    <p class="dek">Apollo's chief economist finds no sign of an AI payoff outside big tech. My reading: most companies added AI to work they never redesigned, and never measured where they started.</p>
+    <div class="meta"><span><b>Rory McClelland</b></span><span>October 2026</span><span>5 min read</span></div>
+  </header>
+  <figure class="hero-fig"><svg viewBox="0 0 1200 630" role="img" aria-labelledby="h1t"><title id="h1t">A schematic chart of revenue per worker: one line, labelled big tech, climbs steeply; another, labelled the other 493, stays flat. A handwritten note says the work was never redesigned and the start was never measured.</title><rect class="s-bg" width="1200" height="630"/><g transform="rotate(-1.2 900 330)"><rect x="660" y="96" width="476" height="420" fill="#000" opacity=".07" transform="translate(8 10)"/><rect class="s-paper" style="stroke:var(--ink)" x="660" y="96" width="476" height="420" stroke-width="1.5"/><text class="t-lab s-gr" x="688" y="136" font-size="14" letter-spacing="1.2">REVENUE PER WORKER · SCHEMATIC</text><line class="k-line" x1="672" y1="154" x2="1124" y2="154" stroke-width="1.2"/><line class="k-line" x1="700" y1="470" x2="1104" y2="470" stroke-width="1.4"/><line class="k-line" x1="700" y1="190" x2="700" y2="470" stroke-width="1.4"/><path class="k-acc" d="M704,420 C800,410 860,380 920,330 C980,280 1040,230 1096,196" stroke-width="4" stroke-linecap="round"/><text class="t-body s-acc" x="930" y="228" font-size="22">big tech</text><path class="k-gr" d="M704,424 C800,426 900,420 1000,424 C1040,426 1070,422 1096,424" stroke-width="4" stroke-linecap="round"/><rect class="s-hl" x="900" y="432" width="184" height="30"/><text class="t-body s-ink" x="908" y="455" font-size="21">the other 493</text></g><rect class="s-hl" x="56" y="246" width="292" height="34"/><text class="t-disp s-ink" x="60" y="196" font-size="64">tools without</text><text class="t-disp s-ink" x="60" y="272" font-size="64">a method.</text><text class="t-note s-acc" x="62" y="380" font-size="25">the work was never redesigned,</text><text class="t-note s-acc" x="62" y="414" font-size="25">the start was never measured.</text><path class="k-acc" d="M400,430 C520,500 700,500 860,450" stroke-width="2" stroke-linecap="round"/><path class="k-acc" d="M842,446 L861,450 L850,466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg></figure>
+  <article class="read prose">
+    <p>Torsten Slok, Apollo’s chief economist, published a short note on 24 October with a blunt headline: <a href="https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector" target="_blank" rel="noopener">“No signs of AI payoff outside the tech sector”</a>. His charts show revenue per worker and profit margins rising for the Magnificent 7, flat for the other 493 companies in the S&amp;P 500, and no lift in productivity growth. In his words, the technology “has delivered zero financial payoff to corporate America outside of tech.”</p>
+    <p>He adds that mainstream companies are starting to treat token spending as a cost that squeezes margins, and that “the AI story will be decided in the S&amp;P 493, not the Mag 7”.</p>
+    <p>I think he is right on both counts. Where I’d look for the cause is in how most companies have gone about it.</p>
+
+    <h2>The tech firms changed the work</h2>
+    <p>The companies where AI is paying off are the ones whose own work is software. They rebuilt how code is written, reviewed and shipped around agents, and they could see the effect, because engineering already measures almost everything.</p>
+    <p>Outside tech, the usual first move is AI added to a workflow nobody redesigned: an assistant licence for everyone, a chatbot on the intranet, a pilot that summarises meetings. Each one saves someone a few minutes. None of them changes how many people, steps or days the work takes, so none of them shows up in revenue per worker.</p>
+    <p>This has happened before. The economist Paul David showed in 1990 that factories took decades to get the gain from electric motors. The gain arrived when they redesigned the factory floor around them, long after the motors were installed.</p>
+
+    <h2>No baseline, no payoff</h2>
+    <p>The second problem is measurement. A return nobody measured cannot be shown, so token spend ends up filed as a cost. In most organisations, nobody recorded how long the work took before the AI arrived.</p>
+    <p>In the staged adoption plan I wrote for one organisation, what counts as success, and how it will be measured, is agreed before each stage begins. Baselines for the first process are recorded before anything new is switched on. It is the least exciting part of the plan, and it is what lets a board see a payoff, or decide with evidence to stop.</p>
+    <p class="aside">A return nobody measured cannot be shown.</p>
+
+    <h2>Pick the work before the tool</h2>
+    <p>The <a href="../method/">method I use</a> runs every process through five stages: map, rank, prove, operationalise and scale.</p>
+    <ul>
+      <li><strong>Map</strong> looks for where the work actually loses time, through five lenses: the coordination tax, context assembly, the judgement bottleneck, the queue, and work nobody has ever tried because it was too expensive.</li>
+      <li><strong>Rank</strong> puts each candidate through five pass-or-fail qualifiers (contained, high reuse, measurable, data and access, a named sponsor) before any scoring.</li>
+      <li><strong>Prove, operationalise and scale</strong> take one process into production and then reuse what it built.</li>
+    </ul>
+    <p>“Measurable” is a qualifier, so a process that can’t be measured doesn’t get past ranking, however exciting it looks. And the test for scaling is blunt: if the second lap costs what the first one did, stop.</p>
+    <p>That test speaks directly to Slok’s charts. A single pilot rarely moves a company’s margins. The payoff comes from the second, third and fourth process reusing the context, connections and evaluations the first one paid for.</p>
+
+    <h2>The judgement point</h2>
+    <p>Slok’s sharpest line is that “AI may be a great calculator, but in business, intelligence is mostly judgment”, and that AI “does not understand accountability, trust, culture, unwritten rules, ethical trade-offs or fairness”.</p>
+    <p>I agree, and I build around it. Every AI process in my plans has a named owner, and a person signs off on anything that needs judgement. The work I hand to agents is the coordination, the context-gathering and the queueing, which is where most of the time goes in the first place. Judgement stays with people, and it gets more of their time once the rest is cleared.</p>
+    <p>He also notes that mainstream companies don’t need the newest models and won’t pay for them. That matches my builds too: most of the work runs on a small local model, with cloud steps only where they earn their cost.</p>
+
+    <h2>Where the S&amp;P 493 line moves</h2>
+    <p>Buying tokens is the easy part. Redesigning the work, measuring where you started, and teaching people to run the next lap themselves is slower, and it is the part that will show up in margins. My guess is that Slok’s flat line starts to move one redesigned process at a time, in companies that did the boring measuring first.</p>
+    <p style="font-size:.85rem;color:var(--graphite)">Sources: <a href="https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector" target="_blank" rel="noopener">No Signs of AI Payoff Outside the Tech Sector</a>, Torsten Slok, Apollo Daily Spark, 24 October 2026; Paul A. David, “The Dynamo and the Computer: An Historical Perspective on the Modern Productivity Paradox”, American Economic Review, 1990.</p>
+
+    <div class="after">
+      <div class="who"><img src="../headshot-mono-light.jpg" alt=""><p>Rory McClelland leads product, with a background in privacy and user safety at Google Chrome and Bumble, and now builds with AI. <a href="../work/">See the work</a> or write to <a href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a>.</p></div>
+      <div class="next-step"><p><b>See the method</b>Map, rank, prove, operationalise and scale, with the lenses, qualifiers and gates in full.</p><a class="btn primary" href="../method/">Read the method →</a></div>
+      <div class="more"><a href="teach-the-thinking.html"><span class="k">AI in organisations</span><span class="t">The method should outlast the consultant</span></a><a href="the-approximation-tax.html"><span class="k">Building with AI</span><span class="t">The approximation tax</span></a></div>
+    </div>
+  </article>
+</main>
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
+
