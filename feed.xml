@@ -7,6 +7,20 @@
   <description>Notes on building with AI, privacy and safety, and bringing AI into organisations.</description>
   <language>en-gb</language>
   <item>
+    <title>Tools without a method</title>
+    <link>https://mcclelland.info/writing/tools-without-a-method.html</link>
+    <guid>https://mcclelland.info/writing/tools-without-a-method.html</guid>
+    <pubDate>Sun, 25 Oct 2026 09:30:00 +0000</pubDate>
+    <description>Apollo's chief economist finds no sign of an AI payoff outside big tech. My reading: most companies added AI to work they never redesigned, and never measured where they started.</description>
+  </item>
+  <item>
+    <title>The spec is the product now</title>
+    <link>https://mcclelland.info/writing/the-spec-is-the-product.html</link>
+    <guid>https://mcclelland.info/writing/the-spec-is-the-product.html</guid>
+    <pubDate>Sun, 25 Oct 2026 09:00:00 +0000</pubDate>
+    <description>AI writes most of the code now, so the hard part is knowing whether it is right. That depends on what was written down before the build started.</description>
+  </item>
+  <item>
     <title>Sit my test first</title>
     <link>https://mcclelland.info/writing/sit-my-test-first.html</link>
     <guid>https://mcclelland.info/writing/sit-my-test-first.html</guid>

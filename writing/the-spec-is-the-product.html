@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The spec is the product now · Rory McClelland</title>
+<meta name="description" content="AI writes most of the code now, so the hard part is knowing whether it is right. That depends on what was written down before the build started.">
+<meta name="author" content="Rory McClelland">
+<meta name="theme-color" content="#FBF8F1">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/writing/the-spec-is-the-product">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The spec is the product now · Rory McClelland">
+<meta property="og:description" content="AI writes most of the code now, so the hard part is knowing whether it is right. That depends on what was written down before the build started.">
+<meta property="og:url" content="https://mcclelland.info/writing/the-spec-is-the-product">
+<meta property="og:image" content="https://mcclelland.info/writing/img/the-spec-is-the-product.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mcclelland.info/writing/img/the-spec-is-the-product.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/writing.css">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<script>(function(){ try { var t = localStorage.getItem('rm-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="../writing/" aria-current="page">Writing</a>
+      <a href="../work/">Work</a>
+      <a href="../method/">Method</a>
+      <a href="../build/">Build</a>
+      <a href="../safety/">Safety</a>
+      <a href="../about/">About</a>
+      <a href="../teaching/">Teaching</a>
+    </div>
+    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+<main class="wrap">
+  <header class="post-head read">
+    <div class="eyebrow">Writing · Building with AI</div>
+    <h1>The spec is the product now</h1>
+    <p class="dek">AI writes most of the code now, so the hard part is knowing whether it is right. That depends on what was written down before the build started.</p>
+    <div class="meta"><span><b>Rory McClelland</b></span><span>October 2026</span><span>5 min read</span></div>
+  </header>
+  <figure class="hero-fig"><svg viewBox="0 0 1200 630" role="img" aria-labelledby="h1t"><title id="h1t">A grey ticket reading support Word upload, labelled a ticket title, beside a story sheet headed story, read Word uploads. The sheet lists the job, then test cases: a zip bomb refused before opening, a macro file refused with advice, a script tag kept as plain text, and a pass mark set first, highlighted.</title><rect class="s-bg" width="1200" height="630"/><g transform="rotate(-5 760 128)"><rect class="s-paper" x="636" y="78" width="270" height="92" stroke-width="1.2" style="stroke:var(--graphite)"/><text class="t-lab s-gr" x="656" y="108" font-size="13" letter-spacing="1.2">TICKET</text><text class="t-body s-gr" x="656" y="146" font-size="24">Support Word upload</text></g><text class="t-note s-gr" x="926" y="118" font-size="22">a ticket title.</text><g transform="rotate(1.2 900 400)"><rect x="668" y="200" width="466" height="376" fill="#000" opacity=".07" transform="translate(8 10)"/><rect class="s-paper" style="stroke:var(--ink)" x="668" y="200" width="466" height="376" stroke-width="1.5"/><text class="t-lab s-gr" x="696" y="240" font-size="14" letter-spacing="1.2">STORY · READ WORD UPLOADS</text><line class="k-line" x1="680" y1="258" x2="1122" y2="258" stroke-width="1.2"/><text class="t-lab s-acc" x="696" y="292" font-size="13" letter-spacing="1">THE JOB</text><text class="t-body s-ink" x="696" y="320" font-size="21">read a buyer's document, safely</text><line class="k-line" x1="680" y1="340" x2="1122" y2="340" stroke-width="1.2"/><text class="t-lab s-acc" x="696" y="372" font-size="13" letter-spacing="1">TEST CASES</text><text class="t-body s-ink" x="696" y="402" font-size="20">zip bomb: refused before opening</text><text class="t-body s-ink" x="696" y="434" font-size="20">.docm with macros: refused, with advice</text><text class="t-body s-ink" x="696" y="466" font-size="20">&lt;script&gt; in the text: kept as plain text</text><line class="k-line" x1="680" y1="490" x2="1122" y2="490" stroke-width="1.2"/><rect class="s-hl" x="690" y="508" width="300" height="38"/><text class="t-body s-ink" x="698" y="535" font-size="21">pass mark: set before the run</text></g><rect class="s-hl" x="56" y="246" width="342" height="34"/><text class="t-disp s-ink" x="60" y="196" font-size="64">the spec is</text><text class="t-disp s-ink" x="60" y="272" font-size="64">the product.</text><text class="t-note s-acc" x="62" y="380" font-size="25">what the agent's work</text><text class="t-note s-acc" x="62" y="414" font-size="25">gets checked against.</text><path class="k-acc" d="M330,428 C430,500 540,510 660,476" stroke-width="2" stroke-linecap="round"/><path class="k-acc" d="M642,470 L661,476 L648,491" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg></figure>
+  <article class="read prose">
+    <p>Qt published a piece this week with a title that made me smile: <a href="https://www.qt.io/software-insights/specifications-are-back" target="_blank" rel="noopener">“Specifications are back”</a>. Its author, Sebastian Krings, argues that AI now writes much of the code, so the real engineering work has moved to checking it. That checking is harder than it looks, because “AI output is rarely obviously wrong. It’s almost right.”</p>
+    <p>He brings the evidence. Google’s 2025 DORA report found 90% of technology professionals use AI at work, and 30% have little or no trust in the code it produces. In METR’s 2025 trial, experienced developers expected AI to make them 24% faster, believed afterwards it had made them 20% faster, and in fact took 19% longer (METR has since called those results out of date). GitClear counts duplicated code blocks up 81% on 2023.</p>
+    <p>The line I keep coming back to is this one: “Feed a model a title instead of a real requirement, and you get guesses instead of code.”</p>
+
+    <h2>Agile made the spec optional</h2>
+    <p>Krings points out that many teams let documentation lapse during the shift to agile, until a requirement was little more than a ticket title. That worked while the person building could walk over and ask what was meant. An agent does not walk over. It fills the gap with the most plausible guess, and plausible is exactly the kind of wrong that gets through review.</p>
+    <p>For a product manager, this is the interesting part. The spec used to be a handover note, a means to an end. When an agent does the building, the spec is what you are really designing, and it is the only thing you can check the output against. If it is vague, all that is left to check against is a feeling that it looks fine.</p>
+
+    <h2>What my specs look like now</h2>
+    <p>I build my own tools with AI coding agents, and every sprint starts with a written refinement before any code exists. Each story has the same parts:</p>
+    <ul>
+      <li><strong>The job:</strong> one or two sentences on what it is for.</li>
+      <li><strong>What changes:</strong> the files, tables, functions and limits involved.</li>
+      <li><strong>Test cases:</strong> numbered, including failure cases and at least one hostile case.</li>
+      <li><strong>Boundaries:</strong> which of the project’s standing rules apply.</li>
+      <li><strong>Questions for me:</strong> each with options and a recommendation.</li>
+    </ul>
+    <p>I answer the questions, the stories are marked Ready, and only then does the build start.</p>
+    <p>One example from the RFI tool (a portfolio build on synthetic data) is the story for reading uploaded Word documents. Its test cases include a zip bomb that must be refused before it is opened, a <code>.docm</code> file with macros that must be refused with advice, and text containing a <code>&lt;script&gt;</code> tag that must be kept as plain text and never treated as markup. None of those would come from a ticket titled “Support Word upload”. An agent given that title would build an upload that works on a well-behaved document, and it would look finished.</p>
+
+    <h2>Set the bar before you see the result</h2>
+    <p>The part of the spec that matters most with AI is the pass mark. In the same tool’s first retrieval sprint, the bars were agreed before anything ran: recall@5 of 0.90 for English questions and 0.80 for Japanese, a calibration error of at most 0.10, and 80% of unanswerable questions scoring below the “no good match” floor.</p>
+    <p>Two things followed. First, the build changed course. The comparison showed that blending keyword and meaning-based search cut English recall@5 from 98.0% to 78.5%, so retrieval went meaning-first, and the change went into the refinement with its reason. Second, no model met the abstention bar once near misses were added to the test set; the best left only 35.3% of them below the floor. Because the bar was in writing, the miss was visible. Lowering the floor until the chart looked good would have been easy. It became a decision record and a new check in the next sprint.</p>
+    <p class="aside">Without written bars, both would have been arguments about whether it seemed fine.</p>
+
+    <h2>The spec outranks the story</h2>
+    <p>Above the stories sits a one-page product brief, and its opening settles disputes: where a story and the brief disagree, the brief wins until it is changed. Some lines in it never move. Pricing and legal questions are never auto-approved, whatever their confidence score. That is where my <a href="write-the-never-list-first.html">never list</a> lives, and Krings’s advice to “write down intent and keep it checkable” is the same idea at engineering scale.</p>
+
+    <h2>What this means for product managers</h2>
+    <p>Krings concludes that “AI doesn’t fix a team. It amplifies what’s already there.” For product managers, I’d put it more sharply: the skills that started to look old-fashioned (acceptance criteria, a real definition of done, honest test cases) are now the main lever on quality. Three habits have earned their place in my builds:</p>
+    <ol>
+      <li>Write the job and the test cases before the build, including at least one hostile case.</li>
+      <li>Set the pass marks before anyone sees a result.</li>
+      <li>Record every change made during the build, with the reason, so the spec stays true.</li>
+    </ol>
+    <p>He also warns of a judgement gap: experienced engineers can reject plausible output quickly because they have years of fixing code behind them, and newcomers who start with AI may not. A good spec puts some of that judgement in writing, where everyone can use it.</p>
+    <p>Nobody needs a 200-page requirements document for this (the waterfall jokes can wait). A page per story, written before the agent starts, has done more for the quality of my builds than any change of model.</p>
+    <p style="font-size:.85rem;color:var(--graphite)">Source: <a href="https://www.qt.io/software-insights/specifications-are-back" target="_blank" rel="noopener">Specifications Are Back: What AI Exposed About Your Engineering Foundations</a>, Sebastian Krings, Qt, 23 October 2026. The DORA, METR and GitClear figures are as cited there.</p>
+
+    <div class="after">
+      <div class="who"><img src="../headshot-mono-light.jpg" alt=""><p>Rory McClelland leads product, with a background in privacy and user safety at Google Chrome and Bumble, and now builds with AI. <a href="../work/">See the work</a> or write to <a href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a>.</p></div>
+      <div class="next-step"><p><b>See how the build runs</b>Refinement, test cases, pass marks and the rest of the sprint cycle are set out on one page.</p><a class="btn primary" href="../build/">How the build runs →</a></div>
+      <div class="more"><a href="sit-my-test-first.html"><span class="k">Evaluation</span><span class="t">Sit my test first</span></a><a href="write-the-never-list-first.html"><span class="k">Building with AI</span><span class="t">Write the never list first</span></a></div>
+    </div>
+  </article>
+</main>
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
+
