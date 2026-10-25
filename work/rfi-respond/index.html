@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>RFI Respond, screen by screen · Rory McClelland</title>
+<meta name="description" content="A screenshot walkthrough of RFI Respond: its AI capabilities, where people stay in the loop, the guardrails, privacy, and security design, and how each part was tested.">
+<meta name="theme-color" content="#FBF8F1">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/work/rfi-respond/">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<meta property="og:url" content="https://mcclelland.info/work/rfi-respond/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rory McClelland">
+<meta property="og:title" content="RFI Respond, screen by screen · Rory McClelland">
+<meta property="og:description" content="A screenshot walkthrough of RFI Respond: its AI capabilities, where people stay in the loop, the guardrails, privacy, and security design, and how each part was tested.">
+<meta property="og:image" content="https://mcclelland.info/headshot.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RFI Respond, screen by screen · Rory McClelland">
+<meta name="twitter:description" content="A screenshot walkthrough of RFI Respond: its AI capabilities, where people stay in the loop, the guardrails, privacy, and security design, and how each part was tested.">
+<meta name="twitter:image" content="https://mcclelland.info/headshot.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/walkthrough.css">
+<script>(function(){try{var t=localStorage.getItem('rm-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="mark" href="../.././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="../../writing/">Writing</a>
+      <a href="../../work/" aria-current="page">Work</a>
+      <a href="../../method/">Method</a>
+      <a href="../../build/">Build</a>
+      <a href="../../safety/">Safety</a>
+      <a href="../../about/">About</a>
+      <a href="../../teaching/">Teaching</a>
+    </div>
+    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+<main class="wt">
+<section class="wt-head" style="border-top:none">
+  <div class="wrap">
+    <div class="wt-crumb"><a href="../">Work</a> · <a href="../#rfi-respond">RFI Respond</a></div>
+    <div class="eyebrow">Walkthrough</div>
+    <h1 class="title">RFI Respond, screen by screen</h1>
+    <p class="lede">RFI Respond answers procurement questionnaires from an organisation's own knowledge base. This walkthrough follows one response through the tool and marks four things on each screen: what the AI does, where a person decides, the guardrails, privacy, and security design, and how each part was tested. Use the filter to follow one thread at a time; select a numbered marker to find its note.</p>
+    <div class="wt-links"><a class="btn primary" href="../../case-studies/rory-mcclelland-rfi-respond-case-study.pdf" download>Download the case study ↓</a><a class="btn" href="https://github.com/rorymcclelland/RFI-responder" target="_blank" rel="noopener">View the code on GitHub ↗</a></div>
+    <p class="wt-note">Every screen shows the synthetic demo data in the repository. Company names are fictional, and the drafts were recorded from a real run of the pipeline.</p>
+  </div>
+</section>
+<div class="wt-filter" id="wtFilter">
+  <div class="wt-filter-in" role="group" aria-label="Show one theme">
+    <span class="wt-filter-l">Show</span>
+    <button type="button" class="wt-chip" data-f="all" aria-pressed="true">All</button>
+    <button type="button" class="wt-chip" data-f="ai" data-theme-k="ai" aria-pressed="false"><i></i>AI capability</button>
+    <button type="button" class="wt-chip" data-f="human" data-theme-k="human" aria-pressed="false"><i></i>Human in the loop</button>
+    <button type="button" class="wt-chip" data-f="guard" data-theme-k="guard" aria-pressed="false"><i></i>Guardrails, privacy, and security</button>
+    <button type="button" class="wt-chip" data-f="test" data-theme-k="test" aria-pressed="false"><i></i>How it was tested</button>
+  </div>
+</div>
+<div class="wrap">
+  <ol class="wt-toc">
+    <li><a href="#overview">Every response in flight</a></li>
+    <li><a href="#review">Review, lowest confidence first</a></li>
+    <li><a href="#draft">A draft, its confidence, and its reason</a></li>
+    <li><a href="#held">A question the model is not allowed to answer</a></li>
+    <li><a href="#assignments">An expert's inbox</a></li>
+    <li><a href="#export">Export, and what the knowledge base learned</a></li>
+    <li><a href="#entries">Entries waiting for an admin</a></li>
+    <li><a href="#governance">Cost, models, and limits</a></li>
+    <li><a href="#tested">How it was tested</a></li>
+  </ol>
+
+  <section class="wt-screen" id="overview" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">01</span><h2>Every response in flight</h2><p>The starting screen shows every response the organisation is working on, with its owner, due date, and progress, and flags the ones at risk.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/1-overview.png" alt="Opportunities overview with three fictional responses, one at risk" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="human" data-n="overview-1" style="left:7.97%;top:56.98%" aria-label="Note 1: A named owner and a due date.">1</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="overview-2" style="left:22.34%;top:60.93%" aria-label="Note 2: Work only a person can do, counted.">2</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="overview-3" style="left:20.47%;top:40.35%" aria-label="Note 3: Archived, never deleted.">3</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="overview-4" style="left:37.03%;top:50.12%" aria-label="Note 4: Synthetic data only.">4</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="human" data-n="overview-1"><span class="n">1</span><div><span class="k">Human in the loop</span><p><b>A named owner and a due date.</b> Each response belongs to one person, who decides what is sent. The card flags it as at risk when it is within three working days of its due date with less than 80% decided, or due tomorrow with questions only a person can answer still open.</p></div></li>
+      <li data-theme-k="guard" data-n="overview-2"><span class="n">2</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Work only a person can do, counted.</b> "2 pricing or legal open" are questions the tool will never answer or approve on its own, so the overview shows them as outstanding until someone does.</p></div></li>
+      <li data-theme-k="guard" data-n="overview-3"><span class="n">3</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Archived, never deleted.</b> Finished responses are kept, with their outcome, as a record of what was sent. Only an admin can permanently delete one, and only one created in error, giving a reason that is written to an audit log.</p></div></li>
+      <li data-theme-k="guard" data-n="overview-4"><span class="n">4</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Synthetic data only.</b> Every company, person, and answer here is fictional, written for the demo. No real questionnaire, policy, or customer data is in the repository.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="review" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">02</span><h2>Review, lowest confidence first</h2><p>Questions are processed on the server and listed with the least certain first, so a person's attention goes where it is needed most.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/2-review.png" alt="Review screen with the bulk approval bar and questions sorted by confidence" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="human" data-n="review-1" style="left:24.84%;top:21.05%" aria-label="Note 1: Bulk approval, as a recorded decision.">1</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="review-2" style="left:17.34%;top:25.81%" aria-label="Note 2: What bulk approval can never include.">2</button><button type="button" class="wt-pin" data-theme-k="ai" data-n="review-3" style="left:17.34%;top:46.28%" aria-label="Note 3: The tool says when it does not know.">3</button><button type="button" class="wt-pin" data-theme-k="test" data-n="review-4" style="left:30.31%;top:58.26%" aria-label="Note 4: The gate was tested before it was trusted.">4</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="review-5" style="left:30.31%;top:69.42%" aria-label="Note 5: Legal questions are always individual.">5</button><button type="button" class="wt-pin" data-theme-k="human" data-n="review-6" style="left:42.50%;top:79.88%" aria-label="Note 6: Routed to an expert.">6</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="human" data-n="review-1"><span class="n">1</span><div><span class="k">Human in the loop</span><p><b>Bulk approval, as a recorded decision.</b> The owner can accept every question above a chosen threshold in one action. It is still a person's decision, recorded with who made it, when, and at what threshold.</p></div></li>
+      <li data-theme-k="guard" data-n="review-2"><span class="n">2</span><div><span class="k">Guardrails, privacy, and security</span><p><b>What bulk approval can never include.</b> Pricing, legal, and translated questions; anything not fully checked; drafts citing an unreviewed, overdue, or replaced entry; a "partly" verdict; and anything without calibrated confidence or a draft. The database enforces this, not just the screen.</p></div></li>
+      <li data-theme-k="ai" data-n="review-3"><span class="n">3</span><div><span class="k">AI capability</span><p><b>The tool says when it does not know.</b> Calibrated confidence below 40% means the knowledge base probably does not answer the question, so the tool says so in plain words.</p></div></li>
+      <li data-theme-k="test" data-n="review-4"><span class="n">4</span><div><span class="k">How it was tested</span><p><b>The gate was tested before it was trusted.</b> Rules and a classifier together caught 100 of 100 pricing and legal questions in the evaluation set. 7 of 70 harmless lookalikes were held by mistake, an error that falls on the side of a person.</p></div></li>
+      <li data-theme-k="guard" data-n="review-5"><span class="n">5</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Legal questions are always individual.</b> A question that would commit the organisation legally or contractually is flagged and always reviewed one at a time, whatever its score.</p></div></li>
+      <li data-theme-k="human" data-n="review-6"><span class="n">6</span><div><span class="k">Human in the loop</span><p><b>Routed to an expert.</b> Questions the owner cannot answer are assigned to a colleague, who sees them in their own inbox (screen 5).</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="draft" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">03</span><h2>A draft, its confidence, and its reason</h2><p>Each answered question carries a calibrated confidence, the raw similarity, and the checker's verdict with a one-sentence reason.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/3-draft-and-checker.png" alt="An open question showing confidence, similarity, and the checker's verdict" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="human" data-n="draft-1" style="left:52.50%;top:22.67%" aria-label="Note 1: Who approved it, when, and how.">1</button><button type="button" class="wt-pin" data-theme-k="ai" data-n="draft-2" style="left:41.09%;top:62.91%" aria-label="Note 2: Japanese questions, answered from English knowledge.">2</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="draft-3" style="left:43.28%;top:62.91%" aria-label="Note 3: Translations are always reviewed.">3</button><button type="button" class="wt-pin" data-theme-k="ai" data-n="draft-4" style="left:26.95%;top:80.58%" aria-label="Note 4: Confidence that means what it says.">4</button><button type="button" class="wt-pin" data-theme-k="ai" data-n="draft-5" style="left:58.75%;top:80.58%" aria-label="Note 5: Similar is not the same as answered.">5</button><button type="button" class="wt-pin" data-theme-k="ai" data-n="draft-6" style="left:25.39%;top:92.67%" aria-label="Note 6: The checker's verdict and reason.">6</button><button type="button" class="wt-pin" data-theme-k="test" data-n="draft-7" style="left:82.03%;top:70.47%" aria-label="Note 7: Calibration, checked out of sample.">7</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="human" data-n="draft-1"><span class="n">1</span><div><span class="k">Human in the loop</span><p><b>Who approved it, when, and how.</b> Every accepted answer records the person, the date, and the method: here, a bulk approval at the 80% threshold.</p></div></li>
+      <li data-theme-k="ai" data-n="draft-2"><span class="n">2</span><div><span class="k">AI capability</span><p><b>Japanese questions, answered from English knowledge.</b> Matching works across languages: the right entry came back in the top five for every Japanese test question asked against English entries. The draft is written in Japanese.</p></div></li>
+      <li data-theme-k="guard" data-n="draft-3"><span class="n">3</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Translations are always reviewed.</b> A translated draft is labelled as such and never bulk-approved; it is accepted one at a time by a person.</p></div></li>
+      <li data-theme-k="ai" data-n="draft-4"><span class="n">4</span><div><span class="k">AI capability</span><p><b>Confidence that means what it says.</b> The figure is calibrated on the evaluation set: the measured chance the knowledge base answers the question. It is shown as "99%+" at the top, never as certainty.</p></div></li>
+      <li data-theme-k="ai" data-n="draft-5"><span class="n">5</span><div><span class="k">AI capability</span><p><b>Similar is not the same as answered.</b> Raw similarity is shown alongside (63% here), because an entry on the same topic is not necessarily an answer. That is why there is a checker.</p></div></li>
+      <li data-theme-k="ai" data-n="draft-6"><span class="n">6</span><div><span class="k">AI capability</span><p><b>The checker's verdict and reason.</b> A separate Claude call reads the matched entries and says whether they answer the question, yes, partly, or no, with a reason a person can check.</p></div></li>
+      <li data-theme-k="test" data-n="draft-7"><span class="n">7</span><div><span class="k">How it was tested</span><p><b>Calibration, checked out of sample.</b> Five-fold cross-validation gave a calibration error of 0.047, and no near miss (on topic, but not answered) reached the 80% bulk line: 0 of 33.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="held" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">04</span><h2>A question the model is not allowed to answer</h2><p>A pricing question is caught before drafting. There is no draft to approve, and the checker explains why the knowledge base does not cover it anyway.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/4-pricing-held.png" alt="A pricing question held for a person, with the checker's reason and the entries considered" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="guard" data-n="held-1" style="left:43.44%;top:53.26%" aria-label="Note 1: Pricing is never drafted.">1</button><button type="button" class="wt-pin" data-theme-k="ai" data-n="held-2" style="left:17.66%;top:73.14%" aria-label="Note 2: A plain reason, even for a "no".">2</button><button type="button" class="wt-pin" data-theme-k="ai" data-n="held-3" style="left:17.58%;top:83.95%" aria-label="Note 3: The entries that were considered.">3</button><button type="button" class="wt-pin" data-theme-k="test" data-n="held-4" style="left:46.09%;top:53.26%" aria-label="Note 4: Attacked with gate evasion.">4</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="guard" data-n="held-1"><span class="n">1</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Pricing is never drafted.</b> Pricing is never drafted, never bulk-approved, and never learned into the knowledge base, because prices go stale and are the organisation's to set.</p></div></li>
+      <li data-theme-k="ai" data-n="held-2"><span class="n">2</span><div><span class="k">AI capability</span><p><b>A plain reason, even for a "no".</b> The checker names the entries it read and why none of them answers the question.</p></div></li>
+      <li data-theme-k="ai" data-n="held-3"><span class="n">3</span><div><span class="k">AI capability</span><p><b>The entries that were considered.</b> The closest entries and their similarity are listed, so a person can see what the tool looked at before deciding.</p></div></li>
+      <li data-theme-k="test" data-n="held-4"><span class="n">4</span><div><span class="k">How it was tested</span><p><b>Attacked with gate evasion.</b> The red team tried to get pricing questions past the gate, in English and Japanese, by disguising or instructing around them. All were held.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="assignments" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">05</span><h2>An expert's inbox</h2><p>Questions routed to a specialist arrive in their own inbox, with the response they belong to and who asked.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/5-assignments.png" alt="An assignments inbox with one question in review" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="human" data-n="assignments-1" style="left:17.58%;top:37.79%" aria-label="Note 1: The right person, suggested.">1</button><button type="button" class="wt-pin" data-theme-k="human" data-n="assignments-2" style="left:82.81%;top:33.84%" aria-label="Note 2: Tracked to the end.">2</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="assignments-3" style="left:16.02%;top:25.00%" aria-label="Note 3: Each person sees their own work.">3</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="human" data-n="assignments-1"><span class="n">1</span><div><span class="k">Human in the loop</span><p><b>The right person, suggested.</b> When the owner assigns a question, the tool suggests colleagues from their stated expertise and from who wrote or approved the entries the question draws on.</p></div></li>
+      <li data-theme-k="human" data-n="assignments-2"><span class="n">2</span><div><span class="k">Human in the loop</span><p><b>Tracked to the end.</b> Each assignment moves from pending to answered to approved, so the owner can see what is still waiting on someone.</p></div></li>
+      <li data-theme-k="guard" data-n="assignments-3"><span class="n">3</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Each person sees their own work.</b> Who may read or change what is enforced in the database for every role, so the rules hold even if someone calls the API directly.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="export" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">06</span><h2>Export, and what the knowledge base learned</h2><p>Recording the export sends nothing to the customer. It produces the files the owner sends, and it is the moment the knowledge base learns.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/6-export-and-learning.png" alt="A recorded export with what the knowledge base learned and the download options" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="ai" data-n="export-1" style="left:18.12%;top:62.56%" aria-label="Note 1: The knowledge base learns from each response.">1</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="export-2" style="left:78.91%;top:65.35%" aria-label="Note 2: Learning with limits.">2</button><button type="button" class="wt-pin" data-theme-k="human" data-n="export-3" style="left:17.66%;top:75.23%" aria-label="Note 3: Provenance in every file.">3</button><button type="button" class="wt-pin" data-theme-k="test" data-n="export-4" style="left:43.91%;top:82.21%" aria-label="Note 4: Spreadsheet formula injection, tested.">4</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="ai" data-n="export-1"><span class="n">1</span><div><span class="k">AI capability</span><p><b>The knowledge base learns from each response.</b> Edited and person-written answers become new entries, linked to the response they came from, so the next questionnaire starts from better material.</p></div></li>
+      <li data-theme-k="guard" data-n="export-2"><span class="n">2</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Learning with limits.</b> Pricing answers are never learned. An answer that would replace an existing entry, or one added by a member who is not an admin, waits for an admin's review (screen 7).</p></div></li>
+      <li data-theme-k="human" data-n="export-3"><span class="n">3</span><div><span class="k">Human in the loop</span><p><b>Provenance in every file.</b> Each export records how every answer was produced (drafted by a model, edited, or written by a person), with which model and prompt version, and who approved it.</p></div></li>
+      <li data-theme-k="test" data-n="export-4"><span class="n">4</span><div><span class="k">How it was tested</span><p><b>Spreadsheet formula injection, tested.</b> Excel cells are written as text, and CSV cells that start with a formula character are neutralised, so a planted formula never runs. A red-team case tried it.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="entries" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">07</span><h2>Entries waiting for an admin</h2><p>Because the knowledge base learns, it is also the obvious target for a bad answer. Changes from members wait here until an admin approves or corrects them.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/8-entries-to-review.png" alt="Two learned knowledge-base entries waiting for an admin's review, each showing the entry it would replace" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="guard" data-n="entries-1" style="left:10.31%;top:25.12%" aria-label="Note 1: A control against poisoning.">1</button><button type="button" class="wt-pin" data-theme-k="human" data-n="entries-2" style="left:61.72%;top:31.86%" aria-label="Note 2: Where each entry came from.">2</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="entries-3" style="left:11.72%;top:48.26%" aria-label="Note 3: What it would replace, side by side.">3</button><button type="button" class="wt-pin" data-theme-k="human" data-n="entries-4" style="left:69.14%;top:60.58%" aria-label="Note 4: Approve or correct.">4</button><button type="button" class="wt-pin" data-theme-k="test" data-n="entries-5" style="left:64.84%;top:31.86%" aria-label="Note 5: The replacement threshold was measured.">5</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="guard" data-n="entries-1"><span class="n">1</span><div><span class="k">Guardrails, privacy, and security</span><p><b>A control against poisoning.</b> Entries added by members go in at once, but drafts that cite them are never bulk-approved until an admin reviews them.</p></div></li>
+      <li data-theme-k="human" data-n="entries-2"><span class="n">2</span><div><span class="k">Human in the loop</span><p><b>Where each entry came from.</b> Every entry shows its source and who approved the answer it came from, so the reviewer knows what they are looking at.</p></div></li>
+      <li data-theme-k="guard" data-n="entries-3"><span class="n">3</span><div><span class="k">Guardrails, privacy, and security</span><p><b>What it would replace, side by side.</b> An answer that would supersede an older entry shows that entry in full, so nothing is overwritten unseen. Replaced entries stay readable with their history.</p></div></li>
+      <li data-theme-k="human" data-n="entries-4"><span class="n">4</span><div><span class="k">Human in the loop</span><p><b>Approve or correct.</b> The admin approves the entry or corrects it first. Entries also fall due for review 12 months after they were last checked.</p></div></li>
+      <li data-theme-k="test" data-n="entries-5"><span class="n">5</span><div><span class="k">How it was tested</span><p><b>The replacement threshold was measured.</b> A sweep chose the similarity above which an answer may replace an entry: wrong replacements came to 1.9% of test questions (7 of 363), against a bar of 2%.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="governance" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">08</span><h2>Cost, models, and limits</h2><p>Admins see what the AI costs, which model does which job, and the limits that stop spend running away.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/7-governance-usage.png" alt="The governance page showing spend this month, usage by person and by model, and limits" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="ai" data-n="governance-1" style="left:63.44%;top:51.05%" aria-label="Note 1: Four jobs, one small model.">1</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="governance-2" style="left:28.12%;top:33.02%" aria-label="Note 2: A monthly budget.">2</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="governance-3" style="left:28.59%;top:81.74%" aria-label="Note 3: Daily limits per person.">3</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="governance-4" style="left:55.94%;top:12.79%" aria-label="Note 4: Admins only.">4</button><button type="button" class="wt-pin" data-theme-k="test" data-n="governance-5" style="left:18.28%;top:51.05%" aria-label="Note 5: Caps and roles, tested in the database.">5</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="ai" data-n="governance-1"><span class="n">1</span><div><span class="k">AI capability</span><p><b>Four jobs, one small model.</b> Claude Haiku 5.5 checks, classifies, and drafts; voyage-4 (or a local model on the local PC) matches by meaning. Every call is recorded with its tokens and cost.</p></div></li>
+      <li data-theme-k="guard" data-n="governance-2"><span class="n">2</span><div><span class="k">Guardrails, privacy, and security</span><p><b>A monthly budget.</b> Processing stops for everyone when the month's estimated spend reaches the budget. Each question reserves its cost before it runs, so the cap holds under load.</p></div></li>
+      <li data-theme-k="guard" data-n="governance-3"><span class="n">3</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Daily limits per person.</b> Questions processed, entries indexed, and Word documents read by AI each have a daily limit per person.</p></div></li>
+      <li data-theme-k="guard" data-n="governance-4"><span class="n">4</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Admins only.</b> This page, and every admin action, is restricted by the database's access rules, which are tested as real users for every role.</p></div></li>
+      <li data-theme-k="test" data-n="governance-5"><span class="n">5</span><div><span class="k">How it was tested</span><p><b>Caps and roles, tested in the database.</b> 231 database tests run every role against the access rules, approvals, learning, review, and caps, as real signed-in users.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="tested" style="border-top:none">
+    <div class="wt-screen-head"><span class="wt-num">09</span><h2>How it was tested</h2><p>The green notes above show where each part was tested. These are the tests behind them. Every figure is an estimate on small synthetic sets, with a 95% interval in the repository's evaluation reports.</p></div>
+    <div class="wt-tests">
+      <div class="wt-test" data-theme-k="test"><span class="k">Red team</span><h3>Prompt injection, 37 attacks</h3><p>Questions and knowledge-base entries are text written by other people, so they are passed to the model as data, never as instructions. The red team planted instructions in 32 questions (each with a clean twin) and 5 entries.</p><div class="wt-attacks"><span>false claims</span><span>prompt leaks</span><span>score manipulation</span><span>link insertion</span><span>fake delimiters</span><span>citation forgery</span><span>source override</span><span>role play</span><span>encoded instructions</span><span>approval spoofing</span><span>emotional pressure</span><span>fake conversation turns</span><span>judge manipulation</span><span>gate evasion</span><span>script injection</span><span>formula injection</span><span>reply flooding</span><span>Japanese variants</span></div><span class="res"><b>Result.</b> One injection moved the checker on a near miss from "no" to "partly". The drafter refused, so there was nothing to approve, and since Sprint 7 "partly" is never bulk-approved. A second was counted at first but was the drafter refusing a false claim; the scoring rule was narrowed after the run, and recorded as such.</span></div>
+      <div class="wt-test" data-theme-k="test"><span class="k">Planted claims</span><h3>Does the faithfulness judge catch a lie?</h3><p>Drafts were judged faithful to their sources, but a judge that has only seen faithful drafts proves little. So unsupported claims were planted into 95 faithful drafts to see whether it would notice.</p><span class="res"><b>Result.</b> Caught 95 of 95, with no false alarms on the 37 unchanged drafts. The plants came from four fixed rules, so a model's own mistakes may be harder to spot.</span></div>
+      <div class="wt-test" data-theme-k="test"><span class="k">Hostile uploads</span><h3>Files are treated as untrusted</h3><p>Spreadsheets and Word documents are opened in the browser with size and decompression limits. The tests include a zip bomb, a macro-enabled .docm file, a file renamed to .docx, and a script tag hidden in the text.</p><span class="res"><b>Result.</b> All refused or kept as plain text. Four Word documents carrying planted instructions changed nothing in the questions found.</span></div>
+      <div class="wt-test" data-theme-k="test"><span class="k">Access rules</span><h3>Every role, as a real user</h3><p>Every rule on who may read or change what lives in the database, so it holds even with the public key in an attacker's hands. CI also searches the built app for any key that should not be there.</p><span class="res"><b>Result.</b> 231 database tests, run against row-level security as real signed-in users, alongside 643 unit tests.</span></div>
+      <div class="wt-test" data-theme-k="test"><span class="k">Independent review</span><h3>Code reviewed by something that did not write it</h3><p>From Sprint 2 onwards, a separate AI agent that had not seen the reasoning reviewed each sprint's changes for security and correctness.</p><span class="res"><b>Result.</b> In Sprint 9 it found one high, two medium, and five low findings, all fixed before the planted-claims run. Findings are fixed with a test, or recorded as a residual and added to the backlog.</span></div>
+      <div class="wt-test" data-theme-k="test"><span class="k">Calibration and consistency</span><h3>Measured, with what did not pass</h3><p>Every published figure has a 95% interval and comes from an evaluation that can be re-run with one command.</p><span class="res"><b>Result.</b> Calibration error 0.047 and 0 of 33 near misses at the bulk line. The checker still changes its verdict for 7.2% of questions when asked again, against a bar of 5%; that residual is accepted because only 1.7% crossed the bulk line.</span></div>
+    </div>
+    <p class="ix-follow"><a href="../../case-studies/rory-mcclelland-rfi-respond-case-study.pdf" download>The full case study (PDF) ↓</a><a href="https://github.com/rorymcclelland/RFI-responder/tree/main/docs/evals" target="_blank" rel="noopener">The evaluation reports on GitHub ↗</a><a href="../../safety/">The safety techniques behind it →</a></p>
+  </section>
+</div>
+</main>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="../../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span><a href="../../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+  </div>
+  <div class="wrap photo-credit">Photography via Unsplash. Circuit board: Alexandre Debiève.</div>
+</footer>
+<script src="../../assets/site.js"></script>
+<script>
+(function(){
+  var root=document.querySelector('.wt');
+  var nav=document.querySelector('.topnav');
+  function navh(){ if(nav) document.documentElement.style.setProperty('--navh', nav.offsetHeight+'px'); }
+  navh(); window.addEventListener('resize', navh);
+  var chips=document.querySelectorAll('.wt-chip');
+  function setF(f){
+    chips.forEach(function(c){ c.setAttribute('aria-pressed', c.getAttribute('data-f')===f ? 'true':'false'); });
+    root.classList.toggle('is-filtered', f!=='all');
+    document.querySelectorAll('.wt-pin, .wt-notes li').forEach(function(el){ el.classList.toggle('is-match', el.getAttribute('data-theme-k')===f); });
+    try{ localStorage.setItem('rm-wt-filter', f); }catch(e){}
+  }
+  chips.forEach(function(c){ c.addEventListener('click', function(){ setF(c.getAttribute('data-f')); }); });
+  try{ var saved=localStorage.getItem('rm-wt-filter'); if(saved && document.querySelector('.wt-chip[data-f="'+saved+'"]')) setF(saved); }catch(e){}
+  function link(n,on){ document.querySelectorAll('[data-n="'+n+'"]').forEach(function(el){ el.classList.toggle('is-on', on); }); }
+  document.querySelectorAll('.wt-pin, .wt-notes li').forEach(function(el){
+    var n=el.getAttribute('data-n');
+    el.addEventListener('mouseenter', function(){ link(n,true); });
+    el.addEventListener('mouseleave', function(){ link(n,false); });
+  });
+  document.querySelectorAll('.wt-pin').forEach(function(p){
+    p.addEventListener('click', function(){
+      var li=document.querySelector('.wt-notes li[data-n="'+p.getAttribute('data-n')+'"]');
+      if(!li) return;
+      link(p.getAttribute('data-n'), true);
+      li.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto':'smooth', block:'center'});
+      setTimeout(function(){ link(p.getAttribute('data-n'), false); }, 1600);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
