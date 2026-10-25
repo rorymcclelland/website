@@ -7,18 +7,11 @@
   <description>Notes on building with AI, privacy and safety, and bringing AI into organisations.</description>
   <language>en-gb</language>
   <item>
-    <title>Keep your voice on your own machine</title>
-    <link>https://mcclelland.info/writing/keep-your-voice-local.html</link>
-    <guid>https://mcclelland.info/writing/keep-your-voice-local.html</guid>
-    <pubDate>Sat, 24 Oct 2026 12:00:00 +0100</pubDate>
-    <description>I have swapped a cloud dictation app for OpenWhispr, which transcribes speech on the local PC. It is a touch slower, it costs nothing, and my voice stays with me.</description>
-  </item>
-  <item>
-    <title>What your open tabs say about you</title>
-    <link>https://mcclelland.info/writing/what-your-tabs-say.html</link>
-    <guid>https://mcclelland.info/writing/what-your-tabs-say.html</guid>
-    <pubDate>Sat, 24 Oct 2026 11:00:00 +0100</pubDate>
-    <description>A small Firefox add-on sorts my tabs into groups with AI. The model runs on the local PC, so one of the most revealing lists on my computer never leaves it.</description>
+    <title>Sit my test first</title>
+    <link>https://mcclelland.info/writing/sit-my-test-first.html</link>
+    <guid>https://mcclelland.info/writing/sit-my-test-first.html</guid>
+    <pubDate>Fri, 23 Oct 2026 19:00:00 +0100</pubDate>
+    <description>A new open coding model posts 89.7% on a leading benchmark. Before any model goes near one of my builds, it sits my own evaluation, on my own data, against my never list.</description>
   </item>
   <item>
     <title>Attack it before anyone else does</title>
