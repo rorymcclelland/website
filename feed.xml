@@ -7,6 +7,48 @@
   <description>Notes on building with AI, privacy and safety, and bringing AI into organisations.</description>
   <language>en-gb</language>
   <item>
+    <title>Guardrails the agent can’t talk its way past</title>
+    <link>https://mcclelland.info/writing/guardrails-outside-the-agent.html</link>
+    <guid>https://mcclelland.info/writing/guardrails-outside-the-agent.html</guid>
+    <pubDate>Sat, 31 Oct 2026 10:30:00 +0000</pubDate>
+    <description>Nvidia's new agent safety platform puts the guard outside the agent. It is the right instinct, and you do not need a data centre to apply it.</description>
+  </item>
+  <item>
+    <title>When ‘rogue agent’ becomes an incident category</title>
+    <link>https://mcclelland.info/writing/rogue-agent-runbook.html</link>
+    <guid>https://mcclelland.info/writing/rogue-agent-runbook.html</guid>
+    <pubDate>Sat, 31 Oct 2026 10:00:00 +0000</pubDate>
+    <description>The Budget funds a unit to respond to AI agents that slip their controls. Every team shipping agents should check whether its own runbook has that page.</description>
+  </item>
+  <item>
+    <title>Who red-teams the guardrail?</title>
+    <link>https://mcclelland.info/writing/who-red-teams-the-guardrail.html</link>
+    <guid>https://mcclelland.info/writing/who-red-teams-the-guardrail.html</guid>
+    <pubDate>Sat, 31 Oct 2026 09:30:00 +0000</pubDate>
+    <description>OpenAI's browsing safety check can reportedly block a website with no reason given and no way to appeal. A guardrail that cannot explain itself becomes a problem of its own.</description>
+  </item>
+  <item>
+    <title>Designing for customers who aren’t human</title>
+    <link>https://mcclelland.info/writing/customers-who-are-not-human.html</link>
+    <guid>https://mcclelland.info/writing/customers-who-are-not-human.html</guid>
+    <pubDate>Sat, 31 Oct 2026 09:00:00 +0000</pubDate>
+    <description>Amazon's chief executive says outside shopping agents are 'still not great'. Meta says ten million people have set one up. Every product team needs to decide how it treats a customer that is software.</description>
+  </item>
+  <item>
+    <title>Sovereign isn’t the same as local</title>
+    <link>https://mcclelland.info/writing/sovereign-is-not-local.html</link>
+    <guid>https://mcclelland.info/writing/sovereign-is-not-local.html</guid>
+    <pubDate>Sat, 31 Oct 2026 08:30:00 +0000</pubDate>
+    <description>Mistral has released the weights for a trillion-parameter model, pitched as defence nobody can switch off. Open weights give you control of the model. Where your data goes is a separate decision, and usually the more important one.</description>
+  </item>
+  <item>
+    <title>What’s left to sell when the seat goes</title>
+    <link>https://mcclelland.info/writing/what-is-left-to-sell.html</link>
+    <guid>https://mcclelland.info/writing/what-is-left-to-sell.html</guid>
+    <pubDate>Sat, 31 Oct 2026 08:00:00 +0000</pubDate>
+    <description>ServiceNow had its worst day ever on a quarter in which subscription revenue grew 20%. The market is pricing in build versus buy, and the vendors are already moving to sell control.</description>
+  </item>
+  <item>
     <title>Tools without a method</title>
     <link>https://mcclelland.info/writing/tools-without-a-method.html</link>
     <guid>https://mcclelland.info/writing/tools-without-a-method.html</guid>

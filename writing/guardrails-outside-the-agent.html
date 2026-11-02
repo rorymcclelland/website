@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Guardrails the agent can’t talk its way past · Rory McClelland</title>
+<meta name="description" content="Nvidia's new agent safety platform puts the guard outside the agent. It is the right instinct, and you do not need a data centre to apply it.">
+<meta name="author" content="Rory McClelland">
+<meta name="theme-color" content="#FBF8F1">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/writing/guardrails-outside-the-agent">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guardrails the agent can’t talk its way past · Rory McClelland">
+<meta property="og:description" content="Nvidia's new agent safety platform puts the guard outside the agent. It is the right instinct, and you do not need a data centre to apply it.">
+<meta property="og:url" content="https://mcclelland.info/writing/guardrails-outside-the-agent">
+<meta property="og:image" content="https://mcclelland.info/writing/img/guardrails-outside-the-agent.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mcclelland.info/writing/img/guardrails-outside-the-agent.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/writing.css">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<script>(function(){ try { var t = localStorage.getItem('rm-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="../writing/" aria-current="page">Writing</a>
+      <a href="../work/">Work</a>
+      <a href="../method/">Method</a>
+      <a href="../build/">Build</a>
+      <a href="../safety/">Safety</a>
+      <a href="../about/">About</a>
+      <a href="../teaching/">Teaching</a>
+    </div>
+    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+<main class="wrap">
+  <header class="post-head read">
+    <div class="eyebrow">Writing · Guardrails</div>
+    <h1>Guardrails the agent can’t talk its way past</h1>
+    <p class="dek">Nvidia's new agent safety platform puts the guard outside the agent. It is the right instinct, and you do not need a data centre to apply it.</p>
+    <div class="meta"><span><b>Rory McClelland</b></span><span>October 2026</span><span>4 min read</span></div>
+  </header>
+  <figure class="hero-fig"><svg viewBox="0 0 1200 630" role="img" aria-labelledby="h1t"><title id="h1t">An agent inside a dashed fence labelled the prompt, which has a gap it slips through, and a solid padlocked wall labelled the code and the permissions, where its escape stops.</title><rect class="s-bg" width="1200" height="630"/><rect class="s-hl" x="56" y="246" width="470" height="34"/><text class="t-disp s-ink" x="60" y="196" font-size="60">guardrails the</text><text class="t-disp s-ink" x="60" y="272" font-size="60">agent can’t pass.</text><text class="t-note s-acc" x="62" y="380" font-size="24">a rule in a prompt is a request.</text><text class="t-note s-acc" x="62" y="414" font-size="24">a rule in the code is a control.</text><text class="t-lab s-ink" x="660" y="92" font-size="14" letter-spacing="1.2">THE CODE · THE PERMISSIONS</text><rect class="k-ink" x="660" y="108" width="470" height="380" stroke-width="9"/><path class="k-ink" d="M1114,286 v-14 a16,16 0 0 1 32,0 v14" stroke-width="5"/><rect class="s-ink" x="1106" y="284" width="48" height="40" rx="4"/><circle class="s-hl" cx="1130" cy="302" r="5"/><text class="t-lab s-gr" x="730" y="172" font-size="14" letter-spacing="1.2">THE PROMPT</text><path class="k-gr" d="M990,262 V186 H730 V406 H990 V322" stroke-width="2.5" stroke-dasharray="10 8"/><line class="k-ink" x1="855" y1="236" x2="855" y2="214" stroke-width="3"/><circle class="s-acc" cx="855" cy="208" r="7"/><rect class="s-paper" style="stroke:var(--ink)" x="800" y="236" width="110" height="92" rx="18" stroke-width="3"/><circle class="s-ink" cx="835" cy="276" r="7"/><circle class="s-ink" cx="875" cy="276" r="7"/><path class="k-ink" d="M836,302 h38" stroke-width="3" stroke-linecap="round"/><path class="k-acc" d="M916,290 C960,290 1000,292 1068,292" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 9"/><path class="k-acc" d="M1056,280 L1072,292 L1056,304" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path style="stroke:var(--warn)" fill="none" d="M1084,262 l10,-12 M1086,292 h16 M1084,322 l10,12" stroke-width="3" stroke-linecap="round"/><text class="t-note s-gr" x="900" y="452" font-size="20" text-anchor="middle">slips past the prompt, stops at the wall.</text><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg></figure>
+  <article class="read prose">
+    <p>Nvidia’s Open Agent Safety Platform has two halves. OpenShell is open-source software that runs an agent inside a boundary, traces what it does, and enforces a policy as it works. Sentry runs on a separate chip, outside the agent’s own environment, and can quarantine an agent within milliseconds if it tries to step outside that boundary. More than 100 organisations are said to be working with it, and Tim Bajarin’s Forbes column this week called the location of the enforcement the key design choice.</p>
+    <p>The line I keep coming back to is from one of the launch partners, SpaceXAI: safety “should be enforced outside the model by additional controls the agent can’t get past”. That is the whole argument in one sentence, and it applies to a hobby project on a laptop as much as to a rack of Nvidia hardware.</p>
+
+    <h2>A prompt is a request</h2>
+    <p>Most guardrails I see in early agent builds live in the system prompt. “Never share the customer’s address.” “Do not send anything without approval.” They read well in a demo, and they are written in the same language the attacker uses. A web page, an email, or a document the agent reads can carry instructions of its own, and the model has no reliable way to tell your rules from theirs. That is what prompt injection is.</p>
+    <p>So a rule in a prompt is a request to the model. A rule in the code, the permissions, or the infrastructure is a control. The model can be persuaded to ignore the first. It cannot be persuaded to use a capability it was never given.</p>
+    <p class="aside">If the honest answer is “in the prompt”, it is a hope.</p>
+
+    <h2>Where each line of my never list lives</h2>
+    <p>Every build I do starts with a <a href="write-the-never-list-first.html">never list</a>: the things the system must never do, written before any code. The habit I have added since is a second column, which says where each line is enforced. Here is part of the list for Job Scout, the agent that runs my morning job search:</p>
+    <figure class="fig">
+      <div class="tablewrap">
+        <table class="split">
+          <thead><tr><th>Never</th><th>Where it is enforced</th></tr></thead>
+          <tbody>
+            <tr><td>Send an application or email on my behalf</td><td>No send capability exists. The mailbox client is read-only.</td></tr>
+            <tr><td>Let an advert’s text give the model instructions</td><td>The model that reads adverts runs locally with no tools at all, and must return a fixed JSON shape.</td></tr>
+            <tr><td>Invent a requirement or a salary</td><td>Code keeps a requirement or pay figure only if it appears in the advert’s own words.</td></tr>
+            <tr><td>Read LinkedIn</td><td>A rule in the reader’s code, before any model is involved.</td></tr>
+            <tr><td>Run when I have paused it</td><td>Every scheduled run checks the pause switch first.</td></tr>
+            <tr><td>Run up a bill</td><td>Hard caps in code: 20 adverts and 5 application packs per run.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <figcaption>Part of Job Scout’s never list, with the second column: where each line is enforced.</figcaption>
+    </figure>
+    <p>None of those depends on a model behaving well. If the advert reader were fully compromised by a hostile page, the worst it could do is return a wrong answer in a fixed shape, which the next step checks. It has nothing to act with. That is the same idea as Nvidia’s, scaled down to a single PC.</p>
+    <p>I am not alone in landing here. monday.com published how its infrastructure agents now resolve about half of its infrastructure tickets without a person stepping in. The striking detail is that none of its 11 guardrails relies on the agent behaving: short-lived tokens scoped to the right repositories, no generic shell tool, a separate model that scores every change, kill switches, and humans still merging every change.</p>
+
+    <h2>The hardware is optional</h2>
+    <p>The Forbes piece is fair about the caveats. A hundred partners is not a hundred production deployments, and a design that depends on specialist chips raises cost questions for mid-sized companies. I would add that out-of-band hardware is the last layer to add. Most teams will get further, sooner, by removing capabilities their agents do not need.</p>
+    <p>It is fair to say the principle is the valuable part. Put the enforcement where the agent cannot reach it, and decide that before the build starts, because retrofitting it later means taking capabilities away from something people already rely on.</p>
+
+    <h2>One question for your own build</h2>
+    <p>Take your never list, or write one, and add the second column. For each line, ask where it is enforced. If the honest answer is “in the prompt”, it is a hope. Move it into the permissions, the code, or the infrastructure, or accept the risk with your eyes open and write down who signed it off.</p>
+    <p>The agent can be clever, persuasive, and wrong. It should still be unable to do the things on the list.</p>
+    <p style="font-size:.85rem;color:var(--graphite)">Sources: <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Open-Agent-Safety-Platform-to-Secure-Agents-From-Testing-to-Deployment/default.aspx" target="_blank" rel="noopener">NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment</a>, Nvidia, 28 September 2026; <a href="https://forbes.com/sites/timbajarin/2026/10/30/nvidia-takes-on-rogue-ai-agents-with-software-and-hardware-guardrails" target="_blank" rel="noopener">Nvidia Takes On Rogue AI Agents With Software And Hardware Guardrails</a>, Tim Bajarin, Forbes, 30 October 2026; <a href="https://www.beri.net/article/monday-com-infra-agents-terraform-helm-50-percent-tickets-guardrails-shared-platform" target="_blank" rel="noopener">monday.com Agents Resolve Half of 1,688 Infra Tickets a Month</a>, Rajesh Beri, 30 October 2026, summarising monday.com’s engineering post of 26 October.</p>
+
+    <div class="after">
+      <div class="who"><img src="../headshot-mono-light.jpg" alt=""><p>Rory McClelland leads product, with a background in privacy and user safety at Google Chrome and Bumble, and now builds with AI. <a href="../work/">See the work</a> or write to <a href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a>.</p></div>
+      <div class="next-step"><p><b>See it in practice</b>The never list, data boundaries, and red team for Job Scout are written up as a case study.</p><a class="btn primary" href="../work/#job-scout">Read the case study →</a></div>
+      <div class="more"><a href="write-the-never-list-first.html"><span class="k">Building with AI</span><span class="t">Write the never list first</span></a><a href="attack-it-first.html"><span class="k">Red team</span><span class="t">Attack it before anyone else does</span></a></div>
+    </div>
+  </article>
+</main>
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
+

@@ -76,7 +76,7 @@
 
     <h2>Set the bar before you see the result</h2>
     <p>The part of the spec that matters most with AI is the pass mark. In the same tool’s first retrieval sprint, the bars were agreed before anything ran: recall@5 of 0.90 for English questions and 0.80 for Japanese, a calibration error of at most 0.10, and 80% of unanswerable questions scoring below the “no good match” floor.</p>
-    <p>Two things followed. First, the build changed course. The comparison showed that blending keyword and meaning-based search cut English recall@5 from 98.0% to 78.5%, so retrieval went meaning-first, and the change went into the refinement with its reason. Second, no model met the abstention bar once near misses were added to the test set; the best left only 35.3% of them below the floor. Because the bar was in writing, the miss was visible. Lowering the floor until the chart looked good would have been easy. It became a decision record and a new check in the next sprint.</p>
+    <p>The bars changed the build. The comparison showed that blending keyword and meaning-based search cut English recall@5 from 98.0% to 78.5%, so retrieval went meaning-first, and the change went into the refinement with its reason. They also exposed a miss: no model met the abstention bar once near misses were added to the test set; the best left only 35.3% of them below the floor. Because the bar was in writing, the miss was visible. Lowering the floor until the chart looked good would have been easy. It became a decision record and a new check in the next sprint.</p>
     <p class="aside">Without written bars, both would have been arguments about whether it seemed fine.</p>
 
     <h2>The spec outranks the story</h2>

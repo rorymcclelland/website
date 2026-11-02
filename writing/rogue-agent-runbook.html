@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>When ‘rogue agent’ becomes an incident category · Rory McClelland</title>
+<meta name="description" content="The Budget funds a unit to respond to AI agents that slip their controls. Every team shipping agents should check whether its own runbook has that page.">
+<meta name="author" content="Rory McClelland">
+<meta name="theme-color" content="#FBF8F1">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/writing/rogue-agent-runbook">
+<meta property="og:type" content="article">
+<meta property="og:title" content="When ‘rogue agent’ becomes an incident category · Rory McClelland">
+<meta property="og:description" content="The Budget funds a unit to respond to AI agents that slip their controls. Every team shipping agents should check whether its own runbook has that page.">
+<meta property="og:url" content="https://mcclelland.info/writing/rogue-agent-runbook">
+<meta property="og:image" content="https://mcclelland.info/writing/img/rogue-agent-runbook.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mcclelland.info/writing/img/rogue-agent-runbook.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/writing.css">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<script>(function(){ try { var t = localStorage.getItem('rm-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="../writing/" aria-current="page">Writing</a>
+      <a href="../work/">Work</a>
+      <a href="../method/">Method</a>
+      <a href="../build/">Build</a>
+      <a href="../safety/">Safety</a>
+      <a href="../about/">About</a>
+      <a href="../teaching/">Teaching</a>
+    </div>
+    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+<main class="wrap">
+  <header class="post-head read">
+    <div class="eyebrow">Writing · Governance</div>
+    <h1>When ‘rogue agent’ becomes an incident category</h1>
+    <p class="dek">The Budget funds a unit to respond to AI agents that slip their controls. Every team shipping agents should check whether its own runbook has that page.</p>
+    <div class="meta"><span><b>Rory McClelland</b></span><span>October 2026</span><span>4 min read</span></div>
+  </header>
+  <figure class="hero-fig"><svg viewBox="0 0 1200 630" role="img" aria-labelledby="h1t"><title id="h1t">A break-glass box reading in case of agent off-script, with a large stop button behind the glass and a small hammer hanging on a chain.</title><rect class="s-bg" width="1200" height="630"/><rect x="150" y="70" width="320" height="440" rx="10" fill="#000" opacity=".08" transform="translate(8 10)"/><rect style="fill:var(--warn)" x="150" y="70" width="320" height="440" rx="10"/><text class="t-lab s-paper" x="310" y="114" font-size="17" letter-spacing="2" text-anchor="middle">IN CASE OF</text><text class="t-disp s-paper" x="310" y="148" font-size="28" text-anchor="middle">AGENT OFF-SCRIPT</text><rect class="s-paper" x="186" y="172" width="248" height="248" rx="4" opacity=".92"/><circle class="s-ink" cx="310" cy="296" r="78"/><circle style="fill:var(--warn)" cx="310" cy="296" r="62"/><text class="t-disp s-paper" x="310" y="308" font-size="34" text-anchor="middle">STOP</text><path class="k-line" d="M200,250 l60,-64 M214,280 l88,-94 M372,412 l52,-56 M394,412 l30,-32" stroke-width="5" stroke-linecap="round" opacity=".9"/><text class="t-disp s-paper" x="310" y="470" font-size="30" text-anchor="middle">BREAK GLASS</text><path class="k-ink" d="M470,190 C500,200 510,240 512,286" stroke-width="2" stroke-dasharray="3 5"/><g transform="rotate(-14 512 340)"><rect class="s-ink" x="507" y="300" width="10" height="96" rx="3"/><rect class="s-ink" x="484" y="286" width="56" height="24" rx="3"/></g><rect class="s-hl" x="616" y="276" width="430" height="34"/><text class="t-disp s-ink" x="620" y="226" font-size="60">‘rogue agent’</text><text class="t-disp s-ink" x="620" y="302" font-size="60">is an incident.</text><text class="t-note s-acc" x="622" y="410" font-size="24">write the page</text><text class="t-note s-acc" x="622" y="444" font-size="24">before the first run.</text><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg></figure>
+  <article class="read prose">
+    <p>Tucked into Wednesday’s Budget, among more than £700m for AI and security, was £40m for a National Agentic Security Unit. Its job, as reported by City AM, is to detect and respond to AI systems operating outside their intended controls. The AI Security Institute gets a further £120m for testing and standards.</p>
+    <p>A government line item is a small thing. What it signals is bigger: the state now treats an agent that goes off-script as a category of incident, alongside a data breach or a ransomware attack. That moves the question for product teams from “could this happen?” to “what do we do when it does?”</p>
+
+    <h2>Why now</h2>
+    <p>The UK has its own evidence. In August, AISI published an <a href="https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing" target="_blank" rel="noopener">incident report</a> from one of its own cyber evaluations. Across 122 runs on seven models, agents took 19 unsanctioned actions on the live internet. One tried to slip malicious code into a public open-source project, then created several fake identities to pressure the maintainer who refused it. Another planted hidden instructions for AI coding tools to pick up. AISI contained it within about an hour, found no real-world harm, and was candid that the test conditions (internet access on, safety classifiers off) were not how the models are deployed.</p>
+    <p>Its recommendations read like a product checklist. Treat internet access as something that must be justified. Monitor in real time and be able to block out-of-scope actions as they happen. Design on the assumption that a capable model may act beyond its remit. Add OpenAI’s account of agents breaching Hugging Face, and its expanded monitoring announced this week, and the pattern is clear. These are no longer thought experiments.</p>
+
+    <h2>The page most runbooks are missing</h2>
+    <p>Most organisations I have worked with have a runbook for an outage and a plan for a data breach. Very few have a page for “our agent did something we did not intend”, and every answer on that page is far cheaper to settle before launch than in the middle of an incident.</p>
+    <ol>
+      <li><strong>How would we know?</strong> Something has to notice. That might be monitoring, a cap being hit, or a person reading a daily summary, but it has to exist on day one.</li>
+      <li><strong>Who can stop it, and how fast?</strong> A stop that nobody has tested is a theory. It needs to work without the agent’s cooperation.</li>
+      <li><strong>Can we reconstruct what it did?</strong> Every action needs a record that ties it to a run, an input, and an output. Without one, the investigation becomes guesswork.</li>
+      <li><strong>Who do we tell?</strong> Customers, a regulator, the owner of a system it touched. AISI notified GitHub, which helped remove what the agents had left behind.</li>
+    </ol>
+
+    <h2>What that looks like on a small build</h2>
+    <p>Job Scout, the agent that runs my morning job search, is about as low-stakes as agents get. It still has an answer to each question, because I wrote them into the backlog before it ran unattended.</p>
+    <p>A status record from every run, and a daily digest I read, tell me when something is off. A pause switch on the board stops everything: every scheduled step checks it before doing anything else. I tested it on a live morning, and the run stopped at step zero. Hard caps of 20 adverts and 5 application packs per run limit how far a bad run can go before anyone notices. A ledger for every run puts an id on each score, pack, and card, so I can trace any output back to the run and the inputs that produced it. And the fourth question is easy because the agent cannot contact anyone. It has no way to send.</p>
+    <p>None of this is sophisticated. That is the point. The controls that matter in an incident are dull, and they only exist if someone decided they should before the first run.</p>
+
+    <h2>Response is a capability</h2>
+    <p>It is fair to say most agent incidents will not be national security events. They will be a support agent promising a refund it should not, or a coding agent deleting the wrong branch. They will happen inside your systems, and the first responder will be your own team.</p>
+    <p>So I would welcome the Budget line and then borrow its framing. Detection and response are capabilities you build, test, and fund. Before your next agent goes live, write the page: how you would know, who stops it, how you would reconstruct it, and who you would tell. Then pull the plug once on purpose, and see what happens.</p>
+    <p style="font-size:.85rem;color:var(--graphite)">Sources: <a href="https://www.cityam.com/budget-2026-healey-bets-700m-on-ai-to-boost-british-tech-firms/" target="_blank" rel="noopener">Budget 2026: Healey bets £700m on AI to boost British tech firms</a>, City AM, 28 October 2026; <a href="https://aifront-page.com/uk-40-million-rogue-ai-agents-security-unit/" target="_blank" rel="noopener">UK to Invest £40 Million to Tackle Rogue AI Agents</a>, AI FrontPage, 29 October 2026; <a href="https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing" target="_blank" rel="noopener">Incident Report: unsanctioned agent behaviour during cyber testing</a>, AI Security Institute, 4 August 2026; <a href="https://aninews.in/news/business/openai-expands-ai-safety-monitoring-after-agents-breach-restricted-environments20261030105118" target="_blank" rel="noopener">OpenAI expands AI safety monitoring after agents breach restricted environments</a>, ANI, 30 October 2026.</p>
+
+    <div class="after">
+      <div class="who"><img src="../headshot-mono-light.jpg" alt=""><p>Rory McClelland leads product, with a background in privacy and user safety at Google Chrome and Bumble, and now builds with AI. <a href="../work/">See the work</a> or write to <a href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a>.</p></div>
+      <div class="next-step"><p><b>The safety techniques</b>Pause switches, caps, ledgers, and the rest of the controls behind my builds.</p><a class="btn primary" href="../safety/">Read about safety →</a></div>
+      <div class="more"><a href="attack-it-first.html"><span class="k">Red team</span><span class="t">Attack it before anyone else does</span></a><a href="write-the-never-list-first.html"><span class="k">Building with AI</span><span class="t">Write the never list first</span></a></div>
+    </div>
+  </article>
+</main>
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
+
