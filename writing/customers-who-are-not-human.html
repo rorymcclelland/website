@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Designing for customers who aren’t human · Rory McClelland</title>
+<meta name="description" content="Amazon's chief executive says outside shopping agents are 'still not great'. Meta says ten million people have set one up. Every product team needs to decide how it treats a customer that is software.">
+<meta name="author" content="Rory McClelland">
+<meta name="theme-color" content="#FBF8F1">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/writing/customers-who-are-not-human">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Designing for customers who aren’t human · Rory McClelland">
+<meta property="og:description" content="Amazon's chief executive says outside shopping agents are 'still not great'. Meta says ten million people have set one up. Every product team needs to decide how it treats a customer that is software.">
+<meta property="og:url" content="https://mcclelland.info/writing/customers-who-are-not-human">
+<meta property="og:image" content="https://mcclelland.info/writing/img/customers-who-are-not-human.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mcclelland.info/writing/img/customers-who-are-not-human.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/writing.css">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<script>(function(){ try { var t = localStorage.getItem('rm-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="../writing/" aria-current="page">Writing</a>
+      <a href="../work/">Work</a>
+      <a href="../method/">Method</a>
+      <a href="../build/">Build</a>
+      <a href="../safety/">Safety</a>
+      <a href="../about/">About</a>
+      <a href="../teaching/">Teaching</a>
+    </div>
+    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+<main class="wrap">
+  <header class="post-head read">
+    <div class="eyebrow">Writing · Product</div>
+    <h1>Designing for customers who aren’t human</h1>
+    <p class="dek">Amazon's chief executive says outside shopping agents are 'still not great'. Meta says ten million people have set one up. Every product team needs to decide how it treats a customer that is software.</p>
+    <div class="meta"><span><b>Rory McClelland</b></span><span>October 2026</span><span>4 min read</span></div>
+  </header>
+  <figure class="hero-fig"><svg viewBox="0 0 1200 630" role="img" aria-labelledby="h1t"><title id="h1t">A visitor log with three rows: a person browsing, welcome; an agent comparing for a person, welcome; and an agent at checkout, highlighted, needing the person to confirm.</title><rect class="s-bg" width="1200" height="630"/><g transform="rotate(-1.2 901.0 281.0)"><rect x="668" y="150" width="466" height="262" fill="#000" opacity=".07" transform="translate(8 10)"/><rect class="s-paper" style="stroke:var(--ink)" x="668" y="150" width="466" height="262" stroke-width="1.5"/><text class="t-lab s-gr" x="696" y="190" font-size="14" letter-spacing="1.2">VISITOR LOG · CHECKOUT</text><line class="k-line" x1="680" y1="208" x2="1122" y2="208" stroke-width="1.2"/><text class="t-body s-ink" x="696" y="248" font-size="20">a person, browsing</text><text class="t-body s-acc" x="1106" y="248" font-size="20" text-anchor="end">welcome</text><line class="k-line" x1="680" y1="270" x2="1122" y2="270" stroke-width="1"/><text class="t-body s-ink" x="696" y="312" font-size="20">an agent, comparing</text><text class="t-body s-acc" x="1106" y="312" font-size="20" text-anchor="end">welcome</text><line class="k-line" x1="680" y1="334" x2="1122" y2="334" stroke-width="1"/><rect class="s-hl" x="688" y="350" width="426" height="38"/><text class="t-body s-ink" x="696" y="376" font-size="20">an agent, paying</text><text class="t-body s-acc" x="1106" y="376" font-size="20" text-anchor="end">ask the person</text></g><rect class="s-hl" x="56" y="246" width="388" height="34"/><text class="t-disp s-ink" x="60" y="196" font-size="60">customers who</text><text class="t-disp s-ink" x="60" y="272" font-size="60">aren't human.</text><text class="t-note s-acc" x="62" y="380" font-size="24">decide your terms</text><text class="t-note s-acc" x="62" y="414" font-size="24">before the traffic arrives.</text><path class="k-acc" d="M330,428 C430,500 540,510 660,476" stroke-width="2" stroke-linecap="round"/><path class="k-acc" d="M642,470 L661,476 L648,491" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg></figure>
+  <article class="read prose">
+    <p>On Amazon’s earnings call this week, Andy Jassy said outside AI shopping agents are “still not great, nor more convenient than coming to a retailer directly”. Amazon blocked Meta’s Muse assistant from its store in September, citing its terms of use, and Jassy said few customers buy that way yet. He pointed instead to Amazon’s own shopping agent, which he said more than 400 million customers used in the past year.</p>
+    <p>The same week, Mark Zuckerberg said more than ten million people in the US and Canada have set up Muse, that shopping is its most common use, and that the average purchase is above $200. Shopify, Walmart, and Best Buy have welcomed it.</p>
+    <p>Both men are talking their book, and both are probably right about something. Today’s agents are clumsy. Plenty of people use them anyway. For a product team, the useful question is what you do when the visitor on the other side of your page is a piece of software acting for someone.</p>
+
+    <h2>I build the visitor</h2>
+    <p>I see this from the agent’s side. Job Scout, my job-search agent, visits other people’s websites every morning to read job adverts, and I had to decide how it should behave as a guest.</p>
+    <p>It tries a job board’s official interface first, where one exists. It looks for the advert on the employer’s own careers page before an aggregator’s copy, because the aggregators were often wrong about whether a role was still open. It respects robots.txt. It never touches LinkedIn, which does not want automated readers. Some sites turn it away altogether: Microsoft’s full jobs list is closed to automated readers, so the agent reports that instead of trying to get round it.</p>
+    <p>Those rules cost me coverage. I accepted that, because an agent that ignores a site’s wishes is one the site will eventually block, and it would deserve to be.</p>
+
+    <h2>Four questions for the other side</h2>
+    <p>If you run the site, the shop, or the service, here are the decisions an agent customer forces on you. Most teams have not made them on purpose yet.</p>
+    <ol>
+      <li><strong>Who is the customer?</strong> The person who wants the outcome, or the agent acting for them? The answer changes who you design for, who you support, and who you can sell to.</li>
+      <li><strong>What can an agent do without the person confirming?</strong> Browsing and comparing are low risk. Payment, cancellation, and anything irreversible are not. Job Scout can find, score, and draft, but it has no way to send an application. I sign off every one, and a retailer can draw the same line at the checkout.</li>
+      <li><strong>How do you know it has authority?</strong> A human shopper proves who they are by logging in. An agent needs a way to show who it acts for and what it is allowed to spend. Without that, every agent looks like a scraper or a fraudster.</li>
+      <li><strong>What does your page say to an agent?</strong> Prices, stock, delivery dates, and returns policies that a person reads from a well-designed page, an agent needs in a form it can parse reliably. If it cannot, it will guess, and its user will blame you.</li>
+    </ol>
+
+    <h2>Blocking is a strategy with a shelf life</h2>
+    <p>Amazon can block outside agents because it is the destination. Customers start their search there, and Amazon has its own agent to offer them instead. That is a real advantage, and a choice very few retailers can copy.</p>
+    <p>For everyone else, blocking only works while customers keep coming to you directly. If a growing share of them start with an agent, the shop that turns agents away is choosing to be invisible to those customers. A better default is to welcome agents for the low-risk parts of the journey, keep a person in the loop for the irreversible steps, and decide your terms before the traffic arrives.</p>
+
+    <h2>Design for both</h2>
+    <p>It is fair to say we are early. Jassy is right that most agent shopping today is worse than doing it yourself, and Zuckerberg’s ten million set-ups are not ten million regular shoppers. But product decisions take longer than market shifts, and teams that design for agent customers now will be ready when the clumsy phase ends.</p>
+    <p>So add a persona to your next discovery round: the agent acting for your customer. Ask what it needs, what it should never be allowed to do, and how your customer would know it did the right thing.</p>
+    <p style="font-size:.85rem;color:var(--graphite)">Sources: <a href="https://fortune.com/2026/10/29/amazon-ceo-says-shopping-agents-like-metas-muse-not-great/" target="_blank" rel="noopener">Report on Andy Jassy's comments about shopping agents</a>, Fortune, 29 October 2026.</p>
+
+    <div class="after">
+      <div class="who"><img src="../headshot-mono-light.jpg" alt=""><p>Rory McClelland leads product, with a background in privacy and user safety at Google Chrome and Bumble, and now builds with AI. <a href="../work/">See the work</a> or write to <a href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a>.</p></div>
+      <div class="next-step"><p><b>See it in full</b>How Job Scout behaves as a guest on other people’s websites, and what it is never allowed to do.</p><a class="btn primary" href="../work/#job-scout">Read the case study →</a></div>
+      <div class="more"><a href="guardrails-outside-the-agent.html"><span class="k">Guardrails</span><span class="t">Guardrails the agent can't talk its way past</span></a><a href="the-approximation-tax.html"><span class="k">Building with AI</span><span class="t">The approximation tax</span></a></div>
+    </div>
+  </article>
+</main>
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
+

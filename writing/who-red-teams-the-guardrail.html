@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Who red-teams the guardrail? · Rory McClelland</title>
+<meta name="description" content="OpenAI's browsing safety check can reportedly block a website with no reason given and no way to appeal. A guardrail that cannot explain itself becomes a problem of its own.">
+<meta name="author" content="Rory McClelland">
+<meta name="theme-color" content="#FBF8F1">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/writing/who-red-teams-the-guardrail">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Who red-teams the guardrail? · Rory McClelland">
+<meta property="og:description" content="OpenAI's browsing safety check can reportedly block a website with no reason given and no way to appeal. A guardrail that cannot explain itself becomes a problem of its own.">
+<meta property="og:url" content="https://mcclelland.info/writing/who-red-teams-the-guardrail">
+<meta property="og:image" content="https://mcclelland.info/writing/img/who-red-teams-the-guardrail.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mcclelland.info/writing/img/who-red-teams-the-guardrail.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/writing.css">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<script>(function(){ try { var t = localStorage.getItem('rm-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="../writing/" aria-current="page">Writing</a>
+      <a href="../work/">Work</a>
+      <a href="../method/">Method</a>
+      <a href="../build/">Build</a>
+      <a href="../safety/">Safety</a>
+      <a href="../about/">About</a>
+      <a href="../teaching/">Teaching</a>
+    </div>
+    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+<main class="wrap">
+  <header class="post-head read">
+    <div class="eyebrow">Writing · Red team</div>
+    <h1>Who red-teams the guardrail?</h1>
+    <p class="dek">OpenAI's browsing safety check can reportedly block a website with no reason given and no way to appeal. A guardrail that cannot explain itself becomes a problem of its own.</p>
+    <div class="meta"><span><b>Rory McClelland</b></span><span>October 2026</span><span>4 min read</span></div>
+  </header>
+  <figure class="hero-fig"><svg viewBox="0 0 1200 630" role="img" aria-labelledby="h1t"><title id="h1t">A notice reading site blocked, followed by three unticked boxes: a reason, a route to challenge it, and a record, with a note saying what a fair gate needs.</title><rect class="s-bg" width="1200" height="630"/><g transform="rotate(-1.2 901.0 281.0)"><rect x="668" y="150" width="466" height="262" fill="#000" opacity=".07" transform="translate(8 10)"/><rect class="s-paper" style="stroke:var(--ink)" x="668" y="150" width="466" height="262" stroke-width="1.5"/><text class="t-lab s-gr" x="696" y="190" font-size="14" letter-spacing="1.2">SITE BLOCKED · WHAT A FAIR GATE GIVES</text><line class="k-line" x1="680" y1="208" x2="1122" y2="208" stroke-width="1.2"/><rect class="s-hl" x="688" y="222" width="426" height="38"/><text class="t-body s-ink" x="696" y="248" font-size="20">a reason</text><text class="t-body s-acc" x="1106" y="248" font-size="20" text-anchor="end">none given</text><line class="k-line" x1="680" y1="270" x2="1122" y2="270" stroke-width="1"/><text class="t-body s-ink" x="696" y="312" font-size="20">a route to challenge it</text><text class="t-body s-acc" x="1106" y="312" font-size="20" text-anchor="end">none</text><line class="k-line" x1="680" y1="334" x2="1122" y2="334" stroke-width="1"/><text class="t-body s-ink" x="696" y="376" font-size="20">a record</text><text class="t-body s-acc" x="1106" y="376" font-size="20" text-anchor="end">not public</text></g><rect class="s-hl" x="56" y="246" width="384" height="34"/><text class="t-disp s-ink" x="60" y="196" font-size="60">who red-teams</text><text class="t-disp s-ink" x="60" y="272" font-size="60">the guardrail?</text><text class="t-note s-acc" x="62" y="380" font-size="24">blocked, with no reason,</text><text class="t-note s-acc" x="62" y="414" font-size="24">no route, and no record.</text><path class="k-acc" d="M330,428 C430,500 540,510 660,476" stroke-width="2" stroke-linecap="round"/><path class="k-acc" d="M642,470 L661,476 L648,491" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg></figure>
+  <article class="read prose">
+    <p>Search Engine Journal published a story this week that every product team building agents should read. According to Dan Taylor, OpenAI runs a central safety check, known internally as ‘Aura’, that decides whether its browsing tools may open a given website. If a domain is flagged, ChatGPT’s live search and Codex’s browser can refuse it, whatever the user’s settings or the site’s robots.txt say. The decision is cached for 24 hours. There is no public explanation of why a site is blocked and no self-service way to ask for a review.</p>
+    <p>Taylor describes a major publisher that ChatGPT simply would not open, while its competitors loaded fine in the same session. Its server logs showed no agent traffic at all. The ticket eventually reached an internal team to check whether the block was intended.</p>
+
+    <h2>The block is the right instinct</h2>
+    <p>I should say clearly that I am in favour of the idea. A browsing agent reads whatever is on the page, and a page can carry instructions written for the agent instead of the reader. Refusing known-bad sites is a sensible layer against prompt injection and fraud, and Taylor says as much.</p>
+    <p>My own agents refuse pages too. Job Scout, my job-search agent, has an input gate in front of the local model that reads adverts. It turns away pages that are too thin to be a real advert or are built by script, because those are exactly the pages where a model starts inventing requirements. The difference is that every refusal is recorded with its reason, and I see source problems in the morning digest.</p>
+
+    <h2>What a fair gate looks like</h2>
+    <p>I have been the gate before. At Google I was Chrome’s first privacy product manager, and part of the job was running the privacy review every end-user feature had to clear before launch. Every review ended in one of three verdicts: approved, approved subject to required changes, or blocked. Engineers sat in the room, the reasons were written down, and a team that disagreed with a block could escalate it. I argued a few of those escalations myself.</p>
+    <p>Teams did not always like the answer, but they trusted the gate, and I think that came down to three things:</p>
+    <ol>
+      <li><strong>A reason.</strong> Every verdict came with an explanation the team could act on.</li>
+      <li><strong>A route.</strong> There was a known way to challenge a decision, and someone accountable at the end of it.</li>
+      <li><strong>A record.</strong> Decisions were written down, so patterns and mistakes could be found later.</li>
+    </ol>
+    <p>On Taylor’s account, Aura reportedly has none of the three, at least for the site owner on the other side of it. That matters more as more traffic arrives through agents. A silent block from a browsing tool is starting to look like being removed from a search index, without the webmaster tools.</p>
+
+    <h2>Red-team the false positives</h2>
+    <p>The other detail worth noticing is that the check reportedly fails open: if the status request hits a network error, access is allowed. That is a reasonable choice for availability, and a red team would note straight away that it means the guard is absent exactly when something unusual is happening.</p>
+    <p>Most red-teaming of guardrails asks one question: does the bad thing get through? It should ask a second: does the good thing get stopped? A guardrail that blocks legitimate businesses is failing too. It just fails out of sight, and the cost lands on someone who cannot see why.</p>
+    <p class="aside">Ask whether the bad thing gets through, and whether the good thing gets stopped.</p>
+    <p>In my RFI tool, answers above a confidence line can be approved in bulk. Before trusting that line, I measured the near misses sitting just above it (0 of 33 in the last evaluation), and I re-measure after every change. The same discipline applies to a block list. Measure how often it is wrong in both directions, and publish enough for the people affected to understand it.</p>
+
+    <h2>Build the appeal into the guardrail</h2>
+    <p>If you are building an agent that refuses things, and you should be, design the refusal as a product surface from day one. Give a reason someone can act on. Give a route to challenge it, with a person accountable for the answer. Keep a record, and review it for the mistakes. Then put the guardrail itself in front of your red team, and ask them to find the good things it stops.</p>
+    <p>Safety that nobody can question tends to drift. The gates people trust are the ones that can explain themselves.</p>
+    <p style="font-size:.85rem;color:var(--graphite)">Sources: <a href="https://www.searchenginejournal.com/openais-aura-safety-check-can-block-your-site-from-chatgpt-browsing/594322/" target="_blank" rel="noopener">OpenAI's Aura Safety Check Can Block Your Site From ChatGPT Browsing</a>, Dan Taylor, Search Engine Journal, 29 October 2026.</p>
+
+    <div class="after">
+      <div class="who"><img src="../headshot-mono-light.jpg" alt=""><p>Rory McClelland leads product, with a background in privacy and user safety at Google Chrome and Bumble, and now builds with AI. <a href="../work/">See the work</a> or write to <a href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a>.</p></div>
+      <div class="next-step"><p><b>The safety techniques</b>How guardrails, red teams, and measured thresholds fit together in my builds.</p><a class="btn primary" href="../safety/">Read about safety →</a></div>
+      <div class="more"><a href="attack-it-first.html"><span class="k">Red team</span><span class="t">Attack it before anyone else does</span></a><a href="private-from-whom.html"><span class="k">Privacy</span><span class="t">Private from whom?</span></a></div>
+    </div>
+  </article>
+</main>
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
+
