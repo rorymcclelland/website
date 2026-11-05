@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Work and case studies · Rory McClelland</title>
-<meta name="description" content="Tools designed and built with AI coding tools, guardrails first, with four case studies to download.">
+<meta name="description" content="Tools designed and built with AI coding tools, guardrails first, with five case studies to download.">
 <meta name="theme-color" content="#FBF8F1">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
@@ -15,11 +15,11 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rory McClelland">
 <meta property="og:title" content="Work and case studies · Rory McClelland">
-<meta property="og:description" content="Tools designed and built with AI coding tools, guardrails first, with four case studies to download.">
+<meta property="og:description" content="Tools designed and built with AI coding tools, guardrails first, with five case studies to download.">
 <meta property="og:image" content="https://mcclelland.info/headshot.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Work and case studies · Rory McClelland">
-<meta name="twitter:description" content="Tools designed and built with AI coding tools, guardrails first, with four case studies to download.">
+<meta name="twitter:description" content="Tools designed and built with AI coding tools, guardrails first, with five case studies to download.">
 <meta name="twitter:image" content="https://mcclelland.info/headshot.jpg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
 <link rel="stylesheet" href="../assets/site.css">
@@ -51,7 +51,7 @@
   <div class="wrap">
     <div class="eyebrow">Work and case studies</div>
     <h1 class="title reveal">How I build, and what I build: guardrails first.</h1>
-    <p class="lede">Tools I have designed and built with AI coding tools, four of them written up in full as short case studies you can download. The first sets out how I run AI as an engineering team; the second follows one system, an automated job search and application tracker, from design to daily use; the third applies the same method to a small product whose full code is public on GitHub; and the fourth shows how AI can be designed into a knowledge-heavy business process to make it faster, more accurate, and more repeatable. In each, safety, privacy, and the limits on what a system may do are settled before the first line of code is written.</p>
+    <p class="lede">Tools I have designed and built with AI coding tools, five of them written up in full as short case studies you can download. The first sets out how I run AI as an engineering team; the second follows one system, an automated job search and application tracker, from design to daily use; the third applies the same method to a small product whose full code is public on GitHub; the fourth shows how AI can be designed into a knowledge-heavy business process to make it faster, more accurate, and more repeatable; and the fifth puts a team of AI agents to work on marketing production, with a person approving every step that spends, publishes, or replaces work. In each, safety, privacy, and the limits on what a system may do are settled before the first line of code is written.</p>
     <div class="principles reveal">
       <div><b>Never list first</b><span>What a system must never do is agreed at the start, and enforced by design rather than by instruction alone.</span></div>
       <div><b>Data has boundaries</b><span>Which part may see which data is decided before what to build. Some data no AI ever reaches.</span></div>
@@ -116,6 +116,21 @@
             <li>Every agreed test case runs as a browser test on every push, including on a staging copy with the real AI, and I sign off each sprint from a page of recordings.</li>
           </ul>
           <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center"><a class="btn primary" href="../case-studies/rory-mcclelland-rfi-respond-case-study.pdf" download>Download the PDF ↓</a><a class="btn" href="rfi-respond/">Walk through it, screen by screen →</a><a class="btn" href="https://github.com/rorymcclelland/RFI-responder" target="_blank" rel="noopener">View the code on GitHub ↗</a><span class="meta" style="margin-left:.3rem">8 pages · A4</span></div>
+        </div>
+      </article>
+      <article class="case reveal" id="studio">
+        <a class="cover" href="../case-studies/rory-mcclelland-studio-case-study.pdf" aria-label="Open the Studio case study (PDF)"><img src="../case-studies/cover-studio-case-study.jpg" alt="First page of the Studio case study" loading="lazy" width="662" height="516"></a>
+        <div>
+          <div class="tag">Case study 05 · Multi-agent product build</div>
+          <h3>Studio: from a one-line objective to a checked launch pack</h3>
+          <p>A web app where AI agents take a marketing campaign from a one-line objective to on-brand ads in every size and language, each checked against the brand's rules, with a person approving every step that spends money, publishes, or replaces work. Built in eight sprints over eleven days, with me as product manager and Claude as lead engineer, and running for invited users with fictional brands and simulated data. It covers what the product saves a marketing team, how it is built, deployed, and run, and how AI built it safely.</p>
+          <ul class="guards">
+            <li>On production in Sprint 5, a signed-off brief became 12 ads in 37 seconds for about 14.7p in model costs, and a daily spending cap is checked before every model call.</li>
+            <li>The image model never draws text: words, logos, and legal lines are composed in code, so they are drawn exactly as written.</li>
+            <li>Ten rules run on every ad in every size and language, and only files that pass, or that a person has accepted, reach the launch pack.</li>
+            <li>Since Sprint 7, each sprint has been signed off from a page built from recorded browser tests, after an independent QA agent and reviewer have checked the work.</li>
+          </ul>
+          <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center"><a class="btn primary" href="../case-studies/rory-mcclelland-studio-case-study.pdf" download>Download the PDF ↓</a><a class="btn" href="studio/">Walk through it, screen by screen →</a><span class="meta" style="margin-left:.3rem">7 pages · A4</span></div>
         </div>
       </article>
     </div>
