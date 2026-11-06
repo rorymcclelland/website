@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Studio, screen by screen · Rory McClelland</title>
+<meta name="description" content="A screenshot walkthrough of Studio, a multi-agent campaign studio: its AI capabilities, where people stay in the loop, the guardrails, privacy, and security design, and how each part was tested.">
+<meta name="theme-color" content="#FBF8F1">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/work/studio/">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<meta property="og:url" content="https://mcclelland.info/work/studio/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rory McClelland">
+<meta property="og:title" content="Studio, screen by screen · Rory McClelland">
+<meta property="og:description" content="A screenshot walkthrough of Studio, a multi-agent campaign studio: its AI capabilities, where people stay in the loop, the guardrails, privacy, and security design, and how each part was tested.">
+<meta property="og:image" content="https://mcclelland.info/headshot.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Studio, screen by screen · Rory McClelland">
+<meta name="twitter:description" content="A screenshot walkthrough of Studio, a multi-agent campaign studio: its AI capabilities, where people stay in the loop, the guardrails, privacy, and security design, and how each part was tested.">
+<meta name="twitter:image" content="https://mcclelland.info/headshot.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/walkthrough.css">
+<script>(function(){try{var t=localStorage.getItem('rm-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="mark" href="../.././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
+  <div class="nav-right">
+    <div class="navlinks">
+      <a href="../../writing/">Writing</a>
+      <a href="../../work/" aria-current="page">Work</a>
+      <a href="../../method/">Method</a>
+      <a href="../../build/">Build</a>
+      <a href="../../safety/">Safety</a>
+      <a href="../../about/">About</a>
+      <a href="../../teaching/">Teaching</a>
+    </div>
+    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+<main class="wt">
+<section class="wt-head" style="border-top:none">
+  <div class="wrap">
+    <div class="wt-crumb"><a href="../">Work</a> · <a href="../#studio">Studio</a></div>
+    <div class="eyebrow">Walkthrough</div>
+    <h1 class="title">Studio, screen by screen</h1>
+    <p class="lede">Studio is a web app where AI agents take a marketing campaign from a one-line objective to checked, on-brand ads in every size and language. This walkthrough follows one campaign through it and marks four things on each screen: what the AI does, where a person decides, the guardrails, privacy, and security design, and how each part was tested. Use the filter to follow one thread at a time; select a numbered marker to find its note.</p>
+    <div class="wt-links"><a class="btn primary" href="../../case-studies/rory-mcclelland-studio-case-study.pdf" download>Download the case study ↓</a><a class="btn" href="../#studio">Back to the case study</a></div>
+    <p class="wt-note">The screens were taken from the app running locally with its free mock model, which is how its automated tests run. The brands are fictional and their data simulated, and the pictures, readings, and costs from the mock model are labelled as simulated on the screen, as they are in the app.</p>
+  </div>
+</section>
+<div class="wt-filter" id="wtFilter">
+  <div class="wt-filter-in" role="group" aria-label="Show one theme">
+    <span class="wt-filter-l">Show</span>
+    <button type="button" class="wt-chip" data-f="all" aria-pressed="true">All</button>
+    <button type="button" class="wt-chip" data-f="ai" data-theme-k="ai" aria-pressed="false"><i></i>AI capability</button>
+    <button type="button" class="wt-chip" data-f="human" data-theme-k="human" aria-pressed="false"><i></i>Human in the loop</button>
+    <button type="button" class="wt-chip" data-f="guard" data-theme-k="guard" aria-pressed="false"><i></i>Guardrails, privacy, and security</button>
+    <button type="button" class="wt-chip" data-f="test" data-theme-k="test" aria-pressed="false"><i></i>How it was tested</button>
+  </div>
+</div>
+<div class="wrap">
+  <ol class="wt-toc">
+    <li><a href="#kit">The brand kit every agent reads</a></li>
+    <li><a href="#market">Market notes, with their sources</a></li>
+    <li><a href="#brief">A brief, signed off by a person</a></li>
+    <li><a href="#personas">Synthetic personas test the brief</a></li>
+    <li><a href="#creative">Creative, compliance, and the decisions left to people</a></li>
+    <li><a href="#gallery">The gallery, and a launch pack that waits</a></li>
+    <li><a href="#compliance">One ad's compliance view</a></li>
+    <li><a href="#pack">A launch pack, once the checks are settled</a></li>
+    <li><a href="#upload">Checking an ad made outside Studio</a></li>
+    <li><a href="#trail">The decision trail behind every run</a></li>
+    <li><a href="#tested">How it was tested</a></li>
+  </ol>
+
+  <section class="wt-screen" id="kit" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">01</span><h2>The brand kit every agent reads</h2><p>Each brand has a kit in the shared Business Context store: its voice, palette, fonts, legal lines, banned terms, claims that need evidence, and do and don't rules. Every agent works from it, and every check is run against it.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/1-brand-kit.png" alt="The Fernhollow Outfitters brand kit: voice notes, do and don't rules, palette, fonts, legal lines, banned terms and claims that need evidence" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="human" data-n="kit-1" style="left:10.94%;top:35.81%" aria-label="Note 1: Rules only a person can judge.">1</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="kit-2" style="left:29.53%;top:70.70%" aria-label="Note 2: Legal lines are copied, never written.">2</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="kit-3" style="left:48.28%;top:70.70%" aria-label="Note 3: Banned terms, checked in code.">3</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="kit-4" style="left:61.72%;top:70.70%" aria-label="Note 4: Claims that need evidence.">4</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="kit-5" style="left:81.25%;top:29.77%" aria-label="Note 5: Fonts drawn in code.">5</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="human" data-n="kit-1"><span class="n">1</span><div><span class="k">Human in the loop</span><p><b>Rules only a person can judge.</b> A don't rule such as "use fear to sell" cannot be checked reliably by code. Each one is listed against every picked ad for a person to confirm (screen 5).</p></div></li>
+      <li data-theme-k="guard" data-n="kit-2"><span class="n">2</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Legal lines are copied, never written.</b> Required legal lines are copied into every ad by code, word for word. No model writes or rewrites them, so no instruction can remove them.</p></div></li>
+      <li data-theme-k="guard" data-n="kit-3"><span class="n">3</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Banned terms, checked in code.</b> Every ad is checked for the kit's banned terms, in every size and every language it is translated into.</p></div></li>
+      <li data-theme-k="guard" data-n="kit-4"><span class="n">4</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Claims that need evidence.</b> A brief that says "warmest" or "most sustainable" must cite evidence for it from the context store, or the brief's checks refuse it.</p></div></li>
+      <li data-theme-k="guard" data-n="kit-5"><span class="n">5</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Fonts drawn in code.</b> Ads are drawn in code with bundled open fonts, each brand font mapped to the nearest one. The image model never draws text, so the words are drawn exactly as written.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="market" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">02</span><h2>Market notes, with their sources</h2><p>The Market agent searches the web about the category, never the brand, and writes short notes the Brief agent can cite. Every note links to the pages it rests on.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/2-market-notes.png" alt="Four market notes for Fernhollow Outfitters, each with a source link and the date it was checked" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="ai" data-n="market-1" style="left:70.70%;top:5.23%" aria-label="Note 1: A web-searching agent, on a budget.">1</button><button type="button" class="wt-pin" data-theme-k="test" data-n="market-2" style="left:10.94%;top:41.98%" aria-label="Note 2: Every figure is checked against its page.">2</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="market-3" style="left:37.34%;top:81.40%" aria-label="Note 3: Real company names stay here.">3</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="market-4" style="left:10.94%;top:50.70%" aria-label="Note 4: Simulated in this demo.">4</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="ai" data-n="market-1"><span class="n">1</span><div><span class="k">AI capability</span><p><b>A web-searching agent, on a budget.</b> On production the Market agent (Claude Sonnet) runs up to three searches. A refresh costs up to about 20p and counts against the daily cap.</p></div></li>
+      <li data-theme-k="test" data-n="market-2"><span class="n">2</span><div><span class="k">How it was tested</span><p><b>Every figure is checked against its page.</b> Code reads each cited page and refuses a note whose figures are not on it. On production, every figure in the measured run was found on its cited page.</p></div></li>
+      <li data-theme-k="guard" data-n="market-3"><span class="n">3</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Real company names stay here.</b> Notes may name real companies, flagged as such. Before the Brief agent sees the notes, those names are replaced with "a named company", and the brief's checks refuse any of them.</p></div></li>
+      <li data-theme-k="guard" data-n="market-4"><span class="n">4</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Simulated in this demo.</b> These screens use the free mock model, so the notes link to sample pages. The real agent links to the pages it actually read.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="brief" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">03</span><h2>A brief, signed off by a person</h2><p>A one-line objective becomes a structured brief that cites the context it comes from. Nothing creative happens until a person signs a version off.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/3-brief-signed-off.png" alt="A Fernhollow Outfitters campaign brief, version 1, signed off on 5 November 2026, with a box to revise it with AI" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="ai" data-n="brief-1" style="left:12.66%;top:38.37%" aria-label="Note 1: From one line to a brief.">1</button><button type="button" class="wt-pin" data-theme-k="human" data-n="brief-2" style="left:10.94%;top:67.44%" aria-label="Note 2: Sign-off is a person's decision.">2</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="brief-3" style="left:39.69%;top:27.67%" aria-label="Note 3: Simulated data, labelled.">3</button><button type="button" class="wt-pin" data-theme-k="human" data-n="brief-4" style="left:10.94%;top:80.58%" aria-label="Note 4: Revise, and keep every version.">4</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="brief-5" style="left:37.66%;top:46.63%" aria-label="Note 5: Every run has a trail.">5</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="ai" data-n="brief-1"><span class="n">1</span><div><span class="k">AI capability</span><p><b>From one line to a brief.</b> The Brief agent (Claude Sonnet on production) writes the brief from the brand's context store. Every insight cites a context item, and code refuses a citation, figure, or claim that its source does not support.</p></div></li>
+      <li data-theme-k="human" data-n="brief-2"><span class="n">2</span><div><span class="k">Human in the loop</span><p><b>Sign-off is a person's decision.</b> A version is sent for sign-off and approved in the approvals inbox. Creative can start only from a signed-off brief, and the workflow checks that again before it spends anything.</p></div></li>
+      <li data-theme-k="guard" data-n="brief-3"><span class="n">3</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Simulated data, labelled.</b> The demo brands and their customers are fictional, and the page says so wherever their data is shown.</p></div></li>
+      <li data-theme-k="human" data-n="brief-4"><span class="n">4</span><div><span class="k">Human in the loop</span><p><b>Revise, and keep every version.</b> The brief can be revised with AI, as a whole or a section at a time, or edited by hand. Each change makes a new version; nothing is overwritten.</p></div></li>
+      <li data-theme-k="guard" data-n="brief-5"><span class="n">5</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Every run has a trail.</b> Each agent run records its inputs, outputs, model, tokens, cost, time, and outcome (screen 10).</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="personas" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">04</span><h2>Synthetic personas test the brief</h2><p>At sign-off, four synthetic customers built from the brand's segments score the brief and say what would put them off. It is a quick check before money is spent, not research with real people.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/4-personas.png" alt="Persona scores for a brief: an average of 3.8 out of 5, and two personas with their scores, objections and what would win them over" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="ai" data-n="personas-1" style="left:10.00%;top:33.95%" aria-label="Note 1: Started automatically at sign-off.">1</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="personas-2" style="left:36.95%;top:53.26%" aria-label="Note 2: Labelled as synthetic.">2</button><button type="button" class="wt-pin" data-theme-k="ai" data-n="personas-3" style="left:10.00%;top:91.98%" aria-label="Note 3: Objections in the brief's words.">3</button><button type="button" class="wt-pin" data-theme-k="human" data-n="personas-4" style="left:73.28%;top:5.23%" aria-label="Note 4: Asked again on a click.">4</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="ai" data-n="personas-1"><span class="n">1</span><div><span class="k">AI capability</span><p><b>Started automatically at sign-off.</b> The persona review and the test plan (Claude Haiku on production) start as soon as the brief is signed off. Each cost under 0.1p on production.</p></div></li>
+      <li data-theme-k="guard" data-n="personas-2"><span class="n">2</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Labelled as synthetic.</b> Every persona says it is synthetic, not a real customer, and the scores are presented as a check on the brief, never as a forecast.</p></div></li>
+      <li data-theme-k="ai" data-n="personas-3"><span class="n">3</span><div><span class="k">AI capability</span><p><b>Objections in the brief's words.</b> Each objection quotes the part of the brief it is about, so a person can see exactly what prompted it.</p></div></li>
+      <li data-theme-k="human" data-n="personas-4"><span class="n">4</span><div><span class="k">Human in the loop</span><p><b>Asked again on a click.</b> A person can ask the personas again after revising the brief. Nothing in the brief changes as a result.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="creative" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">05</span><h2>Creative, compliance, and the decisions left to people</h2><p>Making creative runs the Imagery and Copy agents in parallel and composes the ads in code. Above the gallery, the campaign shows what still needs a person.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/5-creative.png" alt="The Creative section: a simulated-images notice, compliance of the picked ads with 64 to review, three don't rules awaiting a person, languages, and pre-test" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="guard" data-n="creative-1" style="left:88.75%;top:5.47%" aria-label="Note 1: The cost is shown before the click.">1</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="creative-2" style="left:10.94%;top:22.67%" aria-label="Note 2: Simulated images, said plainly.">2</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="creative-3" style="left:10.94%;top:35.12%" aria-label="Note 3: Nothing passes on a model's say-so.">3</button><button type="button" class="wt-pin" data-theme-k="human" data-n="creative-4" style="left:88.75%;top:47.33%" aria-label="Note 4: A person confirms the don't rules.">4</button><button type="button" class="wt-pin" data-theme-k="human" data-n="creative-5" style="left:10.94%;top:70.35%" aria-label="Note 5: Machine translation, human legal lines.">5</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="creative-6" style="left:10.94%;top:87.79%" aria-label="Note 6: A synthetic panel, never a prediction.">6</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="guard" data-n="creative-1"><span class="n">1</span><div><span class="k">Guardrails, privacy, and security</span><p><b>The cost is shown before the click.</b> "About 18p, at most 46p": the typical and worst-case cost. Before the call, the worst case is reserved against the daily cap, so parallel runs cannot overshoot it.</p></div></li>
+      <li data-theme-k="guard" data-n="creative-2"><span class="n">2</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Simulated images, said plainly.</b> In this demo the pictures come from the mock image model. Each one is stamped "Simulated image" in its pixels, in every size.</p></div></li>
+      <li data-theme-k="guard" data-n="creative-3"><span class="n">3</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Nothing passes on a model's say-so.</b> Every picked ad is checked in every size and language. Only files that pass, or whose review items a person has accepted, can go into the launch pack.</p></div></li>
+      <li data-theme-k="human" data-n="creative-4"><span class="n">4</span><div><span class="k">Human in the loop</span><p><b>A person confirms the don't rules.</b> Each don't rule waits on every picked ad until a person accepts it, for all picked ads at once or one by one. The decision is recorded with who made it and when.</p></div></li>
+      <li data-theme-k="human" data-n="creative-5"><span class="n">5</span><div><span class="k">Human in the loop</span><p><b>Machine translation, human legal lines.</b> The Localise agent translates the words and badges them "Machine translation". Legal lines are never machine-translated: each language has its own in the brand's kit. For the demo brands, Claude wrote them, and they are marked as written for the demo.</p></div></li>
+      <li data-theme-k="guard" data-n="creative-6"><span class="n">6</span><div><span class="k">Guardrails, privacy, and security</span><p><b>A synthetic panel, never a prediction.</b> The pre-test panel's reasons may hold no figures or predictions, and the panel is labelled "Synthetic panel, not real customers".</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="gallery" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">06</span><h2>The gallery, and a launch pack that waits</h2><p>Twelve ads from four pictures and three sets of words, four of them picked and translated. The launch pack refuses to build until the review items are settled.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/6-gallery.png" alt="The launch pack card saying there is no pack yet, above four picked Fernhollow ads with their checks, translations and panel scores" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="guard" data-n="gallery-1" style="left:10.94%;top:4.42%" aria-label="Note 1: No pack until the checks are settled.">1</button><button type="button" class="wt-pin" data-theme-k="human" data-n="gallery-2" style="left:10.94%;top:13.14%" aria-label="Note 2: The reasons, one click away.">2</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="gallery-3" style="left:13.75%;top:33.95%" aria-label="Note 3: The image model never draws text.">3</button><button type="button" class="wt-pin" data-theme-k="test" data-n="gallery-4" style="left:46.88%;top:58.72%" aria-label="Note 4: Contrast measured before drawing.">4</button><button type="button" class="wt-pin" data-theme-k="ai" data-n="gallery-5" style="left:64.84%;top:74.19%" aria-label="Note 5: Every translation, re-checked.">5</button><button type="button" class="wt-pin" data-theme-k="human" data-n="gallery-6" style="left:73.28%;top:58.72%" aria-label="Note 6: Review items, counted on the card.">6</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="guard" data-n="gallery-1"><span class="n">1</span><div><span class="k">Guardrails, privacy, and security</span><p><b>No pack until the checks are settled.</b> Every size and language of the picked ads is still waiting for review, so there is no launch pack yet, and the card says why.</p></div></li>
+      <li data-theme-k="human" data-n="gallery-2"><span class="n">2</span><div><span class="k">Human in the loop</span><p><b>The reasons, one click away.</b> The card lists the 16 sizes or languages left out, each with its reason, so a person knows what to look at.</p></div></li>
+      <li data-theme-k="guard" data-n="gallery-3"><span class="n">3</span><div><span class="k">Guardrails, privacy, and security</span><p><b>The image model never draws text.</b> The model supplies only the picture. Headline, body, button, logo, and legal lines are composed in code, so they are drawn exactly as written, in the brand's colours and the nearest open font to its own. A vision check on each picture redraws it once if it contains text, then drops it.</p></div></li>
+      <li data-theme-k="test" data-n="gallery-4"><span class="n">4</span><div><span class="k">How it was tested</span><p><b>Contrast measured before drawing.</b> Contrast is worked out before an ad is drawn, and an ad that cannot reach AA (4.5:1 for words) is refused rather than shipped.</p></div></li>
+      <li data-theme-k="ai" data-n="gallery-5"><span class="n">5</span><div><span class="k">AI capability</span><p><b>Every translation, re-checked.</b> Each translation is drawn and checked in every size on its own, because translated words are often longer than the English and can break a layout that worked.</p></div></li>
+      <li data-theme-k="human" data-n="gallery-6"><span class="n">6</span><div><span class="k">Human in the loop</span><p><b>Review items, counted on the card.</b> "3 to review" on each ad is the three don't rules a person has not yet confirmed.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="compliance" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">07</span><h2>One ad's compliance view</h2><p>Each ad has its own compliance view: every rule, in every size and language, as pass, review, or fail, with the reason and a suggested fix.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/7-compliance.png" alt="The compliance view for one ad: four drawn files to review, and a don't rule awaiting a person, with Accept and Not acceptable buttons" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="human" data-n="compliance-1" style="left:41.41%;top:27.91%" aria-label="Note 1: Review, not pass.">1</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="compliance-2" style="left:10.94%;top:38.37%" aria-label="Note 2: Every size and language.">2</button><button type="button" class="wt-pin" data-theme-k="test" data-n="compliance-3" style="left:10.94%;top:48.84%" aria-label="Note 3: Studio's own thresholds, stated.">3</button><button type="button" class="wt-pin" data-theme-k="human" data-n="compliance-4" style="left:10.94%;top:76.05%" aria-label="Note 4: Accept, or not acceptable.">4</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="human" data-n="compliance-1"><span class="n">1</span><div><span class="k">Human in the loop</span><p><b>Review, not pass.</b> Until a person has confirmed the don't rules, the ad is "to review". It never shows as passed because a model saw nothing wrong.</p></div></li>
+      <li data-theme-k="guard" data-n="compliance-2"><span class="n">2</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Every size and language.</b> The same checks run on every drawn file: contrast, legal lines, banned terms, logo clear space, text density, the safe zones on 9:16 stories, and the simulated-image label.</p></div></li>
+      <li data-theme-k="test" data-n="compliance-3"><span class="n">3</span><div><span class="k">How it was tested</span><p><b>Studio's own thresholds, stated.</b> The thresholds are Studio's own defaults, kept in one configuration file, and the page says they are not any ad platform's policy.</p></div></li>
+      <li data-theme-k="human" data-n="compliance-4"><span class="n">4</span><div><span class="k">Human in the loop</span><p><b>Accept, or not acceptable.</b> A person accepts the rule or marks it not acceptable, with an optional note. Decisions are append-only, with who decided and when.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="pack" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">08</span><h2>A launch pack, once the checks are settled</h2><p>For the second demo brand, the review items have been accepted: 64 ads, four picked ads in the four social sizes and four languages, in one zip.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/8-launch-pack.png" alt="A Quillmoor Money launch pack card for 64 ads in four languages, above four picked ads that pass their checks" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="guard" data-n="pack-1" style="left:10.94%;top:7.79%" aria-label="Note 1: Only what passed.">1</button><button type="button" class="wt-pin" data-theme-k="human" data-n="pack-2" style="left:69.38%;top:5.00%" aria-label="Note 2: Nothing is published.">2</button><button type="button" class="wt-pin" data-theme-k="test" data-n="pack-3" style="left:10.94%;top:13.49%" aria-label="Note 3: Measured in CI.">3</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="pack-4" style="left:10.94%;top:20.23%" aria-label="Note 4: Labels travel with the files.">4</button><button type="button" class="wt-pin" data-theme-k="test" data-n="pack-5" style="left:23.44%;top:65.81%" aria-label="Note 5: Passes, in every size.">5</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="guard" data-n="pack-1"><span class="n">1</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Only what passed.</b> The pack holds only files that passed, or whose review items a person accepted, with a manifest in JSON and CSV and a README. It has no AI cost.</p></div></li>
+      <li data-theme-k="human" data-n="pack-2"><span class="n">2</span><div><span class="k">Human in the loop</span><p><b>Nothing is published.</b> Building the pack downloads a zip. Studio never publishes an ad or spends media money; that stays with a person.</p></div></li>
+      <li data-theme-k="test" data-n="pack-3"><span class="n">3</span><div><span class="k">How it was tested</span><p><b>Measured in CI.</b> A 64-ad demo pack took 19.7 seconds from click to complete download in CI, at 22.6 MB.</p></div></li>
+      <li data-theme-k="guard" data-n="pack-4"><span class="n">4</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Labels travel with the files.</b> Simulated pictures and machine translations are labelled in both manifests and the README, so the label survives outside Studio.</p></div></li>
+      <li data-theme-k="test" data-n="pack-5"><span class="n">5</span><div><span class="k">How it was tested</span><p><b>Passes, in every size.</b> Each picked ad here passed every rule checked in code, in every size and language, and a person accepted its don't rules, before it was allowed into the pack.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="upload" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">09</span><h2>Checking an ad made outside Studio</h2><p>An agency's PNG can be checked against the same kit. An AI model reads the words and estimates where they sit; code then checks what was read, and each finding says how it was found.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/9-uploaded-ad.png" alt="An uploaded ad with its check: banned terms, legal lines and real company name passed in code, and estimated items to review" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="human" data-n="upload-1" style="left:40.31%;top:24.07%" aria-label="Note 1: To review, by a person.">1</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="upload-2" style="left:10.94%;top:79.42%" aria-label="Note 2: The file is treated as untrusted.">2</button><button type="button" class="wt-pin" data-theme-k="ai" data-n="upload-3" style="left:67.03%;top:58.72%" aria-label="Note 3: AI reads, code checks.">3</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="upload-4" style="left:66.56%;top:49.19%" aria-label="Note 4: Simulated reading, labelled.">4</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="upload-5" style="left:62.50%;top:84.30%" aria-label="Note 5: Real names fail.">5</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="human" data-n="upload-1"><span class="n">1</span><div><span class="k">Human in the loop</span><p><b>To review, by a person.</b> Estimates, and anything the AI flags, are left for a person to judge. Studio never changes or redraws the uploaded ad.</p></div></li>
+      <li data-theme-k="guard" data-n="upload-2"><span class="n">2</span><div><span class="k">Guardrails, privacy, and security</span><p><b>The file is treated as untrusted.</b> Its contents decide what it is, never its name: PNG or JPEG only, up to 4 MB and 4096 pixels a side, refused if it carries script or web code, and re-encoded without its metadata.</p></div></li>
+      <li data-theme-k="ai" data-n="upload-3"><span class="n">3</span><div><span class="k">AI capability</span><p><b>AI reads, code checks.</b> The Read ad agent (Claude Haiku with vision on production) reads every line of text. Banned terms, legal lines, and real company names are then checked in code on those words.</p></div></li>
+      <li data-theme-k="guard" data-n="upload-4"><span class="n">4</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Simulated reading, labelled.</b> This screen used the mock model, which returns a fixed reading, and says so. The ad was made to match it.</p></div></li>
+      <li data-theme-k="guard" data-n="upload-5"><span class="n">5</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Real names fail.</b> An uploaded ad that names a real company from the brand's market notes fails this check.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="trail" style="border-top:none;padding-bottom:0">
+    <div class="wt-screen-head"><span class="wt-num">10</span><h2>The decision trail behind every run</h2><p>Every agent run has a page showing each step it took, with the model, tokens, cost, time, and number of attempts, and its inputs and outputs.</p></div>
+    <div class="wt-shot-wrap"><div class="wt-shot"><img src="img/10-decision-trail.png" alt="The decision trail for a brief run: two steps, with the model, tokens in and out, cost and attempts" width="1280" height="860" loading="lazy"><button type="button" class="wt-pin" data-theme-k="guard" data-n="trail-1" style="left:61.72%;top:93.26%" aria-label="Note 1: Traceable to the token.">1</button><button type="button" class="wt-pin" data-theme-k="test" data-n="trail-2" style="left:75.39%;top:91.05%" aria-label="Note 2: One repair, then stop.">2</button><button type="button" class="wt-pin" data-theme-k="guard" data-n="trail-3" style="left:78.36%;top:31.74%" aria-label="Note 3: Simulated costs, labelled.">3</button><button type="button" class="wt-pin" data-theme-k="ai" data-n="trail-4" style="left:38.28%;top:72.09%" aria-label="Note 4: Grounded in the brand's context.">4</button></div></div>
+    <p class="wt-swipe">Swipe the screenshot sideways to see all of it.</p>
+    <ol class="wt-notes">
+      <li data-theme-k="guard" data-n="trail-1"><span class="n">1</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Traceable to the token.</b> Each step records its model, tokens, cost, time, and outcome. The cost in the trail is read from the spending ledger, so the two always match.</p></div></li>
+      <li data-theme-k="test" data-n="trail-2"><span class="n">2</span><div><span class="k">How it was tested</span><p><b>One repair, then stop.</b> If a model's answer comes back in the wrong shape, Studio tries one repair. If that fails, the run stops and says why. Every attempt is kept, with its raw reply.</p></div></li>
+      <li data-theme-k="guard" data-n="trail-3"><span class="n">3</span><div><span class="k">Guardrails, privacy, and security</span><p><b>Simulated costs, labelled.</b> With the mock model, costs are simulated at a fixed test price (pictures at the real price), so the daily cap can be tried out without spending anything.</p></div></li>
+      <li data-theme-k="ai" data-n="trail-4"><span class="n">4</span><div><span class="k">AI capability</span><p><b>Grounded in the brand's context.</b> The brief starts by gathering the brand's context items. The agent can cite only those, and code checks every citation.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="wt-screen" id="tested" style="border-top:none">
+    <div class="wt-screen-head"><span class="wt-num">11</span><h2>How it was tested</h2><p>The green notes above show where each part was tested. These are the methods behind them, from the project's decision records, backlog, and sign-off pages.</p></div>
+    <div class="wt-tests">
+      <div class="wt-test" data-theme-k="test"><span class="k">Sign-off</span><h3>Every agreed case, with how it is checked</h3><p>From Sprint 7, each agreed test case is listed with how it is checked. CI records the browser tests, and the demo page the sprint is signed off from is built from those results and recordings. A browser case shows Passed only if the test proved it in that build.</p><span class="res"><b>Result.</b> Sprint 8 was signed off with 12 browser passes, 14 other CI passes, 3 hand checks still to be done on production, and 0 failures. Across Sprints 7 and 8, 66 cases are listed.</span></div>
+      <div class="wt-test" data-theme-k="test"><span class="k">Independent QA</span><h3>Tests checked by an agent that did not write them</h3><p>A separate QA agent, which had not built the work, checks the tests against the agreed cases before the demo.</p><span class="res"><b>Result.</b> In Sprint 7 it found 12 problems with the tests, including a browser test that could pass on a broken implementation. All 12 were fixed before the demo.</span></div>
+      <div class="wt-test" data-theme-k="test"><span class="k">Independent review</span><h3>Security and correctness, reviewed every sprint</h3><p>A separate reviewer agent reads each sprint's changes against the project rules and ranks its findings with a file, a line, and a fix. It does not edit code.</p><div class="wt-attacks"><span>a citation tag read as a figure</span><span>a price read as a percentage</span><span>a banned term in another form</span><span>history lost on delete</span></div><span class="res"><b>Result.</b> Those four came from Sprint 3's review. Sprint 4's review found 19 issues; 18 were fixed and one was accepted. Sprint 5's 12 findings were all fixed.</span></div>
+      <div class="wt-test" data-theme-k="test"><span class="k">Hostile input</span><h3>Every agent has a prompt-injection test</h3><p>Brand rules, briefs, and the words read from an uploaded ad are written by people, so they are passed to models as data. Each agent has a test that plants instructions in its input, and code checks every answer whatever the model says.</p><span class="res"><b>Result.</b> Answers that break the schema, cite outside their context, or slip in a real company name, a testimonial, or an unsupported figure are refused in code.</span></div>
+      <div class="wt-test" data-theme-k="test"><span class="k">Tenancy</span><h3>Every table, tested across workspaces</h3><p>Every business table carries a workspace and row-level security in the database, and the app reaches data only as the signed-in person. Each new table gets a test that tries to read another workspace's rows.</p><span class="res"><b>Result.</b> The database itself refuses another workspace's rows, so most app bugs cannot leak data; one known gap, F-30, is on the backlog. A fresh throwaway database branch is built from the migrations in CI on every push.</span></div>
+      <div class="wt-test" data-theme-k="test"><span class="k">Real models</span><h3>Checked on production, by hand</h3><p>CI uses the free mock model, so anything that depends on real AI output, such as translation quality or picture judgement, is checked by hand on production after the deploy, from a short written test pack.</p><span class="res"><b>Result.</b> Running the real models found and fixed four rounds of Market agent issues and three Imagery issues. No evaluation against the real models has been run yet; the first is top of the backlog.</span></div>
+    </div>
+    <p class="ix-follow"><a href="../../case-studies/rory-mcclelland-studio-case-study.pdf" download>The full case study (PDF) ↓</a><a href="../../build/">How I run sprints with AI →</a><a href="../../safety/">The safety techniques behind it →</a></p>
+  </section>
+</div>
+</main>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
+    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
+    <div class="contact-signoff">
+      <img src="../../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
+      <p>I read and reply to email myself, usually within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
+      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
+      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fl">
+    <span>Rory McClelland · Product &amp; AI-native transformation</span>
+    <span><a href="../../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+  </div>
+  <div class="wrap photo-credit">Photography via Unsplash. Circuit board: Alexandre Debiève.</div>
+</footer>
+<script src="../../assets/site.js"></script>
+<script>
+(function(){
+  var root=document.querySelector('.wt');
+  var nav=document.querySelector('.topnav');
+  function navh(){ if(nav) document.documentElement.style.setProperty('--navh', nav.offsetHeight+'px'); }
+  navh(); window.addEventListener('resize', navh);
+  var chips=document.querySelectorAll('.wt-chip');
+  function setF(f){
+    chips.forEach(function(c){ c.setAttribute('aria-pressed', c.getAttribute('data-f')===f ? 'true':'false'); });
+    root.classList.toggle('is-filtered', f!=='all');
+    document.querySelectorAll('.wt-pin, .wt-notes li').forEach(function(el){ el.classList.toggle('is-match', el.getAttribute('data-theme-k')===f); });
+    try{ localStorage.setItem('rm-wt-filter', f); }catch(e){}
+  }
+  chips.forEach(function(c){ c.addEventListener('click', function(){ setF(c.getAttribute('data-f')); }); });
+  try{ var saved=localStorage.getItem('rm-wt-filter'); if(saved && document.querySelector('.wt-chip[data-f="'+saved+'"]')) setF(saved); }catch(e){}
+  function link(n,on){ document.querySelectorAll('[data-n="'+n+'"]').forEach(function(el){ el.classList.toggle('is-on', on); }); }
+  document.querySelectorAll('.wt-pin, .wt-notes li').forEach(function(el){
+    var n=el.getAttribute('data-n');
+    el.addEventListener('mouseenter', function(){ link(n,true); });
+    el.addEventListener('mouseleave', function(){ link(n,false); });
+  });
+  document.querySelectorAll('.wt-pin').forEach(function(p){
+    p.addEventListener('click', function(){
+      var li=document.querySelector('.wt-notes li[data-n="'+p.getAttribute('data-n')+'"]');
+      if(!li) return;
+      link(p.getAttribute('data-n'), true);
+      li.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto':'smooth', block:'center'});
+      setTimeout(function(){ link(p.getAttribute('data-n'), false); }, 1600);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

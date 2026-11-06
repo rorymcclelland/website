@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Work and case studies · Rory McClelland</title>
-<meta name="description" content="Tools designed and built with AI coding tools, guardrails first, with four case studies to download.">
+<meta name="description" content="Tools designed and built with AI coding tools, guardrails first, with five case studies to download.">
 <meta name="theme-color" content="#FBF8F1">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
@@ -15,11 +15,11 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rory McClelland">
 <meta property="og:title" content="Work and case studies · Rory McClelland">
-<meta property="og:description" content="Tools designed and built with AI coding tools, guardrails first, with four case studies to download.">
+<meta property="og:description" content="Tools designed and built with AI coding tools, guardrails first, with five case studies to download.">
 <meta property="og:image" content="https://mcclelland.info/headshot.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Work and case studies · Rory McClelland">
-<meta name="twitter:description" content="Tools designed and built with AI coding tools, guardrails first, with four case studies to download.">
+<meta name="twitter:description" content="Tools designed and built with AI coding tools, guardrails first, with five case studies to download.">
 <meta name="twitter:image" content="https://mcclelland.info/headshot.jpg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
 <link rel="stylesheet" href="../assets/site.css">
@@ -51,7 +51,7 @@
   <div class="wrap">
     <div class="eyebrow">Work and case studies</div>
     <h1 class="title reveal">How I build, and what I build: guardrails first.</h1>
-    <p class="lede">Tools I have designed and built with AI coding tools, four of them written up in full as short case studies you can download. The first sets out how I run AI as an engineering team; the second follows one system, an automated job search and application tracker, from design to daily use; the third applies the same method to a small product whose full code is public on GitHub; and the fourth shows how AI can be designed into a knowledge-heavy business process to make it faster, more accurate, and more repeatable. In each, safety, privacy, and the limits on what a system may do are settled before the first line of code is written.</p>
+    <p class="lede">Tools I have designed and built with AI coding tools, five of them written up in full as short case studies you can download. They start with the two largest: Studio, where a team of AI agents takes on a marketing team's production work, with a person approving every step that spends, publishes, or replaces work; and RFI Respond, which shows how AI can be designed into a knowledge-heavy business process to make it faster, more accurate, and more repeatable. Job Scout follows one agentic system from design to daily use; How I build with AI sets out the method behind all of them, running AI as an engineering team; and Task oversight applies that method to a small product whose full code is public on GitHub. In each, safety, privacy, and the limits on what a system may do are settled before the first line of code is written.</p>
     <div class="principles reveal">
       <div><b>Never list first</b><span>What a system must never do is agreed at the start, and enforced by design rather than by instruction alone.</span></div>
       <div><b>Data has boundaries</b><span>Which part may see which data is decided before what to build. Some data no AI ever reaches.</span></div>
@@ -60,10 +60,54 @@
     </div>
     <p class="ix-follow" style="margin:-1.4rem 0 2.6rem"><a href="../safety/">The safety and governance techniques behind these principles →</a></p>
     <div class="cases" id="case-studies">
+      <article class="case reveal" id="studio">
+        <a class="cover" href="../case-studies/rory-mcclelland-studio-case-study.pdf" aria-label="Open the Studio case study (PDF)"><img src="../case-studies/cover-studio-case-study.jpg" alt="First page of the Studio case study" loading="lazy" width="662" height="516"></a>
+        <div>
+          <div class="tag">Multi-agent product build</div>
+          <h3>Studio: from a one-line objective to a checked launch pack</h3>
+          <p>A web app where AI agents take a marketing campaign from a one-line objective to on-brand ads in every size and language, each checked against the brand's rules, with a person approving every step that spends money, publishes, or replaces work. Built in eight sprints over eleven days, with me as product manager and Claude as lead engineer, and running for invited users with fictional brands and simulated data. It covers what the product saves a marketing team, how it is built, deployed, and run, and how AI built it safely.</p>
+          <ul class="guards">
+            <li>On production in Sprint 5, a signed-off brief became 12 ads in 37 seconds for about 14.7p in model costs, and a daily spending cap is checked before every model call.</li>
+            <li>The image model never draws text: words, logos, and legal lines are composed in code, so they are drawn exactly as written.</li>
+            <li>Ten rules run on every ad in every size and language, and only files that pass, or that a person has accepted, reach the launch pack.</li>
+            <li>Since Sprint 7, each sprint has been signed off from a page built from recorded browser tests, after an independent QA agent and reviewer have checked the work.</li>
+          </ul>
+          <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center"><a class="btn primary" href="../case-studies/rory-mcclelland-studio-case-study.pdf" download>Download the PDF ↓</a><a class="btn" href="studio/">Walk through it, screen by screen →</a><span class="meta" style="margin-left:.3rem">7 pages · A4</span></div>
+        </div>
+      </article>
+      <article class="case reveal" id="rfi-respond">
+        <a class="cover" href="../case-studies/rory-mcclelland-rfi-respond-case-study.pdf" aria-label="Open the RFI Respond case study (PDF)"><img src="../case-studies/cover-rfi-respond-case-study.jpg" alt="First page of the RFI Respond case study" loading="lazy" width="662" height="516"></a>
+        <div>
+          <div class="tag">AI product build</div>
+          <h3>RFI Respond: drafting from what the organisation already knows</h3>
+          <p>An internal tool that answers procurement questionnaires from an organisation's own knowledge base, rebuilt over twenty-five sprints from a prototype first made in three hours for a job interview, and now running as an invite-only demo where a visitor can try it on a sample questionnaire. It shows how AI can be designed into a knowledge-heavy business process to make it faster, more accurate, and more repeatable, and how the same pattern carries over to support, HR, onboarding, bids, and other flows.</p>
+          <ul class="guards">
+            <li>Drafts only from cited sources, checked in code: all 305 claims in the test drafts judged supported, and the judge caught 95 of 95 planted ones.</li>
+            <li>Confidence is calibrated, not guessed; bulk approval needs the checker's "yes", and pricing and legal questions always go to a person.</li>
+            <li>The knowledge base learns from every response, with provenance, review dates, and an admin's review of members' changes.</li>
+            <li>Every agreed test case runs as a browser test on every push, including on a staging copy with the real AI, and I sign off each sprint from a page of recordings.</li>
+          </ul>
+          <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center"><a class="btn primary" href="../case-studies/rory-mcclelland-rfi-respond-case-study.pdf" download>Download the PDF ↓</a><a class="btn" href="rfi-respond/">Walk through it, screen by screen →</a><a class="btn" href="https://github.com/rorymcclelland/RFI-responder" target="_blank" rel="noopener">View the code on GitHub ↗</a><span class="meta" style="margin-left:.3rem">8 pages · A4</span></div>
+        </div>
+      </article>
+      <article class="case reveal" id="job-scout">
+        <a class="cover" href="../case-studies/rory-mcclelland-job-scout-case-study.pdf" aria-label="Open the Job Scout case study (PDF)"><img src="../case-studies/cover-job-scout-case-study.jpg" alt="First page of the Job Scout case study" loading="lazy" width="662" height="516"></a>
+        <div>
+          <div class="tag">Agentic application</div>
+          <h3>Job Scout: a guarded, private job search</h3>
+          <p>An automated job search and application tracker that runs every morning on my own mailbox and career record. It reads alerts and replies, reads the full adverts, scores each role, drafts a CV and letter for the best few, has a second agent check every claim, and lays it all out on a private board. It never applies, replies or contacts anyone; I make every decision. A demo copy, running on made-up data, is public on GitHub.</p>
+          <ul class="guards">
+            <li>Adverts and emails are read by a model on the local PC, with no tools and no internet access; only a checked summary leaves the machine.</li>
+            <li>An independent reviewer must quote the career record for every claim it accepts, and code confirms each quote exists.</li>
+            <li>Measured, not assumed: 21 of 22 adverts read correctly, and all ten hostile red-team inputs stopped.</li>
+          </ul>
+          <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center"><a class="btn primary" href="../case-studies/rory-mcclelland-job-scout-case-study.pdf" download>Download the PDF ↓</a><a class="btn" href="https://github.com/rorymcclelland/job-scout-demo" target="_blank" rel="noopener">View the demo on GitHub ↗</a><span class="meta" style="margin-left:.3rem">6 pages · A4</span></div>
+        </div>
+      </article>
       <article class="case reveal" id="how-i-build">
         <a class="cover" href="../case-studies/rory-mcclelland-how-i-build-with-ai.pdf" aria-label="Open the How I build with AI case study (PDF)"><img src="../case-studies/cover-how-i-build-with-ai.jpg" alt="First page of the How I build with AI case study" loading="lazy" width="662" height="516"></a>
         <div>
-          <div class="tag">Case study 01 · Way of working</div>
+          <div class="tag">Way of working</div>
           <h3>How I build with AI: guardrails first</h3>
           <p>When I build software, Claude is the engineering team, and I run it as I would a human one: job stories, a ranked backlog, short sprints with a definition of ready, tests before code, and a close that leaves nothing stranded. The note covers where my approach to privacy comes from, the build cycle, and the seven guardrail principles I apply to anything that uses AI, with examples from two of my own builds.</p>
           <ul class="guards">
@@ -75,24 +119,10 @@
           <p class="ix-follow" style="margin-top:.9rem"><a href="../build/">Read the summary: how the build runs →</a></p>
         </div>
       </article>
-      <article class="case reveal" id="job-scout">
-        <a class="cover" href="../case-studies/rory-mcclelland-job-scout-case-study.pdf" aria-label="Open the Job Scout case study (PDF)"><img src="../case-studies/cover-job-scout-case-study.jpg" alt="First page of the Job Scout case study" loading="lazy" width="662" height="516"></a>
-        <div>
-          <div class="tag">Case study 02 · Agentic application</div>
-          <h3>Job Scout: a guarded, private job search</h3>
-          <p>An automated job search and application tracker that runs every morning on my own mailbox and career record. It reads alerts and replies, reads the full adverts, scores each role, drafts a CV and letter for the best few, has a second agent check every claim, and lays it all out on a private board. It never applies, replies or contacts anyone; I make every decision. A demo copy, running on made-up data, is public on GitHub.</p>
-          <ul class="guards">
-            <li>Adverts and emails are read by a model on the local PC, with no tools and no internet access; only a checked summary leaves the machine.</li>
-            <li>An independent reviewer must quote the career record for every claim it accepts, and code confirms each quote exists.</li>
-            <li>Measured, not assumed: 21 of 22 adverts read correctly, and all ten hostile red-team inputs stopped.</li>
-          </ul>
-          <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center"><a class="btn primary" href="../case-studies/rory-mcclelland-job-scout-case-study.pdf" download>Download the PDF ↓</a><a class="btn" href="https://github.com/rorymcclelland/job-scout-demo" target="_blank" rel="noopener">View the demo on GitHub ↗</a><span class="meta" style="margin-left:.3rem">6 pages · A4</span></div>
-        </div>
-      </article>
       <article class="case reveal" id="task-oversight">
         <a class="cover" href="../case-studies/rory-mcclelland-task-oversight-case-study.pdf" aria-label="Open the Task oversight case study (PDF)"><img src="../case-studies/cover-task-oversight-case-study.jpg" alt="First page of the Task oversight case study" loading="lazy" width="662" height="516"></a>
         <div>
-          <div class="tag">Case study 03 · Product build</div>
+          <div class="tag">Product build</div>
           <h3>Task oversight: one list I can trust</h3>
           <p>My tasks were spread across two AI assistants, a task manager and notes on the local PC, and no single list was complete. This app pulls them into one view, ranks them on an Eisenhower matrix and sets them against the calendar. It was built in seven phases from a job-story backlog, with every structural choice written down, and the full code and documentation are public.</p>
           <ul class="guards">
@@ -101,21 +131,6 @@
             <li>18 written decisions, and a full QA pass whose every finding was fixed with a test that failed first: 154 tests in all.</li>
           </ul>
           <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center"><a class="btn primary" href="../case-studies/rory-mcclelland-task-oversight-case-study.pdf" download>Download the PDF ↓</a><a class="btn" href="https://github.com/rorymcclelland/task-manager" target="_blank" rel="noopener">View the code on GitHub ↗</a><span class="meta" style="margin-left:.3rem">5 pages · A4</span></div>
-        </div>
-      </article>
-      <article class="case reveal" id="rfi-respond">
-        <a class="cover" href="../case-studies/rory-mcclelland-rfi-respond-case-study.pdf" aria-label="Open the RFI Respond case study (PDF)"><img src="../case-studies/cover-rfi-respond-case-study.jpg" alt="First page of the RFI Respond case study" loading="lazy" width="662" height="516"></a>
-        <div>
-          <div class="tag">Case study 04 · AI product build</div>
-          <h3>RFI Respond: drafting from what the organisation already knows</h3>
-          <p>An internal tool that answers procurement questionnaires from an organisation's own knowledge base, rebuilt over twenty-five sprints from a prototype first made in three hours for a job interview, and now running as an invite-only demo where a visitor can try it on a sample questionnaire. It shows how AI can be designed into a knowledge-heavy business process to make it faster, more accurate, and more repeatable, and how the same pattern carries over to support, HR, onboarding, bids, and other flows.</p>
-          <ul class="guards">
-            <li>Drafts only from cited sources, checked in code: all 305 claims in the test drafts judged supported, and the judge caught 95 of 95 planted ones.</li>
-            <li>Confidence is calibrated, not guessed; bulk approval needs the checker's "yes", and pricing and legal questions always go to a person.</li>
-            <li>The knowledge base learns from every response, with provenance, review dates, and an admin's review of members' changes.</li>
-            <li>Every agreed test case runs as a browser test on every push, including on a staging copy with the real AI, and I sign off each sprint from a page of recordings.</li>
-          </ul>
-          <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center"><a class="btn primary" href="../case-studies/rory-mcclelland-rfi-respond-case-study.pdf" download>Download the PDF ↓</a><a class="btn" href="rfi-respond/">Walk through it, screen by screen →</a><a class="btn" href="https://github.com/rorymcclelland/RFI-responder" target="_blank" rel="noopener">View the code on GitHub ↗</a><span class="meta" style="margin-left:.3rem">8 pages · A4</span></div>
         </div>
       </article>
     </div>
