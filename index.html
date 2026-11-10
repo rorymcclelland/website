@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Rory McClelland · Product &amp; AI-native transformation</title>
 <meta name="description" content="Product leader and AI transformation practitioner helping organisations redesign how they work around AI: mapped, proven on real data, and made safe to run unattended.">
-<meta name="theme-color" content="#FBF8F1">
+<meta name="theme-color" content="#F3F5EE">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -26,116 +26,186 @@
 (function(){var m={'work':'work/','case-studies':'work/','method':'method/','about':'about/','what-i-do':'about/','experience':'about/','teaching-link':'teaching/'};
 var h=(location.hash||'').slice(1);if(m[h])location.replace(m[h]+(h==='case-studies'?'#case-studies':''));})();
 </script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/home.css">
 <script>(function(){try{var t=localStorage.getItem('rm-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
-<nav class="topnav">
-  <a class="mark" href="./" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
-  <div class="nav-right">
-    <div class="navlinks">
-      <a href="writing/">Writing</a>
-      <a href="work/">Work</a>
-      <a href="method/">Method</a>
-      <a href="build/">Build</a>
-      <a href="safety/">Safety</a>
-      <a href="about/">About</a>
-      <a href="teaching/">Teaching</a>
+<header class="topnav">
+  <div class="navbar">
+    <a class="mark" href="./"><span class="mk" aria-hidden="true">rm</span><span class="nm">Rory McClelland</span></a>
+    <nav class="navlinks" aria-label="Main"><a href="method/">Method</a><a href="work/">Work</a><a href="writing/">Writing</a><a href="about/">About</a></nav>
+    <div class="nav-actions">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Dark theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg></button>
+      <a class="btn primary nav-cta" href="mailto:hello&#64;mcclelland&#46;info">Email me</a>
     </div>
-    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
-    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
-      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
-      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
-    </button>
   </div>
-  <div class="nav-progress" id="navProgress"></div>
-</nav>
+</header>
+<main class="home">
 
-<section class="hero">
-  <div class="wrap hero-inner">
-    <div class="hero-top">
-      <div class="hero-text">
-        <div class="kicker">Product leader &amp; AI transformation practitioner</div>
-        <h1 class="headline">Redesigning how organisations work, <span class="hl">not decorating the old way</span> with new tools.</h1>
-        <p class="subline">Twenty years in product, most recently spent on how AI agents can be built safely into the way companies operate: what is worth automating, how it is tested against real data, and which safeguards let it run unattended.</p>
-        <div class="hero-ctas">
-          <a class="btn primary" href="method/">See the method</a>
-          <a class="btn" href="writing/">Read the writing</a>
-        </div>
+<section class="bento" aria-label="Introduction and method" style="padding:16px 0 0">
+  <div class="card lime hero-tile c8">
+    <h1>Redesigning how organisations work. <span class="dim">Not decorating the old way with new tools.</span></h1>
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <p class="intro">Twenty years in product, most recently spent on how AI agents can be built safely into the way companies operate: what is worth automating, how it is tested against real data, and which safeguards let it run unattended.</p>
+      <div class="btns"><a class="btn primary" href="work/">Read the case studies</a><a class="btn" href="method/">See the method</a></div>
+    </div>
+  </div>
+
+  <aside class="card profile c4" aria-label="About Rory McClelland">
+    <div class="who">
+      <div class="pic"><img class="hs-light" src="headshot-mono-light.jpg" alt="Rory McClelland" width="104" height="124"><img class="hs-dark" src="headshot-mono-dark.jpg" alt="Rory McClelland" width="104" height="124"></div>
+      <div><div class="nm">Rory McClelland</div><div class="rl">Product leader and AI transformation practitioner, London</div></div>
+    </div>
+    <div class="spec">
+      <div class="k">years in product, end to end</div><div class="v">20</div>
+      <div class="k">operating models rebuilt from scratch</div><div class="v">2</div>
+      <div class="k">six-year plan, adopted as the roadmap</div><div class="v">$2M &rarr; $55M</div>
+      <div class="k">MSc Computer Science, Birmingham</div><div class="v">Distinction</div>
+    </div>
+    <a class="more" href="about/" style="margin-top:auto">About and experience</a>
+  </aside>
+
+  <article class="card hot c7">
+    <h2 class="ct">Five stages, four decision gates</h2>
+    <p>Each stage answers one question and produces something a leadership team can decide on. Nothing moves forward without passing its gate, so the programme can stop cheaply at any point.</p>
+    <div class="viz">
+      <div class="steps" role="img" aria-label="The five stages: Map and Rank are done, Prove is the current stage, Operationalise and Scale are still to come. A gate sits before each stage after the first.">
+        <div class="st done"><span class="nd"></span><span class="lb">Map</span></div>
+        <div class="st done"><span class="gate ok"></span><span class="nd"></span><span class="lb">Rank</span></div>
+        <div class="st now"><span class="gate ok"></span><span class="nd"></span><span class="lb">Prove</span></div>
+        <div class="st"><span class="gate"></span><span class="nd"></span><span class="lb">Operationalise</span></div>
+        <div class="st"><span class="gate"></span><span class="nd"></span><span class="lb">Scale</span></div>
       </div>
-      <div class="hero-portrait">
-        <img src="headshot-mono-light.jpg" alt="Portrait of Rory McClelland" class="hs-light"><img src="headshot-mono-dark.jpg" alt="Portrait of Rory McClelland" class="hs-dark">
-        <div class="portrait-cap">Rory McClelland, London</div>
+      <div class="call"><span class="mono">Prove asks: does it work on our data, in our environment?</span><div class="big">Gate: go or no-go to production.</div></div>
+      <a class="more" href="method/">Read the full method</a>
+    </div>
+  </article>
+
+  <article class="card c5">
+    <h2 class="ct">Where it runs, and what it may touch</h2>
+    <p>Two different questions that tend to get answered as one. Where it runs decides who can see the data. What it may touch decides what the system is allowed near.</p>
+    <div class="viz">
+      <div class="mx" role="img" aria-label="Matrix of data sensitivity against deployment type. Public data can proceed everywhere. Customer personal data is avoided everywhere except own agents in their own tenant, which is conditional.">
+        <span></span><span class="mono ch">In-suite</span><span class="mono ch">Assistant</span><span class="mono ch">Vendor API</span><span class="mono ch">Own tenant</span><span class="mono ch">Self-hosted</span>
+        <span class="mono">Public</span><i class="c p"></i><i class="c p"></i><i class="c p"></i><i class="c p"></i><i class="c p"></i>
+        <span class="mono">General internal</span><i class="c p"></i><i class="c p"></i><i class="c p"></i><i class="c p"></i><i class="c q"></i>
+        <span class="mono">Confidential business</span><i class="c q"></i><i class="c q"></i><i class="c p"></i><i class="c p"></i><i class="c a"></i>
+        <span class="mono">Employee personal</span><i class="c a"></i><i class="c q"></i><i class="c q"></i><i class="c p"></i><i class="c a"></i>
+        <span class="mono">Customer personal</span><i class="c a"></i><i class="c a"></i><i class="c a"></i><i class="c q"></i><i class="c a"></i>
       </div>
+      <div class="lg"><span><i class="c p"></i>Proceed</span><span><i class="c q"></i>Conditional</span><span><i class="c a"></i>Avoid</span></div>
+      <a class="more" href="method/#deployment-exposure">How the matrix works</a>
     </div>
-    <div class="quickfacts">
-      <div><span class="num">20</span><span class="lbl">years in product, end to end</span></div>
-      <div><span class="num">2</span><span class="lbl">operating models rebuilt from scratch</span></div>
-      <div><span class="num">$2M→$55M</span><span class="lbl">the six-year plan I wrote, adopted as the roadmap</span></div>
-      <div><span class="num">MSc</span><span class="lbl">Computer Science, Distinction, Birmingham</span></div>
+  </article>
+
+  <article class="card c4">
+    <h2 class="ct">Earning autonomy</h2>
+    <p>Capability and risk rise together, on the same dial. The job is to turn it one step at a time, on the strength of the evidence.</p>
+    <div class="viz lv">
+      <span class="mono">1 Watch</span><i style="width:25%;opacity:.45"></i>
+      <span class="mono">2 Recommend</span><i style="width:50%;opacity:.65"></i>
+      <span class="mono">3 Act, bounded</span><i style="width:75%;opacity:.85"></i>
+      <span class="mono">4 Widen on evidence</span><i style="width:100%"></i>
     </div>
+  </article>
+
+  <article class="card c4" id="r2">
+    <h2 class="ct">The Rule of Two</h2>
+    <p>Is this safe to run unattended? Tick the properties a piece of work would have.</p>
+    <div class="viz" style="display:flex;flex-direction:column;gap:10px">
+      <button type="button" class="tg" data-k="data" aria-pressed="true"><span class="bx"></span>Private data</button>
+      <button type="button" class="tg" data-k="content" aria-pressed="true"><span class="bx"></span>Untrusted content</button>
+      <button type="button" class="tg" data-k="act" aria-pressed="false"><span class="bx"></span>Ability to act</button>
+      <div class="vd" role="status"><span class="mono" id="r2n">2 of 3</span><b id="r2v">Elevated: be deliberate</b></div>
+      <a class="more" href="method/#rule-of-two" style="margin-top:12px">What each answer means</a>
+    </div>
+  </article>
+
+  <article class="card c4">
+    <h2 class="ct">Rank before you build</h2>
+    <p>A weighted scorecard picks the first workflow and holds the rest for a later wave. The scores are from the financial services example on the method page.</p>
+    <div class="viz">
+      <div class="bars" role="img" aria-label="Scorecard: the chosen workflow scores 55 of 65, the one held back 34 of 65.">
+        <span class="mono">Business value</span><span class="tr"><i style="width:100%"></i><i style="width:100%"></i></span>
+        <span class="mono">Confidence</span><span class="tr"><i style="width:80%"></i><i style="width:40%"></i></span>
+        <span class="mono">Reuse</span><span class="tr"><i style="width:100%"></i><i style="width:40%"></i></span>
+        <span class="mono">Effort (inverted)</span><span class="tr"><i style="width:60%"></i><i style="width:40%"></i></span>
+        <span class="mono">Risk (inverted)</span><span class="tr"><i style="width:80%"></i><i style="width:20%"></i></span>
+        <span class="mono">Adoption</span><span class="tr"><i style="width:80%"></i><i style="width:60%"></i></span>
+      </div>
+      <div class="tot"><span class="a">chosen <b>55 / 65</b></span><span>held back <b>34 / 65</b></span></div>
+    </div>
+  </article>
+</section>
+
+<section class="sec" aria-labelledby="home-work">
+  <div class="head">
+    <h2 id="home-work">Built, guardrails first. <span class="dim">Two written up in full.</span></h2>
+    <a class="more" href="work/">All five case studies</a>
+  </div>
+  <div class="g2">
+    <article class="card cs">
+      <a class="cover" href="work/studio/" aria-label="Walk through the Studio case study"><img src="case-studies/cover-studio-case-study.jpg" alt="First page of the Studio case study" width="662" height="516" loading="lazy"></a>
+      <span class="tag">multi-agent product build</span>
+      <h3>Studio: from a one-line objective to a checked launch pack</h3>
+      <p>AI agents take a marketing campaign to on-brand ads in every size and language, checked against the brand&rsquo;s rules, with a person approving every consequential step.</p>
+      <div class="links"><a class="more" href="work/studio/">Read the Studio case study</a><a class="more" href="case-studies/rory-mcclelland-studio-case-study.pdf" download>Download as PDF</a></div>
+    </article>
+    <article class="card cs">
+      <a class="cover" href="work/rfi-respond/" aria-label="Walk through the RFI Respond case study"><img src="case-studies/cover-rfi-respond-case-study.jpg" alt="First page of the RFI Respond case study" width="662" height="516" loading="lazy"></a>
+      <span class="tag">AI product build</span>
+      <h3>RFI Respond: drafting from what the organisation already knows</h3>
+      <p>AI designed into a knowledge-heavy business process to make it faster, more accurate, and more repeatable, with every figure backed by an evaluation.</p>
+      <div class="links"><a class="more" href="work/rfi-respond/">Read the RFI Respond case study</a><a class="more" href="case-studies/rory-mcclelland-rfi-respond-case-study.pdf" download>Download as PDF</a></div>
+    </article>
   </div>
 </section>
 
-<section id="start">
+<section class="sec" aria-labelledby="home-writing">
+  <div class="head">
+    <h2 id="home-writing">Notes from building with AI. <span class="dim">Short, and opinionated.</span></h2>
+    <a class="more" href="writing/">All writing</a>
+  </div>
+  <div class="rows">
+    <a class="row" href="writing/guardrails-outside-the-agent.html"><span class="mono">guardrails</span><h3>Guardrails the agent can&rsquo;t talk its way past</h3><p>Nvidia&rsquo;s new agent safety platform puts the guard outside the agent. It is the right instinct, and you do not need a data centre to apply it.</p></a>
+    <a class="row" href="writing/rogue-agent-runbook.html"><span class="mono">governance</span><h3>When &lsquo;rogue agent&rsquo; becomes an incident category</h3><p>The Budget funds a unit to respond to AI agents that slip their controls. Every team shipping agents should check whether its own runbook has that page.</p></a>
+    <a class="row" href="writing/who-red-teams-the-guardrail.html"><span class="mono">red team</span><h3>Who red-teams the guardrail?</h3><p>OpenAI&rsquo;s browsing safety check can reportedly block a website with no reason given and no way to appeal. A guardrail that cannot explain itself becomes a problem of its own.</p></a>
+  </div>
+</section>
+</main>
+
+<section id="contact" class="contact-sec">
   <div class="wrap">
-    <div class="eyebrow">Start here</div>
-    <h2 class="title reveal">Four ways in.</h2>
-    <div class="routes four reveal">
-      <a class="route" href="method/"><span class="rn">The method</span><h3>Redesigning a business around AI</h3><p>From mapping the work to running it unattended: five stages, four levels of autonomy and a plain test for risk, with worked examples by industry.</p><span class="go">See the method →</span></a>
-      <a class="route" href="work/"><span class="rn">Work</span><h3>How I build, guardrails first</h3><p>Tools designed and built with AI coding tools, two of them written up in full as case studies you can download.</p><span class="go">See the work →</span></a>
-      <a class="route" href="safety/"><span class="rn">Safety</span><h3>AI safety and governance</h3><p>The techniques behind the work, from Chrome's privacy review and Bumble's safety team to guarded AI builds: the idea behind each, and where it was applied.</p><span class="go">See the techniques →</span></a>
-      <a class="route" href="writing/"><span class="rn">Writing</span><h3>Notes from building with AI</h3><p>Short pieces on privacy and safety in product, on how AI systems are built, and on what it takes for an organisation to adopt AI well.</p><span class="go">Read the writing →</span></a>
+    <div class="contact-card">
+      <h2 class="title">Available for consulting engagements <span class="dim">and permanent roles leading AI-native transformation.</span></h2>
+      <p>The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it. I read and reply to email myself, usually within a day.</p>
+      <div class="btns"><a class="btn primary" href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a><a class="btn" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/rorymcclelland" target="_blank" rel="noopener">GitHub</a></div>
     </div>
-    <div class="also reveal"><span>Also: <a href="teaching/">teaching and mentoring people who want to build with AI</a></span><span><a href="about/">About and experience</a></span></div>
   </div>
 </section>
 
-<section id="latest">
+<footer class="site-foot">
   <div class="wrap">
-    <div class="section-head"><div><div class="eyebrow">Latest writing</div><h2 class="title reveal">Notes from building with AI.</h2></div><a href="writing/">All writing →</a></div>
-    <div class="latest">
-      <a class="lcard reveal" href="writing/guardrails-outside-the-agent.html"><span class="theme">Guardrails</span><h3>Guardrails the agent can’t talk its way past</h3><p>Nvidia's new agent safety platform puts the guard outside the agent. It is the right instinct, and you do not need a data centre to apply it.</p></a>
-      <a class="lcard reveal" href="writing/rogue-agent-runbook.html"><span class="theme">Governance</span><h3>When ‘rogue agent’ becomes an incident category</h3><p>The Budget funds a unit to respond to AI agents that slip their controls. Every team shipping agents should check whether its own runbook has that page.</p></a>
-      <a class="lcard reveal" href="writing/who-red-teams-the-guardrail.html"><span class="theme">Red team</span><h3>Who red-teams the guardrail?</h3><p>OpenAI's browsing safety check can reportedly block a website with no reason given and no way to appeal. A guardrail that cannot explain itself becomes a problem of its own.</p></a>
-    </div>
-  </div>
-</section>
-
-<section id="work-strip">
-  <div class="wrap">
-    <div class="section-head"><div><div class="eyebrow">Work</div><h2 class="title reveal">Case studies.</h2></div><a href="work/">All work →</a></div>
-    <div class="case-strip reveal">
-      <a class="cmini" href="work/#studio"><img src="case-studies/cover-studio-case-study.jpg" alt="" loading="lazy" width="662" height="516"><div><div class="tag">Multi-agent product build</div><h3>Studio: from a one-line objective to a checked launch pack</h3><p>AI agents take a marketing campaign to on-brand ads in every size and language, checked against the brand's rules, with a person approving every consequential step.</p></div></a>
-      <a class="cmini" href="work/#rfi-respond"><img src="case-studies/cover-rfi-respond-case-study.jpg" alt="" loading="lazy" width="662" height="516"><div><div class="tag">AI product build</div><h3>RFI Respond: drafting from what the organisation already knows</h3><p>AI designed into a knowledge-heavy business process to make it faster, more accurate, and more repeatable, with every figure backed by an evaluation.</p></div></a>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap">
-    <div class="eyebrow">Contact</div>
-    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
-    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
-    <div class="contact-signoff">
-      <img src="headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
-      <p>I read and reply to email myself, usually within a day.</p>
-    </div>
-    <div class="contact-grid reveal">
-      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
-      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
-      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap fl">
-    <span>Rory McClelland · Product &amp; AI-native transformation</span>
-    <span><a href="feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+    <nav class="foot-links" aria-label="More"><a href="build/">How the build runs</a><a href="safety/">Safety and governance</a><a href="teaching/">Teaching and mentoring</a><a href="feed.xml">RSS</a></nav>
+    <div class="fl"><span>Rory McClelland, product and AI-native transformation</span><span>Based in the UK, working with teams wherever they are.</span></div>
   </div>
 </footer>
 <script src="assets/site.js"></script>
+<script src="assets/rule-of-two.js"></script>
+<script>
+(function(){
+  var b=document.querySelectorAll('#r2 .tg');
+  function upd(){
+    var on={};b.forEach(function(x){on[x.getAttribute('data-k')]=x.getAttribute('aria-pressed')==='true';});
+    var v=window.RuleOfTwo.verdict(on.data,on.content,on.act);
+    document.getElementById('r2n').textContent=v.count+' of 3';
+    document.getElementById('r2v').textContent=v.badgeText;
+    document.querySelector('#r2 .vd').classList.toggle('bad',v.count===3);
+  }
+  b.forEach(function(x){x.addEventListener('click',function(){x.setAttribute('aria-pressed',x.getAttribute('aria-pressed')==='true'?'false':'true');upd();});});
+})();
+</script>
 </body>
 </html>

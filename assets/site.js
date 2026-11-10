@@ -1,6 +1,7 @@
 (function () {
   var toggle = document.getElementById('themeToggle');
   if (toggle) {
+    toggle.setAttribute('aria-pressed', document.documentElement.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
     toggle.addEventListener('click', function () {
       var current = document.documentElement.getAttribute('data-theme');
       if (!current) {
@@ -8,35 +9,9 @@
       }
       var next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
+      toggle.setAttribute('aria-pressed', next === 'dark' ? 'true' : 'false');
       try { localStorage.setItem('rm-theme', next); } catch (e) {}
     });
-  }
-
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && !reduce) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
-      });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add('in-view'); });
-  }
-
-  var bar = document.getElementById('navProgress');
-  if (bar) {
-    var ticking = false;
-    var update = function () {
-      var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
-      bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
-      ticking = false;
-    };
-    window.addEventListener('scroll', function () {
-      if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
-    }, { passive: true });
-    update();
   }
 
   // Writing index: filter posts by theme

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Teaching &amp; mentoring · Rory McClelland</title>
 <meta name="description" content="Teaching and mentoring people of any age or seniority how to take an idea in AI all the way to something real, safely. A former teacher with twenty years in product and a background in privacy and user safety.">
-<meta name="theme-color" content="#FBF8F1">
+<meta name="theme-color" content="#F3F5EE">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -21,32 +21,22 @@
 <meta name="twitter:title" content="Teaching &amp; mentoring · Rory McClelland">
 <meta name="twitter:description" content="Teaching and mentoring people of any age or seniority how to take an idea in AI all the way to something real, safely. A former teacher with twenty years in product and a background in privacy and user safety.">
 <meta name="twitter:image" content="https://mcclelland.info/headshot.jpg">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="stylesheet" href="../assets/teaching.css">
 <script>(function(){try{var t=localStorage.getItem('rm-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
-<nav class="topnav">
-  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
-  <div class="nav-right">
-    <div class="navlinks">
-      <a href="../writing/">Writing</a>
-      <a href="../work/">Work</a>
-      <a href="../method/">Method</a>
-      <a href="../build/">Build</a>
-      <a href="../safety/">Safety</a>
-      <a href="../about/">About</a>
-      <a href="../teaching/" aria-current="page">Teaching</a>
+<header class="topnav">
+  <div class="navbar">
+    <a class="mark" href="../"><span class="mk" aria-hidden="true">rm</span><span class="nm">Rory McClelland</span></a>
+    <nav class="navlinks" aria-label="Main"><a href="../method/">Method</a><a href="../work/">Work</a><a href="../writing/">Writing</a><a href="../about/" aria-current="true">About</a></nav>
+    <div class="nav-actions">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Dark theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg></button>
+      <a class="btn primary nav-cta" href="mailto:hello&#64;mcclelland&#46;info">Email me</a>
     </div>
-    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
-    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
-      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
-      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
-    </button>
   </div>
-  <div class="nav-progress" id="navProgress"></div>
-</nav>
+</header>
 <section class="hero">
   <div class="wrap">
     <div class="hero-top">
@@ -76,8 +66,8 @@
 <section id="why">
   <div class="wrap">
     <div class="eyebrow">01 · Why me</div>
-    <h2 class="title reveal">Three things most AI teaching misses.</h2>
-    <div class="trio reveal">
+    <h2 class="title">Three things most AI teaching misses.</h2>
+    <div class="trio">
       <div>
         <div class="si">A teacher first</div>
         <h3>I know how to teach, not just explain</h3>
@@ -100,9 +90,9 @@
 <section id="gap">
   <div class="wrap">
     <div class="eyebrow">02 · The gap</div>
-    <h2 class="title reveal">Most AI tuition stops at the demo.</h2>
+    <h2 class="title">Most AI tuition stops at the demo.</h2>
     <p class="lede">Building a working demo with an AI tool is now an afternoon's work. Understanding how AI works, and using the tools well, is covered by most courses. The harder and more valuable lessons start afterwards: when real people use what you have made, when something breaks, and when you are responsible for other people's data.</p>
-    <div class="t-ladder reveal">
+    <div class="t-ladder">
       <div class="t-ladder-inner">
         <div class="t-rungs">
           <div class="t-rung early"><span class="n">1</span><h4>Understand</h4><p>How AI works, in plain terms.</p></div>
@@ -122,7 +112,7 @@
 <section id="programme">
   <div class="wrap">
     <div class="eyebrow">03 · A sample programme</div>
-    <h2 class="title reveal">Twelve weeks, from first idea to something real, whoever is building it.</h2>
+    <h2 class="title">Twelve weeks, from first idea to something real, whoever is building it.</h2>
     <p class="lede">The programme follows the same five-stage method I use with businesses, adapted to who it's for: a curious student, someone newly responsible for a workflow at work, or a senior leader who needs to direct AI safely rather than write the code themselves. Each stage ends with something tangible, and each one adds a safety or governance habit. Choose who it's for to see how the programme changes.</p>
 
     <div class="pillbar" role="group" aria-label="Choose who the programme is for">
@@ -148,16 +138,16 @@
 <section id="safety">
   <div class="wrap">
     <div class="eyebrow">04 · Safety &amp; governance</div>
-    <h2 class="title reveal">Governance, sized to whoever is building.</h2>
+    <h2 class="title">Governance, sized to whoever is building.</h2>
     <p class="lede">With businesses, I spend a good deal of time on AI governance: who can see the data, what a system is allowed to do, and who is accountable when something goes wrong. The same four questions apply whoever is building, a student's first app, a new tool at work, or a leadership team's first pilot, in words sized to fit. Most people are never asked them, and they are far easier to learn early than to unlearn later. <a href="../safety/">The techniques behind them are set out on the safety page.</a></p>
-    <div class="quad reveal">
+    <div class="quad">
       <div><h4>My data</h4><p>What should never be typed into an AI tool, and why 'free' usually means you are paying some other way. Many AI tools also set a minimum age in their terms of use, worth checking before a minor uses one.</p></div>
       <div><h4>Other people's data</h4><p>Collect the minimum, keep it safe and delete it when it is no longer needed. For anything likely to be used by children in the UK, the ICO's Children's Code is a useful checklist in its own right.</p></div>
       <div><h4>Who's accountable</h4><p>A named owner for anything built, signed off by the right person before it goes live: a parent for a minor's project, a manager or compliance lead for a workplace one.</p></div>
       <div><h4>Checking the machine</h4><p>AI tools can be confidently wrong, and can be steered by text hidden in what they read. So their work is checked, and nothing important is left to them unsupervised.</p></div>
     </div>
 
-    <div class="checker reveal">
+    <div class="checker">
       <h3>Before you launch: a quick check</h3>
       <p>A simplified version of the risk check I use with businesses. Tick what applies to the project.</p>
       <div class="toggles">
@@ -178,8 +168,8 @@
 <section id="how">
   <div class="wrap">
     <div class="eyebrow">05 · How it works</div>
-    <h2 class="title reveal">Working with the people around the project.</h2>
-    <div class="t-rows reveal">
+    <h2 class="title">Working with the people around the project.</h2>
+    <div class="t-rows">
       <div class="t-row"><h4>Sessions</h4><p>Mostly online. For a student, scheduled around the school timetable and term dates; for a team or a leader, around normal working patterns. Occasional in-person sessions are arranged where they help, for a launch, a demo day or a workshop, for instance.</p></div>
       <div class="t-row"><h4>Keeping the right people informed</h4><p>A short written update at the end of each stage: what was learned, what was made, and what comes next. For a student that goes to parents; at work, to a manager or sponsor. Everyone involved is invited to the end-of-programme demo.</p></div>
       <div class="t-row"><h4>Independence</h4><p>The aim is someone who can research, plan and solve problems without hand-holding. Support is stepped back as confidence grows, the same way autonomy is handed to AI systems in business.</p></div>
@@ -191,7 +181,7 @@
 <section id="contact">
   <div class="wrap">
     <div class="eyebrow">06 · Contact</div>
-    <h2 class="title reveal">Get in touch about mentoring.</h2>
+    <h2 class="title">Get in touch about mentoring.</h2>
     <p class="lede">Email is the best way to reach me. I am happy to talk through what a programme could look like for a particular student, team or leader, and I read and reply to email myself, usually within a day.</p>
     <div class="contact-grid">
       <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
@@ -202,10 +192,10 @@
 </section>
 
 
-<footer>
-  <div class="wrap fl">
-    <span>Rory McClelland · Product &amp; AI-native transformation</span>
-    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+<footer class="site-foot">
+  <div class="wrap">
+    <nav class="foot-links" aria-label="More"><a href="../build/">How the build runs</a><a href="../safety/">Safety and governance</a><a href="../teaching/">Teaching and mentoring</a><a href="../feed.xml">RSS</a></nav>
+    <div class="fl"><span>Rory McClelland, product and AI-native transformation</span><span>Based in the UK, working with teams wherever they are.</span></div>
   </div>
 </footer>
 <script>
@@ -320,22 +310,15 @@
   ids.forEach(function(k){ $('ck-' + k).addEventListener('change', updateCheck); });
 
   var tt = $('themeToggle');
+  tt.setAttribute('aria-pressed', document.documentElement.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
   tt.addEventListener('click', function(){
     var cur = document.documentElement.getAttribute('data-theme');
     if (!cur) cur = 'light';
     var next = cur === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
+    tt.setAttribute('aria-pressed', next === 'dark' ? 'true' : 'false');
     try { localStorage.setItem('rm-theme', next); } catch (e) {}
   });
-
-  var els = document.querySelectorAll('.reveal');
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if ('IntersectionObserver' in window && !reduce) {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in-view'); io.unobserve(en.target); } });
-    }, { rootMargin:'0px 0px -10% 0px', threshold:0.05 });
-    els.forEach(function(el){ io.observe(el); });
-  } else { els.forEach(function(el){ el.classList.add('in-view'); }); }
 
   render();
   updateCheck();

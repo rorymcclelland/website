@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>The method: redesigning a business around AI · Rory McClelland</title>
 <meta name="description" content="A method for redesigning work around AI: five stages from mapping to scale, four levels of autonomy, deployment options by data sensitivity, and the Rule of Two.">
-<meta name="theme-color" content="#FBF8F1">
+<meta name="theme-color" content="#F3F5EE">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -21,36 +21,26 @@
 <meta name="twitter:title" content="The method: redesigning a business around AI · Rory McClelland">
 <meta name="twitter:description" content="A method for redesigning work around AI: five stages from mapping to scale, four levels of autonomy, deployment options by data sensitivity, and the Rule of Two.">
 <meta name="twitter:image" content="https://mcclelland.info/headshot.jpg">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="stylesheet" href="../assets/method.css">
 <script>(function(){try{var t=localStorage.getItem('rm-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
-<nav class="topnav">
-  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
-  <div class="nav-right">
-    <div class="navlinks">
-      <a href="../writing/">Writing</a>
-      <a href="../work/">Work</a>
-      <a href="../method/" aria-current="page">Method</a>
-      <a href="../build/">Build</a>
-      <a href="../safety/">Safety</a>
-      <a href="../about/">About</a>
-      <a href="../teaching/">Teaching</a>
+<header class="topnav">
+  <div class="navbar">
+    <a class="mark" href="../"><span class="mk" aria-hidden="true">rm</span><span class="nm">Rory McClelland</span></a>
+    <nav class="navlinks" aria-label="Main"><a href="../method/" aria-current="page">Method</a><a href="../work/">Work</a><a href="../writing/">Writing</a><a href="../about/">About</a></nav>
+    <div class="nav-actions">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Dark theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg></button>
+      <a class="btn primary nav-cta" href="mailto:hello&#64;mcclelland&#46;info">Email me</a>
     </div>
-    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
-    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
-      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
-      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
-    </button>
   </div>
-  <div class="nav-progress" id="navProgress"></div>
-</nav>
+</header>
 <section id="method">
   <div class="wrap">
     <div class="eyebrow">The method</div>
-    <h1 class="title reveal">Redesigning a business around AI</h1>
+    <h1 class="title">Redesigning a business around AI</h1>
     <p class="lede">Most organisations arrive at AI in much the same way. A few people start using an assistant on their own initiative, one or two get rather good at it, and licences are bought more widely. A dashboard shows adoption climbing, and everyone takes some comfort from that. Eighteen months later, the company works exactly as it always did, because the work itself never changed, only the tool people used to do it. What follows is a method for changing the work.</p>
     <p class="method-premise">Adopting AI tools changes what people use. Redesigning the work around AI changes what a company can do, and that is the part that shows up in the numbers.</p>
 
@@ -87,7 +77,7 @@
       </div>
 
       <div class="m-stages">
-        <article class="m-stage reveal">
+        <article class="m-stage">
           <span class="m-dot">01</span>
           <div>
             <h3>Map</h3>
@@ -112,7 +102,7 @@
           </div>
         </article>
 
-        <article class="m-stage reveal">
+        <article class="m-stage">
           <span class="m-dot">02</span>
           <div>
             <h3>Rank</h3>
@@ -131,7 +121,7 @@
           </div>
         </article>
 
-        <article class="m-stage reveal">
+        <article class="m-stage">
           <span class="m-dot">03</span>
           <div>
             <h3>Prove</h3>
@@ -163,7 +153,7 @@
           </div>
         </article>
 
-        <article class="m-stage reveal">
+        <article class="m-stage">
           <span class="m-dot">04</span>
           <div>
             <h3>Operationalise</h3>
@@ -186,7 +176,7 @@
           </div>
         </article>
 
-        <article class="m-stage reveal">
+        <article class="m-stage">
           <span class="m-dot">05</span>
           <div>
             <h3>Scale</h3>
@@ -220,7 +210,7 @@
         <h2>The practice: how people work day to day</h2>
         <p>While the engine rebuilds workflows, people's own use of AI has to grow alongside it. Three levels describe that, and most of an organisation should end up at the second.</p>
       </div>
-      <div class="rungs reveal">
+      <div class="rungs">
         <div class="rung">
           <div class="r">L1 · Assisted</div>
           <h4>The starting line</h4>
@@ -245,19 +235,19 @@
         <h2>Earning autonomy: four stages before it acts unattended</h2>
         <p>Every workflow passes through the same four stages. Capability and risk rise together, on the same dial, so the job is to turn that dial deliberately, one step at a time, on the strength of the evidence, instead of trying to reduce the risk to zero.</p>
       </div>
-      <div class="m-auto-chart reveal">
+      <div class="m-auto-chart">
         <svg viewBox="0 0 640 170" role="img" aria-label="Capability unlocked and risk if unmanaged both rise across the four stages, from Shadow to Extended authority">
           <g stroke="var(--line)" stroke-width="1"><line x1="40" y1="20" x2="620" y2="20"/><line x1="40" y1="70" x2="620" y2="70"/><line x1="40" y1="120" x2="620" y2="120"/><line x1="40" y1="145" x2="620" y2="145"/></g>
           <polyline fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" points="112,120 257,88 402,51 547,20"/>
           <polyline fill="none" stroke="var(--warn)" stroke-width="3" stroke-dasharray="7 5" stroke-linejoin="round" points="112,139 257,107 402,62 547,20"/>
           <g fill="var(--accent)"><circle cx="112" cy="120" r="4.5"/><circle cx="257" cy="88" r="4.5"/><circle cx="402" cy="51" r="4.5"/><circle cx="547" cy="20" r="4.5"/></g>
           <g fill="var(--warn)"><circle cx="112" cy="139" r="4.5"/><circle cx="257" cy="107" r="4.5"/><circle cx="402" cy="62" r="4.5"/></g>
-          <g font-family="Bricolage Grotesque" font-size="12" fill="var(--graphite)" text-anchor="middle"><text x="112" y="165">Shadow</text><text x="257" y="165">Assisted</text><text x="402" y="165">Delegated</text><text x="547" y="165">Extended</text></g>
-          <text x="40" y="14" font-family="Bricolage Grotesque" font-size="11" fill="var(--graphite)">Higher</text>
+          <g font-family="Onest, sans-serif" font-size="12" fill="var(--graphite)" text-anchor="middle"><text x="112" y="165">Shadow</text><text x="257" y="165">Assisted</text><text x="402" y="165">Delegated</text><text x="547" y="165">Extended</text></g>
+          <text x="40" y="14" font-family="Onest, sans-serif" font-size="11" fill="var(--graphite)">Higher</text>
         </svg>
         <div class="m-auto-key"><span><i style="background:var(--accent)"></i>Capability unlocked</span><span><i style="background:var(--warn)"></i>Risk if unmanaged</span></div>
       </div>
-      <div class="m-auto reveal">
+      <div class="m-auto">
         <div><span class="k">1 · Watch</span><h4>Shadow</h4><p>The system runs in the background on live data, but nobody acts on what it produces yet. Its job is to show that it behaves as people would have.</p><span class="exit"><b>Moves on when</b> its agreement with human judgement has settled, and any disagreements have been understood, not just explained away.</span></div>
         <div><span class="k">2 · Recommend</span><h4>Assisted</h4><p>A recommendation is now produced, with the evidence behind it, but a person still makes the decision.</p><span class="exit"><b>Moves on when</b> people rarely need to correct it, that rate is still falling and, just as importantly, the people using it every day trust it.</span></div>
         <div><span class="k">3 · Act, bounded</span><h4>Delegated, within bounds</h4><p>The system acts on its own, but only within defined limits: value limits, particular case types, and confidence thresholds below which it will not proceed. Anything outside goes to a person instead of being guessed at.</p><span class="exit"><b>Moves on when</b> exception handling is proven and the escalation route has held up under real load, not only in a test environment.</span></div>
@@ -338,14 +328,14 @@
       </div>
       <div class="r2-wrap">
         <svg viewBox="0 0 340 285" aria-hidden="true" style="width:100%;max-width:340px;">
-          <circle id="r2c-data" class="r2-circ" cx="140" cy="110" r="95" fill="var(--accent)" fill-opacity="0.16" stroke="var(--accent)" stroke-width="1.5"/>
+          <circle id="r2c-data" class="r2-circ" cx="140" cy="110" r="95" fill="var(--lime)" fill-opacity="0.3" stroke="var(--accent)" stroke-width="1.5"/>
           <circle id="r2c-content" class="r2-circ" cx="205" cy="110" r="95" fill="var(--warn)" fill-opacity="0.16" stroke="var(--warn)" stroke-width="1.5"/>
           <circle id="r2c-act" class="r2-circ" cx="172" cy="175" r="95" fill="var(--ink)" fill-opacity="0.10" stroke="var(--ink-soft)" stroke-width="1.5"/>
-          <text id="r2t-data" class="r2-lbl" x="72" y="70" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Private data</text>
-          <text id="r2t-content" class="r2-lbl" x="228" y="70" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Untrusted content</text>
-          <text id="r2t-act" class="r2-lbl" x="128" y="240" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Ability to act</text>
-          <text x="172" y="150" font-family="Bricolage Grotesque" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">only with</text>
-          <text x="172" y="163" font-family="Bricolage Grotesque" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">containment</text>
+          <text id="r2t-data" class="r2-lbl" x="72" y="70" font-family="Onest, sans-serif" font-size="11" fill="var(--ink-soft)">Private data</text>
+          <text id="r2t-content" class="r2-lbl" x="228" y="70" font-family="Onest, sans-serif" font-size="11" fill="var(--ink-soft)">Untrusted content</text>
+          <text id="r2t-act" class="r2-lbl" x="128" y="240" font-family="Onest, sans-serif" font-size="11" fill="var(--ink-soft)">Ability to act</text>
+          <text x="172" y="150" font-family="Onest, sans-serif" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">only with</text>
+          <text x="172" y="163" font-family="Onest, sans-serif" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">containment</text>
         </svg>
         <div class="r2-text">
           <p>It is worth being clear about one thing: a language model cannot reliably tell a real instruction from its user apart from one hidden in something it is reading, such as a stray line of text on a web page or an email dressed up as something else. The major AI labs say so themselves, and none of them describe it as solved. Where the model runs changes who can see the data and what it all costs. It changes nothing about this risk.</p>
@@ -393,39 +383,32 @@
 
       <blockquote class="pull">"Where a model runs decides who can see the data and what it all costs. How the system is designed decides what can go wrong, and that is the part that gets my attention."<cite>The sentence I ask a board to remember</cite></blockquote>
 
-      <p class="ix-follow"><a href="../build/">Next: how the build itself is run →</a></p>
+      <div class="next-step"><p><b>Where the method goes next</b>How the build itself is run, and how safety calls are made long before a safety team sees them.</p><a class="btn primary" href="../build/">How the build runs →</a><a class="btn" href="../safety/">Safety and governance →</a></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="section-head"><div><div class="eyebrow">Related writing</div><h2 class="title reveal">More on this.</h2></div><a href="../writing/">All writing →</a></div>
-    <div class="latest"><a class="lcard reveal" href="../writing/teach-the-thinking.html"><span class="theme">AI in organisations</span><h3>The method should outlast the consultant</h3><p>The most valuable thing an AI programme can leave behind is a way of thinking the organisation can run for itself.</p></a><a class="lcard reveal" href="../writing/write-the-never-list-first.html"><span class="theme">Building with AI</span><h3>Write the never list first</h3><p>Before deciding what an AI system should do, I write down what it must never do. Then each line is made true in code.</p></a><a class="lcard reveal" href="../writing/private-from-whom.html"><span class="theme">Privacy</span><h3>Private from whom?</h3><p>Why “I want privacy” is not yet a requirement, and the two questions that turn it into one.</p></a></div>
+    <div class="section-head"><div><div class="eyebrow">Related writing</div><h2 class="title">More on this.</h2></div><a href="../writing/">All writing →</a></div>
+    <div class="latest"><a class="lcard" href="../writing/teach-the-thinking.html"><span class="theme">AI in organisations</span><h3>The method should outlast the consultant</h3><p>The most valuable thing an AI programme can leave behind is a way of thinking the organisation can run for itself.</p></a><a class="lcard" href="../writing/write-the-never-list-first.html"><span class="theme">Building with AI</span><h3>Write the never list first</h3><p>Before deciding what an AI system should do, I write down what it must never do. Then each line is made true in code.</p></a><a class="lcard" href="../writing/private-from-whom.html"><span class="theme">Privacy</span><h3>Private from whom?</h3><p>Why “I want privacy” is not yet a requirement, and the two questions that turn it into one.</p></a></div>
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="contact-sec">
   <div class="wrap">
-    <div class="eyebrow">Contact</div>
-    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
-    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
-    <div class="contact-signoff">
-      <img src="../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
-      <p>I read and reply to email myself, usually within a day.</p>
-    </div>
-    <div class="contact-grid reveal">
-      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
-      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
-      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    <div class="contact-card">
+      <h2 class="title">Available for consulting engagements <span class="dim">and permanent roles leading AI-native transformation.</span></h2>
+      <p>The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it. I read and reply to email myself, usually within a day.</p>
+      <div class="btns"><a class="btn primary" href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a><a class="btn" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/rorymcclelland" target="_blank" rel="noopener">GitHub</a></div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap fl">
-    <span>Rory McClelland · Product &amp; AI-native transformation</span>
-    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+<footer class="site-foot">
+  <div class="wrap">
+    <nav class="foot-links" aria-label="More"><a href="../build/">How the build runs</a><a href="../safety/">Safety and governance</a><a href="../teaching/">Teaching and mentoring</a><a href="../feed.xml">RSS</a></nav>
+    <div class="fl"><span>Rory McClelland, product and AI-native transformation</span><span>Based in the UK, working with teams wherever they are.</span></div>
   </div>
 </footer>
 <script src="../assets/rule-of-two.js"></script>
@@ -600,35 +583,17 @@
     cell.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
   });
 
-  // Reveal on scroll
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if ('IntersectionObserver' in window && !reduceMotion) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); } });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
-    each('.reveal', function (el) { io.observe(el); });
-  } else {
-    each('.reveal', function (el) { el.classList.add('in-view'); });
-  }
-
-  // Reading progress
-  var navProgress = $('navProgress'), ticking = false;
-  function updateProgress() {
-    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
-    if (navProgress) navProgress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
-    ticking = false;
-  }
-  window.addEventListener('scroll', function () { if (!ticking) { window.requestAnimationFrame(updateProgress); ticking = true; } }, { passive: true });
-  updateProgress();
 
   // Theme toggle
   var themeToggle = $('themeToggle');
   if (themeToggle) {
+    themeToggle.setAttribute('aria-pressed', document.documentElement.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
     themeToggle.addEventListener('click', function () {
       var current = document.documentElement.getAttribute('data-theme');
       if (!current) current = 'light';
       var next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
+      themeToggle.setAttribute('aria-pressed', next === 'dark' ? 'true' : 'false');
       try { localStorage.setItem('rm-theme', next); } catch (e) {}
     });
   }
