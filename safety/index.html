@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>AI safety and governance · Rory McClelland</title>
 <meta name="description" content="The safety and governance techniques behind the work, from Chrome's privacy review and Bumble's safety team to guarded AI builds: the idea behind each one, and where it has been put into practice.">
-<meta name="theme-color" content="#FBF8F1">
+<meta name="theme-color" content="#F3F5EE">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -21,39 +21,29 @@
 <meta name="twitter:title" content="AI safety and governance · Rory McClelland">
 <meta name="twitter:description" content="The safety and governance techniques behind the work: the idea behind each one, and where it has been put into practice.">
 <meta name="twitter:image" content="https://mcclelland.info/headshot.jpg">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="stylesheet" href="../assets/safety.css">
 <script>(function(){try{var t=localStorage.getItem('rm-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
-<nav class="topnav">
-  <a class="mark" href=".././" style="color:var(--ink);text-decoration:none">rory mcclelland<span>.</span></a>
-  <div class="nav-right">
-    <div class="navlinks">
-      <a href="../writing/">Writing</a>
-      <a href="../work/">Work</a>
-      <a href="../method/">Method</a>
-      <a href="../build/">Build</a>
-      <a href="../safety/" aria-current="page">Safety</a>
-      <a href="../about/">About</a>
-      <a href="../teaching/">Teaching</a>
+<header class="topnav">
+  <div class="navbar">
+    <a class="mark" href="../"><span class="mk" aria-hidden="true">rm</span><span class="nm">Rory McClelland</span></a>
+    <nav class="navlinks" aria-label="Main"><a href="../method/" aria-current="page">Method</a><a href="../work/">Work</a><a href="../writing/">Writing</a><a href="../about/">About</a></nav>
+    <div class="nav-actions">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch between light and dark"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg></button>
+      <a class="btn primary nav-cta" href="mailto:hello&#64;mcclelland&#46;info">Email me</a>
     </div>
-    <a class="btn primary nav-cta" href="#contact">Get in touch</a>
-    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
-      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg>
-      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
-    </button>
   </div>
-  <div class="nav-progress" id="navProgress"></div>
-</nav>
+</header>
 
 <section class="page-head" id="safety">
   <div class="wrap">
     <div class="eyebrow">AI safety and governance</div>
-    <h1 class="title reveal">Safety is a product decision.</h1>
+    <h1 class="title">Safety is a product decision.</h1>
     <p class="lede">Most of the hard calls in a product are made long before a safety team sees it: what data is collected, what the system is allowed to do, and what counts as harm. This page sets out the techniques I use to make those calls, each shown as a pair: the idea behind it, and where it has been put into practice. They run from a browser used by billions, through a dating app's safety team, to the AI systems I build today.</p>
-    <div class="track reveal">
+    <div class="track">
       <div><span class="when">2018–2021 · Google</span><b>Chrome Privacy</b><span class="d">Product lead for the privacy review every Chrome launch had to clear.</span></div>
       <div><span class="when">2021–2022 · Bumble</span><b>Safety &amp; Integrity</b><span class="d">Product safety strategy across two dating apps, and their first proactive safety feature.</span></div>
       <div><span class="when">Now</span><b>Guarded AI builds</b><span class="d">AI systems designed around what they must never do, then tested as an attacker would.</span></div>
@@ -64,8 +54,8 @@
 <section id="beliefs">
   <div class="wrap">
     <div class="eyebrow">What I believe</div>
-    <h2 class="title reveal">Five beliefs underneath the techniques.</h2>
-    <div class="beliefs five reveal">
+    <h2 class="title">Five beliefs underneath the techniques.</h2>
+    <div class="beliefs five">
       <div class="belief"><h5>Ask “private from whom?” before “how private?”</h5><p>“I want privacy” is not yet a requirement. It becomes one when it says who the user wants privacy from, and whom they are willing to trust to get it.</p></div>
       <div class="belief"><h5>Write the never list before the feature list</h5><p>What a system must never do is agreed first, and each line is then made true by design, rather than by an instruction the system might ignore.</p></div>
       <div class="belief"><h5>Capability and risk are the same dial</h5><p>Every permission that makes an AI system more useful also makes it more dangerous. The job is to turn the dial deliberately, one step at a time, on evidence.</p></div>
@@ -78,7 +68,7 @@
 <section id="techniques">
   <div class="wrap">
     <div class="eyebrow">The techniques</div>
-    <h2 class="title reveal">Theory and practice, side by side.</h2>
+    <h2 class="title">Theory and practice, side by side.</h2>
     <p class="lede">Each technique below pairs the idea with a place it has been used, and links to the evidence where there is some on this site. Open any card for the detail, or filter by the stage of the work it belongs to.</p>
     <div class="reg-bar" role="group" aria-label="Filter techniques">
       <button type="button" class="ipill" data-group="all" aria-pressed="true">All</button>
@@ -222,9 +212,9 @@
 <section id="stories">
   <div class="wrap">
     <div class="eyebrow">In depth</div>
-    <h2 class="title reveal">Three stories behind the techniques.</h2>
+    <h2 class="title">Three stories behind the techniques.</h2>
     <div class="stories">
-      <article class="story reveal" id="story-chrome">
+      <article class="story" id="story-chrome">
         <div class="meta"><span class="tag">Google · Chrome Privacy</span><h3>The review every launch had to clear</h3><p>Launch review · the “yes, but” · privacy as a hygiene factor</p></div>
         <div class="beats">
           <p><b>The problem.</b> Every Chrome launch had to pass a privacy review before it shipped. Engineers sat in the review alongside product, so it tested the design rather than the paperwork, and it returned one of three verdicts: yes; yes, but with required changes; or blocked. Teams could also come early, when they had spotted a risk themselves.</p>
@@ -233,7 +223,7 @@
           <p class="lesson">Safety and privacy work is mostly the work around the build: the stakeholders, the money and the law.</p>
         </div>
       </article>
-      <article class="story reveal" id="story-bumble">
+      <article class="story" id="story-bumble">
         <div class="meta"><span class="tag">Bumble · Safety &amp; Integrity</span><h3>When flirting looks like abuse</h3><p>Relative signals · both kinds of error · safety and quality as one problem</p></div>
         <div class="beats">
           <p><b>The problem.</b> Bumble's first proactive safety feature was designed to step in while a conversation was turning, rather than after a report. It used a beta toxicity-scoring model from Google, which rates a message between 0 and 1.</p>
@@ -242,7 +232,7 @@
           <p class="lesson">The right measure depends on what normal looks like for the people using the product.</p>
         </div>
       </article>
-      <article class="story reveal" id="story-job-scout">
+      <article class="story" id="story-job-scout">
         <div class="meta"><span class="tag">Own build · Job Scout</span><h3>Guardrails on a personal AI agent</h3><p>Never list · containment · red team</p></div>
         <div class="beats">
           <p><b>The problem.</b> Job Scout runs a job search every morning on a private mailbox and career record. It reads alerts and adverts, scores each role and drafts a CV and letter for the best few: private data and text written by strangers, in the same system.</p>
@@ -258,17 +248,17 @@
 <section id="try-it">
   <div class="wrap">
     <div class="eyebrow">Try it</div>
-    <h2 class="title reveal">Is this safe to run unattended?</h2>
+    <h2 class="title">Is this safe to run unattended?</h2>
     <div class="r2-wrap">
       <svg viewBox="0 0 340 285" aria-hidden="true" style="width:100%;max-width:340px;">
-        <circle id="r2c-data" class="r2-circ" cx="140" cy="110" r="95" fill="var(--accent)" fill-opacity="0.16" stroke="var(--accent)" stroke-width="1.5"/>
+        <circle id="r2c-data" class="r2-circ" cx="140" cy="110" r="95" fill="var(--lime)" fill-opacity="0.3" stroke="var(--accent)" stroke-width="1.5"/>
         <circle id="r2c-content" class="r2-circ" cx="205" cy="110" r="95" fill="var(--warn)" fill-opacity="0.16" stroke="var(--warn)" stroke-width="1.5"/>
         <circle id="r2c-act" class="r2-circ" cx="172" cy="175" r="95" fill="var(--ink)" fill-opacity="0.10" stroke="var(--ink-soft)" stroke-width="1.5"/>
-        <text id="r2t-data" class="r2-lbl" x="72" y="70" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Private data</text>
-        <text id="r2t-content" class="r2-lbl" x="228" y="70" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Untrusted content</text>
-        <text id="r2t-act" class="r2-lbl" x="128" y="240" font-family="Bricolage Grotesque" font-size="11" fill="var(--ink-soft)">Ability to act</text>
-        <text x="172" y="150" font-family="Bricolage Grotesque" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">only with</text>
-        <text x="172" y="163" font-family="Bricolage Grotesque" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">containment</text>
+        <text id="r2t-data" class="r2-lbl" x="72" y="70" font-family="Onest, sans-serif" font-size="11" fill="var(--ink-soft)">Private data</text>
+        <text id="r2t-content" class="r2-lbl" x="228" y="70" font-family="Onest, sans-serif" font-size="11" fill="var(--ink-soft)">Untrusted content</text>
+        <text id="r2t-act" class="r2-lbl" x="128" y="240" font-family="Onest, sans-serif" font-size="11" fill="var(--ink-soft)">Ability to act</text>
+        <text x="172" y="150" font-family="Onest, sans-serif" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">only with</text>
+        <text x="172" y="163" font-family="Onest, sans-serif" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="600">containment</text>
       </svg>
       <div class="r2-text">
         <p>A language model cannot reliably tell an instruction from its user apart from one hidden in something it is reading. The major AI labs say so themselves, and none describes the problem as solved. Where the model runs changes who can see the data and what it costs; it changes nothing about this risk.</p>
@@ -296,8 +286,8 @@
 
 <section id="downloads">
   <div class="wrap">
-    <div class="section-head"><div><div class="eyebrow">Downloads</div><h2 class="title reveal">The full write-ups.</h2></div><a href="../work/">All work →</a></div>
-    <div class="downloads reveal">
+    <div class="section-head"><div><div class="eyebrow">Downloads</div><h2 class="title">The full write-ups.</h2></div><a href="../work/">All work →</a></div>
+    <div class="downloads">
       <a class="cmini" href="../case-studies/rory-mcclelland-studio-case-study.pdf" download><img src="../case-studies/cover-studio-case-study.jpg" alt="" loading="lazy" width="662" height="516"><div><div class="tag">Multi-agent product build · 7 pages</div><h3>Studio</h3><p>Agents that propose, code that checks every ad, and people who approve anything that spends, publishes, or replaces work.</p><span class="dl">Download the PDF ↓</span></div></a>
       <a class="cmini" href="../case-studies/rory-mcclelland-rfi-respond-case-study.pdf" download><img src="../case-studies/cover-rfi-respond-case-study.jpg" alt="" loading="lazy" width="662" height="516"><div><div class="tag">AI product build · 8 pages</div><h3>RFI Respond</h3><p>Grounded drafting, calibrated confidence, and gates no bulk approval can bypass, each with its evidence, and a knowledge base that learns only what a person approved.</p><span class="dl">Download the PDF ↓</span></div></a>
       <a class="cmini" href="../case-studies/rory-mcclelland-job-scout-case-study.pdf" download><img src="../case-studies/cover-job-scout-case-study.jpg" alt="" loading="lazy" width="662" height="516"><div><div class="tag">Agentic application · 6 pages</div><h3>Job Scout: a guarded, private job search</h3><p>The never list, data boundaries, red team results and threat model for one system.</p><span class="dl">Download the PDF ↓</span></div></a>
@@ -310,7 +300,7 @@
 <section id="sources">
   <div class="wrap">
     <div class="eyebrow">Where the ideas come from</div>
-    <h2 class="title reveal">Further reading.</h2>
+    <h2 class="title">Further reading.</h2>
     <p class="lede">Several of these techniques build on published work. These are the sources worth reading first.</p>
     <ul class="reading">
       <li><a href="https://ai.meta.com/blog/practical-ai-agent-security/" target="_blank" rel="noopener">Agents Rule of Two: A Practical Approach to AI Agent Security</a><span class="src">Meta AI · October 2025</span><p>The rule behind the calculator above: an agent should hold no more than two of untrusted input, access to private data or sensitive systems, and the ability to change state or communicate externally.</p></li>
@@ -321,27 +311,20 @@
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="contact-sec">
   <div class="wrap">
-    <div class="eyebrow">Contact</div>
-    <h2 class="title reveal">Available for consulting engagements and permanent roles leading AI-native transformation.</h2>
-    <p class="lede">The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it.</p>
-    <div class="contact-signoff">
-      <img src="../headshot-mono-light.jpg" alt="" class="signoff-photo hs-light"><img src="../headshot-mono-dark.jpg" alt="" class="signoff-photo hs-dark">
-      <p>I read and reply to email myself, usually within a day.</p>
-    </div>
-    <div class="contact-grid reveal">
-      <a class="clink" href="mailto:hello&#64;mcclelland&#46;info"><span class="k">Email</span><span class="v">hello&#64;mcclelland&#46;info</span></a>
-      <a class="clink" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/rorymcclelland</span></a>
-      <a class="clink" href="https://github.com/rorymcclelland" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/rorymcclelland</span></a>
+    <div class="contact-card">
+      <h2 class="title">Available for consulting engagements <span class="dim">and permanent roles leading AI-native transformation.</span></h2>
+      <p>The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it. I read and reply to email myself, usually within a day.</p>
+      <div class="btns"><a class="btn primary" href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a><a class="btn" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/rorymcclelland" target="_blank" rel="noopener">GitHub</a></div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap fl">
-    <span>Rory McClelland · Product &amp; AI-native transformation</span>
-    <span><a href="../feed.xml">RSS</a> · Based in the UK, working with teams wherever they are</span>
+<footer class="site-foot">
+  <div class="wrap">
+    <nav class="foot-links" aria-label="More"><a href="../build/">How the build runs</a><a href="../safety/">Safety and governance</a><a href="../teaching/">Teaching and mentoring</a><a href="../feed.xml">RSS</a></nav>
+    <div class="fl"><span>Rory McClelland, product and AI-native transformation</span><span>Based in the UK, working with teams wherever they are.</span></div>
   </div>
 </footer>
 <script src="../assets/site.js"></script>
