@@ -118,6 +118,8 @@
   .m-part-head p{grid-column:1;}
 }
 @media (max-width:760px){.m-fig .lenses-grid .lens:last-child{grid-column:1 / -1;}}
+/* Two-column layout with a narrow figure: five lenses do not fit, so use three columns */
+@media (min-width:861px) and (max-width:1100px){.m-fig .lenses-grid{grid-template-columns:repeat(3,minmax(0,1fr));} .m-fig .lenses-grid .lens:last-child{grid-column:span 2;}}
 
 /* ==== Lime layer ==== */
 .m-toc{gap:8px;}
