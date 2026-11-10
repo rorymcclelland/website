@@ -39,7 +39,7 @@
   .stab:hover:not([aria-selected="true"]){background:var(--accent-soft);}
   @media (max-width:640px){ .stab{padding:.7rem .4rem;} .stab .t{font-size:.82rem;} .stab .w{font-size:.58rem;} }
   .stagepanel{border:1px solid var(--line);background:var(--paper-raised);padding:1.8rem;}
-  .sp-q{font-family:var(--display);font-style:italic;font-weight:500;font-size:1.3rem;margin:0 0 1.3rem;color:var(--ink);}
+  .sp-q{font-family:var(--display);font-style:normal;font-weight:500;font-size:1.3rem;margin:0 0 1.3rem;color:var(--ink);}
   .sp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.4rem;}
   .sp-grid > div{min-width:0;}
   .sp-grid b{display:block;font-family:var(--mono);font-size:.66rem;text-transform:none;letter-spacing:0;color:var(--graphite);margin-bottom:.35rem;}

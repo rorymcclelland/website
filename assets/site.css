@@ -730,3 +730,5 @@
   .photo-bg,.photo-credit,.hero-net{display:none!important;}
   .reveal,.reveal.in-view{opacity:1!important;transform:none!important;transition:none!important;}
   @media (prefers-reduced-motion:reduce){ *{scroll-behavior:auto!important;} }
+  /* Onest has no italic: quotes and notes stay upright */
+  .note,.portrait-cap,.method-premise,.pull,.sp-q,.hs-q,.stage .q,h1.headline em{font-style:normal;}

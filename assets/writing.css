@@ -95,3 +95,21 @@
   @media (max-width:720px){ .pcard{grid-template-columns:1fr;gap:1.2rem;} }
   @media (prefers-reduced-motion:reduce){ .pcard svg{transition:none;} }
 
+
+/* Lime layer (November 2026) */
+.dek{font-style:normal;color:var(--graphite);}
+.prose blockquote{font-style:normal;font-weight:500;letter-spacing:-.01em;border-left-color:var(--lime);}
+.aside{font-style:normal;font-family:var(--mono);font-size:.8rem;}
+.fig figcaption{font-style:normal;font-family:var(--mono);font-size:.78rem;}
+.t-disp{font-weight:600;letter-spacing:-.03em;}
+.t-note{font-style:normal;}
+.hero-fig svg,.pcard svg{border-radius:var(--r);overflow:hidden;}
+.fig svg,.fig img{border-radius:var(--r-sm);}
+:root[data-theme="dark"] svg .s-hl{fill:color-mix(in srgb,var(--lime) 34%,var(--paper));}
+.pcard{border-radius:var(--r);padding-inline:12px;}
+.pcard:hover{background:linear-gradient(90deg,color-mix(in srgb,var(--lime) 12%,transparent),transparent 70%);}
+.pcard:hover svg{transform:none;}
+.pcard .m{font-family:var(--mono);font-size:.78rem;}
+.ladder2 .st{border-radius:var(--r-sm);}
+.after .who img{border-radius:14px;}
+.more a{border-radius:var(--r-sm);}
