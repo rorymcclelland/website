@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The coordination tax · Rory McClelland</title>
+<meta name="description" content="Multi-agent systems can spend around half their compute on agents talking to each other. Research published this year suggests much of that buys nothing, and the same is true of the organisations the agents were modelled on.">
+<meta name="author" content="Rory McClelland">
+<meta name="theme-color" content="#F3F5EE">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://mcclelland.info/writing/the-coordination-tax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The coordination tax · Rory McClelland">
+<meta property="og:description" content="Multi-agent systems can spend around half their compute on agents talking to each other. Research published this year suggests much of that buys nothing, and the same is true of the organisations the agents were modelled on.">
+<meta property="og:url" content="https://mcclelland.info/writing/the-coordination-tax">
+<meta property="og:image" content="https://mcclelland.info/writing/img/the-coordination-tax.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mcclelland.info/writing/img/the-coordination-tax.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/writing.css">
+<link rel="alternate" type="application/rss+xml" title="Writing · Rory McClelland" href="https://mcclelland.info/feed.xml">
+<script>(function(){ try { var t = localStorage.getItem('rm-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();</script>
+</head>
+<body>
+<header class="topnav">
+  <div class="navbar">
+    <a class="mark" href="../"><span class="mk" aria-hidden="true">rm</span><span class="nm">Rory McClelland</span></a>
+    <nav class="navlinks" aria-label="Main"><a href="../method/">Method</a><a href="../work/">Work</a><a href="../writing/" aria-current="true">Writing</a><a href="../about/">About</a></nav>
+    <div class="nav-actions">
+      <a class="nav-soc" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener">LinkedIn</a><a class="nav-soc" href="https://github.com/rorymcclelland" target="_blank" rel="noopener">GitHub</a>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Dark theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/><line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg></button>
+      <a class="btn primary nav-cta" href="mailto:hello&#64;mcclelland&#46;info">Email me</a>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <header class="post-head read">
+    <div class="eyebrow">Writing · AI in organisations</div>
+    <h1>The coordination tax</h1>
+    <p class="dek">Multi-agent systems can spend around half their compute on agents talking to each other. Research published this year suggests much of that buys nothing, and the same is true of the organisations the agents were modelled on.</p>
+    <div class="meta"><span><b>Rory McClelland</b></span><span>November 2026</span><span>4 min read</span></div>
+  </header>
+  <figure class="hero-fig"><svg viewBox="0 0 1200 630" role="img" aria-labelledby="h1t"><title id="h1t">A till receipt. The task is one short line at the top. Briefings, handoffs, status checks, and reviews are long lines beneath it, and the total is highlighted as talk about the task.</title><rect class="s-bg" width="1200" height="630"/><path d="M150,70 H470 V500 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 Z" fill="#000" opacity=".08" transform="translate(8 10)"/><path class="s-paper" style="stroke:var(--line)" d="M150,70 H470 V500 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 l-16,-14 l-16,14 Z" stroke-width="1.5"/><text class="t-lab s-gr" x="310" y="116" font-size="17" letter-spacing="2" text-anchor="middle">RECEIPT</text><path class="k-line" d="M182,138 H438" stroke-width="2" stroke-dasharray="3 6"/><text class="t-body s-ink" x="182" y="182" font-size="22">the task</text><rect class="s-acc" x="398" y="168" width="40" height="14" rx="2"/><text class="t-body s-gr" x="182" y="226" font-size="22">briefings</text><rect class="s-ink" x="345" y="212" width="93" height="14" rx="2"/><text class="t-body s-gr" x="182" y="270" font-size="22">handoffs</text><rect class="s-ink" x="365" y="256" width="73" height="14" rx="2"/><text class="t-body s-gr" x="182" y="314" font-size="22">status checks</text><rect class="s-ink" x="333" y="300" width="105" height="14" rx="2"/><text class="t-body s-gr" x="182" y="358" font-size="22">reviews</text><rect class="s-ink" x="378" y="344" width="60" height="14" rx="2"/><path class="k-line" d="M182,392 H438" stroke-width="2" stroke-dasharray="3 6"/><rect class="s-hl" x="170" y="412" width="280" height="46"/><text class="t-lab s-ink" x="182" y="442" font-size="19" letter-spacing="1">TALK ABOUT THE TASK</text><rect class="s-hl" x="616" y="276" width="124" height="34"/><text class="t-disp s-ink" x="620" y="226" font-size="60">the coordination</text><text class="t-disp s-ink" x="620" y="302" font-size="60">tax.</text><text class="t-note s-acc" x="622" y="410" font-size="24">pay it only where</text><text class="t-note s-acc" x="622" y="444" font-size="24">the task demands it.</text><text class="t-lab s-gr" x="60" y="575" font-size="15" letter-spacing="1.2">MCCLELLAND.INFO · WRITING</text></svg></figure>
+  <article class="read prose">
+    <p>In February, Harang Ju of Johns Hopkins published a paper that asks which tasks need coordination to come out right, and which merely receive it. He calls the gap between the two the coordination tax, and gives it a formula. The paper puts multi-agent AI systems at 40-60% of total compute spent on coordination overhead, citing an earlier study of token use in agentic software engineering.</p>
+    <p>I think the name will stick. Anyone who has worked in a large company has been paying this tax for years (the invoice just never arrived).</p>
+
+    <h2>A tax with no line item</h2>
+    <p>In an organisation, the coordination tax is the status meeting, the approval chain, the handoff where the context is explained for the third time, and the thread that exists to find out who owns the thing. Since it never appears on a budget, it is rarely challenged.</p>
+    <p>Adding AI to that process speeds up each person and leaves the handoffs where they were. A faster desk does little when the work still queues at the next one.</p>
+
+    <h2>Agents put a price on it</h2>
+    <p>Agents make the tax visible. When a planner agent briefs a specialist and a reviewer agent checks the result, every exchange is paid for in tokens and shows up on a bill. In Ju’s simulations, the coordinated runs used 2.3 to 4.4 times the tokens of the uncoordinated ones.</p>
+    <p>Agent systems also tend to copy the structure of the organisation they serve, so they inherit its meetings along with its roles. A team that builds a ‘manager’ agent, three ‘specialist’ agents, and a ‘reviewer’ agent has usually redrawn its own org chart, and will pay for it at the same rate.</p>
+
+    <h2>Most work does not need it</h2>
+    <p>The paper borrows a result from distributed systems. Coordination is required for correctness only where new information can invalidate work already done. If contributions simply accumulate (a security audit, a feature specification, a set of strategy pillars), they can be produced independently and merged. If one decision constrains another (a budget, a headcount plan, a production schedule, a sprint), the parties have to talk. Nearly all of the tasks in that second group involve dividing up something finite.</p>
+    <p>Ju classified 65 standard enterprise workflows on this basis. 48 of them (74%) could be completed correctly without mutual coordination, and nine of those needed only to happen in the right order. The remaining 17 needed the real thing. Across a much larger set of occupational tasks the coordination-free share was lower, at 42%. On his estimate, between 24% and 57% of coordination spending buys nothing in correctness.</p>
+    <p>The simulations cut both ways, which is the part I find most useful. The tasks that needed coordination failed every time without it. The lesson is therefore to spend coordination where the shape of the task demands it, and to withhold it everywhere else.</p>
+    <p class="aside">Spend coordination where the shape of the task demands it.</p>
+    <p>The paper is careful about its limits: the simulation covers ten tasks, the guarantee concerns correctness and says nothing about quality, and the author recommends defaulting to coordination when a task is hard to classify. I still take the direction of the finding seriously, because it matches what I see when I build.</p>
+
+    <h2>Design for the task</h2>
+    <p>On my own builds I use a separate agent only where isolation, independence, or on-demand use calls for one. Job Scout has a second agent check every claim, because independence is the whole point of a check. Everything else stays in one place, where there is nobody to brief.</p>
+    <p>The same test works for a team of people or a team of agents. Before drawing the boxes, map the work and ask of each handoff whether later information could undo what came before. Work that only accumulates can run in parallel and be merged at the end. Work that depends on order needs a sequence and nothing more. Conversation is reserved for the places where something finite is being shared out.</p>
+    <p>Then measure it. For agents, split the token bill into the task and the talk about the task. For people, count the handoffs and approvals between a request and its outcome.</p>
+    <p>Approval gates are a separate matter, and I keep them. In Studio, a person approves every step that spends money, publishes, or replaces work. That is a safeguard with a clear purpose, and it is cheap next to a planning meeting between five agents.</p>
+    <p>The cheapest handoff is the one the design never needed.</p>
+    <p style="font-size:.85rem;color:var(--graphite)">Sources: <a href="https://arxiv.org/abs/2602.18673" target="_blank" rel="noopener">When Coordination Is Avoidable: A Monotonicity Analysis of Organizational Tasks</a>, Harang Ju, arXiv, February 2026. The 40-60% compute figure is cited there from Salim et al. (2025), ‘Tokenomics: quantifying where tokens are used in agentic software engineering’.</p>
+
+    <div class="after">
+      <div class="who"><img src="../headshot-mono-light.jpg" alt=""><p>Rory McClelland leads product, with a background in privacy and user safety at Google Chrome and Bumble, and now builds with AI. <a href="../work/">See the work</a> or write to <a href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a>.</p></div>
+      <div class="next-step"><p><b>See the method</b>Map, rank, prove, operationalise and scale, with the lenses, qualifiers and gates in full.</p><a class="btn primary" href="../method/">Read the method →</a></div>
+      <div class="more"><a href="tools-without-a-method.html"><span class="k">AI in organisations</span><span class="t">Tools without a method</span></a><a href="the-approximation-tax.html"><span class="k">Building with AI</span><span class="t">The approximation tax</span></a></div>
+    </div>
+  </article>
+</main>
+<section id="contact" class="contact-sec">
+  <div class="wrap">
+    <div class="contact-card">
+      <h2 class="title">Available for consulting engagements <span class="dim">and permanent roles leading AI-native transformation.</span></h2>
+      <p>The best way to get in touch is by email. I'm always happy to talk through a specific workflow, a rollout that's stalled somewhere along the way, or a question a security team has been asked with no deadline attached to it. I read and reply to email myself, usually within a day.</p>
+      <div class="btns"><a class="btn primary" href="mailto:hello&#64;mcclelland&#46;info">hello&#64;mcclelland&#46;info</a><a class="btn" href="https://linkedin.com/in/rorymcclelland" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/rorymcclelland" target="_blank" rel="noopener">GitHub</a></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav class="foot-links" aria-label="More"><a href="../build/">How the build runs</a><a href="../safety/">Safety and governance</a><a href="../teaching/">Teaching and mentoring</a><a href="../feed.xml">RSS</a></nav>
+    <div class="fl"><span>Rory McClelland, product and AI-native transformation</span><span>Based in the UK, working with teams wherever they are.</span></div>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
+
