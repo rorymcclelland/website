@@ -2,7 +2,7 @@
 .home{max-width:1200px;margin:0 auto;padding-top:16px;}
 .bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px;}
 .c8{grid-column:span 8}.c7{grid-column:span 7}.c5{grid-column:span 5}.c4{grid-column:span 4}
-.card h3{font-size:1.6rem;line-height:1.15;letter-spacing:-.02em;margin:0;}
+.card h3,.card h2.ct{font-size:1.6rem;line-height:1.15;letter-spacing:-.02em;margin:0;}
 .card p{margin:0;color:var(--graphite);max-width:52ch;}
 .viz{margin-top:auto;padding-top:24px;}
 .hot{position:relative;}
