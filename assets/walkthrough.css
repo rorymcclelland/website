@@ -81,3 +81,31 @@
   .wt-shot{min-width:720px;}
   .wt-swipe{display:block;}
 }
+
+/* Lime layer (November 2026) */
+.wt{--t-test:#2B5FA8;}
+:root[data-theme="dark"] .wt{--t-test:#8FB4F0;}
+.wt-crumb{font-family:var(--mono);}
+.wt-filter{border:0;background:transparent;backdrop-filter:none;margin-inline:0;padding-inline:0;}
+.wt-filter-in{max-width:none;width:max-content;max-width:100%;padding:6px;border-radius:999px;border:1px solid var(--line);background:color-mix(in srgb,var(--paper-raised) 88%,transparent);backdrop-filter:blur(10px);}
+.wt-chip{border-radius:999px;border-color:transparent;min-height:36px;}
+.wt-chip[aria-pressed="true"]{background:var(--lime);color:var(--lime-ink);border-color:var(--lime);}
+.wt-chip[aria-pressed="true"] i{box-shadow:0 0 0 2px var(--lime-ink);}
+.wt-toc a{border-radius:var(--r-sm);background:var(--paper-raised);font-weight:500;}
+.wt-toc a::before{font-family:var(--mono);}
+.wt-num{font-family:var(--mono);font-weight:500;}
+.wt-screen-head h2{font-weight:500;letter-spacing:-.02em;}
+.wt-shot{border-radius:var(--r-sm);overflow:hidden;box-shadow:0 1px 2px rgba(11,16,32,.06),0 12px 32px -18px rgba(11,16,32,.25);}
+.wt-pin{font-family:var(--mono);font-weight:500;}
+.wt [data-theme-k="ai"].wt-pin,.wt [data-theme-k="ai"] .n{background:var(--lime);color:var(--lime-ink);}
+.wt [data-theme-k="ai"].wt-pin{border-color:var(--lime-ink);}
+.wt [data-theme-k="human"].wt-pin,.wt [data-theme-k="human"] .n{background:#0B1020;}
+.wt-notes li{border-left:0;border:1px solid var(--line);border-radius:var(--r-sm);box-shadow:inset 3px 0 0 var(--tc);}
+.wt-notes li[data-theme-k="ai"]{box-shadow:inset 3px 0 0 var(--lime);}
+.wt-notes .n{font-family:var(--mono);font-weight:500;}
+.wt-notes b{font-weight:500;}
+.wt-tests{gap:12px;background:none;border:0;}
+.wt-test{border:1px solid var(--line);border-radius:var(--r-sm);background:var(--paper-raised);}
+.wt-test h3{font-weight:500;}
+.wt-attacks span{border-radius:999px;font-family:var(--mono);}
+@media (max-width:640px){ .wt-filter-in{border-radius:18px;width:auto;} }
