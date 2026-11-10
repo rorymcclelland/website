@@ -109,3 +109,5 @@
 .wt-test h3{font-weight:500;}
 .wt-attacks span{border-radius:999px;font-family:var(--mono);}
 @media (max-width:640px){ .wt-filter-in{border-radius:18px;width:auto;} }
+:root[data-theme="dark"] .wt [data-theme-k="guard"].wt-pin,:root[data-theme="dark"] .wt [data-theme-k="guard"] .n,
+:root[data-theme="dark"] .wt [data-theme-k="test"].wt-pin,:root[data-theme="dark"] .wt [data-theme-k="test"] .n{color:#0B1020;}

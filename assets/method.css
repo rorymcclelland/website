@@ -151,3 +151,5 @@
 .m-auto{background:none;border:none;gap:12px;margin-top:12px;}
 .m-auto > div{border:1px solid var(--line);border-radius:var(--r-sm);background:linear-gradient(90deg,var(--paper-raised),var(--panel2));}
 .m-auto .exit b{font-weight:500;}
+.m-example{background:linear-gradient(90deg,var(--lime),var(--lime2));}
+@media (prefers-reduced-motion:reduce){.m-fig .lens,.m-fig .lens *,.m-fig .is-lit{transition:none!important;}}
