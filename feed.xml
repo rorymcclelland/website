@@ -7,6 +7,13 @@
   <description>Notes on building with AI, privacy and safety, and bringing AI into organisations.</description>
   <language>en-gb</language>
   <item>
+    <title>The coordination tax</title>
+    <link>https://mcclelland.info/writing/the-coordination-tax</link>
+    <guid>https://mcclelland.info/writing/the-coordination-tax.html</guid>
+    <pubDate>Tue, 10 Nov 2026 20:30:00 +0000</pubDate>
+    <description>Multi-agent systems can spend around half their compute on agents talking to each other. Research published this year suggests much of that buys nothing, and the same is true of the organisations the agents were modelled on.</description>
+  </item>
+  <item>
     <title>Guardrails the agent can’t talk its way past</title>
     <link>https://mcclelland.info/writing/guardrails-outside-the-agent</link>
     <guid>https://mcclelland.info/writing/guardrails-outside-the-agent.html</guid>
