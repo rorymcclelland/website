@@ -55,6 +55,12 @@
         <div>
           <div class="tag">Multi-agent product build</div>
           <h3>Studio: from a one-line objective to a checked launch pack</h3>
+          <dl class="problem">
+            <div><dt>The problem</dt><dd>A marketing team with a good campaign idea still has to turn it into dozens of ads: every size, every channel, and every language, each one checked against the brand's rules. That production work tends to be slow and repetitive, so campaigns can launch late and fewer ideas get tested than the team would like.</dd></div>
+            <div><dt>Who has it</dt><dd>Brand and campaign managers, and the designers and reviewers who support them.</dd></div>
+            <div><dt>Why this problem</dt><dd>Most of the work is high in volume and low in judgement, however the few judgement calls in it (spending money, publishing, replacing approved work) carry real risk. That makes it a fair test of whether AI agents can take on the production whilst a real person keeps every consequential decision.</dd></div>
+            <div><dt>What was left out</dt><dd>Video, publishing to live ad platforms, and real performance data. Studio stops at a checked launch pack, which a person takes from there.</dd></div>
+          </dl>
           <p>A web app where AI agents take a marketing campaign from a one-line objective to on-brand ads in every size and language, each checked against the brand's rules, with a real person approving every step that spends money, publishes, or replaces work. Built in eight sprints over eleven days, with me as product manager and Claude as lead engineer, and running for invited users with fictional brands and simulated data. It is a non-commercial demonstration, inspired by multi-agent campaign platforms I saw at Elsewhen and built independently. The case study covers what the product saves a marketing team, how it is built, deployed, and run, and how AI built it safely.</p>
           <ul class="guards">
             <li>On production in Sprint 5, a signed-off brief became 12 ads in 37 seconds for about 14.7p in model costs, and a daily spending cap is checked before every model call.</li>
@@ -70,6 +76,12 @@
         <div>
           <div class="tag">AI product build</div>
           <h3>RFI Respond: drafting from what the organisation already knows</h3>
+          <dl class="problem">
+            <div><dt>The problem</dt><dd>Organisations that sell through formal procurement answer the same questionnaires again and again. Most questions have been answered before, however the answers sit in old documents and in people's heads. Each response is slow to assemble, its quality depends on who happens to work on it, and what one team learns is rarely reused by the next.</dd></div>
+            <div><dt>Who has it</dt><dd>The person responsible for sending each response, and the subject experts who are chased for answers.</dd></div>
+            <div><dt>Why this problem</dt><dd>What sits underneath is institutional knowledge that is never captured. The questionnaire is simply where the cost shows. Solving it here leaves a knowledge base the organisation can reuse in support, HR, onboarding, and bids.</dd></div>
+            <div><dt>What was left out</dt><dd>It is not a CRM, and it never sends anything to a customer. Pricing and legal questions always go to a person, and pricing is never drafted or learned.</dd></div>
+          </dl>
           <p>An internal tool that answers procurement questionnaires from an organisation's own knowledge base, rebuilt over twenty-five sprints from a prototype first made in three hours for a job interview, and now running as an invite-only demo where a visitor can try it on a sample questionnaire. It shows how AI can be designed into a knowledge-heavy business process to make it faster, more accurate, and more repeatable, and how the same pattern carries over to support, HR, onboarding, bids, and other flows.</p>
           <ul class="guards">
             <li>Drafts only from cited sources, checked in code: all 305 claims in the test drafts judged supported, and the judge caught 95 of 95 planted ones.</li>

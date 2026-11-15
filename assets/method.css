@@ -155,3 +155,7 @@
 .m-auto .exit b{font-weight:500;}
 .m-example{background:linear-gradient(90deg,var(--lime),var(--lime2));}
 @media (prefers-reduced-motion:reduce){.m-fig .lens,.m-fig .lens *,.m-fig .is-lit{transition:none!important;}}
+.m-frame{margin-bottom:1rem;}
+.m-frame-lead,.m-frame-out{margin:0;font-size:.9rem;color:var(--ink-soft);}
+.m-frame-qs{margin:.6rem 0 .8rem;padding-left:1.1rem;display:grid;gap:.35rem;font-size:.92rem;color:var(--ink);}
+.m-frame-qs li::marker{color:var(--accent);}

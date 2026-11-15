@@ -691,6 +691,9 @@
   .case{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(20px,3vw,36px);padding:clamp(20px,2.6vw,32px);}
   .case .cover{border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;box-shadow:none;}
   .case h3{font-size:clamp(1.5rem,1.4vw + 1rem,2rem);}
+  .case dl.problem{margin:0 0 1.2rem;display:grid;gap:.7rem;padding:1rem 1.1rem;background:var(--panel2);border-radius:var(--r-sm);}
+  .case dl.problem dt{font-family:var(--mono);font-size:.7rem;font-weight:500;color:var(--accent);margin-bottom:.15rem;}
+  .case dl.problem dd{margin:0;font-size:.9rem;line-height:1.5;color:var(--ink-soft);}
   .case ul.guards li::before{border:none;background:var(--lime);border-radius:50%;width:.6rem;height:.6rem;box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 35%,transparent);}
   .cmini{border-radius:var(--r);}
   .cmini img{border-radius:10px;}
